@@ -27,7 +27,7 @@
                 <i class="fas fa-check-circle"></i>
             </div>
             <h2 class="success-title">Registration Successful!</h2>
-            <p class="success-message">Thank you for registering! We will send you updates about the event to your email.</p>
+            <p class="success-message">Thank you for registering! We will send you a confirmation email shortly with all the event details.</p>
             <button class="success-button" id="successButton">Got It</button>
         </div>
     </div>
@@ -70,46 +70,46 @@
         </div>
     </div>
     
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-container">
-            <a href="#" class="logo">
-                <img src="https://via.placeholder.com/40" alt="Innovation Hub Logo" class="logo-img">
-                <span>Innovation Hub</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
-                <li><a href="#" class="nav-link" data-page="about">About</a></li>
-                <li><a href="#" class="nav-link" data-page="gallery">Gallery</a></li>
-                <li><a href="#" class="nav-link" data-page="events">Events</a></li>
-                <li><a href="#" class="nav-link" data-page="updates">Updates</a></li>
-                <li><a href="#" class="nav-link" data-page="team">Team</a></li>
-                <li><a href="#" class="nav-link" data-page="contact">Contact</a></li>
-            </ul>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
+    <!-- Main Content -->
+    <div id="mainContent">
+        <!-- Navigation -->
+        <nav id="navbar">
+            <div class="nav-container">
+                <a href="#" class="logo">
+                    <img src="logo.png" alt="Innovation Hub Logo" class="logo-img">
+                    <span>Innovation Hub</span>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#" id="aboutLink">About</a></li>
+                    <li><a href="#" id="galleryLink">Gallery</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#" id="updatesLink">Updates</a></li>
+                    <li><a href="#" id="teamLink">Team</a></li>
+                    <li><a href="#" id="contactLink">Contact</a></li>
+                </ul>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div class="mobile-menu" id="mobileMenu">
-            <ul class="mobile-menu-links">
-                <li><a href="#" class="mobile-nav-link active" data-page="home">Home</a></li>
-                <li><a href="#" class="mobile-nav-link" data-page="about">About</a></li>
-                <li><a href="#" class="mobile-nav-link" data-page="gallery">Gallery</a></li>
-                <li><a href="#" class="mobile-nav-link" data-page="events">Events</a></li>
-                <li><a href="#" class="mobile-nav-link" data-page="updates">Updates</a></li>
-                <li><a href="#" class="mobile-nav-link" data-page="team">Team</a></li>
-                <li><a href="#" class="mobile-nav-link" data-page="contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-    
-    <!-- Home Page -->
-    <div id="homePage" class="page active">
+            <!-- Mobile Menu -->
+            <div class="mobile-menu" id="mobileMenu">
+                <ul class="mobile-menu-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#" id="mobileAboutLink">About</a></li>
+                    <li><a href="#" id="mobileGalleryLink">Gallery</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#" id="mobileUpdatesLink">Updates</a></li>
+                    <li><a href="#" id="mobileTeamLink">Team</a></li>
+                    <li><a href="#" id="mobileContactLink">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+        
         <!-- Hero Section with Carousel -->
-        <section class="hero">
+        <section id="home" class="hero">
             <div class="hero-carousel">
                 <div class="carousel-slide active"></div>
                 <div class="carousel-slide"></div>
@@ -118,35 +118,18 @@
             </div>
             <div class="carousel-overlay"></div>
             
+            <div class="hero-content">
+                <h1 class="hero-title">Innovation Hub</h1>
+                <p class="hero-subtitle">Beyond Imagination</p>
+                <div class="hero-buttons">
+                    <a href="#whatwedo" class="btn btn-primary">Explore</a>
+                    <a href="#events" class="btn btn-secondary">Events</a>
+                </div>
+            </div>
+            
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
             <div class="shape shape-3"></div>
-        </section>
-        
-        <!-- New Banner Section -->
-        <section class="home-banner">
-            <div class="banner-container">
-                <div class="banner-content">
-                    <h2 class="banner-title">Innovate. Create. Transform.</h2>
-                    <p class="banner-subtitle">Join our community of forward-thinkers and change-makers</p>
-                    <div class="banner-buttons">
-                        <a href="#whatwedo" class="btn btn-primary">Discover More</a>
-                        <a href="#events" class="btn btn-secondary">Upcoming Events</a>
-                    </div>
-                </div>
-                <div class="banner-visual">
-                    <div class="cube-container">
-                        <div class="cube">
-                            <div class="cube-face cube-face-front">Success</div>
-                            <div class="cube-face cube-face-back">Innovation</div>
-                            <div class="cube-face cube-face-top">Technology</div>
-                            <div class="cube-face cube-face-bottom">Future</div>
-                            <div class="cube-face cube-face-left">Growth</div>
-                            <div class="cube-face cube-face-right">Vision</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
         
         <!-- What We Do Section -->
@@ -236,8 +219,8 @@
                         Join us for our annual Innovation Hackathon where students, developers, designers, and entrepreneurs come together to create innovative solutions to real-world problems. This 48-hour event will feature workshops, mentorship from industry experts, and amazing prizes for the winning teams.
                     </div>
                     <div class="event-actions">
-                        <button class="btn btn-primary register-btn">Register Now</button>
-                        <a href="#" class="btn btn-secondary learn-more-btn">Learn More</a>
+                        <button class="btn btn-primary" id="registerBtn">Register Now</button>
+                        <a href="#" id="learnMoreBtn" class="btn btn-secondary">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -269,12 +252,12 @@
                 <div class="footer-card">
                     <h3>Quick Access</h3>
                     <div class="quick-links">
-                        <a href="#" class="footer-link" data-page="about"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="#" id="footerAboutLink"><i class="fas fa-chevron-right"></i> About Us</a>
                         <a href="#whatwedo"><i class="fas fa-chevron-right"></i> What We Do</a>
                         <a href="#events"><i class="fas fa-chevron-right"></i> Events</a>
-                        <a href="#" class="footer-link" data-page="gallery"><i class="fas fa-chevron-right"></i> Gallery</a>
-                        <a href="#" class="footer-link" data-page="updates"><i class="fas fa-chevron-right"></i> Updates</a>
-                        <a href="#" class="footer-link" data-page="team"><i class="fas fa-chevron-right"></i> Team</a>
+                        <a href="#" id="footerGalleryLink"><i class="fas fa-chevron-right"></i> Gallery</a>
+                        <a href="#" id="footerUpdatesLink"><i class="fas fa-chevron-right"></i> Updates</a>
+                        <a href="#" id="footerTeamLink"><i class="fas fa-chevron-right"></i> Team</a>
                     </div>
                 </div>
                 
@@ -298,391 +281,74 @@
         </footer>
     </div>
     
-    <!-- About Page -->
-    <div id="aboutPage" class="page">
-        <div class="about-hero">
-            <div class="about-hero-content">
-                <h1 class="about-hero-title">About Us</h1>
-                <p class="about-hero-subtitle">Pioneering Innovation at JIIT</p>
+    <!-- Contact Page -->
+    <div id="contactPage" class="contact-page">
+        <div class="contact-hero">
+            <div class="contact-hero-content">
+                <h1 class="contact-hero-title">Get In Touch</h1>
+                <p class="contact-hero-subtitle">We'd love to hear from you</p>
             </div>
         </div>
         
-        <div class="about-container">
-            <div class="about-intro">
-                <h2 class="about-section-title">Our Story</h2>
-                <div class="about-intro-content">
-                    <p>The Innovation Hub at JIIT is a dynamic ecosystem that fosters creativity, entrepreneurship, and technological advancement. Established with a vision to transform ideas into reality, we provide a platform for students, faculty, and industry experts to collaborate and innovate.</p>
-                    <p>Our mission is to nurture the next generation of innovators and entrepreneurs by providing them with the resources, mentorship, and opportunities they need to succeed in today's rapidly evolving technological landscape.</p>
+        <div class="contact-container">
+            <div class="contact-info-section">
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="contact-info-title">Visit Us</h3>
+                    <p class="contact-info-text">Innovation Hub<br>JJIT Campus<br>Technology Park, Bangalore</p>
+                </div>
+                
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="contact-info-title">Call Us</h3>
+                    <p class="contact-info-text">+91 98765 43210</p>
+                </div>
+                
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-info-title">Email Us</h3>
+                    <p class="contact-info-text">ecell@jjit.ac.in</p>
                 </div>
             </div>
             
-            <div class="about-events">
-                <h2 class="about-section-title">Flagship Events</h2>
-                
-                <div class="about-event-card">
-                    <div class="about-event-image">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Ride Hack">
-                    </div>
-                    <div class="about-event-content">
-                        <h3 class="about-event-title">Ride Hack</h3>
-                        <p class="about-event-description">Ride Hack is our annual mobility-focused hackathon that brings together innovators to solve transportation challenges. Participants work in teams to develop creative solutions for urban mobility, sustainable transportation, and smart city integration.</p>
-                        <div class="about-event-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-users"></i>
-                                <span>300+ Participants</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-clock"></i>
-                                <span>36 Hours</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-trophy"></i>
-                                <span>₹1 Lakh in Prizes</span>
-                            </div>
+            <div class="contact-form-section">
+                <h2 class="contact-form-title">Send Us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
                         </div>
                     </div>
-                </div>
-                
-                <div class="about-event-card reverse">
-                    <div class="about-event-image">
-                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Hackathon">
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
                     </div>
-                    <div class="about-event-content">
-                        <h3 class="about-event-title">Innovation Hackathon</h3>
-                        <p class="about-event-description">Our flagship Innovation Hackathon is a 48-hour marathon of coding, designing, and problem-solving. Teams tackle real-world challenges across various domains including AI, blockchain, IoT, and sustainability, with mentorship from industry experts.</p>
-                        <div class="about-event-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-users"></i>
-                                <span>500+ Participants</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-clock"></i>
-                                <span>48 Hours</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-trophy"></i>
-                                <span>₹2 Lakhs in Prizes</span>
-                            </div>
-                        </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
                     </div>
-                </div>
-                
-                <div class="about-event-card">
-                    <div class="about-event-image">
-                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Startup Pitch">
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
                     </div>
-                    <div class="about-event-content">
-                        <h3 class="about-event-title">Startup Pitch Competition</h3>
-                        <p class="about-event-description">Our Startup Pitch Competition provides a platform for early-stage entrepreneurs to present their innovative ideas to a panel of investors and industry experts. Winners receive seed funding, mentorship, and incubation support to turn their ideas into successful ventures.</p>
-                        <div class="about-event-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-users"></i>
-                                <span>100+ Startups</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-handshake"></i>
-                                <span>20+ Investors</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-rupee-sign"></i>
-                                <span>₹5 Lakhs Investment</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="about-vision">
-                <h2 class="about-section-title">Our Vision</h2>
-                <div class="about-vision-content">
-                    <p>We envision a future where innovation thrives at the intersection of technology and entrepreneurship. Our goal is to create a vibrant ecosystem that nurtures creativity, fosters collaboration, and empowers individuals to transform their ideas into impactful solutions.</p>
-                    <p>Through our various programs and initiatives, we aim to build a community of innovators who are not just problem-solvers but also visionaries shaping the future of technology and business.</p>
-                </div>
+                    <button type="submit" class="btn btn-primary contact-submit-btn">Send Message</button>
+                </form>
             </div>
         </div>
         
         <div class="back-button-container">
-            <a href="#" class="sexy-back-button back-to-home">
-                <i class="fas fa-arrow-left"></i>
-                <span>Back to Home</span>
-            </a>
-        </div>
-    </div>
-    
-    <!-- Gallery Page -->
-    <div id="galleryPage" class="page">
-        <div class="gallery-hero">
-            <div class="gallery-hero-content">
-                <h1 class="gallery-hero-title">Innovation Gallery</h1>
-                <p class="gallery-hero-subtitle">Explore our events and achievements</p>
-            </div>
-        </div>
-        
-        <div class="gallery-container">
-            <div class="gallery-section">
-                <h2 class="gallery-section-title">Hackathons</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <div class="gallery-image">
-                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Hackathon">
-                        </div>
-                        <div class="gallery-info">
-                            <h3 class="gallery-title">Innovation Hackathon 2023</h3>
-                            <p class="gallery-description">48-hour intensive coding competition with 500+ participants creating innovative solutions.</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-image">
-                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Hackathon">
-                        </div>
-                        <div class="gallery-info">
-                            <h3 class="gallery-title">AI for Good Hackathon</h3>
-                            <p class="gallery-description">Focused on developing AI solutions for social and environmental challenges.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="gallery-section">
-                <h2 class="gallery-section-title">Workshops</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <div class="gallery-image">
-                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Workshop">
-                        </div>
-                        <div class="gallery-info">
-                            <h3 class="gallery-title">Blockchain Workshop</h3>
-                            <p class="gallery-description">Hands-on workshop on blockchain technology and smart contract development.</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-image">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Workshop">
-                        </div>
-                        <div class="gallery-info">
-                            <h3 class="gallery-title">IoT Development</h3>
-                            <p class="gallery-description">Practical workshop on building IoT devices and applications.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="gallery-section">
-                <h2 class="gallery-section-title">Startup Showcases</h2>
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <div class="gallery-image">
-                            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=688&q=80" alt="Startup">
-                        </div>
-                        <div class="gallery-info">
-                            <h3 class="gallery-title">Demo Day 2023</h3>
-                            <p class="gallery-description">Showcase of 20+ startups presenting their innovative products to investors.</p>
-                        </div>
-                    </div>
-                    <div class="gallery-item">
-                        <div class="gallery-image">
-                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Startup">
-                        </div>
-                        <div class="gallery-info">
-                            <h3 class="gallery-title">Pitch Competition</h3>
-                            <p class="gallery-description">Entrepreneurs pitching their ideas to win funding and mentorship.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="back-button-container">
-            <a href="#" class="sexy-back-button back-to-home">
-                <i class="fas fa-arrow-left"></i>
-                <span>Back to Home</span>
-            </a>
-        </div>
-    </div>
-    
-    <!-- Events Page -->
-    <div id="eventsPage" class="page">
-        <div class="events-hero">
-            <div class="events-hero-content">
-                <h1 class="events-hero-title">Upcoming Events</h1>
-                <p class="events-hero-subtitle">Coming Soon</p>
-            </div>
-        </div>
-        
-        <div class="events-container">
-            <div class="coming-soon-message">
-                <h2>Our Events Are Coming Soon!</h2>
-                <p>We're working hard to bring you amazing events. Stay tuned for updates!</p>
-            </div>
-            
-            <div class="events-grid">
-                <div class="event-card coming-soon">
-                    <div class="event-header">
-                        <div class="event-date">
-                            <span class="day">15</span>
-                            <span class="month">JUL</span>
-                        </div>
-                        <div class="event-info">
-                            <h3 class="event-title">Innovation Hackathon 2023</h3>
-                            <div class="event-meta">
-                                <div class="event-meta-item">
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>July 15-17, 2023</span>
-                                </div>
-                                <div class="event-meta-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Innovation Hub Campus</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="event-description">
-                        Join us for our annual Innovation Hackathon where students, developers, designers, and entrepreneurs come together to create innovative solutions to real-world problems.
-                    </div>
-                    <div class="event-actions">
-                        <button class="btn btn-primary register-btn">Register Now</button>
-                        <a href="#" class="btn btn-secondary learn-more-btn">Learn More</a>
-                    </div>
-                    <div class="coming-soon-badge">Coming Soon</div>
-                </div>
-                
-                <div class="event-card coming-soon">
-                    <div class="event-header">
-                        <div class="event-date">
-                            <span class="day">05</span>
-                            <span class="month">AUG</span>
-                        </div>
-                        <div class="event-info">
-                            <h3 class="event-title">AI Workshop Series</h3>
-                            <div class="event-meta">
-                                <div class="event-meta-item">
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>August 5-7, 2023</span>
-                                </div>
-                                <div class="event-meta-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Innovation Hub Campus</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="event-description">
-                        Explore the world of Artificial Intelligence in our comprehensive workshop series covering machine learning, neural networks, and practical applications.
-                    </div>
-                    <div class="event-actions">
-                        <button class="btn btn-primary register-btn">Register Now</button>
-                        <a href="#" class="btn btn-secondary learn-more-btn">Learn More</a>
-                    </div>
-                    <div class="coming-soon-badge">Coming Soon</div>
-                </div>
-                
-                <div class="event-card coming-soon">
-                    <div class="event-header">
-                        <div class="event-date">
-                            <span class="day">20</span>
-                            <span class="month">SEP</span>
-                        </div>
-                        <div class="event-info">
-                            <h3 class="event-title">Startup Pitch Competition</h3>
-                            <div class="event-meta">
-                                <div class="event-meta-item">
-                                    <i class="fas fa-calendar-alt"></i>
-                                    <span>September 20, 2023</span>
-                                </div>
-                                <div class="event-meta-item">
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Innovation Hub Campus</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="event-description">
-                        Present your innovative ideas to a panel of investors and industry experts. Win funding and mentorship to turn your startup dreams into reality.
-                    </div>
-                    <div class="event-actions">
-                        <button class="btn btn-primary register-btn">Register Now</button>
-                        <a href="#" class="btn btn-secondary learn-more-btn">Learn More</a>
-                    </div>
-                    <div class="coming-soon-badge">Coming Soon</div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="back-button-container">
-            <a href="#" class="sexy-back-button back-to-home">
-                <i class="fas fa-arrow-left"></i>
-                <span>Back to Home</span>
-            </a>
-        </div>
-    </div>
-    
-    <!-- Updates Page -->
-    <div id="updatesPage" class="page">
-        <div class="updates-hero">
-            <div class="updates-hero-content">
-                <h1 class="updates-hero-title">Latest Updates</h1>
-                <p class="updates-hero-subtitle">Stay informed about our innovations</p>
-            </div>
-        </div>
-        
-        <div class="updates-container">
-            <div class="updates-timeline">
-                <div class="update-item">
-                    <div class="update-date">
-                        <span class="update-day">15</span>
-                        <span class="update-month">JUL</span>
-                        <span class="update-year">2023</span>
-                    </div>
-                    <div class="update-content">
-                        <h3 class="update-title">New Partnership with Tech Giants</h3>
-                        <p class="update-description">We're excited to announce our new partnership with leading technology companies to provide more resources and opportunities for our innovators.</p>
-                        <a href="#" class="update-link">Read More</a>
-                    </div>
-                </div>
-                
-                <div class="update-item">
-                    <div class="update-date">
-                        <span class="update-day">28</span>
-                        <span class="update-month">JUN</span>
-                        <span class="update-year">2023</span>
-                    </div>
-                    <div class="update-content">
-                        <h3 class="update-title">Innovation Lab Expansion</h3>
-                        <p class="update-description">Our innovation lab has been expanded with new equipment and facilities to support advanced research and development projects.</p>
-                        <a href="#" class="update-link">Read More</a>
-                    </div>
-                </div>
-                
-                <div class="update-item">
-                    <div class="update-date">
-                        <span class="update-day">12</span>
-                        <span class="update-month">JUN</span>
-                        <span class="update-year">2023</span>
-                    </div>
-                    <div class="update-content">
-                        <h3 class="update-title">Startup Incubation Program Launch</h3>
-                        <p class="update-description">We've launched our new startup incubation program to support early-stage startups with mentorship, funding, and resources.</p>
-                        <a href="#" class="update-link">Read More</a>
-                    </div>
-                </div>
-                
-                <div class="update-item">
-                    <div class="update-date">
-                        <span class="update-day">25</span>
-                        <span class="update-month">MAY</span>
-                        <span class="update-year">2023</span>
-                    </div>
-                    <div class="update-content">
-                        <h3 class="update-title">AI Research Center Inauguration</h3>
-                        <p class="update-description">Our new AI Research Center was inaugurated with the goal of advancing artificial intelligence research and applications.</p>
-                        <a href="#" class="update-link">Read More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="back-button-container">
-            <a href="#" class="sexy-back-button back-to-home">
+            <a href="#" id="backToHome" class="sexy-back-button">
                 <i class="fas fa-arrow-left"></i>
                 <span>Back to Home</span>
             </a>
@@ -690,7 +356,7 @@
     </div>
     
     <!-- Team Page -->
-    <div id="teamPage" class="page">
+    <div id="teamPage" class="team-page">
         <div class="team-hero">
             <div class="team-hero-content">
                 <h1 class="team-hero-title">Meet Our Team</h1>
@@ -797,81 +463,282 @@
         </div>
         
         <div class="back-button-container">
-            <a href="#" class="sexy-back-button back-to-home">
+            <a href="#" id="backToHomeFromTeam" class="sexy-back-button">
                 <i class="fas fa-arrow-left"></i>
                 <span>Back to Home</span>
             </a>
         </div>
     </div>
     
-    <!-- Contact Page -->
-    <div id="contactPage" class="page">
-        <div class="contact-hero">
-            <div class="contact-hero-content">
-                <h1 class="contact-hero-title">Get In Touch</h1>
-                <p class="contact-hero-subtitle">We'd love to hear from you</p>
+    <!-- About Us Page -->
+    <div id="aboutPage" class="about-page">
+        <div class="about-hero">
+            <div class="about-hero-content">
+                <h1 class="about-hero-title">About Us</h1>
+                <p class="about-hero-subtitle">Pioneering Innovation at JIIT</p>
             </div>
         </div>
         
-        <div class="contact-container">
-            <div class="contact-info-section">
-                <div class="contact-info-card">
-                    <div class="contact-info-icon">
-                        <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <h3 class="contact-info-title">Visit Us</h3>
-                    <p class="contact-info-text">Innovation Hub<br>JJIT Campus<br>Technology Park, Bangalore</p>
-                </div>
-                
-                <div class="contact-info-card">
-                    <div class="contact-info-icon">
-                        <i class="fas fa-phone"></i>
-                    </div>
-                    <h3 class="contact-info-title">Call Us</h3>
-                    <p class="contact-info-text">+91 98765 43210</p>
-                </div>
-                
-                <div class="contact-info-card">
-                    <div class="contact-info-icon">
-                        <i class="fas fa-envelope"></i>
-                    </div>
-                    <h3 class="contact-info-title">Email Us</h3>
-                    <p class="contact-info-text">ecell@jjit.ac.in</p>
+        <div class="about-container">
+            <div class="about-intro">
+                <h2 class="about-section-title">Our Story</h2>
+                <div class="about-intro-content">
+                    <p>The Innovation Hub at JIIT is a dynamic ecosystem that fosters creativity, entrepreneurship, and technological advancement. Established with a vision to transform ideas into reality, we provide a platform for students, faculty, and industry experts to collaborate and innovate.</p>
+                    <p>Our mission is to nurture the next generation of innovators and entrepreneurs by providing them with the resources, mentorship, and opportunities they need to succeed in today's rapidly evolving technological landscape.</p>
                 </div>
             </div>
             
-            <div class="contact-form-section">
-                <h2 class="contact-form-title">Send Us a Message</h2>
-                <form id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" name="firstName" required>
+            <div class="about-events">
+                <h2 class="about-section-title">Flagship Events</h2>
+                
+                <div class="about-event-card">
+                    <div class="about-event-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Ride Hack">
+                    </div>
+                    <div class="about-event-content">
+                        <h3 class="about-event-title">Ride Hack</h3>
+                        <p class="about-event-description">Ride Hack is our annual mobility-focused hackathon that brings together innovators to solve transportation challenges. Participants work in teams to develop creative solutions for urban mobility, sustainable transportation, and smart city integration.</p>
+                        <div class="about-event-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-users"></i>
+                                <span>300+ Participants</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-clock"></i>
+                                <span>36 Hours</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-trophy"></i>
+                                <span>₹1 Lakh in Prizes</span>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" name="lastName" required>
+                    </div>
+                </div>
+                
+                <div class="about-event-card reverse">
+                    <div class="about-event-image">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Hackathon">
+                    </div>
+                    <div class="about-event-content">
+                        <h3 class="about-event-title">Innovation Hackathon</h3>
+                        <p class="about-event-description">Our flagship Innovation Hackathon is a 48-hour marathon of coding, designing, and problem-solving. Teams tackle real-world challenges across various domains including AI, blockchain, IoT, and sustainability, with mentorship from industry experts.</p>
+                        <div class="about-event-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-users"></i>
+                                <span>500+ Participants</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-clock"></i>
+                                <span>48 Hours</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-trophy"></i>
+                                <span>₹2 Lakhs in Prizes</span>
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="about-event-card">
+                    <div class="about-event-image">
+                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Startup Pitch">
                     </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
+                    <div class="about-event-content">
+                        <h3 class="about-event-title">Startup Pitch Competition</h3>
+                        <p class="about-event-description">Our Startup Pitch Competition provides a platform for early-stage entrepreneurs to present their innovative ideas to a panel of investors and industry experts. Winners receive seed funding, mentorship, and incubation support to turn their ideas into successful ventures.</p>
+                        <div class="about-event-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-users"></i>
+                                <span>100+ Startups</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-handshake"></i>
+                                <span>20+ Investors</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-rupee-sign"></i>
+                                <span>₹5 Lakhs Investment</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary contact-submit-btn">Send Message</button>
-                </form>
+                </div>
+            </div>
+            
+            <div class="about-vision">
+                <h2 class="about-section-title">Our Vision</h2>
+                <div class="about-vision-content">
+                    <p>We envision a future where innovation thrives at the intersection of technology and entrepreneurship. Our goal is to create a vibrant ecosystem that nurtures creativity, fosters collaboration, and empowers individuals to transform their ideas into impactful solutions.</p>
+                    <p>Through our various programs and initiatives, we aim to build a community of innovators who are not just problem-solvers but also visionaries shaping the future of technology and business.</p>
+                </div>
             </div>
         </div>
         
         <div class="back-button-container">
-            <a href="#" class="sexy-back-button back-to-home">
+            <a href="#" id="backToHomeFromAbout" class="sexy-back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Gallery Page -->
+    <div id="galleryPage" class="gallery-page">
+        <div class="gallery-hero">
+            <div class="gallery-hero-content">
+                <h1 class="gallery-hero-title">Innovation Gallery</h1>
+                <p class="gallery-hero-subtitle">Explore our events and achievements</p>
+            </div>
+        </div>
+        
+        <div class="gallery-container">
+            <div class="gallery-section">
+                <h2 class="gallery-section-title">Hackathons</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Hackathon">
+                        </div>
+                        <div class="gallery-info">
+                            <h3 class="gallery-title">Innovation Hackathon 2023</h3>
+                            <p class="gallery-description">48-hour intensive coding competition with 500+ participants creating innovative solutions.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Hackathon">
+                        </div>
+                        <div class="gallery-info">
+                            <h3 class="gallery-title">AI for Good Hackathon</h3>
+                            <p class="gallery-description">Focused on developing AI solutions for social and environmental challenges.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-section">
+                <h2 class="gallery-section-title">Workshops</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Workshop">
+                        </div>
+                        <div class="gallery-info">
+                            <h3 class="gallery-title">Blockchain Workshop</h3>
+                            <p class="gallery-description">Hands-on workshop on blockchain technology and smart contract development.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Workshop">
+                        </div>
+                        <div class="gallery-info">
+                            <h3 class="gallery-title">IoT Development</h3>
+                            <p class="gallery-description">Practical workshop on building IoT devices and applications.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="gallery-section">
+                <h2 class="gallery-section-title">Startup Showcases</h2>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Startup">
+                        </div>
+                        <div class="gallery-info">
+                            <h3 class="gallery-title">Demo Day 2023</h3>
+                            <p class="gallery-description">Showcase of 20+ startups presenting their innovative products to investors.</p>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Startup">
+                        </div>
+                        <div class="gallery-info">
+                            <h3 class="gallery-title">Pitch Competition</h3>
+                            <p class="gallery-description">Entrepreneurs pitching their ideas to win funding and mentorship.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="back-button-container">
+            <a href="#" id="backToHomeFromGallery" class="sexy-back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Updates Page -->
+    <div id="updatesPage" class="updates-page">
+        <div class="updates-hero">
+            <div class="updates-hero-content">
+                <h1 class="updates-hero-title">Latest Updates</h1>
+                <p class="updates-hero-subtitle">Stay informed about our innovations</p>
+            </div>
+        </div>
+        
+        <div class="updates-container">
+            <div class="updates-timeline">
+                <div class="update-item">
+                    <div class="update-date">
+                        <span class="update-day">15</span>
+                        <span class="update-month">JUL</span>
+                        <span class="update-year">2023</span>
+                    </div>
+                    <div class="update-content">
+                        <h3 class="update-title">New Partnership with Tech Giants</h3>
+                        <p class="update-description">We're excited to announce our new partnership with leading technology companies to provide more resources and opportunities for our innovators.</p>
+                        <a href="#" class="update-link">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="update-item">
+                    <div class="update-date">
+                        <span class="update-day">28</span>
+                        <span class="update-month">JUN</span>
+                        <span class="update-year">2023</span>
+                    </div>
+                    <div class="update-content">
+                        <h3 class="update-title">Innovation Lab Expansion</h3>
+                        <p class="update-description">Our innovation lab has been expanded with new equipment and facilities to support advanced research and development projects.</p>
+                        <a href="#" class="update-link">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="update-item">
+                    <div class="update-date">
+                        <span class="update-day">12</span>
+                        <span class="update-month">JUN</span>
+                        <span class="update-year">2023</span>
+                    </div>
+                    <div class="update-content">
+                        <h3 class="update-title">Startup Incubation Program Launch</h3>
+                        <p class="update-description">We've launched our new startup incubation program to support early-stage startups with mentorship, funding, and resources.</p>
+                        <a href="#" class="update-link">Read More</a>
+                    </div>
+                </div>
+                
+                <div class="update-item">
+                    <div class="update-date">
+                        <span class="update-day">25</span>
+                        <span class="update-month">MAY</span>
+                        <span class="update-year">2023</span>
+                    </div>
+                    <div class="update-content">
+                        <h3 class="update-title">AI Research Center Inauguration</h3>
+                        <p class="update-description">Our new AI Research Center was inaugurated with the goal of advancing artificial intelligence research and applications.</p>
+                        <a href="#" class="update-link">Read More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="back-button-container">
+            <a href="#" id="backToHomeFromUpdates" class="sexy-back-button">
                 <i class="fas fa-arrow-left"></i>
                 <span>Back to Home</span>
             </a>
