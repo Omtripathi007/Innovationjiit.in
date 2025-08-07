@@ -1,27 +1,12 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // Typewriter Effect
-    const typewriterText = document.getElementById('typewriter-text');
-    const text = 'Welcome to JIIT Innovation Hub';
-    let i = 0;
+document.addEventListener('DOMContentLoaded', function() {
+    // Loader
+    setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+    }, 4000);
 
-    function typeWriter() {
-        if (i < text.length) {
-            typewriterText.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(typeWriter, 100);
-        } else {
-            setTimeout(() => {
-                document.getElementById('loader').style.display = 'none';
-                document.getElementById('welcomeModal').classList.add('active');
-                document.getElementById('mainContent').style.display = 'block';
-            }, 1000);
-        }
-    }
-    setTimeout(typeWriter, 1000);
-
-    // Navbar Scroll Effect
-    const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
+    // Navbar scroll effect
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
         if (window.scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
@@ -29,162 +14,285 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Mobile Menu Toggle
+    // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
-    menuToggle.addEventListener('click', () => {
+    
+    menuToggle.addEventListener('click', function() {
         menuToggle.classList.toggle('active');
         mobileMenu.classList.toggle('active');
     });
 
-    // Close mobile menu when clicking a link
+    // Close mobile menu when clicking on a link
     const mobileLinks = document.querySelectorAll('.mobile-menu-links a');
     mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', function() {
             menuToggle.classList.remove('active');
             mobileMenu.classList.remove('active');
-        });
-    });
-
-    // Smooth Scrolling
-    const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu-links a, .quick-links a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetId = link.getAttribute('href').substring(1);
-            const targetSection = document.getElementById(targetId);
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
         });
     });
 
     // Carousel
     const slides = document.querySelectorAll('.carousel-slide');
     let currentSlide = 0;
-
-    function showSlide(index) {
-        slides.forEach((slide, i) => {
-            slide.classList.toggle('active', i === index);
-        });
-    }
-
+    
     function nextSlide() {
+        slides[currentSlide].classList.remove('active');
         currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
+        slides[currentSlide].classList.add('active');
     }
-
+    
     setInterval(nextSlide, 5000);
-    showSlide(currentSlide);
 
-    // Scroll to Top
+    // Scroll to top
     const scrollTop = document.getElementById('scrollTop');
-    window.addEventListener('scroll', () => {
+    
+    window.addEventListener('scroll', function() {
         if (window.scrollY > 300) {
             scrollTop.classList.add('visible');
         } else {
             scrollTop.classList.remove('visible');
         }
     });
-    scrollTop.addEventListener('click', () => {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+    
+    scrollTop.addEventListener('click', function() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 
-    // Modal Handlers
-    const welcomeModal = document.getElementById('welcomeModal');
-    const welcomeClose = document.getElementById('welcomeClose');
-    const welcomeButton = document.getElementById('welcomeButton');
-    const successModal = document.getElementById('successModal');
-    const successClose = document.getElementById('successClose');
-    const successButton = document.getElementById('successButton');
-    const registrationModal = document.getElementById('registrationModal');
-    const modalClose = document.getElementById('modalClose');
-    const contactPage = document.getElementById('contactPage');
-    const eventDetailsPage = document.getElementById('eventDetailsPage');
-    const mainContent = document.getElementById('mainContent');
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('.nav-links a, .mobile-menu-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            const href = this.getAttribute('href');
+            if (href.startsWith('#')) {
+                e.preventDefault();
+                const targetId = href.substring(1);
+                const targetSection = document.getElementById(targetId);
+                
+                if (targetSection) {
+                    window.scrollTo({
+                        top: targetSection.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
 
-    welcomeClose.addEventListener('click', () => welcomeModal.classList.remove('active'));
-    welcomeButton.addEventListener('click', () => welcomeModal.classList.remove('active'));
-    successClose.addEventListener('click', () => successModal.classList.remove('active'));
-    successButton.addEventListener('click', () => successModal.classList.remove('active'));
-    modalClose.addEventListener('click', () => registrationModal.classList.remove('active'));
+    // Team page navigation
+    const teamLink = document.getElementById('teamLink');
+    const teamLinkMobile = document.getElementById('teamLinkMobile');
+    const teamLinkFooter = document.getElementById('teamLinkFooter');
+    const teamPage = document.getElementById('teamPage');
+    const backFromTeam = document.getElementById('backFromTeam');
+    const mainContent = document.querySelector('.hero, .about, .services, .events, footer');
+    
+    function showTeamPage() {
+        document.body.style.overflow = 'hidden';
+        teamPage.classList.add('active');
+        if (mainContent) mainContent.style.display = 'none';
+    }
+    
+    function hideTeamPage() {
+        document.body.style.overflow = '';
+        teamPage.classList.remove('active');
+        if (mainContent) mainContent.style.display = '';
+    }
+    
+    teamLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        showTeamPage();
+    });
+    
+    teamLinkMobile.addEventListener('click', function(e) {
+        e.preventDefault();
+        showTeamPage();
+    });
+    
+    teamLinkFooter.addEventListener('click', function(e) {
+        e.preventDefault();
+        showTeamPage();
+    });
+    
+    backFromTeam.addEventListener('click', function(e) {
+        e.preventDefault();
+        hideTeamPage();
+    });
 
-    // Contact Page
+    // Contact page navigation
     const contactLink = document.getElementById('contactLink');
-    const mobileContactLink = document.getElementById('mobileContactLink');
-    const backToHome = document.getElementById('backToHome');
-
-    contactLink.addEventListener('click', (e) => {
+    const contactLinkMobile = document.getElementById('contactLinkMobile');
+    const contactLinkFooter = document.getElementById('contactLinkFooter');
+    const contactPage = document.getElementById('contactPage');
+    const backFromContact = document.getElementById('backFromContact');
+    
+    function showContactPage() {
+        document.body.style.overflow = 'hidden';
+        contactPage.classList.add('active');
+        if (mainContent) mainContent.style.display = 'none';
+    }
+    
+    function hideContactPage() {
+        document.body.style.overflow = '';
+        contactPage.classList.remove('active');
+        if (mainContent) mainContent.style.display = '';
+    }
+    
+    contactLink.addEventListener('click', function(e) {
         e.preventDefault();
-        mainContent.style.display = 'none';
-        contactPage.style.display = 'block';
+        showContactPage();
     });
-    mobileContactLink.addEventListener('click', (e) => {
+    
+    contactLinkMobile.addEventListener('click', function(e) {
         e.preventDefault();
-        mainContent.style.display = 'none';
-        contactPage.style.display = 'block';
-        mobileMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
+        showContactPage();
     });
-    backToHome.addEventListener('click', (e) => {
+    
+    contactLinkFooter.addEventListener('click', function(e) {
         e.preventDefault();
-        contactPage.style.display = 'none';
-        mainContent.style.display = 'block';
+        showContactPage();
     });
-
-    // Event Details Page
-    const learnMoreBtn = document.getElementById('learnMoreBtn');
-    const backToEvents = document.getElementById('backToEvents');
-
-    learnMoreBtn.addEventListener('click', (e) => {
+    
+    backFromContact.addEventListener('click', function(e) {
         e.preventDefault();
-        mainContent.style.display = 'none';
-        eventDetailsPage.style.display = 'block';
-    });
-    backToEvents.addEventListener('click', (e) => {
-        e.preventDefault();
-        eventDetailsPage.style.display = 'none';
-        mainContent.style.display = 'block';
-    });
-
-    // Registration Form
-    const registrationForm = document.getElementById('registrationForm');
-    const registerBtn = document.getElementById('registerBtn');
-    const eventRegisterBtn = document.getElementById('eventRegisterBtn');
-
-    registerBtn.addEventListener('click', () => registrationModal.classList.add('active'));
-    eventRegisterBtn.addEventListener('click', () => registrationModal.classList.add('active'));
-
-    registrationForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        registrationModal.classList.remove('active');
-        successModal.classList.add('active');
+        hideContactPage();
     });
 
-    // Contact Form
-    const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', (e) => {
+    // Event details page
+    const eventDetailsBtns = document.querySelectorAll('.event-details-btn');
+    const eventDetailsPage = document.getElementById('eventDetailsPage');
+    const backFromEvent = document.getElementById('backFromEvent');
+    
+    function showEventDetailsPage() {
+        document.body.style.overflow = 'hidden';
+        eventDetailsPage.classList.add('active');
+        if (mainContent) mainContent.style.display = 'none';
+    }
+    
+    function hideEventDetailsPage() {
+        document.body.style.overflow = '';
+        eventDetailsPage.classList.remove('active');
+        if (mainContent) mainContent.style.display = '';
+    }
+    
+    eventDetailsBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showEventDetailsPage();
+        });
+    });
+    
+    backFromEvent.addEventListener('click', function(e) {
         e.preventDefault();
-        contactPage.style.display = 'none';
-        mainContent.style.display = 'block';
-        successModal.classList.add('active');
+        hideEventDetailsPage();
     });
 
-    // Get Started Buttons
+    // Modals
+    const welcomeModal = document.getElementById('welcomeModal');
+    const successModal = document.getElementById('successModal');
+    const comingSoonModal = document.getElementById('comingSoonModal');
+    
+    // Welcome modal
+    const joinBtn = document.getElementById('joinBtn');
+    const welcomeClose = document.getElementById('welcomeClose');
     const getStartedBtn = document.getElementById('getStartedBtn');
-    const mobileGetStartedBtn = document.getElementById('mobileGetStartedBtn');
-
-    getStartedBtn.addEventListener('click', (e) => {
+    
+    function showWelcomeModal() {
+        welcomeModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function hideWelcomeModal() {
+        welcomeModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    joinBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        registrationModal.classList.add('active');
+        showWelcomeModal();
     });
-    mobileGetStartedBtn.addEventListener('click', (e) => {
+    
+    welcomeClose.addEventListener('click', hideWelcomeModal);
+    getStartedBtn.addEventListener('click', hideWelcomeModal);
+    
+    // Success modal
+    const successClose = document.getElementById('successClose');
+    const successOkBtn = document.getElementById('successOkBtn');
+    
+    function showSuccessModal() {
+        successModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function hideSuccessModal() {
+        successModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    successClose.addEventListener('click', hideSuccessModal);
+    successOkBtn.addEventListener('click', hideSuccessModal);
+    
+    // Coming soon modal
+    const comingSoonClose = document.getElementById('comingSoonClose');
+    const comingSoonOkBtn = document.getElementById('comingSoonOkBtn');
+    
+    function showComingSoonModal() {
+        comingSoonModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function hideComingSoonModal() {
+        comingSoonModal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    comingSoonClose.addEventListener('click', hideComingSoonModal);
+    comingSoonOkBtn.addEventListener('click', hideComingSoonModal);
+    
+    // Join team button
+    const joinTeamBtn = document.getElementById('joinTeamBtn');
+    joinTeamBtn.addEventListener('click', function(e) {
         e.preventDefault();
-        registrationModal.classList.add('active');
-        mobileMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
+        showComingSoonModal();
+    });
+    
+    // Event register buttons
+    const eventRegisterBtns = document.querySelectorAll('.event-register-btn');
+    const registerEventBtn = document.getElementById('registerEventBtn');
+    
+    eventRegisterBtns.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            showSuccessModal();
+        });
+    });
+    
+    registerEventBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        showSuccessModal();
+    });
+    
+    // Contact form submission
+    const contactForm = document.getElementById('contactForm');
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        showSuccessModal();
+        contactForm.reset();
+    });
+    
+    // Close modals when clicking outside
+    window.addEventListener('click', function(e) {
+        if (e.target === welcomeModal) {
+            hideWelcomeModal();
+        }
+        if (e.target === successModal) {
+            hideSuccessModal();
+        }
+        if (e.target === comingSoonModal) {
+            hideComingSoonModal();
+        }
     });
 });
