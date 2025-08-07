@@ -335,13 +335,14 @@ nav.scrolled {
     background: rgba(10, 10, 15, 0.4);
     z-index: 1;
 }
-/* Hero Content */
+/* Hero Content - Removed as requested */
 .hero-content {
     position: relative;
     z-index: 2;
     text-align: center;
     max-width: 800px;
     padding: 0 20px;
+    display: none; /* Hidden as requested */
 }
 .hero-title {
     font-family: 'Orbitron', sans-serif;
@@ -526,6 +527,7 @@ nav.scrolled {
     flex-direction: column;
     gap: 30px;
     transition: all 0.3s ease;
+    position: relative;
 }
 .event-card:hover {
     transform: translateY(-10px);
@@ -587,6 +589,83 @@ nav.scrolled {
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+}
+/* Coming Soon Badge */
+.coming-soon-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--gradient);
+    color: var(--dark);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+/* Events Page Styles */
+.events-hero {
+    height: 40vh;
+    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.events-hero-content {
+    text-align: center;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+}
+.events-hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.events-hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+.coming-soon-message {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.coming-soon-message h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.coming-soon-message p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+.event-card.coming-soon {
+    opacity: 0.8;
 }
 /* Footer */
 footer {
@@ -1859,10 +1938,6 @@ footer {
         min-height: 600px;
     }
     
-    .hero-title {
-        font-size: 3.5rem;
-    }
-    
     .carousel-slide {
         background-position: center top;
         background-size: cover;
@@ -2105,6 +2180,10 @@ footer {
         padding: 10px 20px;
         font-size: 12px;
     }
+    
+    .events-grid {
+        grid-template-columns: 1fr;
+    }
 }
 @media (max-width: 480px) {
     nav {
@@ -2153,10 +2232,6 @@ footer {
     .hero {
         height: 60vh;
         min-height: 500px;
-    }
-    
-    .hero-title {
-        font-size: 2.5rem;
     }
     
     .section-title {
@@ -2401,5 +2476,10 @@ footer {
     .sexy-back-button {
         padding: 8px 15px;
         font-size: 11px;
+    }
+    
+    .coming-soon-badge {
+        font-size: 12px;
+        padding: 3px 10px;
     }
 }
