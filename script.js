@@ -10,16 +10,12 @@ document.addEventListener('DOMContentLoaded', () => {
             index++;
             setTimeout(typeWriter, 300);
         } else {
-            // After typing JIIT, show Innovation Hub subtitle
+            // After typing JIIT, hide the loader
             setTimeout(() => {
                 const loader = document.getElementById('loader');
                 loader.style.opacity = '0';
                 setTimeout(() => {
                     loader.style.display = 'none';
-                    
-                    // Show welcome modal after loading
-                    const welcomeModal = document.getElementById('welcomeModal');
-                    welcomeModal.classList.add('active');
                 }, 500);
             }, 1500);
         }
@@ -71,18 +67,6 @@ mobileLinks.forEach(link => {
     });
 });
 
-// Welcome modal
-const welcomeModal = document.getElementById('welcomeModal');
-const welcomeClose = document.getElementById('welcomeClose');
-const welcomeButton = document.getElementById('welcomeButton');
-
-function closeWelcomeModal() {
-    welcomeModal.classList.remove('active');
-}
-
-welcomeClose.addEventListener('click', closeWelcomeModal);
-welcomeButton.addEventListener('click', closeWelcomeModal);
-
 // Success modal
 const successModal = document.getElementById('successModal');
 const successClose = document.getElementById('successClose');
@@ -99,41 +83,77 @@ function closeSuccessModal() {
 successClose.addEventListener('click', closeSuccessModal);
 successButton.addEventListener('click', closeSuccessModal);
 
-// Registration modal
-const registrationModal = document.getElementById('registrationModal');
-const modalClose = document.getElementById('modalClose');
+// Coming Soon modal
+const comingSoonModal = document.getElementById('comingSoonModal');
+const comingSoonClose = document.getElementById('comingSoonClose');
+const comingSoonButton = document.getElementById('comingSoonButton');
 const registerBtn = document.getElementById('registerBtn');
-const eventRegisterBtn = document.getElementById('eventRegisterBtn');
+const learnMoreBtn = document.getElementById('learnMoreBtn');
 
-function showRegistrationModal() {
-    registrationModal.classList.add('active');
+function showComingSoonModal() {
+    comingSoonModal.classList.add('active');
+    startCountdown();
 }
 
-function closeRegistrationModal() {
-    registrationModal.classList.remove('active');
+function closeComingSoonModal() {
+    comingSoonModal.classList.remove('active');
 }
 
-modalClose.addEventListener('click', closeRegistrationModal);
+comingSoonClose.addEventListener('click', closeComingSoonModal);
+comingSoonButton.addEventListener('click', () => {
+    closeComingSoonModal();
+    showSuccessModal();
+});
+
 registerBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    showRegistrationModal();
+    showComingSoonModal();
 });
-eventRegisterBtn.addEventListener('click', (e) => {
+
+learnMoreBtn.addEventListener('click', (e) => {
     e.preventDefault();
-    showRegistrationModal();
+    showComingSoonModal();
 });
+
+// Countdown timer
+function startCountdown() {
+    // Set the date we're counting down to (30 days from now)
+    const countDownDate = new Date();
+    countDownDate.setDate(countDownDate.getDate() + 30);
+    
+    // Update the count down every 1 second
+    const countdownInterval = setInterval(function() {
+        // Get today's date and time
+        const now = new Date().getTime();
+        
+        // Find the distance between now and the count down date
+        const distance = countDownDate - now;
+        
+        // Time calculations for days, hours, minutes and seconds
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+        
+        // Display the result
+        document.getElementById("days").textContent = days.toString().padStart(2, '0');
+        document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
+        document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
+        document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+        
+        // If the count down is finished, clear the interval
+        if (distance < 0) {
+            clearInterval(countdownInterval);
+            document.getElementById("days").textContent = "00";
+            document.getElementById("hours").textContent = "00";
+            document.getElementById("minutes").textContent = "00";
+            document.getElementById("seconds").textContent = "00";
+        }
+    }, 1000);
+}
 
 // Form submissions
-const registrationForm = document.getElementById('registrationForm');
 const contactForm = document.getElementById('contactForm');
-
-registrationForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    // In a real application, you would submit the form data to a server here
-    closeRegistrationModal();
-    showSuccessModal();
-    registrationForm.reset();
-});
 
 contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -149,10 +169,6 @@ const contactPage = document.getElementById('contactPage');
 const mainContent = document.getElementById('mainContent');
 const backToHome = document.getElementById('backToHome');
 
-const learnMoreBtn = document.getElementById('learnMoreBtn');
-const eventDetailsPage = document.getElementById('eventDetailsPage');
-const backToEvents = document.getElementById('backToEvents');
-
 const teamLink = document.getElementById('teamLink');
 const mobileTeamLink = document.getElementById('mobileTeamLink');
 const teamPage = document.getElementById('teamPage');
@@ -165,12 +181,6 @@ function showContactPage() {
     window.scrollTo(0, 0);
 }
 
-function showEventDetailsPage() {
-    mainContent.style.display = 'none';
-    eventDetailsPage.style.display = 'block';
-    window.scrollTo(0, 0);
-}
-
 function showTeamPage() {
     mainContent.style.display = 'none';
     teamPage.style.display = 'block';
@@ -179,7 +189,6 @@ function showTeamPage() {
 
 function showMainContent() {
     contactPage.style.display = 'none';
-    eventDetailsPage.style.display = 'none';
     teamPage.style.display = 'none';
     mainContent.style.display = 'block';
     window.scrollTo(0, 0);
@@ -196,16 +205,6 @@ mobileContactLink.addEventListener('click', (e) => {
 });
 
 backToHome.addEventListener('click', (e) => {
-    e.preventDefault();
-    showMainContent();
-});
-
-learnMoreBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    showEventDetailsPage();
-});
-
-backToEvents.addEventListener('click', (e) => {
     e.preventDefault();
     showMainContent();
 });
@@ -228,20 +227,6 @@ backToHomeFromTeam.addEventListener('click', (e) => {
 footerTeamLink.addEventListener('click', (e) => {
     e.preventDefault();
     showTeamPage();
-});
-
-// Get Started button
-const getStartedBtn = document.getElementById('getStartedBtn');
-const mobileGetStartedBtn = document.getElementById('mobileGetStartedBtn');
-
-getStartedBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    showContactPage();
-});
-
-mobileGetStartedBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    showContactPage();
 });
 
 // Scroll to top button
