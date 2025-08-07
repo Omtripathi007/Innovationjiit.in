@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize scroll effects
     initScrollEffects();
 });
-
 // Navigation functionality
 function initNavigation() {
     // Get all navigation links
@@ -144,7 +143,6 @@ function initNavigation() {
     // Show home page by default
     showPage('home');
 }
-
 // Carousel functionality
 function initCarousel() {
     const slides = document.querySelectorAll('.carousel-slide');
@@ -169,7 +167,6 @@ function initCarousel() {
     // Auto-advance carousel
     setInterval(nextSlide, 5000);
 }
-
 // Modal functionality
 function initModals() {
     // Success modal
@@ -177,7 +174,14 @@ function initModals() {
     const successClose = document.getElementById('successClose');
     const successButton = document.getElementById('successButton');
     
-    function showSuccessModal() {
+    function showSuccessModal(message) {
+        const successMessageElement = document.querySelector('.success-message');
+        if (message) {
+            successMessageElement.textContent = message;
+        } else {
+            // Reset to default message
+            successMessageElement.textContent = "Thank you for registering! We will send you updates about the event to your email.";
+        }
         successModal.classList.add('active');
     }
     
@@ -193,9 +197,8 @@ function initModals() {
     const comingSoonClose = document.getElementById('comingSoonClose');
     const comingSoonButton = document.getElementById('comingSoonButton');
     const notifyButton = document.getElementById('notifyButton');
-    const registerBtn = document.getElementById('registerBtn');
-    const learnMoreBtn = document.getElementById('learnMoreBtn');
     const updateEmail = document.getElementById('updateEmail');
+    let countdownInterval;
     
     function showComingSoonModal() {
         comingSoonModal.classList.add('active');
@@ -205,6 +208,10 @@ function initModals() {
     function closeComingSoonModal() {
         comingSoonModal.classList.remove('active');
         updateEmail.value = '';
+        if (countdownInterval) {
+            clearInterval(countdownInterval);
+            countdownInterval = null;
+        }
     }
     
     comingSoonClose.addEventListener('click', closeComingSoonModal);
@@ -217,31 +224,44 @@ function initModals() {
         const email = updateEmail.value.trim();
         if (email) {
             // In a real application, you would save the email to a database
-            alert(`Thank you! We'll send updates to ${email} when the event starts.`);
             closeComingSoonModal();
+            showSuccessModal(`Thank you! We'll send updates to ${email} when the event starts.`);
         } else {
             alert('Please enter a valid email address.');
         }
     });
     
-    registerBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        showComingSoonModal();
+    // Event listeners for register and learn more buttons
+    const registerBtns = document.querySelectorAll('.register-btn');
+    const learnMoreBtns = document.querySelectorAll('.learn-more-btn');
+    
+    registerBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showComingSoonModal();
+        });
     });
     
-    learnMoreBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        showComingSoonModal();
+    learnMoreBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showComingSoonModal();
+        });
     });
     
     // Countdown timer
     function startCountdown() {
+        // Clear any existing interval
+        if (countdownInterval) {
+            clearInterval(countdownInterval);
+        }
+        
         // Set the date we're counting down to (30 days from now)
         const countDownDate = new Date();
         countDownDate.setDate(countDownDate.getDate() + 30);
         
         // Update the count down every 1 second
-        const countdownInterval = setInterval(function() {
+        countdownInterval = setInterval(function() {
             // Get today's date and time
             const now = new Date().getTime();
             
@@ -271,7 +291,6 @@ function initModals() {
         }, 1000);
     }
 }
-
 // Form functionality
 function initForm() {
     const contactForm = document.getElementById('contactForm');
@@ -279,11 +298,10 @@ function initForm() {
     contactForm.addEventListener('submit', (e) => {
         e.preventDefault();
         // In a real application, you would submit the form data to a server here
-        alert('Thank you for your message! We will get back to you soon.');
+        showSuccessModal('Thank you for your message! We will get back to you soon.');
         contactForm.reset();
     });
 }
-
 // Scroll effects
 function initScrollEffects() {
     // Scroll to top button
