@@ -111,15 +111,6 @@
             </div>
             <div class="carousel-overlay"></div>
             
-            <div class="hero-content">
-                <h1 class="hero-title">Innovation Hub</h1>
-                <p class="hero-subtitle">Pioneering Tomorrow's Technology Today</p>
-                <div class="hero-buttons">
-                    <a href="#about" class="btn btn-primary">Discover More</a>
-                    <a href="#events" class="btn btn-secondary">View Events</a>
-                </div>
-            </div>
-            
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
             <div class="shape shape-3"></div>
@@ -325,33 +316,75 @@
     
     <!-- Contact Page -->
     <div id="contactPage" class="contact-page">
-        <div class="section-header">
-            <div class="section-subtitle">Get In Touch</div>
-            <h2 class="section-title">Let's Create Together</h2>
+        <div class="contact-hero">
+            <div class="contact-hero-content">
+                <h1 class="contact-hero-title">Get In Touch</h1>
+                <p class="contact-hero-subtitle">We'd love to hear from you</p>
+            </div>
         </div>
         
-        <a href="#" id="backToHome" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        <div class="contact-container">
+            <div class="contact-info-section">
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <h3 class="contact-info-title">Visit Us</h3>
+                    <p class="contact-info-text">Innovation Hub<br>JJIT Campus<br>Technology Park, Bangalore</p>
+                </div>
+                
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <h3 class="contact-info-title">Call Us</h3>
+                    <p class="contact-info-text">+91 98765 43210</p>
+                </div>
+                
+                <div class="contact-info-card">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <h3 class="contact-info-title">Email Us</h3>
+                    <p class="contact-info-text">ecell@jjit.ac.in</p>
+                </div>
+            </div>
+            
+            <div class="contact-form-section">
+                <h2 class="contact-form-title">Send Us a Message</h2>
+                <form id="contactForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <input type="text" id="lastName" name="lastName" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" id="subject" name="subject" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary contact-submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
         
-        <div class="contact-form-container">
-            <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Your Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="subject">Subject</label>
-                    <input type="text" id="subject" name="subject" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
-            </form>
+        <div class="back-button-container">
+            <a href="#" id="backToHome" class="sexy-back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
         </div>
     </div>
     
@@ -462,7 +495,12 @@
             </div>
         </div>
         
-        <a href="#" id="backToHomeFromTeam" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        <div class="back-button-container">
+            <a href="#" id="backToHomeFromTeam" class="sexy-back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
     </div>
     
     <!-- Scroll to Top -->
