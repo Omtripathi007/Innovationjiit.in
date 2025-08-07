@@ -170,6 +170,12 @@ const mobileAboutLink = document.getElementById('mobileAboutLink');
 const aboutPage = document.getElementById('aboutPage');
 const backToHomeFromAbout = document.getElementById('backToHomeFromAbout');
 const footerAboutLink = document.getElementById('footerAboutLink');
+// Events page navigation
+const eventsLink = document.getElementById('eventsLink');
+const mobileEventsLink = document.getElementById('mobileEventsLink');
+const eventsPage = document.getElementById('eventsPage');
+const backToHomeFromEvents = document.getElementById('backToHomeFromEvents');
+const footerEventsLink = document.getElementById('footerEventsLink');
 
 function showContactPage() {
     mainContent.style.display = 'none';
@@ -177,6 +183,7 @@ function showContactPage() {
     updatesPage.style.display = 'none';
     teamPage.style.display = 'none';
     aboutPage.style.display = 'none';
+    eventsPage.style.display = 'none';
     contactPage.style.display = 'block';
     window.scrollTo(0, 0);
 }
@@ -186,6 +193,7 @@ function showTeamPage() {
     updatesPage.style.display = 'none';
     contactPage.style.display = 'none';
     aboutPage.style.display = 'none';
+    eventsPage.style.display = 'none';
     teamPage.style.display = 'block';
     window.scrollTo(0, 0);
 }
@@ -195,6 +203,7 @@ function showGalleryPage() {
     updatesPage.style.display = 'none';
     teamPage.style.display = 'none';
     aboutPage.style.display = 'none';
+    eventsPage.style.display = 'none';
     galleryPage.style.display = 'block';
     window.scrollTo(0, 0);
 }
@@ -204,6 +213,7 @@ function showUpdatesPage() {
     galleryPage.style.display = 'none';
     teamPage.style.display = 'none';
     aboutPage.style.display = 'none';
+    eventsPage.style.display = 'none';
     updatesPage.style.display = 'block';
     window.scrollTo(0, 0);
 }
@@ -213,7 +223,18 @@ function showAboutPage() {
     teamPage.style.display = 'none';
     galleryPage.style.display = 'none';
     updatesPage.style.display = 'none';
+    eventsPage.style.display = 'none';
     aboutPage.style.display = 'block';
+    window.scrollTo(0, 0);
+}
+function showEventsPage() {
+    mainContent.style.display = 'none';
+    contactPage.style.display = 'none';
+    teamPage.style.display = 'none';
+    galleryPage.style.display = 'none';
+    updatesPage.style.display = 'none';
+    aboutPage.style.display = 'none';
+    eventsPage.style.display = 'block';
     window.scrollTo(0, 0);
 }
 function showMainContent() {
@@ -222,6 +243,7 @@ function showMainContent() {
     galleryPage.style.display = 'none';
     updatesPage.style.display = 'none';
     aboutPage.style.display = 'none';
+    eventsPage.style.display = 'none';
     mainContent.style.display = 'block';
     window.scrollTo(0, 0);
 }
@@ -302,6 +324,96 @@ footerAboutLink.addEventListener('click', (e) => {
     e.preventDefault();
     showAboutPage();
 });
+eventsLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    showEventsPage();
+});
+mobileEventsLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    showEventsPage();
+});
+backToHomeFromEvents.addEventListener('click', (e) => {
+    e.preventDefault();
+    showMainContent();
+});
+footerEventsLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    showEventsPage();
+});
+
+// Event countdown timers
+function initEventCountdowns() {
+    const eventCountdowns = document.querySelectorAll('.event-countdown');
+    
+    eventCountdowns.forEach(countdown => {
+        const eventDate = countdown.getAttribute('data-date');
+        const countDownDate = new Date(eventDate).getTime();
+        
+        const countdownInterval = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            
+            if (distance < 0) {
+                clearInterval(countdownInterval);
+                countdown.innerHTML = '<div class="countdown-item"><span class="countdown-value">00</span><span class="countdown-label">Days</span></div>';
+                return;
+            }
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            
+            countdown.innerHTML = `
+                <div class="countdown-item">
+                    <span class="countdown-value">${days.toString().padStart(2, '0')}</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value">${hours.toString().padStart(2, '0')}</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value">${minutes.toString().padStart(2, '0')}</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+            `;
+        }, 1000);
+    });
+}
+
+// Initialize event countdowns when events page is shown
+const eventsPageObserver = new MutationObserver((mutations) => {
+    mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'style') {
+            if (eventsPage.style.display === 'block') {
+                initEventCountdowns();
+            }
+        }
+    });
+});
+
+eventsPageObserver.observe(eventsPage, { attributes: true });
+
+// Event notify buttons
+const eventNotifyBtns = document.querySelectorAll('.event-notify-btn');
+eventNotifyBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        showSuccessModal();
+    });
+});
+
+// Newsletter form
+const newsletterForm = document.querySelector('.newsletter-form');
+if (newsletterForm) {
+    newsletterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const email = newsletterForm.querySelector('input[type="email"]').value;
+        if (email) {
+            showSuccessModal();
+            newsletterForm.reset();
+        }
+    });
+}
 
 // Scroll to top button
 const scrollTopBtn = document.getElementById('scrollTop');
