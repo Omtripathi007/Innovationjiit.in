@@ -61,12 +61,7 @@
                     <span class="countdown-label">Seconds</span>
                 </div>
             </div>
-            <div class="email-update-container">
-                <div class="form-group">
-                    <input type="email" id="updateEmail" placeholder="Enter your email for updates" class="email-input">
-                </div>
-                <button class="coming-soon-button" id="notifyButton">Notify Me</button>
-            </div>
+            <button class="coming-soon-button" id="comingSoonButton">Notify Me</button>
         </div>
     </div>
     
@@ -81,7 +76,7 @@
                 </a>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#" id="aboutLink">About</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#" id="galleryLink">Gallery</a></li>
                     <li><a href="#events">Events</a></li>
                     <li><a href="#" id="updatesLink">Updates</a></li>
@@ -98,7 +93,7 @@
             <div class="mobile-menu" id="mobileMenu">
                 <ul class="mobile-menu-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#" id="mobileAboutLink">About</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="#" id="mobileGalleryLink">Gallery</a></li>
                     <li><a href="#events">Events</a></li>
                     <li><a href="#" id="mobileUpdatesLink">Updates</a></li>
@@ -118,18 +113,60 @@
             </div>
             <div class="carousel-overlay"></div>
             
-            <div class="hero-content">
-                <h1 class="hero-title">Innovation Hub</h1>
-                <p class="hero-subtitle">Beyond Imagination</p>
-                <div class="hero-buttons">
-                    <a href="#whatwedo" class="btn btn-primary">Explore</a>
-                    <a href="#events" class="btn btn-secondary">Events</a>
-                </div>
-            </div>
-            
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
             <div class="shape shape-3"></div>
+        </section>
+        
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="section-header">
+                <div class="section-subtitle">Who We Are</div>
+                <h2 class="section-title">Pioneering Tomorrow</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>We Build The Future</h3>
+                    <p>We are a team of passionate innovators, creators, and problem-solvers dedicated to pushing the boundaries of what's possible. Our mission is to transform ideas into reality through cutting-edge technology and creative solutions.</p>
+                    <p>With expertise in AI, machine learning, blockchain, and emerging technologies, we help businesses and individuals navigate the digital landscape and unlock new opportunities for growth and innovation.</p>
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="feature-text">Fast Delivery</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div class="feature-text">Secure Solutions</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-brain"></i>
+                            </div>
+                            <div class="feature-text">AI Powered</div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="feature-text">Expert Team</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual">
+                    <div class="about-cube">
+                        <div class="cube-face">Innovation</div>
+                        <div class="cube-face">Technology</div>
+                        <div class="cube-face">Future</div>
+                        <div class="cube-face">Growth</div>
+                        <div class="cube-face">Success</div>
+                        <div class="cube-face">Vision</div>
+                    </div>
+                </div>
+            </div>
         </section>
         
         <!-- What We Do Section -->
@@ -252,7 +289,7 @@
                 <div class="footer-card">
                     <h3>Quick Access</h3>
                     <div class="quick-links">
-                        <a href="#" id="footerAboutLink"><i class="fas fa-chevron-right"></i> About Us</a>
+                        <a href="#about"><i class="fas fa-chevron-right"></i> About E-Cell</a>
                         <a href="#whatwedo"><i class="fas fa-chevron-right"></i> What We Do</a>
                         <a href="#events"><i class="fas fa-chevron-right"></i> Events</a>
                         <a href="#" id="footerGalleryLink"><i class="fas fa-chevron-right"></i> Gallery</a>
@@ -464,117 +501,6 @@
         
         <div class="back-button-container">
             <a href="#" id="backToHomeFromTeam" class="sexy-back-button">
-                <i class="fas fa-arrow-left"></i>
-                <span>Back to Home</span>
-            </a>
-        </div>
-    </div>
-    
-    <!-- About Us Page -->
-    <div id="aboutPage" class="about-page">
-        <div class="about-hero">
-            <div class="about-hero-content">
-                <h1 class="about-hero-title">About Us</h1>
-                <p class="about-hero-subtitle">Pioneering Innovation at JIIT</p>
-            </div>
-        </div>
-        
-        <div class="about-container">
-            <div class="about-intro">
-                <h2 class="about-section-title">Our Story</h2>
-                <div class="about-intro-content">
-                    <p>The Innovation Hub at JIIT is a dynamic ecosystem that fosters creativity, entrepreneurship, and technological advancement. Established with a vision to transform ideas into reality, we provide a platform for students, faculty, and industry experts to collaborate and innovate.</p>
-                    <p>Our mission is to nurture the next generation of innovators and entrepreneurs by providing them with the resources, mentorship, and opportunities they need to succeed in today's rapidly evolving technological landscape.</p>
-                </div>
-            </div>
-            
-            <div class="about-events">
-                <h2 class="about-section-title">Flagship Events</h2>
-                
-                <div class="about-event-card">
-                    <div class="about-event-image">
-                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Ride Hack">
-                    </div>
-                    <div class="about-event-content">
-                        <h3 class="about-event-title">Ride Hack</h3>
-                        <p class="about-event-description">Ride Hack is our annual mobility-focused hackathon that brings together innovators to solve transportation challenges. Participants work in teams to develop creative solutions for urban mobility, sustainable transportation, and smart city integration.</p>
-                        <div class="about-event-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-users"></i>
-                                <span>300+ Participants</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-clock"></i>
-                                <span>36 Hours</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-trophy"></i>
-                                <span>₹1 Lakh in Prizes</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-event-card reverse">
-                    <div class="about-event-image">
-                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Hackathon">
-                    </div>
-                    <div class="about-event-content">
-                        <h3 class="about-event-title">Innovation Hackathon</h3>
-                        <p class="about-event-description">Our flagship Innovation Hackathon is a 48-hour marathon of coding, designing, and problem-solving. Teams tackle real-world challenges across various domains including AI, blockchain, IoT, and sustainability, with mentorship from industry experts.</p>
-                        <div class="about-event-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-users"></i>
-                                <span>500+ Participants</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-clock"></i>
-                                <span>48 Hours</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-trophy"></i>
-                                <span>₹2 Lakhs in Prizes</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="about-event-card">
-                    <div class="about-event-image">
-                        <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Startup Pitch">
-                    </div>
-                    <div class="about-event-content">
-                        <h3 class="about-event-title">Startup Pitch Competition</h3>
-                        <p class="about-event-description">Our Startup Pitch Competition provides a platform for early-stage entrepreneurs to present their innovative ideas to a panel of investors and industry experts. Winners receive seed funding, mentorship, and incubation support to turn their ideas into successful ventures.</p>
-                        <div class="about-event-highlights">
-                            <div class="highlight-item">
-                                <i class="fas fa-users"></i>
-                                <span>100+ Startups</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-handshake"></i>
-                                <span>20+ Investors</span>
-                            </div>
-                            <div class="highlight-item">
-                                <i class="fas fa-rupee-sign"></i>
-                                <span>₹5 Lakhs Investment</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="about-vision">
-                <h2 class="about-section-title">Our Vision</h2>
-                <div class="about-vision-content">
-                    <p>We envision a future where innovation thrives at the intersection of technology and entrepreneurship. Our goal is to create a vibrant ecosystem that nurtures creativity, fosters collaboration, and empowers individuals to transform their ideas into impactful solutions.</p>
-                    <p>Through our various programs and initiatives, we aim to build a community of innovators who are not just problem-solvers but also visionaries shaping the future of technology and business.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="back-button-container">
-            <a href="#" id="backToHomeFromAbout" class="sexy-back-button">
                 <i class="fas fa-arrow-left"></i>
                 <span>Back to Home</span>
             </a>
