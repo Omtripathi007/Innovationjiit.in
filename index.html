@@ -76,7 +76,7 @@
                 </a>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#" id="aboutLink">About</a></li>
                     <li><a href="#" id="galleryLink">Gallery</a></li>
                     <li><a href="#events">Events</a></li>
                     <li><a href="#" id="updatesLink">Updates</a></li>
@@ -93,7 +93,7 @@
             <div class="mobile-menu" id="mobileMenu">
                 <ul class="mobile-menu-links">
                     <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li><a href="#" id="mobileAboutLink">About</a></li>
                     <li><a href="#" id="mobileGalleryLink">Gallery</a></li>
                     <li><a href="#events">Events</a></li>
                     <li><a href="#" id="mobileUpdatesLink">Updates</a></li>
@@ -289,7 +289,7 @@
                 <div class="footer-card">
                     <h3>Quick Access</h3>
                     <div class="quick-links">
-                        <a href="#about"><i class="fas fa-chevron-right"></i> About E-Cell</a>
+                        <a href="#" id="footerAboutLink"><i class="fas fa-chevron-right"></i> About</a>
                         <a href="#whatwedo"><i class="fas fa-chevron-right"></i> What We Do</a>
                         <a href="#events"><i class="fas fa-chevron-right"></i> Events</a>
                         <a href="#" id="footerGalleryLink"><i class="fas fa-chevron-right"></i> Gallery</a>
@@ -316,6 +316,141 @@
                 &copy; 2023 Innovation Hub. All rights reserved.
             </div>
         </footer>
+    </div>
+    
+    <!-- About Page -->
+    <div id="aboutPage" class="about-page">
+        <div class="about-hero">
+            <div class="about-hero-content">
+                <h1 class="about-hero-title">About Innovation Hub</h1>
+                <p class="about-hero-subtitle">Pioneering the future of technology and entrepreneurship</p>
+            </div>
+        </div>
+        
+        <div class="about-container">
+            <div class="about-intro">
+                <h2 class="about-intro-title">Who We Are</h2>
+                <p class="about-intro-text">
+                    We are a dynamic community of innovators, entrepreneurs, and tech enthusiasts dedicated to fostering creativity, 
+                    collaboration, and cutting-edge solutions. Our mission is to transform ideas into reality through mentorship, 
+                    resources, and a supportive ecosystem.
+                </p>
+            </div>
+            
+            <div class="about-activities">
+                <h2 class="activities-title">Our Flagship Activities</h2>
+                
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Ride Hack">
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">Ride Hack</h3>
+                        <p class="activity-description">
+                            Our flagship 48-hour hackathon where students, developers, and designers come together to create 
+                            innovative solutions for real-world transportation challenges. Participants work in teams to build 
+                            prototypes, receive mentorship from industry experts, and compete for prizes and funding opportunities.
+                        </p>
+                        <div class="activity-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-users"></i>
+                                <span>500+ Participants</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-trophy"></i>
+                                <span>₹5 Lakh in Prizes</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-building"></i>
+                                <span>20+ Industry Partners</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card reverse">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Hackathon">
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">Innovation Hackathon</h3>
+                        <p class="activity-description">
+                            Our annual technology hackathon brings together the brightest minds to tackle challenges in AI, 
+                            blockchain, IoT, and sustainability. Teams develop solutions from concept to prototype in an 
+                            intense, collaborative environment with access to cutting-edge tools and technologies.
+                        </p>
+                        <div class="activity-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>100+ Projects</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-award"></i>
+                                <span>10 Winning Teams</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-handshake"></i>
+                                <span>15+ Mentors</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="activity-card">
+                    <div class="activity-image">
+                        <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Startup Incubation">
+                    </div>
+                    <div class="activity-content">
+                        <h3 class="activity-title">Startup Incubation</h3>
+                        <p class="activity-description">
+                            Our incubation program supports early-stage startups with mentorship, resources, and infrastructure 
+                            to help them grow and succeed. We provide access to funding opportunities, legal support, 
+                            technical expertise, and a network of industry connections.
+                        </p>
+                        <div class="activity-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-rocket"></i>
+                                <span>30+ Startups Incubated</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-coins"></i>
+                                <span>₹2 Crore+ Funding Raised</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-user-tie"></i>
+                                <span>50+ Mentors</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="about-stats">
+                <div class="stat-item">
+                    <div class="stat-number">5000+</div>
+                    <div class="stat-label">Community Members</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Events Conducted</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Startups Launched</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">Industry Partners</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="back-button-container">
+            <a href="#" id="backToHomeFromAbout" class="sexy-back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
     </div>
     
     <!-- Contact Page -->
