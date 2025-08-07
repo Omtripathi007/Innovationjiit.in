@@ -164,11 +164,19 @@ const mobileUpdatesLink = document.getElementById('mobileUpdatesLink');
 const updatesPage = document.getElementById('updatesPage');
 const backToHomeFromUpdates = document.getElementById('backToHomeFromUpdates');
 const footerUpdatesLink = document.getElementById('footerUpdatesLink');
+// About page navigation
+const aboutLink = document.getElementById('aboutLink');
+const mobileAboutLink = document.getElementById('mobileAboutLink');
+const aboutPage = document.getElementById('aboutPage');
+const backToHomeFromAbout = document.getElementById('backToHomeFromAbout');
+const footerAboutLink = document.getElementById('footerAboutLink');
+
 function showContactPage() {
     mainContent.style.display = 'none';
     galleryPage.style.display = 'none';
     updatesPage.style.display = 'none';
     teamPage.style.display = 'none';
+    aboutPage.style.display = 'none';
     contactPage.style.display = 'block';
     window.scrollTo(0, 0);
 }
@@ -177,6 +185,7 @@ function showTeamPage() {
     galleryPage.style.display = 'none';
     updatesPage.style.display = 'none';
     contactPage.style.display = 'none';
+    aboutPage.style.display = 'none';
     teamPage.style.display = 'block';
     window.scrollTo(0, 0);
 }
@@ -185,6 +194,7 @@ function showGalleryPage() {
     contactPage.style.display = 'none';
     updatesPage.style.display = 'none';
     teamPage.style.display = 'none';
+    aboutPage.style.display = 'none';
     galleryPage.style.display = 'block';
     window.scrollTo(0, 0);
 }
@@ -193,7 +203,17 @@ function showUpdatesPage() {
     contactPage.style.display = 'none';
     galleryPage.style.display = 'none';
     teamPage.style.display = 'none';
+    aboutPage.style.display = 'none';
     updatesPage.style.display = 'block';
+    window.scrollTo(0, 0);
+}
+function showAboutPage() {
+    mainContent.style.display = 'none';
+    contactPage.style.display = 'none';
+    teamPage.style.display = 'none';
+    galleryPage.style.display = 'none';
+    updatesPage.style.display = 'none';
+    aboutPage.style.display = 'block';
     window.scrollTo(0, 0);
 }
 function showMainContent() {
@@ -201,9 +221,11 @@ function showMainContent() {
     teamPage.style.display = 'none';
     galleryPage.style.display = 'none';
     updatesPage.style.display = 'none';
+    aboutPage.style.display = 'none';
     mainContent.style.display = 'block';
     window.scrollTo(0, 0);
 }
+
 contactLink.addEventListener('click', (e) => {
     e.preventDefault();
     showContactPage();
@@ -264,6 +286,23 @@ footerUpdatesLink.addEventListener('click', (e) => {
     e.preventDefault();
     showUpdatesPage();
 });
+aboutLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    showAboutPage();
+});
+mobileAboutLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    showAboutPage();
+});
+backToHomeFromAbout.addEventListener('click', (e) => {
+    e.preventDefault();
+    showMainContent();
+});
+footerAboutLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    showAboutPage();
+});
+
 // Scroll to top button
 const scrollTopBtn = document.getElementById('scrollTop');
 window.addEventListener('scroll', () => {
