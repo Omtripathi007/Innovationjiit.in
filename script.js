@@ -75,19 +75,32 @@ successButton.addEventListener('click', closeSuccessModal);
 const comingSoonModal = document.getElementById('comingSoonModal');
 const comingSoonClose = document.getElementById('comingSoonClose');
 const comingSoonButton = document.getElementById('comingSoonButton');
+const notifyButton = document.getElementById('notifyButton');
 const registerBtn = document.getElementById('registerBtn');
 const learnMoreBtn = document.getElementById('learnMoreBtn');
+const updateEmail = document.getElementById('updateEmail');
 function showComingSoonModal() {
     comingSoonModal.classList.add('active');
     startCountdown();
 }
 function closeComingSoonModal() {
     comingSoonModal.classList.remove('active');
+    updateEmail.value = '';
 }
 comingSoonClose.addEventListener('click', closeComingSoonModal);
 comingSoonButton.addEventListener('click', () => {
     closeComingSoonModal();
     showSuccessModal();
+});
+notifyButton.addEventListener('click', () => {
+    const email = updateEmail.value.trim();
+    if (email) {
+        // In a real application, you would save the email to a database
+        alert(`Thank you! We'll send updates to ${email} when the event starts.`);
+        closeComingSoonModal();
+    } else {
+        alert('Please enter a valid email address.');
+    }
 });
 registerBtn.addEventListener('click', (e) => {
     e.preventDefault();
@@ -152,6 +165,12 @@ const mobileTeamLink = document.getElementById('mobileTeamLink');
 const teamPage = document.getElementById('teamPage');
 const backToHomeFromTeam = document.getElementById('backToHomeFromTeam');
 const footerTeamLink = document.getElementById('footerTeamLink');
+// About navigation
+const aboutLink = document.getElementById('aboutLink');
+const mobileAboutLink = document.getElementById('mobileAboutLink');
+const aboutPage = document.getElementById('aboutPage');
+const backToHomeFromAbout = document.getElementById('backToHomeFromAbout');
+const footerAboutLink = document.getElementById('footerAboutLink');
 // Gallery navigation
 const galleryLink = document.getElementById('galleryLink');
 const mobileGalleryLink = document.getElementById('mobileGalleryLink');
@@ -166,6 +185,7 @@ const backToHomeFromUpdates = document.getElementById('backToHomeFromUpdates');
 const footerUpdatesLink = document.getElementById('footerUpdatesLink');
 function showContactPage() {
     mainContent.style.display = 'none';
+    aboutPage.style.display = 'none';
     galleryPage.style.display = 'none';
     updatesPage.style.display = 'none';
     teamPage.style.display = 'none';
@@ -174,15 +194,26 @@ function showContactPage() {
 }
 function showTeamPage() {
     mainContent.style.display = 'none';
+    aboutPage.style.display = 'none';
     galleryPage.style.display = 'none';
     updatesPage.style.display = 'none';
     contactPage.style.display = 'none';
     teamPage.style.display = 'block';
     window.scrollTo(0, 0);
 }
+function showAboutPage() {
+    mainContent.style.display = 'none';
+    contactPage.style.display = 'none';
+    galleryPage.style.display = 'none';
+    updatesPage.style.display = 'none';
+    teamPage.style.display = 'none';
+    aboutPage.style.display = 'block';
+    window.scrollTo(0, 0);
+}
 function showGalleryPage() {
     mainContent.style.display = 'none';
     contactPage.style.display = 'none';
+    aboutPage.style.display = 'none';
     updatesPage.style.display = 'none';
     teamPage.style.display = 'none';
     galleryPage.style.display = 'block';
@@ -192,6 +223,7 @@ function showUpdatesPage() {
     mainContent.style.display = 'none';
     contactPage.style.display = 'none';
     galleryPage.style.display = 'none';
+    aboutPage.style.display = 'none';
     teamPage.style.display = 'none';
     updatesPage.style.display = 'block';
     window.scrollTo(0, 0);
@@ -201,6 +233,7 @@ function showMainContent() {
     teamPage.style.display = 'none';
     galleryPage.style.display = 'none';
     updatesPage.style.display = 'none';
+    aboutPage.style.display = 'none';
     mainContent.style.display = 'block';
     window.scrollTo(0, 0);
 }
@@ -231,6 +264,22 @@ backToHomeFromTeam.addEventListener('click', (e) => {
 footerTeamLink.addEventListener('click', (e) => {
     e.preventDefault();
     showTeamPage();
+});
+aboutLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    showAboutPage();
+});
+mobileAboutLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    showAboutPage();
+});
+backToHomeFromAbout.addEventListener('click', (e) => {
+    e.preventDefault();
+    showMainContent();
+});
+footerAboutLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    showAboutPage();
 });
 galleryLink.addEventListener('click', (e) => {
     e.preventDefault();
