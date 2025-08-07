@@ -114,8 +114,14 @@ function closeRegistrationModal() {
 }
 
 modalClose.addEventListener('click', closeRegistrationModal);
-registerBtn.addEventListener('click', showRegistrationModal);
-eventRegisterBtn.addEventListener('click', showRegistrationModal);
+registerBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    showRegistrationModal();
+});
+eventRegisterBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    showRegistrationModal();
+});
 
 // Form submissions
 const registrationForm = document.getElementById('registrationForm');
@@ -147,22 +153,35 @@ const learnMoreBtn = document.getElementById('learnMoreBtn');
 const eventDetailsPage = document.getElementById('eventDetailsPage');
 const backToEvents = document.getElementById('backToEvents');
 
+const teamLink = document.getElementById('teamLink');
+const mobileTeamLink = document.getElementById('mobileTeamLink');
+const teamPage = document.getElementById('teamPage');
+const backToHomeFromTeam = document.getElementById('backToHomeFromTeam');
+const footerTeamLink = document.getElementById('footerTeamLink');
+
 function showContactPage() {
     mainContent.style.display = 'none';
     contactPage.style.display = 'block';
     window.scrollTo(0, 0);
 }
 
-function showMainContent() {
-    contactPage.style.display = 'none';
-    eventDetailsPage.style.display = 'none';
-    mainContent.style.display = 'block';
-    window.scrollTo(0, 0);
-}
-
 function showEventDetailsPage() {
     mainContent.style.display = 'none';
     eventDetailsPage.style.display = 'block';
+    window.scrollTo(0, 0);
+}
+
+function showTeamPage() {
+    mainContent.style.display = 'none';
+    teamPage.style.display = 'block';
+    window.scrollTo(0, 0);
+}
+
+function showMainContent() {
+    contactPage.style.display = 'none';
+    eventDetailsPage.style.display = 'none';
+    teamPage.style.display = 'none';
+    mainContent.style.display = 'block';
     window.scrollTo(0, 0);
 }
 
@@ -189,6 +208,26 @@ learnMoreBtn.addEventListener('click', (e) => {
 backToEvents.addEventListener('click', (e) => {
     e.preventDefault();
     showMainContent();
+});
+
+teamLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    showTeamPage();
+});
+
+mobileTeamLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    showTeamPage();
+});
+
+backToHomeFromTeam.addEventListener('click', (e) => {
+    e.preventDefault();
+    showMainContent();
+});
+
+footerTeamLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    showTeamPage();
 });
 
 // Get Started button
