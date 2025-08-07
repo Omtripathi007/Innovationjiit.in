@@ -27,7 +27,7 @@
                 <i class="fas fa-check-circle"></i>
             </div>
             <h2 class="success-title">Registration Successful!</h2>
-            <p class="success-message">Thank you for registering! We will send you a confirmation email shortly with all the event details.</p>
+            <p class="success-message">Thank you for registering! We will send you updates about the event to your email.</p>
             <button class="success-button" id="successButton">Got It</button>
         </div>
     </div>
@@ -118,14 +118,7 @@
             </div>
             <div class="carousel-overlay"></div>
             
-            <div class="hero-content">
-                <h1 class="hero-title">Innovation Hub</h1>
-                <p class="hero-subtitle">Beyond Imagination</p>
-                <div class="hero-buttons">
-                    <a href="#whatwedo" class="btn btn-primary">Explore</a>
-                    <a href="#events" class="btn btn-secondary">Events</a>
-                </div>
-            </div>
+            <!-- Hero content removed as requested -->
             
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
@@ -219,8 +212,8 @@
                         Join us for our annual Innovation Hackathon where students, developers, designers, and entrepreneurs come together to create innovative solutions to real-world problems. This 48-hour event will feature workshops, mentorship from industry experts, and amazing prizes for the winning teams.
                     </div>
                     <div class="event-actions">
-                        <button class="btn btn-primary" id="registerBtn">Register Now</button>
-                        <a href="#" id="learnMoreBtn" class="btn btn-secondary">Learn More</a>
+                        <button class="btn btn-primary register-btn">Register Now</button>
+                        <a href="#" class="btn btn-secondary learn-more-btn">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -440,7 +433,7 @@
                     </div>
                     <div class="gallery-item">
                         <div class="gallery-image">
-                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Workshop">
+                            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Workshop">
                         </div>
                         <div class="gallery-info">
                             <h3 class="gallery-title">IoT Development</h3>
@@ -455,7 +448,7 @@
                 <div class="gallery-grid">
                     <div class="gallery-item">
                         <div class="gallery-image">
-                            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Startup">
+                            <img src="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=688&q=80" alt="Startup">
                         </div>
                         <div class="gallery-info">
                             <h3 class="gallery-title">Demo Day 2023</h3>
@@ -471,6 +464,122 @@
                             <p class="gallery-description">Entrepreneurs pitching their ideas to win funding and mentorship.</p>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="back-button-container">
+            <a href="#" class="sexy-back-button back-to-home">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Events Page -->
+    <div id="eventsPage" class="page">
+        <div class="events-hero">
+            <div class="events-hero-content">
+                <h1 class="events-hero-title">Upcoming Events</h1>
+                <p class="events-hero-subtitle">Coming Soon</p>
+            </div>
+        </div>
+        
+        <div class="events-container">
+            <div class="coming-soon-message">
+                <h2>Our Events Are Coming Soon!</h2>
+                <p>We're working hard to bring you amazing events. Stay tuned for updates!</p>
+            </div>
+            
+            <div class="events-grid">
+                <div class="event-card coming-soon">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <span class="day">15</span>
+                            <span class="month">JUL</span>
+                        </div>
+                        <div class="event-info">
+                            <h3 class="event-title">Innovation Hackathon 2023</h3>
+                            <div class="event-meta">
+                                <div class="event-meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>July 15-17, 2023</span>
+                                </div>
+                                <div class="event-meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Innovation Hub Campus</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-description">
+                        Join us for our annual Innovation Hackathon where students, developers, designers, and entrepreneurs come together to create innovative solutions to real-world problems.
+                    </div>
+                    <div class="event-actions">
+                        <button class="btn btn-primary register-btn">Register Now</button>
+                        <a href="#" class="btn btn-secondary learn-more-btn">Learn More</a>
+                    </div>
+                    <div class="coming-soon-badge">Coming Soon</div>
+                </div>
+                
+                <div class="event-card coming-soon">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <span class="day">05</span>
+                            <span class="month">AUG</span>
+                        </div>
+                        <div class="event-info">
+                            <h3 class="event-title">AI Workshop Series</h3>
+                            <div class="event-meta">
+                                <div class="event-meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>August 5-7, 2023</span>
+                                </div>
+                                <div class="event-meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Innovation Hub Campus</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-description">
+                        Explore the world of Artificial Intelligence in our comprehensive workshop series covering machine learning, neural networks, and practical applications.
+                    </div>
+                    <div class="event-actions">
+                        <button class="btn btn-primary register-btn">Register Now</button>
+                        <a href="#" class="btn btn-secondary learn-more-btn">Learn More</a>
+                    </div>
+                    <div class="coming-soon-badge">Coming Soon</div>
+                </div>
+                
+                <div class="event-card coming-soon">
+                    <div class="event-header">
+                        <div class="event-date">
+                            <span class="day">20</span>
+                            <span class="month">SEP</span>
+                        </div>
+                        <div class="event-info">
+                            <h3 class="event-title">Startup Pitch Competition</h3>
+                            <div class="event-meta">
+                                <div class="event-meta-item">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>September 20, 2023</span>
+                                </div>
+                                <div class="event-meta-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    <span>Innovation Hub Campus</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="event-description">
+                        Present your innovative ideas to a panel of investors and industry experts. Win funding and mentorship to turn your startup dreams into reality.
+                    </div>
+                    <div class="event-actions">
+                        <button class="btn btn-primary register-btn">Register Now</button>
+                        <a href="#" class="btn btn-secondary learn-more-btn">Learn More</a>
+                    </div>
+                    <div class="coming-soon-badge">Coming Soon</div>
                 </div>
             </div>
         </div>
