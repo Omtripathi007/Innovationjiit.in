@@ -61,7 +61,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#events">Events</a></li>
-                    <li><a href="#team">Team</a></li>
+                    <li><a href="#" id="teamLink">Team</a></li>
                     <li><a href="#" id="contactLink">Contact</a></li>
                 </ul>
                 <div class="nav-cta">
@@ -80,7 +80,7 @@
                     <li><a href="#about">About</a></li>
                     <li><a href="#services">Services</a></li>
                     <li><a href="#events">Events</a></li>
-                    <li><a href="#team">Team</a></li>
+                    <li><a href="#" id="mobileTeamLink">Team</a></li>
                     <li><a href="#" id="mobileContactLink">Contact</a></li>
                 </ul>
                 <div class="mobile-menu-cta">
@@ -249,64 +249,6 @@
             </div>
         </section>
         
-        <!-- Team Section -->
-        <section id="team" class="team">
-            <div class="section-header">
-                <div class="section-subtitle">Our Team</div>
-                <h2 class="section-title">Meet The Experts</h2>
-            </div>
-            <div class="team-grid">
-                <div class="team-member">
-                    <div class="member-avatar">
-                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Team Member">
-                    </div>
-                    <h3 class="member-name">Sarah Johnson</h3>
-                    <p class="member-role">CEO & Founder</p>
-                    <div class="member-social">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-avatar">
-                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Team Member">
-                    </div>
-                    <h3 class="member-name">Michael Chen</h3>
-                    <p class="member-role">CTO</p>
-                    <div class="member-social">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-avatar">
-                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Team Member">
-                    </div>
-                    <h3 class="member-name">Emily Rodriguez</h3>
-                    <p class="member-role">Lead Designer</p>
-                    <div class="member-social">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-dribbble"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <div class="member-avatar">
-                        <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Team Member">
-                    </div>
-                    <h3 class="member-name">David Kim</h3>
-                    <p class="member-role">Head of Engineering</p>
-                    <div class="member-social">
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-github"></i></a>
-                        <a href="#"><i class="fas fa-envelope"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
         <!-- Footer -->
         <footer>
             <div class="footer-container">
@@ -336,7 +278,7 @@
                         <a href="#about"><i class="fas fa-chevron-right"></i> About E-Cell</a>
                         <a href="#services"><i class="fas fa-chevron-right"></i> Programs</a>
                         <a href="#events"><i class="fas fa-chevron-right"></i> Events</a>
-                        <a href="#team"><i class="fas fa-chevron-right"></i> Team</a>
+                        <a href="#" id="footerTeamLink"><i class="fas fa-chevron-right"></i> Team</a>
                     </div>
                 </div>
                 
@@ -505,6 +447,67 @@
             
             <div class="event-cta">
                 <button class="btn btn-primary" id="eventRegisterBtn">Register Now</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Team Page -->
+    <div id="teamPage" class="team-page">
+        <div class="section-header">
+            <div class="section-subtitle">Our Team</div>
+            <h2 class="section-title">Meet The Experts</h2>
+        </div>
+        
+        <a href="#" id="backToHomeFromTeam" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
+        
+        <div class="team-grid">
+            <div class="team-member">
+                <div class="member-avatar">
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Team Member">
+                </div>
+                <h3 class="member-name">Sarah Johnson</h3>
+                <p class="member-role">CEO & Founder</p>
+                <div class="member-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="member-avatar">
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Team Member">
+                </div>
+                <h3 class="member-name">Michael Chen</h3>
+                <p class="member-role">CTO</p>
+                <div class="member-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="member-avatar">
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Team Member">
+                </div>
+                <h3 class="member-name">Emily Rodriguez</h3>
+                <p class="member-role">Lead Designer</p>
+                <div class="member-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-dribbble"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+            <div class="team-member">
+                <div class="member-avatar">
+                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Team Member">
+                </div>
+                <h3 class="member-name">David Kim</h3>
+                <p class="member-role">Head of Engineering</p>
+                <div class="member-social">
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="#"><i class="fas fa-envelope"></i></a>
+                </div>
             </div>
         </div>
     </div>
