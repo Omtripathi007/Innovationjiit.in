@@ -17,21 +17,6 @@
         <div class="typewriter-subtitle">Innovation Hub</div>
     </div>
     
-    <!-- Welcome Modal -->
-    <div class="welcome-modal" id="welcomeModal">
-        <div class="welcome-content">
-            <button class="welcome-close" id="welcomeClose">
-                <i class="fas fa-times"></i>
-            </button>
-            <div class="welcome-icon">
-                <i class="fas fa-rocket"></i>
-            </div>
-            <h2 class="welcome-title">Welcome to JIIT Innovation Hub</h2>
-            <p class="welcome-message">Discover cutting-edge technology, exciting events, and a community of innovators. Check out our website for the latest updates and opportunities!</p>
-            <button class="welcome-button" id="welcomeButton">Explore Now</button>
-        </div>
-    </div>
-    
     <!-- Success Modal -->
     <div class="success-modal" id="successModal">
         <div class="success-content">
@@ -47,14 +32,47 @@
         </div>
     </div>
     
+    <!-- Coming Soon Modal -->
+    <div class="coming-soon-modal" id="comingSoonModal">
+        <div class="coming-soon-content">
+            <button class="coming-soon-close" id="comingSoonClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="coming-soon-icon">
+                <i class="fas fa-rocket"></i>
+            </div>
+            <h2 class="coming-soon-title">Coming Soon!</h2>
+            <p class="coming-soon-message">We're working hard to bring you an amazing experience. Stay tuned for updates!</p>
+            <div class="countdown-container">
+                <div class="countdown-item">
+                    <span class="countdown-value" id="days">00</span>
+                    <span class="countdown-label">Days</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="hours">00</span>
+                    <span class="countdown-label">Hours</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="minutes">00</span>
+                    <span class="countdown-label">Minutes</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="seconds">00</span>
+                    <span class="countdown-label">Seconds</span>
+                </div>
+            </div>
+            <button class="coming-soon-button" id="comingSoonButton">Notify Me</button>
+        </div>
+    </div>
+    
     <!-- Main Content -->
     <div id="mainContent">
         <!-- Navigation -->
         <nav id="navbar">
             <div class="nav-container">
                 <a href="#" class="logo">
-                    <i class="fas fa-rocket"></i>
-                    Innovation Hub
+                    <img src="logo.png" alt="Innovation Hub Logo" class="logo-img">
+                    <span>Innovation Hub</span>
                 </a>
                 <ul class="nav-links">
                     <li><a href="#home">Home</a></li>
@@ -64,13 +82,10 @@
                     <li><a href="#" id="teamLink">Team</a></li>
                     <li><a href="#" id="contactLink">Contact</a></li>
                 </ul>
-                <div class="nav-cta">
-                    <a href="#" id="getStartedBtn" class="btn btn-primary">Get Started</a>
-                    <div class="menu-toggle" id="menuToggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
+                <div class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
             <!-- Mobile Menu -->
@@ -83,9 +98,6 @@
                     <li><a href="#" id="mobileTeamLink">Team</a></li>
                     <li><a href="#" id="mobileContactLink">Contact</a></li>
                 </ul>
-                <div class="mobile-menu-cta">
-                    <a href="#" id="mobileGetStartedBtn" class="btn btn-primary">Get Started</a>
-                </div>
             </div>
         </nav>
         
@@ -98,6 +110,15 @@
                 <div class="carousel-slide"></div>
             </div>
             <div class="carousel-overlay"></div>
+            
+            <div class="hero-content">
+                <h1 class="hero-title">Innovation Hub</h1>
+                <p class="hero-subtitle">Pioneering Tomorrow's Technology Today</p>
+                <div class="hero-buttons">
+                    <a href="#about" class="btn btn-primary">Discover More</a>
+                    <a href="#events" class="btn btn-secondary">View Events</a>
+                </div>
+            </div>
             
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
@@ -334,248 +355,119 @@
         </div>
     </div>
     
-    <!-- Event Details Page -->
-    <div id="eventDetailsPage" class="event-details-page">
-        <div class="event-details-container">
-            <a href="#" id="backToEvents" class="back-button"><i class="fas fa-arrow-left"></i> Back to Events</a>
-            
-            <div class="event-header-large">
-                <h1 class="event-title-large">Innovation Hackathon 2023</h1>
-                <div class="event-meta-large">
-                    <div class="event-meta-item-large">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>July 15-17, 2023</span>
-                    </div>
-                    <div class="event-meta-item-large">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Innovation Hub Campus</span>
-                    </div>
-                    <div class="event-meta-item-large">
-                        <i class="fas fa-users"></i>
-                        <span>500+ Participants</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="event-image"></div>
-            
-            <div class="event-content-section">
-                <h3>About The Event</h3>
-                <p>Join us for our annual Innovation Hackathon where students, developers, designers, and entrepreneurs come together to create innovative solutions to real-world problems. This 48-hour event will feature workshops, mentorship from industry experts, and amazing prizes for the winning teams.</p>
-                <p>The Innovation Hackathon is a platform for creative minds to collaborate, innovate, and build solutions that can make a difference. Whether you're a seasoned developer or just starting your journey, this event offers something for everyone.</p>
-            </div>
-            
-            <div class="event-content-section">
-                <h3>Event Highlights</h3>
-                <div class="event-highlights">
-                    <div class="event-highlight-item">
-                        <div class="event-highlight-icon">
-                            <i class="fas fa-trophy"></i>
-                        </div>
-                        <div class="event-highlight-title">Amazing Prizes</div>
-                        <div class="event-highlight-text">Win cash prizes, mentorship opportunities, and internship offers</div>
-                    </div>
-                    <div class="event-highlight-item">
-                        <div class="event-highlight-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <div class="event-highlight-title">Expert Mentors</div>
-                        <div class="event-highlight-text">Get guidance from industry leaders and tech experts</div>
-                    </div>
-                    <div class="event-highlight-item">
-                        <div class="event-highlight-icon">
-                            <i class="fas fa-lightbulb"></i>
-                        </div>
-                        <div class="event-highlight-title">Innovative Themes</div>
-                        <div class="event-highlight-text">Work on real-world problems in healthcare, education, and sustainability</div>
-                    </div>
-                    <div class="event-highlight-item">
-                        <div class="event-highlight-icon">
-                            <i class="fas fa-network-wired"></i>
-                        </div>
-                        <div class="event-highlight-title">Networking</div>
-                        <div class="event-highlight-text">Connect with like-minded individuals and potential employers</div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="event-content-section">
-                <h3>Event Schedule</h3>
-                <div class="event-timeline">
-                    <div class="timeline-item">
-                        <div class="timeline-time">Day 1 - July 15</div>
-                        <div class="timeline-content">
-                            <h4>Opening Ceremony & Team Formation</h4>
-                            <p>9:00 AM - 12:00 PM: Registration, opening ceremony, and team formation</p>
-                            <p>1:00 PM - 5:00 PM: Idea pitching and team finalization</p>
-                            <p>6:00 PM - 8:00 PM: Dinner and networking session</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">Day 2 - July 16</div>
-                        <div class="timeline-content">
-                            <h4>Hacking & Workshops</h4>
-                            <p>9:00 AM - 12:00 PM: Development begins</p>
-                            <p>1:00 PM - 2:00 PM: Lunch</p>
-                            <p>2:00 PM - 5:00 PM: Technical workshops and mentorship sessions</p>
-                            <p>6:00 PM - 8:00 PM: Dinner and progress review</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-time">Day 3 - July 17</div>
-                        <div class="timeline-content">
-                            <h4>Final Presentations & Awards</h4>
-                            <p>9:00 AM - 12:00 PM: Final development and preparation</p>
-                            <p>1:00 PM - 2:00 PM: Lunch</p>
-                            <p>2:00 PM - 5:00 PM: Project presentations</p>
-                            <p>6:00 PM - 8:00 PM: Awards ceremony and closing</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="event-content-section">
-                <h3>Who Can Participate?</h3>
-                <p>The Innovation Hackathon is open to:</p>
-                <ul style="list-style: none; padding-left: 0;">
-                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i> Students from colleges and universities</li>
-                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i>Professional developers and designers</li>
-                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i>Entrepreneurs and startup founders</li>
-                    <li style="margin-bottom: 10px;"><i class="fas fa-check" style="color: var(--primary); margin-right: 10px;"></i>Anyone passionate about technology and innovation</li>
-                </ul>
-            </div>
-            
-            <div class="event-cta">
-                <button class="btn btn-primary" id="eventRegisterBtn">Register Now</button>
-            </div>
-        </div>
-    </div>
-    
     <!-- Team Page -->
     <div id="teamPage" class="team-page">
-        <div class="section-header">
-            <div class="section-subtitle">Our Team</div>
-            <h2 class="section-title">Meet The Experts</h2>
+        <div class="team-hero">
+            <div class="team-hero-content">
+                <h1 class="team-hero-title">Meet Our Team</h1>
+                <p class="team-hero-subtitle">The minds behind the innovation</p>
+            </div>
+        </div>
+        
+        <div class="team-container">
+            <div class="team-section">
+                <h2 class="team-section-title">Leadership Team</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Team Member">
+                        </div>
+                        <h3 class="member-name">Sarah Johnson</h3>
+                        <p class="member-role">CEO & Founder</p>
+                        <p class="member-bio">Visionary leader with 15+ years of experience in technology innovation and startup growth.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Team Member">
+                        </div>
+                        <h3 class="member-name">Michael Chen</h3>
+                        <p class="member-role">CTO</p>
+                        <p class="member-bio">Tech genius specializing in AI, blockchain, and scalable architecture solutions.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-section">
+                <h2 class="team-section-title">Design & Development</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Team Member">
+                        </div>
+                        <h3 class="member-name">Emily Rodriguez</h3>
+                        <p class="member-role">Lead Designer</p>
+                        <p class="member-bio">Creative expert crafting intuitive user experiences and stunning visual designs.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Team Member">
+                        </div>
+                        <h3 class="member-name">David Kim</h3>
+                        <p class="member-role">Head of Engineering</p>
+                        <p class="member-bio">Full-stack developer with expertise in cloud technologies and system architecture.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-github"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-section">
+                <h2 class="team-section-title">Marketing & Operations</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=688&q=80" alt="Team Member">
+                        </div>
+                        <h3 class="member-name">Jessica Williams</h3>
+                        <p class="member-role">Marketing Director</p>
+                        <p class="member-bio">Strategic marketer driving brand growth and customer engagement across digital channels.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&auto=format&fit=crop&w=700&q=80" alt="Team Member">
+                        </div>
+                        <h3 class="member-name">Robert Taylor</h3>
+                        <p class="member-role">Operations Manager</p>
+                        <p class="member-bio">Operations expert ensuring smooth project delivery and team coordination.</p>
+                        <div class="member-social">
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fas fa-envelope"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <a href="#" id="backToHomeFromTeam" class="back-button"><i class="fas fa-arrow-left"></i> Back to Home</a>
-        
-        <div class="team-grid">
-            <div class="team-member">
-                <div class="member-avatar">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Team Member">
-                </div>
-                <h3 class="member-name">Sarah Johnson</h3>
-                <p class="member-role">CEO & Founder</p>
-                <div class="member-social">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            <div class="team-member">
-                <div class="member-avatar">
-                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80" alt="Team Member">
-                </div>
-                <h3 class="member-name">Michael Chen</h3>
-                <p class="member-role">CTO</p>
-                <div class="member-social">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            <div class="team-member">
-                <div class="member-avatar">
-                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Team Member">
-                </div>
-                <h3 class="member-name">Emily Rodriguez</h3>
-                <p class="member-role">Lead Designer</p>
-                <div class="member-social">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-dribbble"></i></a>
-                    <a href="#"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-            <div class="team-member">
-                <div class="member-avatar">
-                    <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?ixlib=rb-4.0.3&auto=format&fit=crop&w=687&q=80" alt="Team Member">
-                </div>
-                <h3 class="member-name">David Kim</h3>
-                <p class="member-role">Head of Engineering</p>
-                <div class="member-social">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
-                    <a href="#"><i class="fas fa-envelope"></i></a>
-                </div>
-            </div>
-        </div>
     </div>
     
     <!-- Scroll to Top -->
     <div class="scroll-top" id="scrollTop">
         <i class="fas fa-arrow-up"></i>
-    </div>
-    
-    <!-- Registration Modal -->
-    <div class="modal" id="registrationModal">
-        <div class="modal-content">
-            <button class="modal-close" id="modalClose">
-                <i class="fas fa-times"></i>
-            </button>
-            <h3 class="modal-title">Hackathon Registration</h3>
-            <form id="registrationForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <input type="text" id="firstName" name="firstName" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <input type="text" id="lastName" name="lastName" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="regEmail">Email Address</label>
-                    <input type="email" id="regEmail" name="regEmail" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" required>
-                </div>
-                <div class="form-group">
-                    <label for="institution">Institution/Organization</label>
-                    <input type="text" id="institution" name="institution" required>
-                </div>
-                <div class="form-group">
-                    <label for="experience">Experience Level</label>
-                    <select id="experience" name="experience" required>
-                        <option value="">Select your level</option>
-                        <option value="beginner">Beginner</option>
-                        <option value="intermediate">Intermediate</option>
-                        <option value="advanced">Advanced</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="team">Team Preference</label>
-                    <select id="team" name="team" required>
-                        <option value="">Select preference</option>
-                        <option value="individual">Individual (will be assigned to a team)</option>
-                        <option value="team">Already have a team</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="motivation">Why do you want to participate?</label>
-                    <textarea id="motivation" name="motivation" required></textarea>
-                </div>
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" name="terms" required> I agree to the terms and conditions
-                    </label>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Registration</button>
-            </form>
-        </div>
     </div>
     
     <script src="script.js"></script>
