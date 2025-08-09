@@ -1246,7 +1246,7 @@ footer {
 }
 .contact-hero {
     height: 40vh;
-    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9));
+    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1398,7 +1398,7 @@ footer {
 }
 .team-hero {
     height: 50vh;
-    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9));
+    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1556,7 +1556,7 @@ footer {
 }
 .gallery-hero {
     height: 40vh;
-    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9));
+    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1650,7 +1650,7 @@ footer {
 }
 .updates-hero {
     height: 40vh;
-    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9));
+    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1736,7 +1736,7 @@ footer {
 }
 .about-hero {
     height: 50vh;
-    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9));
+    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1923,7 +1923,7 @@ footer {
 }
 .events-hero {
     height: 50vh;
-    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9));
+    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -2483,6 +2483,10 @@ footer {
         background-position: center center;
         background-size: cover;
         height: 40vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
     }
     
     .about-hero-content,
@@ -2492,7 +2496,12 @@ footer {
     .contact-hero-content,
     .team-hero-content {
         padding: 0 20px;
-        padding-top: 80px; /* Add more padding at top to push content down */
+        padding-top: 60px; /* Adjusted padding for better mobile view */
+        text-align: center;
+        position: relative;
+        z-index: 2;
+        width: 100%;
+        max-width: 100%;
     }
     
     .contact-hero {
@@ -2673,6 +2682,21 @@ footer {
     
     .coming-soon-section .coming-soon-message {
         font-size: 1.2rem;
+    }
+    
+    /* Center text in hero banners for mobile */
+    .about-hero-content,
+    .events-hero-content,
+    .gallery-hero-content,
+    .updates-hero-content,
+    .contact-hero-content,
+    .team-hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
     }
 }
 @media (max-width: 480px) {
@@ -3031,7 +3055,7 @@ footer {
     .contact-hero-title,
     .team-hero-title {
         font-size: 1.8rem;
-        padding-top: 80px; /* More padding to push content down on very small screens */
+        padding-top: 60px; /* More padding to push content down on very small screens */
     }
     
     .about-hero-subtitle,
@@ -3056,5 +3080,21 @@ footer {
     
     .coming-soon-section .coming-soon-message {
         font-size: 1rem;
+    }
+    
+    /* Ensure text is centered in hero banners for very small screens */
+    .about-hero-content,
+    .events-hero-content,
+    .gallery-hero-content,
+    .updates-hero-content,
+    .contact-hero-content,
+    .team-hero-content {
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
     }
 }
