@@ -58,14 +58,18 @@ body {
     to { opacity: 1; transform: translateY(0); }
 }
 /* Starry Background Effect */
-.starry-background {
-    position: relative;
+.starry-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
     background: var(--dark);
     overflow: hidden;
 }
-.starry-background::before {
-    content: '';
-    position: fixed;
+.stars {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -78,13 +82,11 @@ body {
         radial-gradient(2px 2px at 80px 10px, rgba(255, 255, 255, 0.8), transparent);
     background-repeat: repeat;
     background-size: 200px 200px;
-    opacity: 0.3;
-    z-index: -1;
     animation: twinkle 10s infinite;
 }
 @keyframes twinkle {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 0.5; }
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.3; }
 }
 /* Navigation */
 nav {
@@ -1133,6 +1135,7 @@ footer {
     display: none;
     min-height: 100vh;
     background: var(--dark);
+    position: relative;
 }
 .contact-page.active {
     display: block;
@@ -1284,6 +1287,7 @@ footer {
     display: none;
     min-height: 100vh;
     background: var(--dark);
+    position: relative;
 }
 .team-page.active {
     display: block;
@@ -1441,6 +1445,7 @@ footer {
     display: none;
     min-height: 100vh;
     background: var(--dark);
+    position: relative;
 }
 .gallery-page.active {
     display: block;
@@ -1534,6 +1539,7 @@ footer {
     display: none;
     min-height: 100vh;
     background: var(--dark);
+    position: relative;
 }
 .updates-page.active {
     display: block;
@@ -1671,6 +1677,7 @@ footer {
     display: none;
     min-height: 100vh;
     background: var(--dark);
+    position: relative;
 }
 .about-page.active {
     display: block;
@@ -1857,6 +1864,7 @@ footer {
     display: none;
     min-height: 100vh;
     background: var(--dark);
+    position: relative;
 }
 .events-page.active {
     display: block;
@@ -2175,7 +2183,7 @@ footer {
     }
     
     .logo-img {
-        height: 30px;
+        height: 50px; /* Increased logo size for mobile */
     }
     
     .nav-links {
@@ -2410,6 +2418,30 @@ footer {
         font-size: 24px;
     }
     
+    /* Full width banners for inner pages on mobile */
+    .about-hero,
+    .events-hero,
+    .gallery-hero,
+    .updates-hero,
+    .contact-hero,
+    .team-hero {
+        width: 100vw;
+        margin-left: -20px;
+        border-radius: 0;
+        background-position: center center;
+        background-size: cover;
+    }
+    
+    .about-hero-content,
+    .events-hero-content,
+    .gallery-hero-content,
+    .updates-hero-content,
+    .contact-hero-content,
+    .team-hero-content {
+        padding: 0 20px;
+        padding-top: 60px; /* Add more padding at top to push content down */
+    }
+    
     .contact-hero {
         height: 35vh;
     }
@@ -2563,25 +2595,39 @@ footer {
         font-size: 1rem;
     }
     
-    /* Full width banners for inner pages on mobile */
-    .about-hero,
-    .events-hero,
-    .gallery-hero,
-    .updates-hero,
-    .contact-hero,
-    .team-hero {
-        width: 100vw;
-        margin-left: -20px;
-        border-radius: 0;
+    /* Add starry background to inner pages */
+    .about-page,
+    .events-page,
+    .gallery-page,
+    .updates-page,
+    .team-page,
+    .contact-page {
+        position: relative;
     }
     
-    .about-hero-content,
-    .events-hero-content,
-    .gallery-hero-content,
-    .updates-hero-content,
-    .contact-hero-content,
-    .team-hero-content {
-        padding: 0 20px;
+    .about-page::before,
+    .events-page::before,
+    .gallery-page::before,
+    .updates-page::before,
+    .team-page::before,
+    .contact-page::before {
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: 
+            radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.8), transparent),
+            radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.6), transparent),
+            radial-gradient(1px 1px at 50px 160px, rgba(255, 255, 255, 0.9), transparent),
+            radial-gradient(1px 1px at 130px 40px, rgba(255, 255, 255, 0.7), transparent),
+            radial-gradient(2px 2px at 80px 10px, rgba(255, 255, 255, 0.8), transparent);
+        background-repeat: repeat;
+        background-size: 200px 200px;
+        opacity: 0.3;
+        z-index: -1;
+        animation: twinkle 10s infinite;
     }
 }
 @media (max-width: 480px) {
@@ -2595,7 +2641,7 @@ footer {
     }
     
     .logo-img {
-        height: 25px;
+        height: 45px; /* Further increased logo size for very small screens */
     }
     
     .menu-toggle {
@@ -2955,5 +3001,25 @@ footer {
     .event-actions .btn {
         padding: 10px 15px;
         font-size: 12px;
+    }
+    
+    /* Further adjust banner titles for very small screens */
+    .about-hero-title,
+    .events-hero-title,
+    .gallery-hero-title,
+    .updates-hero-title,
+    .contact-hero-title,
+    .team-hero-title {
+        font-size: 2rem;
+        padding-top: 80px; /* More padding to push content down on very small screens */
+    }
+    
+    .about-hero-subtitle,
+    .events-hero-subtitle,
+    .gallery-hero-subtitle,
+    .updates-hero-subtitle,
+    .contact-hero-subtitle,
+    .team-hero-subtitle {
+        font-size: 0.9rem;
     }
 }
