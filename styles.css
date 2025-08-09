@@ -1246,7 +1246,7 @@ footer {
 }
 .contact-hero {
     height: 40vh;
-    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9));
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1398,7 +1398,7 @@ footer {
 }
 .team-hero {
     height: 50vh;
-    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9));
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1556,7 +1556,7 @@ footer {
 }
 .gallery-hero {
     height: 40vh;
-    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9));
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1650,7 +1650,7 @@ footer {
 }
 .updates-hero {
     height: 40vh;
-    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9));
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1736,7 +1736,7 @@ footer {
 }
 .about-hero {
     height: 50vh;
-    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9));
     background-size: cover;
     background-position: center;
     display: flex;
@@ -1923,7 +1923,7 @@ footer {
 }
 .events-hero {
     height: 50vh;
-    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9));
     background-size: cover;
     background-position: center;
     display: flex;
