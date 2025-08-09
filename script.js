@@ -86,8 +86,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const comingSoonModal = document.getElementById('comingSoonModal');
     const comingSoonClose = document.getElementById('comingSoonClose');
     const comingSoonButton = document.getElementById('comingSoonButton');
-    const registerBtn = document.getElementById('registerBtn');
-    const learnMoreBtn = document.getElementById('learnMoreBtn');
     
     function showComingSoonModal() {
         comingSoonModal.classList.add('active');
@@ -104,14 +102,32 @@ document.addEventListener('DOMContentLoaded', () => {
         showSuccessModal();
     });
     
+    // Simple Coming Soon modal
+    const simpleComingSoonModal = document.getElementById('simpleComingSoonModal');
+    const simpleComingSoonClose = document.getElementById('simpleComingSoonClose');
+    const simpleComingSoonButton = document.getElementById('simpleComingSoonButton');
+    const registerBtn = document.getElementById('registerBtn');
+    const learnMoreBtn = document.getElementById('learnMoreBtn');
+    
+    function showSimpleComingSoonModal() {
+        simpleComingSoonModal.classList.add('active');
+    }
+    
+    function closeSimpleComingSoonModal() {
+        simpleComingSoonModal.classList.remove('active');
+    }
+    
+    simpleComingSoonClose.addEventListener('click', closeSimpleComingSoonModal);
+    simpleComingSoonButton.addEventListener('click', closeSimpleComingSoonModal);
+    
     registerBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        showComingSoonModal();
+        showSimpleComingSoonModal();
     });
     
     learnMoreBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        showComingSoonModal();
+        showSimpleComingSoonModal();
     });
     
     // Countdown timer
@@ -380,80 +396,6 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
         showEventsPage();
     });
-    
-    // Event countdown timers
-    function initEventCountdowns() {
-        const eventCountdowns = document.querySelectorAll('.event-countdown');
-        
-        eventCountdowns.forEach(countdown => {
-            const eventDate = countdown.getAttribute('data-date');
-            const countDownDate = new Date(eventDate).getTime();
-            
-            const countdownInterval = setInterval(function() {
-                const now = new Date().getTime();
-                const distance = countDownDate - now;
-                
-                if (distance < 0) {
-                    clearInterval(countdownInterval);
-                    countdown.innerHTML = '<div class="countdown-item"><span class="countdown-value">00</span><span class="countdown-label">Days</span></div>';
-                    return;
-                }
-                
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                
-                countdown.innerHTML = `
-                    <div class="countdown-item">
-                        <span class="countdown-value">${days.toString().padStart(2, '0')}</span>
-                        <span class="countdown-label">Days</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-value">${hours.toString().padStart(2, '0')}</span>
-                        <span class="countdown-label">Hours</span>
-                    </div>
-                    <div class="countdown-item">
-                        <span class="countdown-value">${minutes.toString().padStart(2, '0')}</span>
-                        <span class="countdown-label">Minutes</span>
-                    </div>
-                `;
-            }, 1000);
-        });
-    }
-    
-    // Initialize event countdowns when events page is shown
-    const eventsPageObserver = new MutationObserver((mutations) => {
-        mutations.forEach((mutation) => {
-            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                if (eventsPage.classList.contains('active')) {
-                    initEventCountdowns();
-                }
-            }
-        });
-    });
-    
-    eventsPageObserver.observe(eventsPage, { attributes: true });
-    
-    // Event notify buttons
-    const eventNotifyBtns = document.querySelectorAll('.event-notify-btn');
-    eventNotifyBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            showSuccessModal();
-        });
-    });
-    
-    // Newsletter form
-    const newsletterForm = document.querySelector('.newsletter-form');
-    if (newsletterForm) {
-        newsletterForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            const email = newsletterForm.querySelector('input[type="email"]').value;
-            if (email) {
-                showSuccessModal();
-                newsletterForm.reset();
-            }
-        });
-    }
     
     // Scroll to top button
     const scrollTopBtn = document.getElementById('scrollTop');
