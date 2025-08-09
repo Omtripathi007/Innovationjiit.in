@@ -118,15 +118,16 @@
             </div>
         </nav>
         
-        <!-- Hero Section with Carousel -->
+        <!-- Hero Section with Video Background -->
         <section id="home" class="hero">
-            <div class="hero-carousel">
-                <div class="carousel-slide active"></div>
-                <div class="carousel-slide"></div>
-                <div class="carousel-slide"></div>
-                <div class="carousel-slide"></div>
+            <div class="hero-video-container">
+                <video class="hero-video" autoplay muted loop playsinline>
+                    <source src="https://assets.mixkit.co/videos/preview/mixkit-team-of-diverse-people-working-together-39891-large.mp4" type="video/mp4">
+                    <!-- Fallback for browsers that don't support video -->
+                    <div class="hero-fallback"></div>
+                </video>
+                <div class="carousel-overlay"></div>
             </div>
-            <div class="carousel-overlay"></div>
             
             <div class="shape shape-1"></div>
             <div class="shape shape-2"></div>
