@@ -1500,21 +1500,6 @@ footer {
 .gallery-item:hover .gallery-image img {
     transform: scale(1.1);
 }
-.gallery-info {
-    padding: 25px;
-}
-.gallery-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: var(--light);
-}
-.gallery-description {
-    font-size: 14px;
-    line-height: 1.6;
-    opacity: 0.8;
-}
 /* Updates Page */
 .updates-page {
     display: none;
@@ -1652,18 +1637,15 @@ footer {
 .update-link:hover {
     text-shadow: 0 0 10px var(--primary);
 }
-
 /* About Page Styles */
 .about-page {
     display: none;
     min-height: 100vh;
     background: var(--dark);
 }
-
 .about-page.active {
     display: block;
 }
-
 .about-hero {
     height: 50vh;
     background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
@@ -1674,14 +1656,12 @@ footer {
     justify-content: center;
     position: relative;
 }
-
 .about-hero-content {
     text-align: center;
     z-index: 2;
     max-width: 800px;
     padding: 0 20px;
 }
-
 .about-hero-title {
     font-family: 'Orbitron', sans-serif;
     font-size: 4rem;
@@ -1694,23 +1674,19 @@ footer {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-
 .about-hero-subtitle {
     font-size: 1.5rem;
     opacity: 0.9;
 }
-
 .about-container {
     padding: 80px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .about-intro {
     text-align: center;
     margin-bottom: 80px;
 }
-
 .about-intro-title {
     font-family: 'Orbitron', sans-serif;
     font-size: 2.5rem;
@@ -1723,7 +1699,6 @@ footer {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
 .about-intro-text {
     font-size: 1.2rem;
     line-height: 1.8;
@@ -1731,7 +1706,6 @@ footer {
     margin: 0 auto;
     opacity: 0.9;
 }
-
 .activities-title {
     font-family: 'Orbitron', sans-serif;
     font-size: 2.5rem;
@@ -1745,7 +1719,6 @@ footer {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
 .activity-card {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -1753,37 +1726,30 @@ footer {
     margin-bottom: 100px;
     align-items: center;
 }
-
 .activity-card.reverse {
     direction: rtl;
 }
-
 .activity-card.reverse .activity-content {
     direction: ltr;
 }
-
 .activity-image {
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
     border: 1px solid rgba(0, 212, 255, 0.3);
 }
-
 .activity-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .activity-card:hover .activity-image img {
     transform: scale(1.05);
 }
-
 .activity-content {
     padding: 20px;
 }
-
 .activity-title {
     font-family: 'Orbitron', sans-serif;
     font-size: 2rem;
@@ -1791,20 +1757,17 @@ footer {
     margin-bottom: 20px;
     color: var(--primary);
 }
-
 .activity-description {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 30px;
     opacity: 0.9;
 }
-
 .activity-highlights {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
-
 .highlight-item {
     display: flex;
     align-items: center;
@@ -1815,22 +1778,18 @@ footer {
     padding: 10px 20px;
     transition: all 0.3s ease;
 }
-
 .highlight-item:hover {
     background: rgba(0, 212, 255, 0.2);
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
 }
-
 .highlight-item i {
     color: var(--primary);
     font-size: 1.2rem;
 }
-
 .highlight-item span {
     font-weight: 600;
 }
-
 .about-stats {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -1838,7 +1797,6 @@ footer {
     margin-top: 80px;
     text-align: center;
 }
-
 .stat-item {
     background: rgba(0, 212, 255, 0.05);
     border: 1px solid rgba(0, 212, 255, 0.2);
@@ -1846,13 +1804,11 @@ footer {
     padding: 30px 20px;
     transition: all 0.3s ease;
 }
-
 .stat-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 212, 255, 0.2);
     border-color: var(--primary);
 }
-
 .stat-number {
     font-family: 'Orbitron', sans-serif;
     font-size: 3rem;
@@ -1863,23 +1819,19 @@ footer {
     background-clip: text;
     color: transparent;
 }
-
 .stat-label {
     font-size: 1.1rem;
     opacity: 0.8;
 }
-
 /* Events Page Styles */
 .events-page {
     display: none;
     min-height: 100vh;
     background: var(--dark);
 }
-
 .events-page.active {
     display: block;
 }
-
 .events-hero {
     height: 50vh;
     background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
@@ -1890,14 +1842,12 @@ footer {
     justify-content: center;
     position: relative;
 }
-
 .events-hero-content {
     text-align: center;
     z-index: 2;
     max-width: 800px;
     padding: 0 20px;
 }
-
 .events-hero-title {
     font-family: 'Orbitron', sans-serif;
     font-size: 4rem;
@@ -1910,23 +1860,19 @@ footer {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
-
 .events-hero-subtitle {
     font-size: 1.5rem;
     opacity: 0.9;
 }
-
 .events-container {
     padding: 80px 20px;
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .events-intro {
     text-align: center;
     margin-bottom: 60px;
 }
-
 .events-intro-title {
     font-family: 'Orbitron', sans-serif;
     font-size: 2.5rem;
@@ -1939,7 +1885,6 @@ footer {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
 .events-intro-text {
     font-size: 1.2rem;
     line-height: 1.8;
@@ -1947,14 +1892,12 @@ footer {
     margin: 0 auto;
     opacity: 0.9;
 }
-
 .coming-events-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 40px;
     margin-bottom: 80px;
 }
-
 .coming-event-card {
     background: rgba(0, 212, 255, 0.05);
     border: 1px solid rgba(0, 212, 255, 0.2);
@@ -1963,33 +1906,27 @@ footer {
     transition: all 0.3s ease;
     position: relative;
 }
-
 .coming-event-card:hover {
     transform: translateY(-15px);
     box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
     border-color: var(--primary);
 }
-
 .event-image {
     height: 200px;
     overflow: hidden;
 }
-
 .event-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.5s ease;
 }
-
 .coming-event-card:hover .event-image img {
     transform: scale(1.1);
 }
-
 .event-content {
     padding: 30px;
 }
-
 .event-title {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.8rem;
@@ -1997,7 +1934,6 @@ footer {
     margin-bottom: 15px;
     color: var(--primary);
 }
-
 .event-date {
     display: flex;
     align-items: center;
@@ -2006,25 +1942,21 @@ footer {
     color: var(--light);
     font-weight: 600;
 }
-
 .event-date i {
     color: var(--primary);
 }
-
 .event-description {
     font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 20px;
     opacity: 0.9;
 }
-
 .event-countdown {
     display: flex;
     justify-content: space-between;
     margin-bottom: 25px;
     gap: 10px;
 }
-
 .event-countdown .countdown-item {
     background: rgba(0, 212, 255, 0.1);
     border: 1px solid rgba(0, 212, 255, 0.3);
@@ -2033,7 +1965,6 @@ footer {
     min-width: 70px;
     text-align: center;
 }
-
 .event-countdown .countdown-value {
     font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
@@ -2041,16 +1972,13 @@ footer {
     color: var(--primary);
     display: block;
 }
-
 .event-countdown .countdown-label {
     font-size: 0.8rem;
     opacity: 0.8;
 }
-
 .event-notify-btn {
     width: 100%;
 }
-
 .events-cta {
     background: rgba(0, 212, 255, 0.05);
     border: 1px solid rgba(0, 212, 255, 0.2);
@@ -2059,7 +1987,6 @@ footer {
     text-align: center;
     margin-bottom: 40px;
 }
-
 .cta-title {
     font-family: 'Orbitron', sans-serif;
     font-size: 2rem;
@@ -2072,7 +1999,6 @@ footer {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-
 .cta-text {
     font-size: 1.1rem;
     line-height: 1.6;
@@ -2082,14 +2008,12 @@ footer {
     margin-left: auto;
     margin-right: auto;
 }
-
 .newsletter-form {
     display: flex;
     max-width: 500px;
     margin: 0 auto;
     gap: 15px;
 }
-
 .newsletter-form input {
     flex: 1;
     padding: 15px;
@@ -2100,17 +2024,14 @@ footer {
     font-size: 16px;
     transition: all 0.3s ease;
 }
-
 .newsletter-form input:focus {
     outline: none;
     border-color: var(--primary);
     box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
 }
-
 .newsletter-form button {
     flex-shrink: 0;
 }
-
 /* Responsive adjustments */
 @media (max-width: 1024px) {
     .nav-links {
@@ -2514,10 +2435,6 @@ footer {
     
     .activity-title {
         font-size: 1.6rem;
-    }
-    
-    .activity-description {
-        font-size: 1rem;
     }
     
     .activity-highlights {
