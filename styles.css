@@ -57,6 +57,35 @@ body {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
 }
+/* Starry Background Effect */
+.starry-background {
+    position: relative;
+    background: var(--dark);
+    overflow: hidden;
+}
+.starry-background::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.8), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.6), transparent),
+        radial-gradient(1px 1px at 50px 160px, rgba(255, 255, 255, 0.9), transparent),
+        radial-gradient(1px 1px at 130px 40px, rgba(255, 255, 255, 0.7), transparent),
+        radial-gradient(2px 2px at 80px 10px, rgba(255, 255, 255, 0.8), transparent);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    opacity: 0.3;
+    z-index: -1;
+    animation: twinkle 10s infinite;
+}
+@keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 0.5; }
+}
 /* Navigation */
 nav {
     position: fixed;
@@ -2249,49 +2278,65 @@ footer {
         grid-template-columns: 1fr;
     }
     
-    /* Make event card smaller on mobile */
+    /* Make event card smaller and sexier on mobile */
     .event-card {
-        padding: 20px;
-        gap: 15px;
+        padding: 15px;
+        gap: 10px;
+        border-radius: 15px;
+        margin-bottom: 30px;
     }
     
     .event-header {
         flex-direction: column;
         align-items: flex-start;
-        gap: 15px;
+        gap: 10px;
     }
     
     .event-date {
         align-self: flex-start;
-        padding: 15px;
-        min-width: 100px;
+        padding: 10px 15px;
+        min-width: 80px;
+        border-radius: 10px;
     }
     
     .event-date .day {
-        font-size: 24px;
+        font-size: 20px;
     }
     
     .event-date .month {
-        font-size: 16px;
+        font-size: 14px;
     }
     
     .event-title {
-        font-size: 24px;
+        font-size: 20px;
+        margin-bottom: 5px;
     }
     
     .event-meta {
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+    
+    .event-meta-item {
+        font-size: 14px;
     }
     
     .event-description {
-        font-size: 16px;
+        font-size: 14px;
         margin-bottom: 15px;
+        line-height: 1.5;
     }
     
     .event-actions {
         flex-direction: column;
         gap: 10px;
+    }
+    
+    .event-actions .btn {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 14px;
     }
     
     .footer-container {
@@ -2516,6 +2561,27 @@ footer {
     
     .cta-text {
         font-size: 1rem;
+    }
+    
+    /* Full width banners for inner pages on mobile */
+    .about-hero,
+    .events-hero,
+    .gallery-hero,
+    .updates-hero,
+    .contact-hero,
+    .team-hero {
+        width: 100vw;
+        margin-left: -20px;
+        border-radius: 0;
+    }
+    
+    .about-hero-content,
+    .events-hero-content,
+    .gallery-hero-content,
+    .updates-hero-content,
+    .contact-hero-content,
+    .team-hero-content {
+        padding: 0 20px;
     }
 }
 @media (max-width: 480px) {
@@ -2856,5 +2922,38 @@ footer {
     
     .cta-text {
         font-size: 0.9rem;
+    }
+    
+    /* Even smaller event card on very small screens */
+    .event-card {
+        padding: 12px;
+        gap: 8px;
+    }
+    
+    .event-date {
+        padding: 8px 12px;
+        min-width: 70px;
+    }
+    
+    .event-date .day {
+        font-size: 18px;
+    }
+    
+    .event-date .month {
+        font-size: 12px;
+    }
+    
+    .event-title {
+        font-size: 18px;
+    }
+    
+    .event-description {
+        font-size: 13px;
+        margin-bottom: 12px;
+    }
+    
+    .event-actions .btn {
+        padding: 10px 15px;
+        font-size: 12px;
     }
 }
