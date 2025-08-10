@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Initialize Supabase
+    const supabaseUrl = 'https://juyiwpyvzumcaqyfhywc.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp1eWl3cHl2enVtY2FxeWZoeXdjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQwNTU2NDUsImV4cCI6MjA2OTYzMTY0NX0.wCm7cjrYuthREMdcjPBylIIfvJ08DXAwXSc2HLe85L4';
+    const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
+    
     // Typewriter Loading Effect
     const typewriterText = document.getElementById('typewriter-text');
     const text = "JIIT";
@@ -167,13 +172,38 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
     
-    // Form submissions
+    // Form submissions with Supabase integration
     const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        // In a real application, you would submit the form data to a server here
-        alert('Thank you for your message! We will get back to you soon.');
-        contactForm.reset();
+        
+        // Get form data
+        const formData = {
+            first_name: document.getElementById('firstName').value,
+            last_name: document.getElementById('lastName').value,
+            email: document.getElementById('email').value,
+            subject: document.getElementById('subject').value,
+            message: document.getElementById('message').value,
+            created_at: new Date().toISOString()
+        };
+        
+        try {
+            // Insert data into Supabase
+            const { data, error } = await supabase
+                .from('contacts')
+                .insert([formData]);
+                
+            if (error) {
+                throw error;
+            }
+            
+            // Show success modal
+            showSuccessModal();
+            contactForm.reset();
+        } catch (error) {
+            console.error('Error submitting form:', error);
+            alert('There was an error submitting your message. Please try again.');
+        }
     });
     
     // Navigation to pages
