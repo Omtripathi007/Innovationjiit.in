@@ -142,7 +142,7 @@ nav.scrolled {
     list-style: none;
     gap: 40px;
 }
-.nav-links a {
+.nav-link {
     color: var(--light);
     text-decoration: none;
     font-weight: 500;
@@ -152,7 +152,10 @@ nav.scrolled {
     text-transform: uppercase;
     letter-spacing: 1px;
 }
-.nav-links a::before {
+.nav-link.active {
+    color: var(--primary);
+}
+.nav-link::before {
     content: '';
     position: absolute;
     bottom: -5px;
@@ -162,11 +165,11 @@ nav.scrolled {
     background: var(--gradient);
     transition: width 0.3s ease;
 }
-.nav-links a:hover {
+.nav-link:hover {
     color: var(--primary);
     text-shadow: 0 0 10px var(--primary);
 }
-.nav-links a:hover::before {
+.nav-link:hover::before {
     width: 100%;
 }
 .menu-toggle {
@@ -262,7 +265,7 @@ nav.scrolled {
     gap: 25px;
     list-style: none;
 }
-.mobile-menu-links a {
+.mobile-nav-link {
     color: var(--light);
     text-decoration: none;
     font-weight: 600;
@@ -276,7 +279,10 @@ nav.scrolled {
     position: relative;
     padding-left: 20px;
 }
-.mobile-menu-links a::before {
+.mobile-nav-link.active {
+    color: var(--primary);
+}
+.mobile-nav-link::before {
     content: '';
     position: absolute;
     left: 0;
@@ -287,15 +293,15 @@ nav.scrolled {
     background: var(--gradient);
     transition: width 0.3s ease;
 }
-.mobile-menu-links a:hover {
+.mobile-nav-link:hover {
     color: var(--primary);
     text-shadow: 0 0 10px var(--primary);
     padding-left: 25px;
 }
-.mobile-menu-links a:hover::before {
+.mobile-nav-link:hover::before {
     width: 15px;
 }
-/* Hero Section with Video Background */
+/* Hero Section with 3D Interactive Video Background */
 .hero {
     height: 100vh;
     position: relative;
@@ -303,6 +309,15 @@ nav.scrolled {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+.hero-3d-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    perspective: 1000px;
+    overflow: hidden;
 }
 .hero-video-container {
     position: absolute;
@@ -340,6 +355,51 @@ nav.scrolled {
     height: 100%;
     background: rgba(10, 10, 15, 0.4);
     z-index: 2;
+}
+.hero-3d-scene {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+}
+.hero-content {
+    position: relative;
+    z-index: 4;
+    text-align: center;
+    padding: 0 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 20px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.2;
+}
+.hero-subtitle {
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+.hero-cta {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 /* Floating Shapes */
 .shape {
@@ -618,6 +678,7 @@ nav.scrolled {
     min-width: 120px;
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
+    flex-shrink: 0;
 }
 .event-date .day {
     font-size: 32px;
@@ -628,6 +689,7 @@ nav.scrolled {
 }
 .event-info {
     flex: 1;
+    min-width: 0;
 }
 .event-title {
     font-family: 'Orbitron', sans-serif;
@@ -635,6 +697,7 @@ nav.scrolled {
     font-weight: 800;
     margin-bottom: 10px;
     color: var(--light);
+    word-wrap: break-word;
 }
 .event-meta {
     display: flex;
@@ -656,6 +719,309 @@ nav.scrolled {
 }
 .event-actions {
     display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+/* Ride Hack Event Detail Page */
+.ride-hack-page {
+    display: none;
+    min-height: 100vh;
+    background: var(--dark);
+    position: relative;
+}
+.ride-hack-page.active {
+    display: block;
+}
+.ride-hack-hero {
+    height: 50vh;
+    background: linear-gradient(rgba(10, 10, 15, 0.7), rgba(10, 10, 15, 0.9)), url('ridehack.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.ride-hack-hero-content {
+    text-align: center;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.ride-hack-hero-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.ride-hack-hero-subtitle {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+.event-date-badge {
+    position: absolute;
+    top: -60px;
+    right: 20px;
+    background: var(--gradient);
+    color: var(--dark);
+    border-radius: 15px;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+}
+.date-day {
+    font-size: 32px;
+    display: block;
+    line-height: 1;
+}
+.date-month {
+    font-size: 18px;
+    display: block;
+}
+.date-year {
+    font-size: 14px;
+    opacity: 0.8;
+}
+.ride-hack-container {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.ride-hack-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.ride-hack-intro-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.ride-hack-intro-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+.ride-hack-details {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.detail-section {
+    background: rgba(0, 212, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 20px;
+    padding: 40px;
+    transition: all 0.3s ease;
+}
+.detail-section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 212, 255, 0.3);
+    border-color: var(--primary);
+}
+.detail-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 30px;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    display: inline-block;
+}
+.detail-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gradient);
+}
+.schedule-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+.schedule-day {
+    background: rgba(0, 212, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+}
+.schedule-day-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.schedule-list {
+    list-style: none;
+}
+.schedule-item {
+    display: flex;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.schedule-item:last-child {
+    border-bottom: none;
+}
+.schedule-time {
+    min-width: 100px;
+    font-weight: 700;
+    color: var(--primary);
+}
+.schedule-activity {
+    flex: 1;
+}
+.prizes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.prize-card {
+    background: rgba(0, 212, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.prize-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 212, 255, 0.3);
+    border-color: var(--primary);
+}
+.prize-position {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+.prize-amount {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.prize-desc {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+.tracks-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.track-item {
+    background: rgba(0, 212, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.track-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 212, 255, 0.3);
+    border-color: var(--primary);
+}
+.track-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--dark);
+    margin: 0 auto 20px;
+}
+.track-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--light);
+}
+.track-desc {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+.criteria-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+.criteria-item {
+    background: rgba(0, 212, 255, 0.05);
+    border: 1px solid rgba(0, 212, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+.criteria-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 212, 255, 0.2);
+    border-color: var(--primary);
+}
+.criteria-weight {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+.criteria-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--light);
+}
+.criteria-desc {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+.register-container {
+    text-align: center;
+}
+.register-info {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+.register-actions {
+    display: flex;
+    justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
 }
@@ -1254,6 +1620,10 @@ footer {
     z-index: 2;
     max-width: 800px;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .contact-hero-title {
     font-family: 'Orbitron', sans-serif;
@@ -1406,6 +1776,10 @@ footer {
     z-index: 2;
     max-width: 800px;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .team-hero-title {
     font-family: 'Orbitron', sans-serif;
@@ -1564,6 +1938,10 @@ footer {
     z-index: 2;
     max-width: 800px;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .gallery-hero-title {
     font-family: 'Orbitron', sans-serif;
@@ -1658,6 +2036,10 @@ footer {
     z-index: 2;
     max-width: 800px;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .updates-hero-title {
     font-family: 'Orbitron', sans-serif;
@@ -1744,6 +2126,10 @@ footer {
     z-index: 2;
     max-width: 800px;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .about-hero-title {
     font-family: 'Orbitron', sans-serif;
@@ -1931,6 +2317,10 @@ footer {
     z-index: 2;
     max-width: 800px;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .events-hero-title {
     font-family: 'Orbitron', sans-serif;
@@ -2204,6 +2594,31 @@ footer {
     .newsletter-form button {
         width: 100%;
     }
+    
+    /* Ride Hack Event Detail Page Responsive */
+    .schedule-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .prizes-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .tracks-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .criteria-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .register-actions {
+        flex-direction: column;
+    }
+    
+    .register-actions .btn {
+        width: 100%;
+    }
 }
 @media (max-width: 768px) {
     /* Sexy Mobile Header */
@@ -2308,6 +2723,19 @@ footer {
     
     .carousel-overlay {
         background: rgba(10, 10, 15, 0.5);
+    }
+    
+    .hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .hero-cta {
+        flex-direction: column;
+        align-items: center;
     }
     
     .about,
@@ -2470,7 +2898,8 @@ footer {
     .gallery-hero,
     .updates-hero,
     .contact-hero,
-    .team-hero {
+    .team-hero,
+    .ride-hack-hero {
         width: 100vw;
         margin-left: -20px;
         border-radius: 0;
@@ -2488,7 +2917,8 @@ footer {
     .gallery-hero-content,
     .updates-hero-content,
     .contact-hero-content,
-    .team-hero-content {
+    .team-hero-content,
+    .ride-hack-hero-content {
         padding: 0 20px;
         padding-top: 60px; /* Adjusted padding for better mobile view */
         text-align: center;
@@ -2496,6 +2926,10 @@ footer {
         z-index: 2;
         width: 100%;
         max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     
     .contact-hero {
@@ -2640,7 +3074,8 @@ footer {
     .gallery-page,
     .updates-page,
     .team-page,
-    .contact-page {
+    .contact-page,
+    .ride-hack-page {
         position: relative;
     }
     
@@ -2649,7 +3084,8 @@ footer {
     .gallery-page::before,
     .updates-page::before,
     .team-page::before,
-    .contact-page::before {
+    .contact-page::before,
+    .ride-hack-page::before {
         content: '';
         position: fixed;
         top: 0;
@@ -2684,7 +3120,8 @@ footer {
     .gallery-hero-content,
     .updates-hero-content,
     .contact-hero-content,
-    .team-hero-content {
+    .team-hero-content,
+    .ride-hack-hero-content {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -2697,6 +3134,86 @@ footer {
     .hero-video {
         object-fit: cover;
         object-position: center;
+    }
+    
+    /* Ride Hack Event Detail Page Mobile */
+    .ride-hack-hero-title {
+        font-size: 2.5rem;
+    }
+    
+    .ride-hack-hero-subtitle {
+        font-size: 1.2rem;
+    }
+    
+    .event-date-badge {
+        top: -40px;
+        right: 10px;
+        padding: 10px;
+    }
+    
+    .date-day {
+        font-size: 24px;
+    }
+    
+    .date-month {
+        font-size: 14px;
+    }
+    
+    .ride-hack-intro-title {
+        font-size: 1.8rem;
+    }
+    
+    .detail-title {
+        font-size: 1.5rem;
+    }
+    
+    .schedule-day {
+        padding: 20px;
+    }
+    
+    .schedule-day-title {
+        font-size: 1.2rem;
+    }
+    
+    .schedule-time {
+        min-width: 80px;
+        font-size: 14px;
+    }
+    
+    .schedule-activity {
+        font-size: 14px;
+    }
+    
+    .prize-position {
+        font-size: 1.5rem;
+    }
+    
+    .prize-amount {
+        font-size: 1.2rem;
+    }
+    
+    .track-title {
+        font-size: 1.1rem;
+    }
+    
+    .track-desc {
+        font-size: 0.8rem;
+    }
+    
+    .criteria-weight {
+        font-size: 1.2rem;
+    }
+    
+    .criteria-title {
+        font-size: 1rem;
+    }
+    
+    .criteria-desc {
+        font-size: 0.8rem;
+    }
+    
+    .register-info {
+        font-size: 1rem;
     }
 }
 @media (max-width: 480px) {
@@ -2746,6 +3263,14 @@ footer {
     .hero {
         height: 60vh;
         min-height: 500px;
+    }
+    
+    .hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.3rem;
     }
     
     .section-title {
@@ -3053,7 +3578,8 @@ footer {
     .gallery-hero-title,
     .updates-hero-title,
     .contact-hero-title,
-    .team-hero-title {
+    .team-hero-title,
+    .ride-hack-hero-title {
         font-size: 1.8rem;
         padding-top: 60px; /* More padding to push content down on very small screens */
     }
@@ -3063,7 +3589,8 @@ footer {
     .gallery-hero-subtitle,
     .updates-hero-subtitle,
     .contact-hero-subtitle,
-    .team-hero-subtitle {
+    .team-hero-subtitle,
+    .ride-hack-hero-subtitle {
         font-size: 0.9rem;
     }
     
@@ -3088,7 +3615,8 @@ footer {
     .gallery-hero-content,
     .updates-hero-content,
     .contact-hero-content,
-    .team-hero-content {
+    .team-hero-content,
+    .ride-hack-hero-content {
         padding-top: 50px;
         display: flex;
         flex-direction: column;
@@ -3102,5 +3630,69 @@ footer {
     .hero-video {
         object-fit: cover;
         object-position: center top;
+    }
+    
+    /* Ride Hack Event Detail Page for very small screens */
+    .ride-hack-intro-title {
+        font-size: 1.5rem;
+    }
+    
+    .detail-title {
+        font-size: 1.3rem;
+    }
+    
+    .schedule-day {
+        padding: 15px;
+    }
+    
+    .schedule-day-title {
+        font-size: 1.1rem;
+    }
+    
+    .schedule-time {
+        min-width: 70px;
+        font-size: 12px;
+    }
+    
+    .schedule-activity {
+        font-size: 12px;
+    }
+    
+    .prize-position {
+        font-size: 1.3rem;
+    }
+    
+    .prize-amount {
+        font-size: 1rem;
+    }
+    
+    .track-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .track-title {
+        font-size: 1rem;
+    }
+    
+    .track-desc {
+        font-size: 0.8rem;
+    }
+    
+    .criteria-weight {
+        font-size: 1rem;
+    }
+    
+    .criteria-title {
+        font-size: 0.9rem;
+    }
+    
+    .criteria-desc {
+        font-size: 0.7rem;
+    }
+    
+    .register-info {
+        font-size: 0.9rem;
     }
 }
