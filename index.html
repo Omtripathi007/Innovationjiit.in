@@ -7,6 +7,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
+    <!-- Three.js for 3D effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <!-- Supabase Integration -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>
@@ -92,13 +94,13 @@
                     <span>Innovation Hub</span>
                 </a>
                 <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#" id="aboutLink">About</a></li>
-                    <li><a href="#" id="eventsLink">Events</a></li>
-                    <li><a href="#" id="galleryLink">Gallery</a></li>
-                    <li><a href="#" id="updatesLink">Updates</a></li>
-                    <li><a href="#" id="teamLink">Team</a></li>
-                    <li><a href="#" id="contactLink">Contact</a></li>
+                    <li><a href="#home" class="nav-link active">Home</a></li>
+                    <li><a href="#" id="aboutLink" class="nav-link">About</a></li>
+                    <li><a href="#" id="eventsLink" class="nav-link">Events</a></li>
+                    <li><a href="#" id="galleryLink" class="nav-link">Gallery</a></li>
+                    <li><a href="#" id="updatesLink" class="nav-link">Updates</a></li>
+                    <li><a href="#" id="teamLink" class="nav-link">Team</a></li>
+                    <li><a href="#" id="contactLink" class="nav-link">Contact</a></li>
                 </ul>
                 <div class="menu-toggle" id="menuToggle">
                     <span></span>
@@ -109,31 +111,37 @@
             <!-- Mobile Menu -->
             <div class="mobile-menu" id="mobileMenu">
                 <ul class="mobile-menu-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#" id="mobileAboutLink">About</a></li>
-                    <li><a href="#" id="mobileEventsLink">Events</a></li>
-                    <li><a href="#" id="mobileGalleryLink">Gallery</a></li>
-                    <li><a href="#" id="mobileUpdatesLink">Updates</a></li>
-                    <li><a href="#" id="mobileTeamLink">Team</a></li>
-                    <li><a href="#" id="mobileContactLink">Contact</a></li>
+                    <li><a href="#home" class="mobile-nav-link active">Home</a></li>
+                    <li><a href="#" id="mobileAboutLink" class="mobile-nav-link">About</a></li>
+                    <li><a href="#" id="mobileEventsLink" class="mobile-nav-link">Events</a></li>
+                    <li><a href="#" id="mobileGalleryLink" class="mobile-nav-link">Gallery</a></li>
+                    <li><a href="#" id="mobileUpdatesLink" class="mobile-nav-link">Updates</a></li>
+                    <li><a href="#" id="mobileTeamLink" class="mobile-nav-link">Team</a></li>
+                    <li><a href="#" id="mobileContactLink" class="mobile-nav-link">Contact</a></li>
                 </ul>
             </div>
         </nav>
         
-        <!-- Hero Section with Video Background -->
+        <!-- Hero Section with 3D Interactive Video Background -->
         <section id="home" class="hero">
-            <div class="hero-video-container">
-                <video class="hero-video" autoplay muted loop playsinline>
-                    <source src="WhatsApp Video 2025-08-09 at 20.23.28.mp4" type="video/mp4">
-                    <!-- Fallback for browsers that don't support video -->
-                    <div class="hero-fallback"></div>
-                </video>
-                <div class="carousel-overlay"></div>
+            <div class="hero-3d-container" id="hero3dContainer">
+                <div class="hero-video-container">
+                    <video class="hero-video" autoplay muted loop playsinline>
+                        <source src="WhatsApp Video 2025-08-09 at 20.23.28.mp4" type="video/mp4">
+                        <!-- Fallback for browsers that don't support video -->
+                        <div class="hero-fallback"></div>
+                    </video>
+                    <div class="carousel-overlay"></div>
+                </div>
+                <div class="hero-3d-scene" id="hero3dScene"></div>
+                <div class="hero-content">
+                    <h1 class="hero-title">Welcome to Innovation Hub</h1>
+                    <p class="hero-subtitle">Pioneering Tomorrow's Technology Today</p>
+                    <div class="hero-cta">
+                    
+                    </div>
+                </div>
             </div>
-            
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
         </section>
         
         <!-- About Section -->
@@ -248,15 +256,15 @@
                 <div class="event-card">
                     <div class="event-header">
                         <div class="event-date">
-                            <span class="day">coming</span>
-                            <span class="month">soon</span>
+                            <span class="day">NOV</span>
+                            <span class="month">1-2</span>
                         </div>
                         <div class="event-info">
-                            <h3 class="event-title">Innovation Hackathon 2025</h3>
+                            <h3 class="event-title">Ride Hack 2025</h3>
                             <div class="event-meta">
                                 <div class="event-meta-item">
                                     <i class="fas fa-calendar-alt"></i>
-                                    <span>coming soon</span>
+                                    <span>November 1-2, 2025</span>
                                 </div>
                                 <div class="event-meta-item">
                                     <i class="fas fa-map-marker-alt"></i>
@@ -270,11 +278,11 @@
                         </div>
                     </div>
                     <div class="event-description">
-                        Join us for our annual Innovation Hackathon where students, developers, designers, and entrepreneurs come together to create innovative solutions to real-world problems. This 48-hour event will feature workshops, mentorship from industry experts, and amazing prizes for the winning teams.
+                        Join us for our flagship Ride Hack 2025 where students, developers, designers, and entrepreneurs come together to create innovative solutions to real-world problems. This 48-hour event will feature workshops, mentorship from industry experts, and amazing prizes for the winning teams.
                     </div>
                     <div class="event-actions">
                         <button class="btn btn-primary" id="registerBtn">Register Now</button>
-                        <a href="#" id="learnMoreBtn" class="btn btn-secondary">Learn More</a>
+                        <a href="#" id="rideHackDetailBtn" class="btn btn-secondary">View Details</a>
                     </div>
                 </div>
             </div>
@@ -467,16 +475,239 @@ The JIIT Innovation Hub is a space where creativity meets technology. We empower
         </div>
         
         <div class="events-container">
-            <div class="events-intro">
-                <h2 class="events-intro-title">Coming Soon</h2>
-                <p class="events-intro-text">
-                    We're constantly working on bringing you new and exciting events. Check back often for updates on our upcoming hackathons, workshops, and networking events.
-                </p>
+            <div class="event-card">
+                <div class="event-header">
+                    <div class="event-date">
+                        <span class="day">NOV</span>
+                        <span class="month">1-2</span>
+                    </div>
+                    <div class="event-info">
+                        <h3 class="event-title">Ride Hack 2025</h3>
+                        <div class="event-meta">
+                            <div class="event-meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>November 1-2, 2025</span>
+                            </div>
+                            <div class="event-meta-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>JIIT NOIDA</span>
+                            </div>
+                            <div class="event-meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>500+ Participants</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-description">
+                    Join us for our flagship Ride Hack 2025 where students, developers, designers, and entrepreneurs come together to create innovative solutions to real-world problems. This 48-hour event will feature workshops, mentorship from industry experts, and amazing prizes for the winning teams.
+                </div>
+                <div class="event-actions">
+                    <button class="btn btn-primary" id="eventsPageRegisterBtn">Register Now</button>
+                    <a href="#" id="eventsPageRideHackDetailBtn" class="btn btn-secondary">View Details</a>
+                </div>
             </div>
         </div>
         
         <div class="back-button-container">
             <a href="#" id="backToHomeFromEvents" class="sexy-back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </div>
+    
+    <!-- Ride Hack Event Detail Page -->
+    <div id="rideHackPage" class="ride-hack-page">
+        <div class="ride-hack-hero">
+            <div class="ride-hack-hero-content">
+                <h1 class="ride-hack-hero-title">Ride Hack 2025</h1>
+                <p class="ride-hack-hero-subtitle">48-Hour Innovation Challenge</p>
+                <div class="event-date-badge">
+                 
+                </div>
+            </div>
+        </div>
+        
+        <div class="ride-hack-container">
+            <div class="ride-hack-intro">
+                <h2 class="ride-hack-intro-title">About Ride Hack 2025</h2>
+                <p class="ride-hack-intro-text">
+                    Ride Hack 2025 is the flagship hackathon of the JIIT Innovation Hub, designed to bring together creative minds to solve real-world problems through technology and innovation. This 48-hour intensive coding competition will challenge students, developers, designers, and entrepreneurs to create innovative solutions under the theme of "Smart Mobility and Sustainable Transportation".
+                </p>
+            </div>
+            
+            <div class="ride-hack-details">
+                <div class="detail-section">
+                    <h3 class="detail-title">Event Schedule</h3>
+                    <div class="schedule-container">
+                        <div class="schedule-day">
+                            <h4 class="schedule-day-title">Day 1 - November 1, 2025</h4>
+                            <ul class="schedule-list">
+                                <li class="schedule-item">
+                                    <span class="schedule-time">09:00 AM</span>
+                                    <span class="schedule-activity">Registration & Breakfast</span>
+                                </li>
+                                <li class="schedule-item">
+                                    <span class="schedule-time">10:00 AM</span>
+                                    <span class="schedule-activity">Inauguration & Theme Announcement</span>
+                                </li>
+                                <li class="schedule-item">
+                                    <span class="schedule-time">11:00 AM</span>
+                                    <span class="schedule-activity">Team Formation & Idea Pitching</span>
+                                </li>
+                                <li class="schedule-item">
+                                    <span class="schedule-time">01:00 PM</span>
+                                    <span class="schedule-activity">Lunch Break</span>
+                                </li>
+                                <li class="schedule-item">
+                                    <span class="schedule-time">02:00 PM</span>
+                                    <span class="schedule-activity">Hacking Begins</span>
+                                </li>
+                                <li class="schedule-item">
+                                    <span class="schedule-time">06:00 PM</span>
+                                    <span class="schedule-activity">Mentorship Session</span>
+                                </li>
+                                <li class="schedule-item">
+                                    <span class="schedule-time">09:00 PM</span>
+                                    <span class="schedule-activity">Dinner</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div class="schedule-day">
+                            <h4 class="schedule-day-title">Day 2 - November 2, 2025</h4>
+                            <ul class="schedule-list">
+                                <li class="schedule-item">
+                                    <span class="schedule-time">08:00 AM</span>
+                                    <span class="schedule-activity">Breakfast</span>
+                                </li>
+                                <li class="schedule-item">
+                                    <span class="schedule-time">09:00 AM</span>
+                                    <span class="schedule-activity">Hacking Continues</span>
+                                </li>
+                                <li class="schedule-item">
+                                    <span class="schedule-time">01:00 PM</span>
+                                    <span class="schedule-activity">Lunch Break</span>
+                                </li>
+                                <li class="schedule-item">
+                                    <span class="schedule-time">02:00 PM</span>
+                                    <span class="schedule-activity">Project Submission Deadline</span>
+                                </li>
+                                <li class="schedule-item">
+                                    <span class="schedule-time">03:00 PM</span>
+                                    <span class="schedule-activity">Presentations & Judging</span>
+                                </li>
+                                <li class="schedule-item">
+                                    <span class="schedule-time">06:00 PM</span>
+                                    <span class="schedule-activity">Prize Distribution & Closing Ceremony</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="detail-section">
+                    <h3 class="detail-title">Prizes & Rewards</h3>
+                    <div class="prizes-container">
+                        <div class="prize-card">
+                            <div class="prize-position">1st Place</div>
+                            <div class="prize-amount">₹50,000</div>
+                            <div class="prize-desc">Cash prize + Mentorship opportunity</div>
+                        </div>
+                        <div class="prize-card">
+                            <div class="prize-position">2nd Place</div>
+                            <div class="prize-amount">₹30,000</div>
+                            <div class="prize-desc">Cash prize + Incubation support</div>
+                        </div>
+                        <div class="prize-card">
+                            <div class="prize-position">3rd Place</div>
+                            <div class="prize-amount">₹20,000</div>
+                            <div class="prize-desc">Cash prize + Workshop vouchers</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="detail-section">
+                    <h3 class="detail-title">Tracks & Themes</h3>
+                    <div class="tracks-container">
+                        <div class="track-item">
+                            <div class="track-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <h4 class="track-title">Electric Vehicles</h4>
+                            <p class="track-desc">Innovations in EV technology, charging infrastructure, and battery solutions</p>
+                        </div>
+                        <div class="track-item">
+                            <div class="track-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <h4 class="track-title">Autonomous Systems</h4>
+                            <p class="track-desc">Self-driving technology, sensors, and safety systems</p>
+                        </div>
+                        <div class="track-item">
+                            <div class="track-icon">
+                                <i class="fas fa-traffic-light"></i>
+                            </div>
+                            <h4 class="track-title">Smart Traffic Management</h4>
+                            <p class="track-desc">AI-powered traffic optimization and congestion reduction</p>
+                        </div>
+                        <div class="track-item">
+                            <div class="track-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <h4 class="track-title">Sustainable Transport</h4>
+                            <p class="track-desc">Eco-friendly mobility solutions and carbon footprint reduction</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="detail-section">
+                    <h3 class="detail-title">Judging Criteria</h3>
+                    <div class="criteria-container">
+                        <div class="criteria-item">
+                            <div class="criteria-weight">25%</div>
+                            <h4 class="criteria-title">Innovation</h4>
+                            <p class="criteria-desc">Originality and creativity of the solution</p>
+                        </div>
+                        <div class="criteria-item">
+                            <div class="criteria-weight">25%</div>
+                            <h4 class="criteria-title">Technical Implementation</h4>
+                            <p class="criteria-desc">Complexity and functionality of the technical solution</p>
+                        </div>
+                        <div class="criteria-item">
+                            <div class="criteria-weight">20%</div>
+                            <h4 class="criteria-title">Impact</h4>
+                            <p class="criteria-desc">Potential real-world impact and scalability</p>
+                        </div>
+                        <div class="criteria-item">
+                            <div class="criteria-weight">15%</div>
+                            <h4 class="criteria-title">Presentation</h4>
+                            <p class="criteria-desc">Clarity and effectiveness of the pitch</p>
+                        </div>
+                        <div class="criteria-item">
+                            <div class="criteria-weight">15%</div>
+                            <h4 class="criteria-title">Collaboration</h4>
+                            <p class="criteria-desc">Teamwork and division of responsibilities</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="detail-section">
+                    <h3 class="detail-title">Register Now</h3>
+                    <div class="register-container">
+                        <p class="register-info">Registration is open to all students and professionals. Teams can consist of 2-4 members.</p>
+                        <div class="register-actions">
+                            <button class="btn btn-primary" id="rideHackRegisterBtn">Register for Ride Hack 2025</button>
+                            <a href="#" class="btn btn-secondary">Download Brochure</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="back-button-container">
+            <a href="#" id="backToHomeFromRideHack" class="sexy-back-button">
                 <i class="fas fa-arrow-left"></i>
                 <span>Back to Home</span>
             </a>
@@ -572,7 +803,7 @@ The JIIT Innovation Hub is a space where creativity meets technology. We empower
                 <div class="team-grid">
                     <div class="team-member">
                         <div class="member-avatar">
-                            <img src="WhatsApp_Image_2025-08-20_at_21.50.42-removebg-preview.png" alt="Team Member">
+                            <img src="Screenshot_2025-08-09_at_9.52.26_AM-removebg-preview-2.png" alt="Team Member">
                         </div>
                         <h3 class="member-name">𝐃𝐈𝐕𝐘𝐀𝐍𝐒𝐇 𝐃𝐔𝐒𝐄𝐉𝐀</h3>
                         <p class="member-role">Head of the Innovation Club</p>
@@ -643,7 +874,7 @@ The JIIT Innovation Hub is a space where creativity meets technology. We empower
                 </div>
                 <div class="gallery-item">
                     <div class="gallery-image">
-                        <img src="WhatsApp Image 2025-08-08 at 19.20.10-2.jpeg" alt="Gallery Image 6">
+                        <img src="WhatsApp Image 2025-08-08 at 18.57.10-2.jpeg" alt="Gallery Image 6">
                     </div>
                 </div>
                 <div class="gallery-item">
