@@ -29,29 +29,91 @@ document.addEventListener('DOMContentLoaded', () => {
     // Start typewriter effect after a short delay
     setTimeout(typeWriter, 500);
     
-    // Carousel functionality
-    let currentSlide = 0;
-    const slides = document.querySelectorAll('.carousel-slide');
+    // 3D Interactive Video Banner
+    const hero3dContainer = document.getElementById('hero3dContainer');
+    const hero3dScene = document.getElementById('hero3dScene');
     
-    function showSlide(index) {
-        // Hide all slides
-        slides.forEach(slide => {
-            slide.classList.remove('active');
+    // Initialize Three.js scene
+    let scene, camera, renderer, particles;
+    
+    function init3DBanner() {
+        // Create scene
+        scene = new THREE.Scene();
+        
+        // Create camera
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
+        
+        // Create renderer
+        renderer = new THREE.WebGLRenderer({ alpha: true });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        hero3dScene.appendChild(renderer.domElement);
+        
+        // Create particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = 500;
+        const posArray = new Float32Array(particlesCount * 3);
+        
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 10;
+        }
+        
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        
+        // Material
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.02,
+            color: 0x00d4ff,
+            transparent: true,
+            opacity: 0.8,
+            blending: THREE.AdditiveBlending
         });
         
-        // Show current slide
-        slides[index].classList.add('active');
-        currentSlide = index;
+        // Mesh
+        particles = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particles);
+        
+        // Mouse movement interaction
+        document.addEventListener('mousemove', onDocumentMouseMove);
+        
+        // Handle window resize
+        window.addEventListener('resize', onWindowResize);
+        
+        // Start animation
+        animate();
     }
     
-    // Next slide
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
+    function onDocumentMouseMove(event) {
+        const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+        const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+        
+        // Rotate particles based on mouse position
+        if (particles) {
+            particles.rotation.x = mouseY * 0.5;
+            particles.rotation.y = mouseX * 0.5;
+        }
     }
     
-    // Auto-advance carousel
-    let slideInterval = setInterval(nextSlide, 5000);
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+    
+    function animate() {
+        requestAnimationFrame(animate);
+        
+        // Auto-rotate particles slowly
+        if (particles) {
+            particles.rotation.x += 0.001;
+            particles.rotation.y += 0.001;
+        }
+        
+        renderer.render(scene, camera);
+    }
+    
+    // Initialize 3D banner when page loads
+    init3DBanner();
     
     // Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
@@ -112,7 +174,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const simpleComingSoonClose = document.getElementById('simpleComingSoonClose');
     const simpleComingSoonButton = document.getElementById('simpleComingSoonButton');
     const registerBtn = document.getElementById('registerBtn');
-    const learnMoreBtn = document.getElementById('learnMoreBtn');
     
     function showSimpleComingSoonModal() {
         simpleComingSoonModal.classList.add('active');
@@ -124,16 +185,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     simpleComingSoonClose.addEventListener('click', closeSimpleComingSoonModal);
     simpleComingSoonButton.addEventListener('click', closeSimpleComingSoonModal);
-    
-    registerBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        showSimpleComingSoonModal();
-    });
-    
-    learnMoreBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        showSimpleComingSoonModal();
-    });
     
     // Countdown timer
     function startCountdown() {
@@ -247,6 +298,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const backToHomeFromEvents = document.getElementById('backToHomeFromEvents');
     const footerEventsLink = document.getElementById('footerEventsLink');
     
+    // Ride Hack event detail page navigation
+    const rideHackPage = document.getElementById('rideHackPage');
+    const rideHackDetailBtn = document.getElementById('rideHackDetailBtn');
+    const backToHomeFromRideHack = document.getElementById('backToHomeFromRideHack');
+    const rideHackRegisterBtn = document.getElementById('rideHackRegisterBtn');
+    const heroEventsBtn = document.getElementById('heroEventsBtn');
+    const heroAboutBtn = document.getElementById('heroAboutBtn');
+    
+    // Events page buttons
+    const eventsPageRegisterBtn = document.getElementById('eventsPageRegisterBtn');
+    const eventsPageRideHackDetailBtn = document.getElementById('eventsPageRideHackDetailBtn');
+    
     // Function to reset all active states
     function resetActiveStates() {
         // Remove active class from all pages
@@ -256,6 +319,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updatesPage.classList.remove('active');
         aboutPage.classList.remove('active');
         eventsPage.classList.remove('active');
+        rideHackPage.classList.remove('active');
         
         // Hide main content
         mainContent.style.display = 'none';
@@ -297,6 +361,12 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0, 0);
     }
     
+    function showRideHackPage() {
+        resetActiveStates();
+        rideHackPage.classList.add('active');
+        window.scrollTo(0, 0);
+    }
+    
     function showMainContent() {
         // Remove active class from all pages
         contactPage.classList.remove('active');
@@ -305,6 +375,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updatesPage.classList.remove('active');
         aboutPage.classList.remove('active');
         eventsPage.classList.remove('active');
+        rideHackPage.classList.remove('active');
         
         // Show main content
         mainContent.style.display = 'block';
@@ -425,6 +496,48 @@ document.addEventListener('DOMContentLoaded', () => {
     footerEventsLink.addEventListener('click', (e) => {
         e.preventDefault();
         showEventsPage();
+    });
+    
+    // Ride Hack event detail navigation
+    rideHackDetailBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showRideHackPage();
+    });
+    
+    backToHomeFromRideHack.addEventListener('click', (e) => {
+        e.preventDefault();
+        showMainContent();
+    });
+    
+    rideHackRegisterBtn.addEventListener('click', () => {
+        showSimpleComingSoonModal();
+    });
+    
+    // Events page buttons
+    eventsPageRegisterBtn.addEventListener('click', () => {
+        showSimpleComingSoonModal();
+    });
+    
+    eventsPageRideHackDetailBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showRideHackPage();
+    });
+    
+    // Hero CTA buttons
+    heroEventsBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showEventsPage();
+    });
+    
+    heroAboutBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showAboutPage();
+    });
+    
+    // Register button
+    registerBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        showSimpleComingSoonModal();
     });
     
     // Scroll to top button
