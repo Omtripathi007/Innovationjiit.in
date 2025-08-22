@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp1eWl3cHl2enVtY2FxeWZoeXdjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQwNTU2NDUsImV4cCI6MjA2OTYzMTY0NX0.wCm7cjrYuthREMdcjPBylIIfvJ08DXAwXSc2HLe85L4';
     const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
     
-    // Typewriter Loading Effect
+    // Enhanced Typewriter Loading Effect
     const typewriterText = document.getElementById('typewriter-text');
     const text = "JIIT";
     let index = 0;
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Material
         const particlesMaterial = new THREE.PointsMaterial({
             size: 0.02,
-            color: 0x00d4ff,
+            color: 0x6C63FF, // Updated color to match new palette
             transparent: true,
             opacity: 0.8,
             blending: THREE.AdditiveBlending
@@ -115,7 +115,64 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize 3D banner when page loads
     init3DBanner();
     
-    // Mobile menu toggle
+    // Enhanced Dynamic cube that follows cursor
+    const aboutCube = document.getElementById('aboutCube');
+    const aboutVisual = document.querySelector('.about-visual');
+    
+    // Variables for cube auto-rotation
+    let isAutoRotating = true;
+    let autoRotateX = 0;
+    let autoRotateY = 0;
+    let mouseX = 0;
+    let mouseY = 0;
+    let targetX = 0;
+    let targetY = 0;
+    
+    // Auto-rotation function
+    function autoRotateCube() {
+        if (isAutoRotating) {
+            autoRotateX += 0.005;
+            autoRotateY += 0.005;
+            aboutCube.style.transform = `rotateX(${autoRotateX * 30}deg) rotateY(${autoRotateY * 30}deg)`;
+        }
+        requestAnimationFrame(autoRotateCube);
+    }
+    
+    // Start auto-rotation
+    autoRotateCube();
+    
+    // Add mouse move event listener to the about visual section
+    aboutVisual.addEventListener('mousemove', (e) => {
+        isAutoRotating = false;
+        
+        // Get the position of the about visual element
+        const rect = aboutVisual.getBoundingClientRect();
+        
+        // Calculate the center of the about visual element
+        const centerX = rect.left + rect.width / 2;
+        const centerY = rect.top + rect.height / 2;
+        
+        // Calculate the mouse position relative to the center
+        mouseX = (e.clientX - centerX) / (rect.width / 2);
+        mouseY = (e.clientY - centerY) / (rect.height / 2);
+        
+        // Smooth transition to target rotation
+        targetX = mouseY * 30; // Max rotation of 30 degrees
+        targetY = mouseX * 30; // Max rotation of 30 degrees
+        
+        // Apply the rotation to the cube
+        aboutCube.style.transform = `rotateX(${targetX}deg) rotateY(${targetY}deg)`;
+    });
+    
+    // Reset cube rotation when mouse leaves the about visual section
+    aboutVisual.addEventListener('mouseleave', () => {
+        isAutoRotating = true;
+        // Reset auto-rotation values to current position for smooth transition
+        autoRotateX = targetX / 30;
+        autoRotateY = targetY / 30;
+    });
+    
+    // Enhanced Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
     
@@ -133,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Success modal
+    // Enhanced Success modal
     const successModal = document.getElementById('successModal');
     const successClose = document.getElementById('successClose');
     const successButton = document.getElementById('successButton');
@@ -149,7 +206,7 @@ document.addEventListener('DOMContentLoaded', () => {
     successClose.addEventListener('click', closeSuccessModal);
     successButton.addEventListener('click', closeSuccessModal);
     
-    // Coming Soon modal
+    // Enhanced Coming Soon modal
     const comingSoonModal = document.getElementById('comingSoonModal');
     const comingSoonClose = document.getElementById('comingSoonClose');
     const comingSoonButton = document.getElementById('comingSoonButton');
@@ -169,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showSuccessModal();
     });
     
-    // Simple Coming Soon modal
+    // Enhanced Simple Coming Soon modal
     const simpleComingSoonModal = document.getElementById('simpleComingSoonModal');
     const simpleComingSoonClose = document.getElementById('simpleComingSoonClose');
     const simpleComingSoonButton = document.getElementById('simpleComingSoonButton');
@@ -186,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
     simpleComingSoonClose.addEventListener('click', closeSimpleComingSoonModal);
     simpleComingSoonButton.addEventListener('click', closeSimpleComingSoonModal);
     
-    // Countdown timer
+    // Enhanced Countdown timer
     function startCountdown() {
         // Set the date we're counting down to (30 days from now)
         const countDownDate = new Date();
@@ -223,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
     
-    // Form submissions with Supabase integration
+    // Enhanced Form submissions with Supabase integration
     const contactForm = document.getElementById('contactForm');
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -257,7 +314,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Navigation to pages
+    // Enhanced Navigation to pages
     const contactLink = document.getElementById('contactLink');
     const mobileContactLink = document.getElementById('mobileContactLink');
     const contactPage = document.getElementById('contactPage');
@@ -540,7 +597,7 @@ document.addEventListener('DOMContentLoaded', () => {
         showSimpleComingSoonModal();
     });
     
-    // Scroll to top button
+    // Enhanced Scroll to top button
     const scrollTopBtn = document.getElementById('scrollTop');
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
@@ -557,7 +614,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Navbar scroll effect
+    // Enhanced Navbar scroll effect
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 50) {
@@ -567,7 +624,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
-    // Smooth scrolling for anchor links
+    // Enhanced Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
