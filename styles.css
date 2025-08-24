@@ -1087,7 +1087,7 @@ nav.scrolled {
 }
 .whatwedo-carousel-track {
     display: flex;
-    animation: carouselSlide 300s linear infinite; /* Slowed down from 120s to 300s */
+    animation: carouselSlide 600s linear infinite; /* Slowed down to 600s (10 minutes) */
     width: 1500%; /* 15 slides * 100% */
 }
 .whatwedo-carousel-container:hover .whatwedo-carousel-track {
@@ -1413,6 +1413,11 @@ footer {
     margin: 0;
     font-size: 16px;
     line-height: 1.4;
+}
+.contact-emails {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 .newsletter-form {
     display: flex;
@@ -1958,7 +1963,7 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 2fr; /* Made form wider */
     gap: 60px;
 }
 .contact-info-section {
@@ -3953,7 +3958,7 @@ footer {
     }
     
     .whatwedo-carousel-track {
-        animation: carouselSlide 400s linear infinite; /* Even slower for mobile */
+        animation: carouselSlide 800s linear infinite; /* Even slower for mobile */
     }
     
     .whatwedo-carousel-slide {
@@ -4070,6 +4075,13 @@ footer {
     
     .contact-item p {
         font-size: 13px;
+    }
+    
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
     }
     
     .footer-links a {
@@ -4532,7 +4544,7 @@ footer {
     }
     
     .whatwedo-carousel-track {
-        animation: carouselSlide 500s linear infinite; /* Slowest for smallest screens */
+        animation: carouselSlide 1000s linear infinite; /* Slowest for smallest screens */
     }
     
     .whatwedo-carousel-slide {
