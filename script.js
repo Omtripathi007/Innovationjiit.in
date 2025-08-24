@@ -15,12 +15,16 @@ document.addEventListener('DOMContentLoaded', () => {
             index++;
             setTimeout(typeWriter, 300);
         } else {
-            // After typing JIIT, hide the loader
+            // After typing JIIT, hide the loader and show the Ride Hack popup
             setTimeout(() => {
                 const loader = document.getElementById('loader');
                 loader.style.opacity = '0';
                 setTimeout(() => {
                     loader.style.display = 'none';
+                    // Show Ride Hack popup after loader disappears
+                    setTimeout(() => {
+                        showRideHackPopup();
+                    }, 500);
                 }, 500);
             }, 1500);
         }
@@ -63,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Material
         const particlesMaterial = new THREE.PointsMaterial({
             size: 0.02,
-            color: 0x6C63FF, // Updated color to match new palette
+            color: 0x0056b3, // Updated color to match new palette
             transparent: true,
             opacity: 0.8,
             blending: THREE.AdditiveBlending
@@ -172,6 +176,44 @@ document.addEventListener('DOMContentLoaded', () => {
         autoRotateY = targetY / 30;
     });
     
+    // Touch events for mobile
+    let touchStartX = 0;
+    let touchStartY = 0;
+    
+    aboutVisual.addEventListener('touchstart', (e) => {
+        isAutoRotating = false;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    });
+    
+    aboutVisual.addEventListener('touchmove', (e) => {
+        if (!isAutoRotating) {
+            const rect = aboutVisual.getBoundingClientRect();
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            const touchX = e.touches[0].clientX;
+            const touchY = e.touches[0].clientY;
+            
+            // Calculate the touch position relative to the center
+            const touchDiffX = (touchX - centerX) / (rect.width / 2);
+            const touchDiffY = (touchY - centerY) / (rect.height / 2);
+            
+            // Apply the rotation to the cube
+            targetX = touchDiffY * 30; // Max rotation of 30 degrees
+            targetY = touchDiffX * 30; // Max rotation of 30 degrees
+            
+            aboutCube.style.transform = `rotateX(${targetX}deg) rotateY(${targetY}deg)`;
+        }
+    });
+    
+    aboutVisual.addEventListener('touchend', () => {
+        isAutoRotating = true;
+        // Reset auto-rotation values to current position for smooth transition
+        autoRotateX = targetX / 30;
+        autoRotateY = targetY / 30;
+    });
+    
     // Enhanced Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
@@ -188,6 +230,33 @@ document.addEventListener('DOMContentLoaded', () => {
             menuToggle.classList.remove('active');
             mobileMenu.classList.remove('active');
         });
+    });
+    
+    // Enhanced Ride Hack Popup Modal
+    const ridehackPopupModal = document.getElementById('ridehackPopupModal');
+    const ridehackPopupClose = document.getElementById('ridehackPopupClose');
+    const ridehackPopupRegister = document.getElementById('ridehackPopupRegister');
+    const ridehackPopupLearn = document.getElementById('ridehackPopupLearn');
+    
+    function showRideHackPopup() {
+        ridehackPopupModal.classList.add('active');
+    }
+    
+    function closeRideHackPopup() {
+        ridehackPopupModal.classList.remove('active');
+    }
+    
+    ridehackPopupClose.addEventListener('click', closeRideHackPopup);
+    
+    ridehackPopupRegister.addEventListener('click', () => {
+        closeRideHackPopup();
+        showSimpleComingSoonModal();
+    });
+    
+    ridehackPopupLearn.addEventListener('click', (e) => {
+        e.preventDefault();
+        closeRideHackPopup();
+        showRideHackPage();
     });
     
     // Enhanced Success modal
@@ -231,6 +300,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const simpleComingSoonClose = document.getElementById('simpleComingSoonClose');
     const simpleComingSoonButton = document.getElementById('simpleComingSoonButton');
     const registerBtn = document.getElementById('registerBtn');
+    const innovateEventBtn = document.getElementById('innovateEventBtn');
     
     function showSimpleComingSoonModal() {
         simpleComingSoonModal.classList.add('active');
@@ -280,6 +350,45 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
     
+    // Enhanced Event Countdown Timer (for Ride Hack 25)
+    function startEventCountdown() {
+        // Set the date we're counting down to (November 1, 2025)
+        const eventDate = new Date("November 1, 2025 09:00:00").getTime();
+        
+        // Update the count down every 1 second
+        const eventCountdownInterval = setInterval(function() {
+            // Get today's date and time
+            const now = new Date().getTime();
+            
+            // Find the distance between now and the event date
+            const distance = eventDate - now;
+            
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+            // Display the result
+            document.getElementById("eventDays").textContent = days.toString().padStart(2, '0');
+            document.getElementById("eventHours").textContent = hours.toString().padStart(2, '0');
+            document.getElementById("eventMinutes").textContent = minutes.toString().padStart(2, '0');
+            document.getElementById("eventSeconds").textContent = seconds.toString().padStart(2, '0');
+            
+            // If the count down is finished, clear the interval
+            if (distance < 0) {
+                clearInterval(eventCountdownInterval);
+                document.getElementById("eventDays").textContent = "00";
+                document.getElementById("eventHours").textContent = "00";
+                document.getElementById("eventMinutes").textContent = "00";
+                document.getElementById("eventSeconds").textContent = "00";
+            }
+        }, 1000);
+    }
+    
+    // Start event countdown when page loads
+    startEventCountdown();
+    
     // Enhanced Form submissions with Supabase integration
     const contactForm = document.getElementById('contactForm');
     contactForm.addEventListener('submit', async (e) => {
@@ -315,53 +424,34 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // Enhanced Navigation to pages
-    const contactLink = document.getElementById('contactLink');
-    const mobileContactLink = document.getElementById('mobileContactLink');
     const contactPage = document.getElementById('contactPage');
     const mainContent = document.getElementById('mainContent');
     const backToHome = document.getElementById('backToHome');
     
-    const teamLink = document.getElementById('teamLink');
-    const mobileTeamLink = document.getElementById('mobileTeamLink');
     const teamPage = document.getElementById('teamPage');
     const backToHomeFromTeam = document.getElementById('backToHomeFromTeam');
-    const footerTeamLink = document.getElementById('footerTeamLink');
     
     // Gallery navigation
-    const galleryLink = document.getElementById('galleryLink');
-    const mobileGalleryLink = document.getElementById('mobileGalleryLink');
     const galleryPage = document.getElementById('galleryPage');
     const backToHomeFromGallery = document.getElementById('backToHomeFromGallery');
-    const footerGalleryLink = document.getElementById('footerGalleryLink');
     
     // Updates navigation
-    const updatesLink = document.getElementById('updatesLink');
-    const mobileUpdatesLink = document.getElementById('mobileUpdatesLink');
     const updatesPage = document.getElementById('updatesPage');
     const backToHomeFromUpdates = document.getElementById('backToHomeFromUpdates');
-    const footerUpdatesLink = document.getElementById('footerUpdatesLink');
     
     // About page navigation
-    const aboutLink = document.getElementById('aboutLink');
-    const mobileAboutLink = document.getElementById('mobileAboutLink');
     const aboutPage = document.getElementById('aboutPage');
     const backToHomeFromAbout = document.getElementById('backToHomeFromAbout');
-    const footerAboutLink = document.getElementById('footerAboutLink');
     
     // Events page navigation
-    const eventsLink = document.getElementById('eventsLink');
-    const mobileEventsLink = document.getElementById('mobileEventsLink');
     const eventsPage = document.getElementById('eventsPage');
     const backToHomeFromEvents = document.getElementById('backToHomeFromEvents');
-    const footerEventsLink = document.getElementById('footerEventsLink');
     
     // Ride Hack event detail page navigation
     const rideHackPage = document.getElementById('rideHackPage');
     const rideHackDetailBtn = document.getElementById('rideHackDetailBtn');
     const backToHomeFromRideHack = document.getElementById('backToHomeFromRideHack');
     const rideHackRegisterBtn = document.getElementById('rideHackRegisterBtn');
-    const heroEventsBtn = document.getElementById('heroEventsBtn');
-    const heroAboutBtn = document.getElementById('heroAboutBtn');
     
     // Events page buttons
     const eventsPageRegisterBtn = document.getElementById('eventsPageRegisterBtn');
@@ -386,36 +476,42 @@ document.addEventListener('DOMContentLoaded', () => {
         resetActiveStates();
         contactPage.classList.add('active');
         window.scrollTo(0, 0);
+        updateActiveNav('contact');
     }
     
     function showTeamPage() {
         resetActiveStates();
         teamPage.classList.add('active');
         window.scrollTo(0, 0);
+        updateActiveNav('team');
     }
     
     function showGalleryPage() {
         resetActiveStates();
         galleryPage.classList.add('active');
         window.scrollTo(0, 0);
+        updateActiveNav('gallery');
     }
     
     function showUpdatesPage() {
         resetActiveStates();
         updatesPage.classList.add('active');
         window.scrollTo(0, 0);
+        updateActiveNav('updates');
     }
     
     function showAboutPage() {
         resetActiveStates();
         aboutPage.classList.add('active');
         window.scrollTo(0, 0);
+        updateActiveNav('about');
     }
     
     function showEventsPage() {
         resetActiveStates();
         eventsPage.classList.add('active');
         window.scrollTo(0, 0);
+        updateActiveNav('events');
     }
     
     function showRideHackPage() {
@@ -437,165 +533,156 @@ document.addEventListener('DOMContentLoaded', () => {
         // Show main content
         mainContent.style.display = 'block';
         window.scrollTo(0, 0);
+        updateActiveNav('home');
     }
     
-    // Add event listeners for navigation
-    contactLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showContactPage();
+    // Function to update active navigation
+    function updateActiveNav(page) {
+        // Remove active class from all nav links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.classList.remove('active');
+        });
+        
+        // Add active class to current page nav links
+        const activeLink = document.querySelector(`.nav-link[data-page="${page}"]`);
+        if (activeLink) {
+            activeLink.classList.add('active');
+        }
+        
+        const activeMobileLink = document.querySelector(`.mobile-nav-link[data-page="${page}"]`);
+        if (activeMobileLink) {
+            activeMobileLink.classList.add('active');
+        }
+    }
+    
+    // Add event listeners for navigation links
+    document.querySelectorAll('.nav-link, .mobile-nav-link, .footer-links a').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const page = link.getAttribute('data-page');
+            
+            switch(page) {
+                case 'home':
+                    showMainContent();
+                    break;
+                case 'about':
+                    showAboutPage();
+                    break;
+                case 'events':
+                    showEventsPage();
+                    break;
+                case 'gallery':
+                    showGalleryPage();
+                    break;
+                case 'updates':
+                    showUpdatesPage();
+                    break;
+                case 'team':
+                    showTeamPage();
+                    break;
+                case 'contact':
+                    showContactPage();
+                    break;
+            }
+        });
     });
     
-    mobileContactLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showContactPage();
-    });
+    // Add event listeners for back buttons
+    if (backToHome) {
+        backToHome.addEventListener('click', (e) => {
+            e.preventDefault();
+            showMainContent();
+        });
+    }
     
-    backToHome.addEventListener('click', (e) => {
-        e.preventDefault();
-        showMainContent();
-    });
+    if (backToHomeFromTeam) {
+        backToHomeFromTeam.addEventListener('click', (e) => {
+            e.preventDefault();
+            showMainContent();
+        });
+    }
     
-    teamLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showTeamPage();
-    });
+    if (backToHomeFromGallery) {
+        backToHomeFromGallery.addEventListener('click', (e) => {
+            e.preventDefault();
+            showMainContent();
+        });
+    }
     
-    mobileTeamLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showTeamPage();
-    });
+    if (backToHomeFromUpdates) {
+        backToHomeFromUpdates.addEventListener('click', (e) => {
+            e.preventDefault();
+            showMainContent();
+        });
+    }
     
-    backToHomeFromTeam.addEventListener('click', (e) => {
-        e.preventDefault();
-        showMainContent();
-    });
+    if (backToHomeFromAbout) {
+        backToHomeFromAbout.addEventListener('click', (e) => {
+            e.preventDefault();
+            showMainContent();
+        });
+    }
     
-    footerTeamLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showTeamPage();
-    });
-    
-    galleryLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showGalleryPage();
-    });
-    
-    mobileGalleryLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showGalleryPage();
-    });
-    
-    backToHomeFromGallery.addEventListener('click', (e) => {
-        e.preventDefault();
-        showMainContent();
-    });
-    
-    footerGalleryLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showGalleryPage();
-    });
-    
-    updatesLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showUpdatesPage();
-    });
-    
-    mobileUpdatesLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showUpdatesPage();
-    });
-    
-    backToHomeFromUpdates.addEventListener('click', (e) => {
-        e.preventDefault();
-        showMainContent();
-    });
-    
-    footerUpdatesLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showUpdatesPage();
-    });
-    
-    aboutLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showAboutPage();
-    });
-    
-    mobileAboutLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showAboutPage();
-    });
-    
-    backToHomeFromAbout.addEventListener('click', (e) => {
-        e.preventDefault();
-        showMainContent();
-    });
-    
-    footerAboutLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showAboutPage();
-    });
-    
-    eventsLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showEventsPage();
-    });
-    
-    mobileEventsLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showEventsPage();
-    });
-    
-    backToHomeFromEvents.addEventListener('click', (e) => {
-        e.preventDefault();
-        showMainContent();
-    });
-    
-    footerEventsLink.addEventListener('click', (e) => {
-        e.preventDefault();
-        showEventsPage();
-    });
+    if (backToHomeFromEvents) {
+        backToHomeFromEvents.addEventListener('click', (e) => {
+            e.preventDefault();
+            showMainContent();
+        });
+    }
     
     // Ride Hack event detail navigation
-    rideHackDetailBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        showRideHackPage();
-    });
+    if (rideHackDetailBtn) {
+        rideHackDetailBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showRideHackPage();
+        });
+    }
     
-    backToHomeFromRideHack.addEventListener('click', (e) => {
-        e.preventDefault();
-        showMainContent();
-    });
+    if (backToHomeFromRideHack) {
+        backToHomeFromRideHack.addEventListener('click', (e) => {
+            e.preventDefault();
+            showEventsPage();
+        });
+    }
     
-    rideHackRegisterBtn.addEventListener('click', () => {
-        showSimpleComingSoonModal();
-    });
+    if (rideHackRegisterBtn) {
+        rideHackRegisterBtn.addEventListener('click', () => {
+            showSimpleComingSoonModal();
+        });
+    }
     
     // Events page buttons
-    eventsPageRegisterBtn.addEventListener('click', () => {
-        showSimpleComingSoonModal();
-    });
+    if (eventsPageRegisterBtn) {
+        eventsPageRegisterBtn.addEventListener('click', () => {
+            showSimpleComingSoonModal();
+        });
+    }
     
-    eventsPageRideHackDetailBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        showRideHackPage();
-    });
-    
-    // Hero CTA buttons
-    heroEventsBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        showEventsPage();
-    });
-    
-    heroAboutBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        showAboutPage();
-    });
+    if (eventsPageRideHackDetailBtn) {
+        eventsPageRideHackDetailBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showRideHackPage();
+        });
+    }
     
     // Register button
-    registerBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        showSimpleComingSoonModal();
-    });
+    if (registerBtn) {
+        registerBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showSimpleComingSoonModal();
+        });
+    }
+    
+    // Innovate Event button
+    if (innovateEventBtn) {
+        innovateEventBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showSimpleComingSoonModal();
+        });
+    }
     
     // Enhanced Scroll to top button
     const scrollTopBtn = document.getElementById('scrollTop');
@@ -640,4 +727,118 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    
+    // Newsletter form submission
+    const newsletterForm = document.querySelector('.newsletter-form');
+    if (newsletterForm) {
+        newsletterForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = newsletterForm.querySelector('input').value;
+            
+            try {
+                // Insert data into Supabase
+                const { data, error } = await supabase
+                    .from('newsletter_subscribers')
+                    .insert([{ email, created_at: new Date().toISOString() }]);
+                    
+                if (error) {
+                    throw error;
+                }
+                
+                // Show success modal
+                showSuccessModal();
+                newsletterForm.reset();
+            } catch (error) {
+                console.error('Error subscribing to newsletter:', error);
+                alert('There was an error subscribing to the newsletter. Please try again.');
+            }
+        });
+    }
+    
+    // Gallery Lightbox Functionality
+    const galleryLightboxModal = document.getElementById('galleryLightboxModal');
+    const galleryLightboxImage = document.getElementById('galleryLightboxImage');
+    const galleryLightboxClose = document.getElementById('galleryLightboxClose');
+    const galleryLightboxPrev = document.getElementById('galleryLightboxPrev');
+    const galleryLightboxNext = document.getElementById('galleryLightboxNext');
+    
+    // Gallery images array
+    const galleryImages = [
+        'WhatsApp Image 2025-08-08 at 18.48.29.jpeg',
+        'WhatsApp Image 2025-08-08 at 18.57.08-2.jpeg',
+        'WhatsApp Image 2025-08-08 at 18.57.08-3.jpeg',
+        'WhatsApp Image 2025-08-08 at 18.57.08.jpeg',
+        'WhatsApp Image 2025-08-08 at 18.57.09-2.jpeg',
+        'WhatsApp Image 2025-08-08 at 18.48.30.jpeg',
+        'WhatsApp Image 2025-08-08 at 19.20.11.jpeg',
+        'WhatsApp Image 2025-08-08 at 19.20.12-2.jpeg',
+        'WhatsApp Image 2025-08-08 at 19.20.09.jpeg',
+        'WhatsApp Image 2025-08-08 at 18.57.09.jpeg',
+        'WhatsApp Image 2025-08-08 at 19.20.12-3.jpeg',
+        'WhatsApp Image 2025-08-08 at 19.20.12.jpeg'
+    ];
+    
+    let currentImageIndex = 0;
+    
+    // Open gallery lightbox
+    function openGalleryLightbox(index) {
+        currentImageIndex = index;
+        galleryLightboxImage.src = galleryImages[currentImageIndex];
+        galleryLightboxModal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scrolling
+    }
+    
+    // Close gallery lightbox
+    function closeGalleryLightbox() {
+        galleryLightboxModal.classList.remove('active');
+        document.body.style.overflow = ''; // Enable scrolling
+    }
+    
+    // Show previous image
+    function showPrevImage() {
+        currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
+        galleryLightboxImage.src = galleryImages[currentImageIndex];
+    }
+    
+    // Show next image
+    function showNextImage() {
+        currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
+        galleryLightboxImage.src = galleryImages[currentImageIndex];
+    }
+    
+    // Add event listeners to gallery items
+    document.querySelectorAll('.gallery-item').forEach((item, index) => {
+        item.addEventListener('click', () => {
+            openGalleryLightbox(index);
+        });
+    });
+    
+    // Add event listeners to gallery lightbox controls
+    galleryLightboxClose.addEventListener('click', closeGalleryLightbox);
+    galleryLightboxPrev.addEventListener('click', showPrevImage);
+    galleryLightboxNext.addEventListener('click', showNextImage);
+    
+    // Close lightbox when clicking outside the image
+    galleryLightboxModal.addEventListener('click', (e) => {
+        if (e.target === galleryLightboxModal) {
+            closeGalleryLightbox();
+        }
+    });
+    
+    // Keyboard navigation for gallery lightbox
+    document.addEventListener('keydown', (e) => {
+        if (galleryLightboxModal.classList.contains('active')) {
+            if (e.key === 'Escape') {
+                closeGalleryLightbox();
+            } else if (e.key === 'ArrowLeft') {
+                showPrevImage();
+            } else if (e.key === 'ArrowRight') {
+                showNextImage();
+            }
+        }
+    });
+    
+    // Initialize page
+    showMainContent();
 });
