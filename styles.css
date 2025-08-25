@@ -1282,11 +1282,11 @@ nav.scrolled {
     box-shadow: 0 15px 30px rgba(0, 86, 179, 0.3);
     background: rgba(0, 0, 0, 0.2);
     padding: 20px;
-    height: 350px; /* Fixed height for consistency */
+    height: 280px; /* Fixed height for consistency */
 }
 .whatwedo-carousel-track {
     display: flex;
-    animation: carouselSlide 60s linear infinite; /* Adjusted speed for better viewing */
+    animation: carouselSlide 120s linear infinite; /* Slowed down for better viewing */
     width: 2000%; /* Adjusted for the number of slides */
 }
 .whatwedo-carousel-container:hover .whatwedo-carousel-track {
@@ -2503,9 +2503,7 @@ footer {
     width: 180px;
     height: 180px;
     margin: 0 auto 20px;
-    border-radius: 50%;
     overflow: hidden;
-    border: 4px solid var(--primary);
     position: relative;
     box-shadow: 0 10px 30px rgba(0, 86, 179, 0.3);
     background: #f0f0f0;
@@ -2513,15 +2511,42 @@ footer {
     align-items: center;
     justify-content: center;
 }
-.member-photo img {
+/* Hexagon shape for team member photos */
+.hexagon-shape {
+    position: relative;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: #f0f0f0;
+    box-shadow: 0 10px 30px rgba(0, 86, 179, 0.3);
+}
+
+.hexagon-shape:before,
+.hexagon-shape:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+}
+
+.hexagon-shape:before {
+    transform: rotate(60deg);
+}
+
+.hexagon-shape:after {
+    transform: rotate(-60deg);
+}
+
+.hexagon-shape img {
+    position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transform: scale(1.2);
 }
-.team-member:hover .member-photo img {
-    transform: scale(1.1);
-}
+
 .member-info {
     text-align: center;
 }
@@ -2687,8 +2712,8 @@ footer {
 }
 .gallery-lightbox-content {
     position: relative;
-    max-width: 90%;
-    max-height: 90vh;
+    max-width: 80%;
+    max-height: 80vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2704,8 +2729,8 @@ footer {
     overflow: hidden;
 }
 .gallery-lightbox-image {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 80%;
+    max-height: 80%;
     object-fit: contain;
     border-radius: 10px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
@@ -3397,7 +3422,7 @@ footer {
     }
     
     .whatwedo-carousel-slide img {
-        height: 300px;
+        height: 240px;
     }
     
     /* Innovation Spotlight Section Responsive */
@@ -4382,8 +4407,14 @@ footer {
     }
     
     .whatwedo-carousel-slide img {
-        height: 250px;
+        height: 200px;
         border-radius: 8px;
+    }
+    
+    /* Team member photos for mobile */
+    .hexagon-shape {
+        width: 140px;
+        height: 140px;
     }
 }
 @media (max-width: 480px) {
@@ -5039,7 +5070,7 @@ footer {
     }
     
     .whatwedo-carousel-slide img {
-        height: 180px;
+        height: 150px;
         border-radius: 6px;
     }
     
@@ -5278,5 +5309,11 @@ footer {
         border-color: transparent;
         transform: translateY(-5px);
         box-shadow: 0 5px 15px rgba(0, 86, 179, 0.4);
+    }
+    
+    /* Hexagon shape adjustments for very small screens */
+    .hexagon-shape {
+        width: 100px;
+        height: 100px;
     }
 }
