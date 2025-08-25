@@ -535,6 +535,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Innovate Event button
     const innovateEventBtn = document.getElementById('innovateEventBtn');
     
+    // Logo link - FIXED: Added to navigate to homepage
+    const logoLink = document.getElementById('logoLink');
+    
     // Function to reset all active states
     function resetActiveStates() {
         // Remove active class from all pages
@@ -753,6 +756,14 @@ document.addEventListener('DOMContentLoaded', () => {
         innovateEventBtn.addEventListener('click', (e) => {
             e.preventDefault();
             showSimpleComingSoonModal();
+        });
+    }
+    
+    // Logo link to homepage - FIXED
+    if (logoLink) {
+        logoLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            showMainContent();
         });
     }
     
