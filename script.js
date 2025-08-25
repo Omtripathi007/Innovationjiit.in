@@ -911,6 +911,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
     
+    // Events page buttons
+    if (eventsPageRideHackDetailBtn) {
+        eventsPageRideHackDetailBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showRideHackPage();
+        });
+    }
+    
     // Initialize page
     showMainContent();
 });
