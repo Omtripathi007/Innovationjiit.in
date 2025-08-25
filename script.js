@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
     
     ridehackPopupRegister.addEventListener('click', () => {
         closeRideHackPopup();
-        showSimpleComingSoonModal();
+        showRegistrationModal();
     });
     
     ridehackPopupLearn.addEventListener('click', (e) => {
@@ -259,48 +259,106 @@ document.addEventListener('DOMContentLoaded', () => {
         showRideHackPage();
     });
     
-    // Enhanced Success modal
-    const successModal = document.getElementById('successModal');
-    const successClose = document.getElementById('successClose');
-    const successButton = document.getElementById('successButton');
+    // Enhanced Registration Modal
+    const registrationModal = document.getElementById('registrationModal');
+    const registrationClose = document.getElementById('registrationClose');
+    const registrationForm = document.getElementById('registrationForm');
     
-    function showSuccessModal() {
-        successModal.classList.add('active');
+    function showRegistrationModal() {
+        registrationModal.classList.add('active');
     }
     
-    function closeSuccessModal() {
-        successModal.classList.remove('active');
+    function closeRegistrationModal() {
+        registrationModal.classList.remove('active');
     }
     
-    successClose.addEventListener('click', closeSuccessModal);
-    successButton.addEventListener('click', closeSuccessModal);
+    registrationClose.addEventListener('click', closeRegistrationModal);
     
-    // Enhanced Coming Soon modal
-    const comingSoonModal = document.getElementById('comingSoonModal');
-    const comingSoonClose = document.getElementById('comingSoonClose');
-    const comingSoonButton = document.getElementById('comingSoonButton');
-    
-    function showComingSoonModal() {
-        comingSoonModal.classList.add('active');
-        startCountdown();
-    }
-    
-    function closeComingSoonModal() {
-        comingSoonModal.classList.remove('active');
-    }
-    
-    comingSoonClose.addEventListener('click', closeComingSoonModal);
-    comingSoonButton.addEventListener('click', () => {
-        closeComingSoonModal();
-        showSuccessModal();
+    // Close registration modal when clicking outside
+    registrationModal.addEventListener('click', (e) => {
+        if (e.target === registrationModal) {
+            closeRegistrationModal();
+        }
     });
     
-    // Enhanced Simple Coming Soon modal
+    // Handle registration form submission
+    registrationForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Get form data
+        const formData = {
+            full_name: document.getElementById('regFullName').value,
+            email: document.getElementById('regEmail').value,
+            college_name: document.getElementById('regCollege').value,
+            contact_number: document.getElementById('regContact').value,
+            event_name: "RIDE Hack'25",
+            created_at: new Date().toISOString()
+        };
+        
+        try {
+            // Insert data into Supabase
+            const { data, error } = await supabase
+                .from('registrations')
+                .insert([formData]);
+                
+            if (error) {
+                throw error;
+            }
+            
+            // Close registration modal
+            closeRegistrationModal();
+            
+            // Show registration success message
+            showRegistrationSuccessModal();
+            
+            // Reset form
+            registrationForm.reset();
+            
+        } catch (error) {
+            console.error('Error submitting registration:', error);
+            alert('There was an error submitting your registration. Please try again.');
+        }
+    });
+    
+    // Enhanced Registration Success Modal (No Timer)
+    const registrationSuccessModal = document.getElementById('registrationSuccessModal');
+    const registrationSuccessClose = document.getElementById('registrationSuccessClose');
+    
+    function showRegistrationSuccessModal() {
+        registrationSuccessModal.classList.add('active');
+        
+        // Faster redirect to Google Form after 0.5 seconds
+        setTimeout(() => {
+            window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScMRQcUzb8iZLMYDaCXhh7tvEF-qFsDzDkF07iL4KeOCnsnaw/viewform';
+        }, 500);
+    }
+    
+    function closeRegistrationSuccessModal() {
+        registrationSuccessModal.classList.remove('active');
+    }
+    
+    registrationSuccessClose.addEventListener('click', closeRegistrationSuccessModal);
+    
+    // Enhanced Contact modal
+    const contactModal = document.getElementById('successModal');
+    const contactClose = document.getElementById('successClose');
+    const contactButton = document.getElementById('successButton');
+    
+    function showContactModal() {
+        contactModal.classList.add('active');
+    }
+    
+    function closeContactModal() {
+        contactModal.classList.remove('active');
+    }
+    
+    contactClose.addEventListener('click', closeContactModal);
+    contactButton.addEventListener('click', closeContactModal);
+    
+    // Enhanced Coming Soon modal
     const simpleComingSoonModal = document.getElementById('simpleComingSoonModal');
     const simpleComingSoonClose = document.getElementById('simpleComingSoonClose');
     const simpleComingSoonButton = document.getElementById('simpleComingSoonButton');
-    const registerBtn = document.getElementById('registerBtn');
-    const innovateEventBtn = document.getElementById('innovateEventBtn');
     
     function showSimpleComingSoonModal() {
         simpleComingSoonModal.classList.add('active');
@@ -350,7 +408,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 1000);
     }
     
-    // Enhanced Event Countdown Timer (for Ride Hack 25)
+    // Enhanced Event Countdown Timer (for RIDE Hack'25)
     function startEventCountdown() {
         // Set the date we're counting down to (November 1, 2025)
         const eventDate = new Date("November 1, 2025 09:00:00").getTime();
@@ -414,14 +472,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 throw error;
             }
             
-            // Show success modal
-            showSuccessModal();
+            // Show contact success modal
+            showContactSuccessModal();
             contactForm.reset();
         } catch (error) {
             console.error('Error submitting form:', error);
             alert('There was an error submitting your message. Please try again.');
         }
     });
+    
+    // Function to show contact success modal
+    function showContactSuccessModal() {
+        // Update modal content for contact success
+        const modalTitle = document.querySelector('#successModal .success-title');
+        const modalMessage = document.querySelector('#successModal .success-message');
+        
+        // Set contact-specific content
+        modalTitle.textContent = 'Message Sent Successfully!';
+        modalMessage.textContent = 'Thank you for contacting us. We will get back to you soon!';
+        
+        // Show modal
+        contactModal.classList.add('active');
+    }
     
     // Enhanced Navigation to pages
     const contactPage = document.getElementById('contactPage');
@@ -456,6 +528,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Events page buttons
     const eventsPageRegisterBtn = document.getElementById('eventsPageRegisterBtn');
     const eventsPageRideHackDetailBtn = document.getElementById('eventsPageRideHackDetailBtn');
+    
+    // Main register button
+    const registerBtn = document.getElementById('registerBtn');
+    
+    // Innovate Event button
+    const innovateEventBtn = document.getElementById('innovateEventBtn');
     
     // Function to reset all active states
     function resetActiveStates() {
@@ -648,35 +726,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    if (rideHackRegisterBtn) {
-        rideHackRegisterBtn.addEventListener('click', () => {
-            showSimpleComingSoonModal();
-        });
-    }
-    
-    // Events page buttons
-    if (eventsPageRegisterBtn) {
-        eventsPageRegisterBtn.addEventListener('click', () => {
-            showSimpleComingSoonModal();
-        });
-    }
-    
-    if (eventsPageRideHackDetailBtn) {
-        eventsPageRideHackDetailBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            showRideHackPage();
-        });
-    }
-    
-    // Register button
+    // Register buttons - now open registration modal
     if (registerBtn) {
         registerBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            showSimpleComingSoonModal();
+            showRegistrationModal();
         });
     }
     
-    // Innovate Event button
+    if (eventsPageRegisterBtn) {
+        eventsPageRegisterBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showRegistrationModal();
+        });
+    }
+    
+    if (rideHackRegisterBtn) {
+        rideHackRegisterBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showRegistrationModal();
+        });
+    }
+    
+    // Innovate Event button - still shows coming soon
     if (innovateEventBtn) {
         innovateEventBtn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -747,7 +819,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 
                 // Show success modal
-                showSuccessModal();
+                showContactSuccessModal();
                 newsletterForm.reset();
             } catch (error) {
                 console.error('Error subscribing to newsletter:', error);
@@ -765,12 +837,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Gallery images array
     const galleryImages = [
-        'WhatsApp Image 2025-08-08 at 18.48.29.jpeg',
-        'WhatsApp Image 2025-08-08 at 18.57.08-2.jpeg',
-        'WhatsApp Image 2025-08-08 at 18.57.08-3.jpeg',
-        'WhatsApp Image 2025-08-08 at 18.57.08.jpeg',
-        'WhatsApp Image 2025-08-08 at 18.57.09-2.jpeg',
-        'WhatsApp Image 2025-08-08 at 18.48.30.jpeg',
+        'kk1.JPG',
+        'kk2.JPG',
+        'kk3.JPG',
+        'kk39.JPG',
+        'kk4.JPG',
+        'kk5.JPG',
         'WhatsApp Image 2025-08-08 at 19.20.11.jpeg',
         'WhatsApp Image 2025-08-08 at 19.20.12-2.jpeg',
         'WhatsApp Image 2025-08-08 at 19.20.09.jpeg',
