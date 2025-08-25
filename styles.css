@@ -1272,7 +1272,7 @@ nav.scrolled {
     color: var(--text-light);
     opacity: 0.9;
 }
-/* What We Do Carousel */
+/* What We Do Carousel - SLOWED DOWN */
 .whatwedo-carousel-container {
     position: relative;
     max-width: 1200px;
@@ -1286,7 +1286,7 @@ nav.scrolled {
 }
 .whatwedo-carousel-track {
     display: flex;
-    animation: carouselSlide 120s linear infinite; /* Slowed down for better viewing */
+    animation: carouselSlide 240s linear infinite; /* Much slower for better viewing */
     width: 2000%; /* Adjusted for the number of slides */
 }
 .whatwedo-carousel-container:hover .whatwedo-carousel-track {
@@ -2500,8 +2500,6 @@ footer {
     padding: 30px;
 }
 .member-photo {
-    width: 180px;
-    height: 180px;
     margin: 0 auto 20px;
     overflow: hidden;
     position: relative;
@@ -2511,40 +2509,26 @@ footer {
     align-items: center;
     justify-content: center;
 }
-/* Hexagon shape for team member photos */
-.hexagon-shape {
-    position: relative;
+
+/* Circular photo for team members */
+.circular-photo {
     width: 180px;
     height: 180px;
-    margin: 0 auto;
+    border-radius: 50%;
     overflow: hidden;
-    background: #f0f0f0;
+    border: 3px solid var(--primary);
+    position: relative;
     box-shadow: 0 10px 30px rgba(0, 86, 179, 0.3);
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.hexagon-shape:before,
-.hexagon-shape:after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: inherit;
-}
-
-.hexagon-shape:before {
-    transform: rotate(60deg);
-}
-
-.hexagon-shape:after {
-    transform: rotate(-60deg);
-}
-
-.hexagon-shape img {
-    position: absolute;
+.circular-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transform: scale(1.2);
 }
 
 .member-info {
@@ -3243,49 +3227,6 @@ footer {
     height: 3px;
     background: var(--gradient);
     border-radius: 2px;
-}
-.schedule-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-.schedule-day {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 40px;
-    backdrop-filter: blur(10px);
-}
-.schedule-day-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: var(--light);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-.schedule-list {
-    list-style: none;
-}
-.schedule-item {
-    display: flex;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-.schedule-item:last-child {
-    border-bottom: none;
-}
-.schedule-time {
-    min-width: 120px;
-    font-weight: 700;
-    color: var(--primary);
-    font-size: 16px;
-}
-.schedule-activity {
-    flex: 1;
-    font-size: 16px;
 }
 .prizes-container {
     display: grid;
@@ -5315,5 +5256,11 @@ footer {
     .hexagon-shape {
         width: 100px;
         height: 100px;
+    }
+    
+    /* Circular photo adjustments for very small screens */
+    .circular-photo {
+        width: 80px;
+        height: 80px;
     }
 }
