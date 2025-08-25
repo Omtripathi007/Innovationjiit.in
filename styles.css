@@ -1272,21 +1272,21 @@ nav.scrolled {
     color: var(--text-light);
     opacity: 0.9;
 }
-/* What We Do Carousel - SLOWED DOWN */
+/* What We Do Carousel - IMPROVED */
 .whatwedo-carousel-container {
     position: relative;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto 60px;
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 15px 30px rgba(0, 86, 179, 0.3);
     background: rgba(0, 0, 0, 0.2);
-    padding: 20px;
-    height: 400px; /* Increased height for better image display */
+    padding: 15px;
+    height: 300px; /* Reduced height for smaller images */
 }
 .whatwedo-carousel-track {
     display: flex;
-    animation: carouselSlide 1200s linear infinite; /* Much slower for better viewing */
+    animation: carouselSlide 2400s linear infinite; /* Much slower for better viewing */
     width: 2000%; /* Adjusted for the number of slides */
 }
 .whatwedo-carousel-container:hover .whatwedo-carousel-track {
@@ -1295,7 +1295,7 @@ nav.scrolled {
 .whatwedo-carousel-slide {
     flex: 0 0 5%; /* Adjusted width for each slide */
     position: relative;
-    padding: 0 15px; /* Increased space between images */
+    padding: 0 10px; /* Reduced space between images */
     box-sizing: border-box;
     height: 100%;
     display: flex;
@@ -1306,13 +1306,13 @@ nav.scrolled {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 15px; /* Increased border radius for better appearance */
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    border-radius: 12px; /* Increased border radius for better appearance */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 .whatwedo-carousel-slide:hover img {
     transform: scale(1.05);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
 }
 @keyframes carouselSlide {
     0% {
@@ -2514,7 +2514,7 @@ footer {
     align-items: center;
     justify-content: center;
 }
-/* Circular photo for team members */
+/* Circular photo for team members - IMPROVED */
 .circular-photo {
     width: 180px;
     height: 180px;
@@ -2527,11 +2527,14 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
+    object-fit: cover;
 }
 .circular-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center top; /* Adjust to show more of the face */
+    transform: scale(1.1); /* Slightly zoom in to ensure heads are fully visible */
 }
 .member-info {
     text-align: center;
@@ -3362,10 +3365,11 @@ footer {
     /* What We Do Section Responsive */
     .whatwedo-carousel-container {
         max-width: 90%;
+        height: 250px; /* Reduced height for tablets */
     }
     
     .whatwedo-carousel-slide img {
-        height: 300px;
+        height: 220px; /* Adjusted image height */
     }
     
     /* Innovation Spotlight Section Responsive */
@@ -4339,31 +4343,31 @@ footer {
     .whatwedo-carousel-container {
         max-width: 95%;
         margin: 0 auto 40px;
+        height: 200px; /* Reduced height for mobile */
     }
     
     .whatwedo-carousel-track {
-        animation: carouselSlide 1800s linear infinite; /* Even slower for mobile */
+        animation: carouselSlide 3600s linear infinite; /* Even slower for mobile */
     }
     
     .whatwedo-carousel-slide {
-        padding: 10px;
+        padding: 8px;
     }
     
     .whatwedo-carousel-slide img {
-        height: 250px;
+        height: 180px; /* Adjusted image height for mobile */
         border-radius: 10px;
     }
     
-    /* Team member photos for mobile */
-    .hexagon-shape {
-        width: 140px;
-        height: 140px;
-    }
-    
-    /* Circular photo adjustments for mobile */
+    /* Team member photos for mobile - IMPROVED */
     .circular-photo {
         width: 120px;
         height: 120px;
+    }
+    
+    .circular-photo img {
+        object-position: center top; /* Ensure faces are visible */
+        transform: scale(1.15); /* Slightly zoomed in to ensure heads are fully visible */
     }
 }
 @media (max-width: 480px) {
@@ -5008,18 +5012,19 @@ footer {
     .whatwedo-carousel-container {
         max-width: 95%;
         margin: 0 auto 30px;
+        height: 150px; /* Further reduced height for very small screens */
     }
     
     .whatwedo-carousel-track {
-        animation: carouselSlide 2400s linear infinite; /* Slowest for smallest screens */
+        animation: carouselSlide 4800s linear infinite; /* Slowest for smallest screens */
     }
     
     .whatwedo-carousel-slide {
-        padding: 8px;
+        padding: 6px;
     }
     
     .whatwedo-carousel-slide img {
-        height: 200px;
+        height: 140px; /* Adjusted image height for very small screens */
         border-radius: 8px;
     }
     
@@ -5202,11 +5207,13 @@ footer {
         width: 100%;
         height: 100%;
         object-fit: cover;
+        object-position: center top; /* Adjust to show more of the face */
+        transform: scale(1.2); /* Zoom in to ensure heads are fully visible */
         transition: transform 0.5s ease;
     }
     
     .team-member:hover .member-photo img {
-        transform: scale(1.1);
+        transform: scale(1.25);
     }
     
     .member-info {
@@ -5266,9 +5273,14 @@ footer {
         height: 100px;
     }
     
-    /* Circular photo adjustments for very small screens */
+    /* Circular photo adjustments for very small screens - IMPROVED */
     .circular-photo {
         width: 80px;
         height: 80px;
+    }
+    
+    .circular-photo img {
+        object-position: center top; /* Ensure faces are visible */
+        transform: scale(1.25); /* Slightly zoomed in to ensure heads are fully visible */
     }
 }
