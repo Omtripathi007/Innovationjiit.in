@@ -17,6 +17,10 @@
     --text-dim: rgba(255, 255, 255, 0.7);
     --glass-bg: rgba(255, 255, 255, 0.1);
     --glass-border: rgba(255, 255, 255, 0.2);
+    --gold: #FFD700;
+    --silver: #C0C0C0;
+    --bronze: #CD7F32;
+    --ride-hack-color: #ff3838; /* New attractive color for RIDE HACK link */
 }
 body {
     font-family: 'Roboto', sans-serif;
@@ -269,6 +273,12 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow: 0 10px 30px rgba(0, 86, 179, 0.5);
     animation: pulse 2s infinite;
 }
+.innovation-logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 .ridehack-popup-title {
     font-family: 'Montserrat', sans-serif;
     font-size: 48px;
@@ -371,8 +381,6 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
     letter-spacing: 1px;
     font-size: 16px;
-}
-.ridehack-popup-register {
     background: var(--gradient);
     color: white;
     box-shadow: 0 5px 20px rgba(0, 86, 179, 0.4);
@@ -540,6 +548,13 @@ h1, h2, h3, h4, h5, h6 {
     border-color: var(--primary);
     box-shadow: 0 0 20px rgba(0, 86, 179, 0.3);
     background: rgba(255, 255, 255, 0.08);
+}
+.form-hint {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: var(--text-dim);
+    font-style: italic;
 }
 .registration-submit-btn {
     width: 100%;
@@ -714,6 +729,59 @@ nav.scrolled {
     color: white;
     background: var(--primary);
     transform: translateY(-3px);
+}
+/* RIDE Hack Navigation Button - Enhanced */
+.ride-hack-nav {
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px;
+    padding: 8px 15px;
+    background: linear-gradient(90deg, var(--ride-hack-color), #ff9a9a, var(--ride-hack-color));
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 56, 56, 0.4);
+    transition: all 0.3s ease;
+}
+.ride-hack-nav:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255, 56, 56, 0.6);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+.ride-hack-text {
+    position: relative;
+    z-index: 2;
+    color: white;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.ride-hack-glow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--ride-hack-color), #ff9a9a, var(--ride-hack-color));
+    background-size: 400% 400%;
+    border-radius: 30px;
+    z-index: 1;
+    opacity: 0.7;
+    animation: gradientFlow 3s ease infinite;
+    filter: blur(5px);
+}
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.ride-hack-nav:hover .ride-hack-text {
+    color: white;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+}
+.ride-hack-nav:hover .ride-hack-glow {
+    opacity: 1;
+    filter: blur(3px);
 }
 .menu-toggle {
     display: none;
@@ -971,6 +1039,16 @@ nav.scrolled {
     background: rgba(78, 205, 196, 0.1);
     color: white;
     text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.hero-location:hover {
+    background: rgba(78, 205, 196, 0.2);
+    transform: scale(1.05);
+}
+.hero-location a {
+    color: white;
+    text-decoration: none;
 }
 /* Enhanced Floating Elements */
 .floating-elements {
@@ -1275,27 +1353,27 @@ nav.scrolled {
 /* What We Do Carousel - IMPROVED */
 .whatwedo-carousel-container {
     position: relative;
-    max-width: 1000px;
+    max-width: 1200px;
     margin: 0 auto 60px;
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 0 15px 30px rgba(0, 86, 179, 0.3);
     background: rgba(0, 0, 0, 0.2);
     padding: 15px;
-    height: 300px; /* Reduced height for smaller images */
+    height: 400px;
 }
 .whatwedo-carousel-track {
     display: flex;
-    animation: carouselSlide 2400s linear infinite; /* Much slower for better viewing */
-    width: 2000%; /* Adjusted for the number of slides */
+    animation: carouselSlide 7200s linear infinite; /* Changed to 7200s (2 hours) for extremely slow speed */
+    width: 3200%;
 }
 .whatwedo-carousel-container:hover .whatwedo-carousel-track {
-    animation-play-state: paused; /* Pause on hover */
+    animation-play-state: paused;
 }
 .whatwedo-carousel-slide {
-    flex: 0 0 5%; /* Adjusted width for each slide */
+    flex: 0 0 3.125%;
     position: relative;
-    padding: 0 10px; /* Reduced space between images */
+    padding: 0 10px;
     box-sizing: border-box;
     height: 100%;
     display: flex;
@@ -1306,7 +1384,7 @@ nav.scrolled {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 12px; /* Increased border radius for better appearance */
+    border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
@@ -1319,7 +1397,7 @@ nav.scrolled {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-2000%); /* Adjusted for the number of slides */
+        transform: translateX(-3200%);
     }
 }
 /* Enhanced Events Section */
@@ -2225,15 +2303,39 @@ footer {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 86, 179, 0.6);
 }
-/* Enhanced Contact Page */
+/* Enhanced Contact Page - NEW UI */
 .contact-page {
     display: none;
     min-height: 100vh;
     background: var(--dark);
     position: relative;
+    overflow: hidden;
 }
 .contact-page.active {
     display: block;
+}
+.contact-page::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        radial-gradient(2px 2px at 20px 30px, rgba(78, 205, 196, 0.3), transparent),
+        radial-gradient(2px 2px at 40px 70px, rgba(0, 86, 179, 0.4), transparent),
+        radial-gradient(1px 1px at 50px 160px, rgba(255, 107, 107, 0.3), transparent),
+        radial-gradient(1px 1px at 130px 40px, rgba(78, 205, 196, 0.2), transparent),
+        radial-gradient(2px 2px at 80px 10px, rgba(0, 86, 179, 0.3), transparent);
+    background-repeat: repeat;
+    background-size: 200px 200px;
+    opacity: 0.5;
+    z-index: -1;
+    animation: twinkle 10s infinite;
+}
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
 }
 .contact-hero {
     height: 50vh;
@@ -2276,8 +2378,10 @@ footer {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
-    grid-template-columns: 1fr 2fr; /* Made form wider */
+    grid-template-columns: 1fr 2fr;
     gap: 60px;
+    position: relative;
+    z-index: 1;
 }
 .contact-info-section {
     display: flex;
@@ -2294,11 +2398,28 @@ footer {
     gap: 20px;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+.contact-info-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.3s ease;
 }
 .contact-info-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 86, 179, 0.2);
     border-color: var(--primary);
+}
+.contact-info-card:hover::before {
+    opacity: 0.1;
 }
 .contact-info-icon {
     width: 70px;
@@ -2312,6 +2433,7 @@ footer {
     color: white;
     flex-shrink: 0;
     box-shadow: 0 10px 20px rgba(0, 86, 179, 0.3);
+    z-index: 1;
 }
 .contact-info-title {
     font-family: 'Montserrat', sans-serif;
@@ -2330,6 +2452,29 @@ footer {
     border-radius: 20px;
     padding: 50px;
     backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+.contact-form-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80') center/cover no-repeat;
+    opacity: 0.05;
+    z-index: -1;
+}
+.contact-form-section::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 86, 179, 0.1), rgba(78, 205, 196, 0.1));
+    z-index: -1;
 }
 .contact-form-title {
     font-family: 'Montserrat', sans-serif;
@@ -2355,6 +2500,23 @@ footer {
 .contact-submit-btn {
     width: 100%;
     margin-top: 20px;
+}
+/* Google Map Section */
+.contact-map {
+    margin-top: 30px;
+}
+.map-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 86, 179, 0.2);
+    height: 250px;
+    position: relative;
+}
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 15px;
 }
 /* Enhanced Form Styles */
 .form-group {
@@ -2398,7 +2560,7 @@ footer {
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
-/* Enhanced Team Page */
+/* Enhanced Team Page Styles */
 .team-page {
     display: none;
     min-height: 100vh;
@@ -2533,8 +2695,8 @@ footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center top; /* Adjust to show more of the face */
-    transform: scale(1.1); /* Slightly zoom in to ensure heads are fully visible */
+    object-position: center top;
+    transform: scale(1.1);
 }
 .member-info {
     text-align: center;
@@ -2580,6 +2742,156 @@ footer {
     border-color: transparent;
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 86, 179, 0.4);
+}
+/* Department Teams Section */
+.department-teams {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+.department-team-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.department-team-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 86, 179, 0.3);
+    border-color: var(--primary);
+}
+.department-team-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    color: white;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0, 86, 179, 0.3);
+}
+.department-team-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--light);
+}
+.department-team-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-dim);
+    margin-bottom: 25px;
+    flex-grow: 1;
+}
+.department-team-btn {
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    background: var(--gradient);
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+}
+.department-team-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 86, 179, 0.5);
+}
+/* Team Intro Section */
+.team-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+.team-intro-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #ffffff, #e0e0e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.team-intro-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+/* Team Projects Section */
+.team-projects {
+    margin-top: 60px;
+}
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+.project-card {
+    background: rgba(0, 86, 179, 0.1);
+    border: 1px solid rgba(0, 86, 179, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 86, 179, 0.2);
+    border-color: var(--primary);
+}
+.project-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0, 86, 179, 0.3);
+}
+.project-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--light);
+}
+.project-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-dim);
 }
 /* Enhanced Gallery Page */
 .gallery-page {
@@ -2883,6 +3195,25 @@ footer {
     font-size: 18px;
     line-height: 1.6;
     color: var(--text-light);
+}
+.update-read-more-btn {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: var(--gradient);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.update-read-more-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.4);
 }
 /* Enhanced About Page Styles */
 .about-page {
@@ -3233,6 +3564,7 @@ footer {
     background: var(--gradient);
     border-radius: 2px;
 }
+/* Enhanced Prizes Section */
 .prizes-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -3246,27 +3578,64 @@ footer {
     text-align: center;
     transition: all 0.3s ease;
     backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+.prize-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient);
+    opacity: 0.05;
+    z-index: -1;
 }
 .prize-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px rgba(0, 86, 179, 0.3);
     border-color: var(--primary);
 }
+.prize-card.first-prize {
+    border: 2px solid var(--gold);
+}
+.prize-card.first-prize::before {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.05));
+}
+.prize-card.second-third-prize {
+    border: 2px solid var(--silver);
+}
+.prize-card.second-third-prize::before {
+    background: linear-gradient(135deg, rgba(192, 192, 192, 0.2), rgba(192, 192, 192, 0.05));
+}
+.prize-card.fourth-fifth-prize {
+    border: 2px solid var(--bronze);
+}
+.prize-card.fourth-fifth-prize::before {
+    background: linear-gradient(135deg, rgba(205, 127, 50, 0.2), rgba(205, 127, 50, 0.05));
+}
 .prize-position {
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: 800;
     margin-bottom: 10px;
-    color: var(--primary);
+    color: var(--light);
+}
+.prize-card.first-prize .prize-position {
+    color: var(--gold);
+}
+.prize-card.second-third-prize .prize-position {
+    color: var(--silver);
+}
+.prize-card.fourth-fifth-prize .prize-position {
+    color: var(--bronze);
 }
 .prize-amount {
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 10px;
-}
-.prize-desc {
-    font-size: 1rem;
-    opacity: 0.8;
+    color: var(--light);
 }
 .register-container {
     text-align: center;
@@ -3282,7 +3651,153 @@ footer {
     gap: 20px;
     flex-wrap: wrap;
 }
+/* Enhanced Section for RIDE Hack Page */
+.enhanced-section {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 50px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    position: relative;
+    overflow: hidden;
+}
+.enhanced-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('ridehack.jpeg') center/cover no-repeat;
+    opacity: 0.05;
+    z-index: -1;
+}
+.enhanced-section:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 86, 179, 0.3);
+    border-color: var(--primary);
+}
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+.benefit-card {
+    background: rgba(0, 86, 179, 0.1);
+    border: 1px solid rgba(0, 86, 179, 0.2);
+    border-radius: 15px;
+    padding: 30px;
+    transition: all 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 86, 179, 0.2);
+    border-color: var(--primary);
+}
+.benefit-icon {
+    width: 70px;
+    height: 70px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 30px;
+    color: white;
+    margin-bottom: 20px;
+    box-shadow: 0 10px 20px rgba(0, 86, 179, 0.3);
+}
+.benefit-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--light);
+}
+.benefit-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-dim);
+}
+/* Timeline Section */
+.timeline {
+    position: relative;
+    margin: 40px 0;
+}
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 100%;
+    background: var(--gradient);
+    border-radius: 2px;
+}
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+}
+.timeline-dot {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 20px;
+    background: var(--gradient);
+    border-radius: 50%;
+    box-shadow: 0 0 0 6px rgba(0, 86, 179, 0.2);
+    z-index: 2;
+}
+.timeline-content {
+    position: relative;
+    background: rgba(0, 86, 179, 0.1);
+    border: 1px solid rgba(0, 86, 179, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    width: calc(50% - 40px);
+    box-sizing: border-box;
+}
+.timeline-item:nth-child(odd) .timeline-content {
+    margin-left: auto;
+}
+.timeline-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--primary);
+}
+.timeline-date {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+.timeline-desc {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--text-light);
+}
 /* Responsive adjustments */
+@media (min-width: 1024px) {
+    /* Bigger text for hero title and subtitle in laptop view */
+    .hero-title {
+        font-size: 5.5rem;
+    }
+    .hero-subtitle {
+        font-size: 2.5rem;
+    }
+}
 @media (max-width: 1024px) {
     .nav-links {
         gap: 15px;
@@ -3365,16 +3880,55 @@ footer {
     /* What We Do Section Responsive */
     .whatwedo-carousel-container {
         max-width: 90%;
-        height: 250px; /* Reduced height for tablets */
+        height: 300px;
     }
     
     .whatwedo-carousel-slide img {
-        height: 220px; /* Adjusted image height */
+        height: 270px;
     }
     
     /* Innovation Spotlight Section Responsive */
     .innovation-cards {
         grid-template-columns: 1fr;
+    }
+    
+    /* Department Teams Responsive */
+    .department-teams {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Benefits Grid Responsive */
+    .benefits-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Timeline Responsive */
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-dot {
+        left: 30px;
+    }
+    
+    .timeline-content {
+        width: calc(100% - 70px);
+        margin-left: 70px !important;
+    }
+    
+    /* Contact Additional Info Responsive */
+    .contact-additional-info {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Google Map Responsive */
+    .contact-map {
+        order: 3;
+        margin-top: 40px;
+    }
+    
+    .map-container {
+        height: 250px;
     }
 }
 @media (max-width: 768px) {
@@ -3940,6 +4494,35 @@ footer {
         font-size: 13px;
     }
     
+    /* Department Teams Mobile */
+    .department-teams {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .department-team-card {
+        padding: 30px 20px;
+    }
+    
+    .department-team-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+    }
+    
+    .department-team-title {
+        font-size: 20px;
+    }
+    
+    .department-team-description {
+        font-size: 14px;
+    }
+    
+    .department-team-btn {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    
     .gallery-hero {
         height: 35vh;
     }
@@ -3968,7 +4551,7 @@ footer {
     
     /* Gallery Lightbox Mobile - IMPROVED */
     .gallery-lightbox-image-container {
-        height: 50vh; /* Reduced from 70vh */
+        height: 50vh;
     }
     
     .gallery-lightbox-image {
@@ -4070,7 +4653,9 @@ footer {
     .updates-page,
     .team-page,
     .contact-page,
-    .ride-hack-page {
+    .ride-hack-page,
+    .webDevTeamPage,
+    .contentTeamPage {
         position: relative;
     }
     
@@ -4080,7 +4665,9 @@ footer {
     .updates-page::before,
     .team-page::before,
     .contact-page::before,
-    .ride-hack-page::before {
+    .ride-hack-page::before,
+    .webDevTeamPage::before,
+    .contentTeamPage::before {
         content: '';
         position: fixed;
         top: 0;
@@ -4107,14 +4694,22 @@ footer {
     
     .update-card {
         flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        border-radius: 15px;
+        gap: 15px;
     }
     
     .update-date {
+        display: flex;
         flex-direction: row;
+        align-items: center;
         justify-content: center;
         gap: 10px;
-        padding: 12px;
+        padding: 10px 15px;
+        border-radius: 10px;
         min-width: auto;
+        margin-bottom: 10px;
     }
     
     .update-day {
@@ -4126,7 +4721,7 @@ footer {
     }
     
     .update-content {
-        padding: 15px;
+        padding: 0;
     }
     
     .update-title {
@@ -4221,6 +4816,32 @@ footer {
         font-size: 0.9rem;
     }
     
+    /* Benefits Grid Mobile */
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Timeline Mobile */
+    .timeline-item {
+        margin-bottom: 30px;
+    }
+    
+    .timeline-content {
+        padding: 15px;
+    }
+    
+    .timeline-title {
+        font-size: 16px;
+    }
+    
+    .timeline-date {
+        font-size: 12px;
+    }
+    
+    .timeline-desc {
+        font-size: 14px;
+    }
+    
     /* Ride Hack Popup Modal Mobile */
     .ridehack-popup-content {
         padding: 25px 15px;
@@ -4257,7 +4878,7 @@ footer {
     }
     
     .ridehack-popup-highlights .highlight-item {
-        padding: 8px 12px;
+        padding: 6px 10px;
         font-size: 12px;
     }
     
@@ -4297,7 +4918,7 @@ footer {
     }
     
     .registration-submit-btn {
-        padding: 12px 15px;
+        padding: 10px 12px;
         font-size: 14px;
     }
     
@@ -4308,7 +4929,7 @@ footer {
     }
     
     .registration-success-title {
-        font-size: 28px;
+        font-size: 24px;
     }
     
     .registration-success-subtitle {
@@ -4316,7 +4937,7 @@ footer {
     }
     
     .registration-success-button {
-        padding: 12px 15px;
+        padding: 10px 12px;
         font-size: 14px;
     }
     
@@ -4326,7 +4947,7 @@ footer {
     }
     
     .gallery-lightbox-image-container {
-        height: 40vh; /* Reduced from 50vh */
+        height: 40vh;
     }
     
     .gallery-lightbox-nav {
@@ -4343,11 +4964,11 @@ footer {
     .whatwedo-carousel-container {
         max-width: 95%;
         margin: 0 auto 40px;
-        height: 200px; /* Reduced height for mobile */
+        height: 200px;
     }
     
     .whatwedo-carousel-track {
-        animation: carouselSlide 3600s linear infinite; /* Even slower for mobile */
+        animation: carouselSlide 300s linear infinite; /* Changed from 60s to 300s for very slow speed */
     }
     
     .whatwedo-carousel-slide {
@@ -4355,7 +4976,7 @@ footer {
     }
     
     .whatwedo-carousel-slide img {
-        height: 180px; /* Adjusted image height for mobile */
+        height: 180px;
         border-radius: 10px;
     }
     
@@ -4366,8 +4987,71 @@ footer {
     }
     
     .circular-photo img {
-        object-position: center top; /* Ensure faces are visible */
-        transform: scale(1.15); /* Slightly zoomed in to ensure heads are fully visible */
+        object-position: center top;
+        transform: scale(1.15);
+    }
+    
+    /* Team Projects Section Mobile */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .project-card {
+        padding: 15px;
+    }
+    
+    .project-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+    
+    .project-title {
+        font-size: 16px;
+    }
+    
+    .project-description {
+        font-size: 12px;
+    }
+    
+    /* Department Teams for very small screens */
+    .department-teams {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .department-team-card {
+        padding: 20px 15px;
+    }
+    
+    .department-team-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .department-team-title {
+        font-size: 18px;
+    }
+    
+    .department-team-description {
+        font-size: 13px;
+    }
+    
+    .department-team-btn {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    
+    /* Google Map for very small screens */
+    .contact-map {
+        margin-top: 20px;
+        order: 3;
+    }
+    
+    .map-container {
+        height: 150px;
     }
 }
 @media (max-width: 480px) {
@@ -4544,14 +5228,7 @@ footer {
         padding: 15px;
         flex-direction: column;
         align-items: flex-start;
-        gap: 12px;
         text-align: left;
-    }
-    
-    .contact-info-icon {
-        width: 40px;
-        height: 40px;
-        font-size: 18px;
     }
     
     .contact-form-section {
@@ -4995,7 +5672,7 @@ footer {
     }
     
     .gallery-lightbox-image-container {
-        height: 35vh; /* Reduced from 40vh */
+        height: 35vh;
     }
     
     .gallery-lightbox-nav {
@@ -5012,11 +5689,11 @@ footer {
     .whatwedo-carousel-container {
         max-width: 95%;
         margin: 0 auto 30px;
-        height: 150px; /* Further reduced height for very small screens */
+        height: 150px;
     }
     
     .whatwedo-carousel-track {
-        animation: carouselSlide 4800s linear infinite; /* Slowest for smallest screens */
+        animation: carouselSlide 300s linear infinite; /* Changed from 60s to 300s for very slow speed */
     }
     
     .whatwedo-carousel-slide {
@@ -5024,7 +5701,7 @@ footer {
     }
     
     .whatwedo-carousel-slide img {
-        height: 140px; /* Adjusted image height for very small screens */
+        height: 140px;
         border-radius: 8px;
     }
     
@@ -5207,8 +5884,8 @@ footer {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center top; /* Adjust to show more of the face */
-        transform: scale(1.2); /* Zoom in to ensure heads are fully visible */
+        object-position: center top;
+        transform: scale(1.2);
         transition: transform 0.5s ease;
     }
     
@@ -5280,7 +5957,65 @@ footer {
     }
     
     .circular-photo img {
-        object-position: center top; /* Ensure faces are visible */
-        transform: scale(1.25); /* Slightly zoomed in to ensure heads are fully visible */
+        object-position: center top;
+        transform: scale(1.25);
+    }
+    
+    /* Team Projects for very small screens */
+    .project-card {
+        padding: 15px;
+    }
+    
+    .project-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+    
+    .project-title {
+        font-size: 16px;
+    }
+    
+    .project-description {
+        font-size: 12px;
+    }
+    
+    /* Department Teams for very small screens */
+    .department-teams {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .department-team-card {
+        padding: 20px 15px;
+    }
+    
+    .department-team-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .department-team-title {
+        font-size: 18px;
+    }
+    
+    .department-team-description {
+        font-size: 13px;
+    }
+    
+    .department-team-btn {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    
+    /* Google Map for very small screens */
+    .contact-map {
+        margin-top: 20px;
+        order: 3;
+    }
+    
+    .map-container {
+        height: 150px;
     }
 }
