@@ -263,6 +263,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const registrationModal = document.getElementById('registrationModal');
     const registrationClose = document.getElementById('registrationClose');
     const registrationForm = document.getElementById('registrationForm');
+    const regContact = document.getElementById('regContact');
+    
+    // Add input validation for contact number
+    regContact.addEventListener('input', function() {
+        // Only allow numbers
+        this.value = this.value.replace(/[^0-9]/g, '');
+        
+        // Limit to 10 digits
+        if (this.value.length > 10) {
+            this.value = this.value.slice(0, 10);
+        }
+    });
     
     function showRegistrationModal() {
         registrationModal.classList.add('active');
@@ -538,6 +550,36 @@ document.addEventListener('DOMContentLoaded', () => {
     // Logo link - FIXED: Added to navigate to homepage
     const logoLink = document.getElementById('logoLink');
     
+    // Department team pages
+    const webDevTeamPage = document.getElementById('webDevTeamPage');
+    const contentTeamPage = document.getElementById('contentTeamPage');
+    
+    // Department team buttons
+    const webDevTeamBtn = document.getElementById('webDevTeamBtn');
+    const contentTeamBtn = document.getElementById('contentTeamBtn');
+    
+    // Back buttons for department team pages
+    const backToTeamFromWebDev = document.getElementById('backToTeamFromWebDev');
+    const backToTeamFromContent = document.getElementById('backToTeamFromContent');
+    
+    // Update page RIDE Hack'25 event button
+    const rideHackUpdateBtn = document.getElementById('rideHackUpdateBtn');
+    
+    // RIDE Hack navigation button
+    const rideHackNavBtn = document.getElementById('rideHackNavBtn');
+    const mobileRideHackNavBtn = document.getElementById('mobileRideHackNavBtn');
+    
+    // Content Team Modal
+    const contentTeamModal = document.getElementById('contentTeamModal');
+    const contentTeamModalClose = document.getElementById('contentTeamModalClose');
+    const contentTeamModalButton = document.getElementById('contentTeamModalButton');
+    
+    // Brochure Coming Soon Modal
+    const brochureComingSoonModal = document.getElementById('brochureComingSoonModal');
+    const brochureComingSoonClose = document.getElementById('brochureComingSoonClose');
+    const brochureComingSoonButton = document.getElementById('brochureComingSoonButton');
+    const downloadBrochureBtn = document.getElementById('downloadBrochureBtn');
+    
     // Function to reset all active states
     function resetActiveStates() {
         // Remove active class from all pages
@@ -548,6 +590,8 @@ document.addEventListener('DOMContentLoaded', () => {
         aboutPage.classList.remove('active');
         eventsPage.classList.remove('active');
         rideHackPage.classList.remove('active');
+        webDevTeamPage.classList.remove('active');
+        contentTeamPage.classList.remove('active');
         
         // Hide main content
         mainContent.style.display = 'none';
@@ -601,6 +645,28 @@ document.addEventListener('DOMContentLoaded', () => {
         window.scrollTo(0, 0);
     }
     
+    function showWebDevTeamPage() {
+        resetActiveStates();
+        webDevTeamPage.classList.add('active');
+        window.scrollTo(0, 0);
+    }
+    
+    function showContentTeamPage() {
+        resetActiveStates();
+        contentTeamPage.classList.add('active');
+        window.scrollTo(0, 0);
+    }
+    
+    // Function to show Content Team Modal
+    function showContentTeamModal() {
+        contentTeamModal.classList.add('active');
+    }
+    
+    // Function to show Brochure Coming Soon Modal
+    function showBrochureComingSoonModal() {
+        brochureComingSoonModal.classList.add('active');
+    }
+    
     function showMainContent() {
         // Remove active class from all pages
         contactPage.classList.remove('active');
@@ -610,6 +676,8 @@ document.addEventListener('DOMContentLoaded', () => {
         aboutPage.classList.remove('active');
         eventsPage.classList.remove('active');
         rideHackPage.classList.remove('active');
+        webDevTeamPage.classList.remove('active');
+        contentTeamPage.classList.remove('active');
         
         // Show main content
         mainContent.style.display = 'block';
@@ -666,6 +734,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     break;
                 case 'contact':
                     showContactPage();
+                    break;
+                case 'ridehack':
+                    showRideHackPage();
                     break;
             }
         });
@@ -764,6 +835,92 @@ document.addEventListener('DOMContentLoaded', () => {
         logoLink.addEventListener('click', (e) => {
             e.preventDefault();
             showMainContent();
+        });
+    }
+    
+    // Department team buttons
+    if (webDevTeamBtn) {
+        webDevTeamBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showWebDevTeamPage();
+        });
+    }
+    
+    if (contentTeamBtn) {
+        contentTeamBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showContentTeamModal();
+        });
+    }
+    
+    // Back buttons for department team pages
+    if (backToTeamFromWebDev) {
+        backToTeamFromWebDev.addEventListener('click', (e) => {
+            e.preventDefault();
+            showTeamPage();
+        });
+    }
+    
+    if (backToTeamFromContent) {
+        backToTeamFromContent.addEventListener('click', (e) => {
+            e.preventDefault();
+            showTeamPage();
+        });
+    }
+    
+    // RIDE Hack'25 Update button
+    if (rideHackUpdateBtn) {
+        rideHackUpdateBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showRideHackPage();
+        });
+    }
+    
+    // RIDE Hack navigation button
+    if (rideHackNavBtn) {
+        rideHackNavBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showRideHackPage();
+        });
+    }
+    
+    if (mobileRideHackNavBtn) {
+        mobileRideHackNavBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showRideHackPage();
+        });
+    }
+    
+    // Content Team Modal
+    if (contentTeamModalClose) {
+        contentTeamModalClose.addEventListener('click', () => {
+            contentTeamModal.classList.remove('active');
+        });
+    }
+    
+    if (contentTeamModalButton) {
+        contentTeamModalButton.addEventListener('click', () => {
+            contentTeamModal.classList.remove('active');
+        });
+    }
+    
+    // Brochure Coming Soon Modal
+    if (brochureComingSoonClose) {
+        brochureComingSoonClose.addEventListener('click', () => {
+            brochureComingSoonModal.classList.remove('active');
+        });
+    }
+    
+    if (brochureComingSoonButton) {
+        brochureComingSoonButton.addEventListener('click', () => {
+            brochureComingSoonModal.classList.remove('active');
+        });
+    }
+    
+    if (downloadBrochureBtn) {
+        downloadBrochureBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showBrochureComingSoonModal();
         });
     }
     
