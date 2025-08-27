@@ -1,3 +1,8 @@
+
+
+Here's the complete updated CSS code with all the requested changes:
+
+```css
 * {
     margin: 0;
     padding: 0;
@@ -1489,7 +1494,7 @@ nav.scrolled {
     margin-bottom: 20px;
     line-height: 1.6;
 }
-/* Event Countdown Section */
+/* Event Countdown Section - UPDATED */
 .event-countdown-section {
     background: var(--glass-bg);
     border: 1px solid var(--glass-border);
@@ -1499,6 +1504,18 @@ nav.scrolled {
     text-align: center;
     backdrop-filter: blur(10px);
     transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.event-countdown-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(0, 86, 179, 0.1), rgba(255, 107, 107, 0.1));
+    z-index: -1;
 }
 .event-countdown-section:hover {
     transform: translateY(-10px);
@@ -1529,18 +1546,51 @@ nav.scrolled {
     flex-direction: column;
     align-items: center;
     min-width: 100px;
+    background: rgba(0, 86, 179, 0.15);
+    border: 1px solid rgba(0, 86, 179, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.countdown-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), transparent);
+    z-index: 1;
+}
+.countdown-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 86, 179, 0.2);
+    border-color: var(--primary);
 }
 .countdown-value {
     font-size: 48px;
     font-weight: 800;
-    color: var(--primary);
+    background: linear-gradient(135deg, #00d4ff, #0099ff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
     line-height: 1;
     margin-bottom: 10px;
+    text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+    letter-spacing: 2px;
+    position: relative;
+    z-index: 2;
 }
 .countdown-label {
     font-size: 16px;
-    color: var(--text-dim);
+    font-weight: 600;
+    color: #00d4ff;
     text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
 }
 .event-actions {
     display: flex;
@@ -3567,15 +3617,15 @@ footer {
     background: var(--gradient);
     border-radius: 2px;
 }
-/* Enhanced Prizes Section */
+/* Enhanced Prizes Section - UPDATED */
 .prizes-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
 }
 .prize-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
+    background: linear-gradient(135deg, rgba(0, 86, 179, 0.3), rgba(0, 20, 60, 0.8));
+    border: 2px solid;
     border-radius: 20px;
     padding: 40px 30px;
     text-align: center;
@@ -3583,6 +3633,7 @@ footer {
     backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 .prize-card::before {
     content: '';
@@ -3591,54 +3642,46 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--gradient);
-    opacity: 0.05;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), transparent);
     z-index: -1;
 }
 .prize-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 86, 179, 0.3);
-    border-color: var(--primary);
+    box-shadow: 0 15px 40px rgba(0, 86, 179, 0.4);
 }
 .prize-card.first-prize {
-    border: 2px solid var(--gold);
-}
-.prize-card.first-prize::before {
-    background: linear-gradient(135deg, rgba(255, 215, 0, 0.2), rgba(255, 215, 0, 0.05));
+    border-color: #FFD700;
 }
 .prize-card.second-third-prize {
-    border: 2px solid var(--silver);
-}
-.prize-card.second-third-prize::before {
-    background: linear-gradient(135deg, rgba(192, 192, 192, 0.2), rgba(192, 192, 192, 0.05));
+    border-color: #C0C0C0;
 }
 .prize-card.fourth-fifth-prize {
-    border: 2px solid var(--bronze);
-}
-.prize-card.fourth-fifth-prize::before {
-    background: linear-gradient(135deg, rgba(205, 127, 50, 0.2), rgba(205, 127, 50, 0.05));
+    border-color: #CD7F32;
 }
 .prize-position {
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 10px;
-    color: var(--light);
 }
 .prize-card.first-prize .prize-position {
-    color: var(--gold);
+    color: #FFD700;
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
 }
 .prize-card.second-third-prize .prize-position {
-    color: var(--silver);
+    color: #C0C0C0;
+    text-shadow: 0 0 15px rgba(192, 192, 192, 0.5);
 }
 .prize-card.fourth-fifth-prize .prize-position {
-    color: var(--bronze);
+    color: #CD7F32;
+    text-shadow: 0 0 15px rgba(205, 127, 50, 0.5);
 }
 .prize-amount {
     font-size: 1.8rem;
     font-weight: 700;
     margin-bottom: 10px;
-    color: var(--light);
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 .register-container {
     text-align: center;
@@ -4171,11 +4214,19 @@ footer {
         font-weight: 800;
         margin-bottom: 8px;
         line-height: 1;
+        background: linear-gradient(135deg, #00d4ff, #0099ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        letter-spacing: 2px;
     }
     
     .countdown-label {
         font-size: 16px;
         font-weight: 600;
+        color: #00d4ff;
+        text-transform: uppercase;
         letter-spacing: 1px;
     }
     
@@ -5078,7 +5129,7 @@ footer {
         top: 28px;
     }
     
-    .menu-toggle.active span:nth-child(1) {
+    span:nth-child(1) .menu-toggle.active {
         top: 20px;
     }
     
@@ -5434,11 +5485,19 @@ footer {
         font-weight: 800;
         margin-bottom: 6px;
         line-height: 1;
+        background: linear-gradient(135deg, #00d4ff, #0099ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        letter-spacing: 2px;
     }
     
     .countdown-label {
         font-size: 11px;
         font-weight: 600;
+        color: #00d4ff;
+        text-transform: uppercase;
         letter-spacing: 0.5px;
     }
     
@@ -5816,6 +5875,12 @@ footer {
         margin-bottom: 8px;
         position: relative;
         z-index: 2;
+        background: linear-gradient(135deg, #00d4ff, #0099ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        letter-spacing: 2px;
     }
     
     .countdown-label {
@@ -6007,3 +6072,4 @@ footer {
         height: 150px;
     }
 }
+```
