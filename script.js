@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Initialize Supabase
-    const supabaseUrl = 'https://juyiwpyvzumcaqyfhywc.supabase.co';
-    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imp1eWl3cHl2enVtY2FxeWZoeXdjIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTQwNTU2NDUsImV4cCI6MjA2OTYzMTY0NX0.wCm7cjrYuthREMdcjPBylIIfvJ08DXAwXSc2HLe85L4';
+    const supabaseUrl = 'https://jrdxrosmyasaexatudra.supabase.co';
+    const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpyZHhyb3NteWFzYWV4YXR1ZHJhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc1NjgwMjgsImV4cCI6MjA3MzE0NDAyOH0.tjVr4aAxNvnfoQX7iJNe5FkxZM9keXLwzpN-wCda7q0';
     const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
     
     // Enhanced Typewriter Loading Effect
