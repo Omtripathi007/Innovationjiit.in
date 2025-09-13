@@ -2793,7 +2793,8 @@ footer {
 }
 /* Department Teams Section */
 .department-teams {
-    display: grid;
+    display: flex;
+    flex-direction: column;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 30px;
