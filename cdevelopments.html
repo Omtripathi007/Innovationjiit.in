@@ -723,15 +723,12 @@
             </div>
         </div>
         <!-- button-->
-       
-
-    <script>
-        // Simple back button functionality
-        document.getElementById('backToHomeFromTeam').addEventListener('click', function(e) {
-            e.preventDefault();
-            // In a real application, this would navigate back to the home page
-            alert('Navigating back to home page...');
-        });
-    </script>
+        <div class="back-button-container">
+            <a href="index.html" id="backToHomeFromTeam" class="sexy-back-button" onclick="window.location.href='index.html';" >
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
+    </div>
 </body>
 </html>
