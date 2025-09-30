@@ -341,7 +341,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Faster redirect to Google Form after 0.5 seconds
         setTimeout(() => {
-            window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLScMRQcUzb8iZLMYDaCXhh7tvEF-qFsDzDkF07iL4KeOCnsnaw/viewform';
+            window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdQPbJnsYRDoyoB-UY4v_fQqI8_KUTH0NfEFBuJ-3jGkYoO0A/viewform';
         }, 500);
     }
     
