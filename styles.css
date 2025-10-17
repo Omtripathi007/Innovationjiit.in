@@ -193,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Shortlisted Teams Announcement Modal */
+/* Shortlisted Teams Announcement Modal - IMPROVED FOR MOBILE */
 .shortlisted-modal {
     display: none;
     position: fixed;
@@ -229,6 +229,8 @@ h1, h2, h3, h4, h5, h6 {
     backdrop-filter: blur(10px);
     overflow: hidden;
     animation: modalSlideIn 0.5s ease-out;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 @keyframes modalSlideIn {
     from { transform: translateY(-50px); opacity: 0; }
@@ -3885,7 +3887,6 @@ footer {
 .date-day {
     font-size: 36px;
     display: block;
-    line-height: 1;
 }
 .date-month {
     font-size: 20px;
@@ -6453,7 +6454,7 @@ footer {
     }
 }
 
-/* Shortlisted Teams Page Styles */
+/* Shortlisted Teams Page Styles - IMPROVED FOR MOBILE */
 .shortlisted-teams-page {
     display: none;
     min-height: 100vh;
