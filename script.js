@@ -1084,22 +1084,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Enhanced Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            const targetId = this.getAttribute('href');
-            if (targetId === '#') return;
-            
-            const targetElement = document.querySelector(targetId);
-            if (targetElement) {
-                e.preventDefault();
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
+   
     
     // Newsletter form submission
     const newsletterForm = document.querySelector('.newsletter-form');
@@ -1289,16 +1274,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Download results button
+    // Download results button - FIXED
     if (downloadResultsBtn) {
         downloadResultsBtn.addEventListener('click', (e) => {
             e.preventDefault();
-      
             
             // Create a temporary link to download the PDF
             const link = document.createElement('a');
-            link.href = pdfUrl;
-            link.download = 'RIDE_Hack_25_Shortlisted_Teams.pdf';
+            link.href = 'RIDEHack\'25_Shortlisted Teams.pdf';
+            link.download = 'RIDEHack\'25_Shortlisted Teams.pdf';
             link.target = '_blank';
             document.body.appendChild(link);
             link.click();
