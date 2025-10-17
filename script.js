@@ -115,7 +115,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Initialize 3D banner when page loads
-    init3DBanner();
+    if (hero3dContainer && hero3dScene) {
+        init3DBanner();
+    }
     
     // Enhanced Dynamic cube that follows cursor
     const aboutCube = document.getElementById('aboutCube');
@@ -135,100 +137,114 @@ document.addEventListener('DOMContentLoaded', () => {
         if (isAutoRotating) {
             autoRotateX += 0.005;
             autoRotateY += 0.005;
-            aboutCube.style.transform = `rotateX(${autoRotateX * 30}deg) rotateY(${autoRotateY * 30}deg)`;
+            if (aboutCube) {
+                aboutCube.style.transform = `rotateX(${autoRotateX * 30}deg) rotateY(${autoRotateY * 30}deg)`;
+            }
         }
         requestAnimationFrame(autoRotateCube);
     }
     
     // Start auto-rotation
-    autoRotateCube();
+    if (aboutCube) {
+        autoRotateCube();
+    }
     
     // Add mouse move event listener to the about visual section
-    aboutVisual.addEventListener('mousemove', (e) => {
-        isAutoRotating = false;
+    if (aboutVisual) {
+        aboutVisual.addEventListener('mousemove', (e) => {
+            isAutoRotating = false;
+            
+            // Get the position of the about visual element
+            const rect = aboutVisual.getBoundingClientRect();
+            
+            // Calculate the center of the about visual element
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            // Calculate the mouse position relative to the center
+            mouseX = (e.clientX - centerX) / (rect.width / 2);
+            mouseY = (e.clientY - centerY) / (rect.height / 2);
+            
+            // Smooth transition to target rotation
+            targetX = mouseY * 30; // Max rotation of 30 degrees
+            targetY = mouseX * 30; // Max rotation of 30 degrees
+            
+            // Apply the rotation to the cube
+            if (aboutCube) {
+                aboutCube.style.transform = `rotateX(${targetX}deg) rotateY(${targetY}deg)`;
+            }
+        });
         
-        // Get the position of the about visual element
-        const rect = aboutVisual.getBoundingClientRect();
-        
-        // Calculate the center of the about visual element
-        const centerX = rect.left + rect.width / 2;
-        const centerY = rect.top + rect.height / 2;
-        
-        // Calculate the mouse position relative to the center
-        mouseX = (e.clientX - centerX) / (rect.width / 2);
-        mouseY = (e.clientY - centerY) / (rect.height / 2);
-        
-        // Smooth transition to target rotation
-        targetX = mouseY * 30; // Max rotation of 30 degrees
-        targetY = mouseX * 30; // Max rotation of 30 degrees
-        
-        // Apply the rotation to the cube
-        aboutCube.style.transform = `rotateX(${targetX}deg) rotateY(${targetY}deg)`;
-    });
-    
-    // Reset cube rotation when mouse leaves the about visual section
-    aboutVisual.addEventListener('mouseleave', () => {
-        isAutoRotating = true;
-        // Reset auto-rotation values to current position for smooth transition
-        autoRotateX = targetX / 30;
-        autoRotateY = targetY / 30;
-    });
+        // Reset cube rotation when mouse leaves the about visual section
+        aboutVisual.addEventListener('mouseleave', () => {
+            isAutoRotating = true;
+            // Reset auto-rotation values to current position for smooth transition
+            autoRotateX = targetX / 30;
+            autoRotateY = targetY / 30;
+        });
+    }
     
     // Touch events for mobile
     let touchStartX = 0;
     let touchStartY = 0;
     
-    aboutVisual.addEventListener('touchstart', (e) => {
-        isAutoRotating = false;
-        touchStartX = e.touches[0].clientX;
-        touchStartY = e.touches[0].clientY;
-    });
-    
-    aboutVisual.addEventListener('touchmove', (e) => {
-        if (!isAutoRotating) {
-            const rect = aboutVisual.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            
-            const touchX = e.touches[0].clientX;
-            const touchY = e.touches[0].clientY;
-            
-            // Calculate the touch position relative to the center
-            const touchDiffX = (touchX - centerX) / (rect.width / 2);
-            const touchDiffY = (touchY - centerY) / (rect.height / 2);
-            
-            // Apply the rotation to the cube
-            targetX = touchDiffY * 30; // Max rotation of 30 degrees
-            targetY = touchDiffX * 30; // Max rotation of 30 degrees
-            
-            aboutCube.style.transform = `rotateX(${targetX}deg) rotateY(${targetY}deg)`;
-        }
-    });
-    
-    aboutVisual.addEventListener('touchend', () => {
-        isAutoRotating = true;
-        // Reset auto-rotation values to current position for smooth transition
-        autoRotateX = targetX / 30;
-        autoRotateY = targetY / 30;
-    });
+    if (aboutVisual) {
+        aboutVisual.addEventListener('touchstart', (e) => {
+            isAutoRotating = false;
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        });
+        
+        aboutVisual.addEventListener('touchmove', (e) => {
+            if (!isAutoRotating) {
+                const rect = aboutVisual.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                const touchX = e.touches[0].clientX;
+                const touchY = e.touches[0].clientY;
+                
+                // Calculate the touch position relative to the center
+                const touchDiffX = (touchX - centerX) / (rect.width / 2);
+                const touchDiffY = (touchY - centerY) / (rect.height / 2);
+                
+                // Apply the rotation to the cube
+                targetX = touchDiffY * 30; // Max rotation of 30 degrees
+                targetY = touchDiffX * 30; // Max rotation of 30 degrees
+                
+                if (aboutCube) {
+                    aboutCube.style.transform = `rotateX(${targetX}deg) rotateY(${targetY}deg)`;
+                }
+            }
+        });
+        
+        aboutVisual.addEventListener('touchend', () => {
+            isAutoRotating = true;
+            // Reset auto-rotation values to current position for smooth transition
+            autoRotateX = targetX / 30;
+            autoRotateY = targetY / 30;
+        });
+    }
     
     // Enhanced Mobile menu toggle
     const menuToggle = document.getElementById('menuToggle');
     const mobileMenu = document.getElementById('mobileMenu');
     
-    menuToggle.addEventListener('click', () => {
-        menuToggle.classList.toggle('active');
-        mobileMenu.classList.toggle('active');
-    });
-    
-    // Close mobile menu when clicking on a link
-    const mobileLinks = document.querySelectorAll('.mobile-menu-links a');
-    mobileLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            menuToggle.classList.remove('active');
-            mobileMenu.classList.remove('active');
+    if (menuToggle && mobileMenu) {
+        menuToggle.addEventListener('click', () => {
+            menuToggle.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
         });
-    });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = document.querySelectorAll('.mobile-menu-links a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuToggle.classList.remove('active');
+                mobileMenu.classList.remove('active');
+            });
+        });
+    }
     
     // Enhanced Registration Closed Modal
     const registrationClosedModal = document.getElementById('registrationClosedModal');
@@ -236,22 +252,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const registrationClosedButton = document.getElementById('registrationClosedButton');
     
     function showRegistrationClosedModal() {
-        registrationClosedModal.classList.add('active');
+        if (registrationClosedModal) {
+            registrationClosedModal.classList.add('active');
+        }
     }
     
     function closeRegistrationClosedModal() {
-        registrationClosedModal.classList.remove('active');
+        if (registrationClosedModal) {
+            registrationClosedModal.classList.remove('active');
+        }
     }
     
-    registrationClosedClose.addEventListener('click', closeRegistrationClosedModal);
-    registrationClosedButton.addEventListener('click', closeRegistrationClosedModal);
+    if (registrationClosedClose) {
+        registrationClosedClose.addEventListener('click', closeRegistrationClosedModal);
+    }
+    
+    if (registrationClosedButton) {
+        registrationClosedButton.addEventListener('click', closeRegistrationClosedModal);
+    }
     
     // Close registration modal when clicking outside
-    registrationClosedModal.addEventListener('click', (e) => {
-        if (e.target === registrationClosedModal) {
-            closeRegistrationClosedModal();
-        }
-    });
+    if (registrationClosedModal) {
+        registrationClosedModal.addEventListener('click', (e) => {
+            if (e.target === registrationClosedModal) {
+                closeRegistrationClosedModal();
+            }
+        });
+    }
     
     // Enhanced Registration Modal
     const registrationModal = document.getElementById('registrationModal');
@@ -260,90 +287,108 @@ document.addEventListener('DOMContentLoaded', () => {
     const regContact = document.getElementById('regContact');
     
     // Add input validation for contact number
-    regContact.addEventListener('input', function() {
-        // Only allow numbers
-        this.value = this.value.replace(/[^0-9]/g, '');
-        
-        // Limit to 10 digits
-        if (this.value.length > 10) {
-            this.value = this.value.slice(0, 10);
-        }
-    });
+    if (regContact) {
+        regContact.addEventListener('input', function() {
+            // Only allow numbers
+            this.value = this.value.replace(/[^0-9]/g, '');
+            
+            // Limit to 10 digits
+            if (this.value.length > 10) {
+                this.value = this.value.slice(0, 10);
+            }
+        });
+    }
     
     function showRegistrationModal() {
-        registrationModal.classList.add('active');
+        if (registrationModal) {
+            registrationModal.classList.add('active');
+        }
     }
     
     function closeRegistrationModal() {
-        registrationModal.classList.remove('active');
+        if (registrationModal) {
+            registrationModal.classList.remove('active');
+        }
     }
     
-    registrationClose.addEventListener('click', closeRegistrationModal);
+    if (registrationClose) {
+        registrationClose.addEventListener('click', closeRegistrationModal);
+    }
     
     // Close registration modal when clicking outside
-    registrationModal.addEventListener('click', (e) => {
-        if (e.target === registrationModal) {
-            closeRegistrationModal();
-        }
-    });
+    if (registrationModal) {
+        registrationModal.addEventListener('click', (e) => {
+            if (e.target === registrationModal) {
+                closeRegistrationModal();
+            }
+        });
+    }
     
     // Handle registration form submission
-    registrationForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = {
-            full_name: document.getElementById('regFullName').value,
-            email: document.getElementById('regEmail').value,
-            college_name: document.getElementById('regCollege').value,
-            contact_number: document.getElementById('regContact').value,
-            event_name: "RIDE Hack'25",
-            created_at: new Date().toISOString()
-        };
-        
-        try {
-            // Insert data into Supabase
-            const { data, error } = await supabase
-                .from('registrations')
-                .insert([formData]);
+    if (registrationForm) {
+        registrationForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = {
+                full_name: document.getElementById('regFullName').value,
+                email: document.getElementById('regEmail').value,
+                college_name: document.getElementById('regCollege').value,
+                contact_number: document.getElementById('regContact').value,
+                event_name: "RIDE Hack'25",
+                created_at: new Date().toISOString()
+            };
+            
+            try {
+                // Insert data into Supabase
+                const { data, error } = await supabase
+                    .from('registrations')
+                    .insert([formData]);
+                    
+                if (error) {
+                    throw error;
+                }
                 
-            if (error) {
-                throw error;
+                // Close registration modal
+                closeRegistrationModal();
+                
+                // Show registration success message
+                showRegistrationSuccessModal();
+                
+                // Reset form
+                registrationForm.reset();
+                
+            } catch (error) {
+                console.error('Error submitting registration:', error);
+                alert('There was an error submitting your registration. Please try again.');
             }
-            
-            // Close registration modal
-            closeRegistrationModal();
-            
-            // Show registration success message
-            showRegistrationSuccessModal();
-            
-            // Reset form
-            registrationForm.reset();
-            
-        } catch (error) {
-            console.error('Error submitting registration:', error);
-            alert('There was an error submitting your registration. Please try again.');
-        }
-    });
+        });
+    }
     
     // Enhanced Registration Success Modal (No Timer)
     const registrationSuccessModal = document.getElementById('registrationSuccessModal');
     const registrationSuccessClose = document.getElementById('registrationSuccessClose');
     
     function showRegistrationSuccessModal() {
-        registrationSuccessModal.classList.add('active');
-        
-        // Faster redirect to Google Form after 0.5 seconds
-        setTimeout(() => {
-            window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdQPbJnsYRDoyoB-UY4v_fQqI8_KUTH0NfEFBuJ-3jGkYoO0A/viewform';
-        }, 500);
+        if (registrationSuccessModal) {
+            registrationSuccessModal.classList.add('active');
+            
+            // Faster redirect to Google Form after 0.5 seconds
+            setTimeout(() => {
+                window.location.href = 'https://docs.google.com/forms/d/e/1FAIpQLSdQPbJnsYRDoyoB-UY4v_fQqI8_KUTH0NfEFBuJ-3jGkYoO0A/viewform';
+            }, 500);
+        }
     }
     
     function closeRegistrationSuccessModal() {
-        registrationSuccessModal.classList.remove('active');
+        if (registrationSuccessModal) {
+            registrationSuccessModal.classList.remove('active');
+        }
     }
     
-    registrationSuccessClose.addEventListener('click', closeRegistrationSuccessModal);
+    if (registrationSuccessClose) {
+        registrationSuccessClose.addEventListener('click', closeRegistrationSuccessModal);
+    }
     
     // Enhanced Contact modal
     const contactModal = document.getElementById('successModal');
@@ -351,15 +396,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactButton = document.getElementById('successButton');
     
     function showContactModal() {
-        contactModal.classList.add('active');
+        if (contactModal) {
+            contactModal.classList.add('active');
+        }
     }
     
     function closeContactModal() {
-        contactModal.classList.remove('active');
+        if (contactModal) {
+            contactModal.classList.remove('active');
+        }
     }
     
-    contactClose.addEventListener('click', closeContactModal);
-    contactButton.addEventListener('click', closeContactModal);
+    if (contactClose) {
+        contactClose.addEventListener('click', closeContactModal);
+    }
+    
+    if (contactButton) {
+        contactButton.addEventListener('click', closeContactModal);
+    }
     
     // Enhanced Coming Soon modal
     const simpleComingSoonModal = document.getElementById('simpleComingSoonModal');
@@ -367,15 +421,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const simpleComingSoonButton = document.getElementById('simpleComingSoonButton');
     
     function showSimpleComingSoonModal() {
-        simpleComingSoonModal.classList.add('active');
+        if (simpleComingSoonModal) {
+            simpleComingSoonModal.classList.add('active');
+        }
     }
     
     function closeSimpleComingSoonModal() {
-        simpleComingSoonModal.classList.remove('active');
+        if (simpleComingSoonModal) {
+            simpleComingSoonModal.classList.remove('active');
+        }
     }
     
-    simpleComingSoonClose.addEventListener('click', closeSimpleComingSoonModal);
-    simpleComingSoonButton.addEventListener('click', closeSimpleComingSoonModal);
+    if (simpleComingSoonClose) {
+        simpleComingSoonClose.addEventListener('click', closeSimpleComingSoonModal);
+    }
+    
+    if (simpleComingSoonButton) {
+        simpleComingSoonButton.addEventListener('click', closeSimpleComingSoonModal);
+    }
     
     // Enhanced Countdown timer
     function startCountdown() {
@@ -398,18 +461,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
             
             // Display the result
-            document.getElementById("days").textContent = days.toString().padStart(2, '0');
-            document.getElementById("hours").textContent = hours.toString().padStart(2, '0');
-            document.getElementById("minutes").textContent = minutes.toString().padStart(2, '0');
-            document.getElementById("seconds").textContent = seconds.toString().padStart(2, '0');
+            const daysEl = document.getElementById("days");
+            const hoursEl = document.getElementById("hours");
+            const minutesEl = document.getElementById("minutes");
+            const secondsEl = document.getElementById("seconds");
+            
+            if (daysEl) daysEl.textContent = days.toString().padStart(2, '0');
+            if (hoursEl) hoursEl.textContent = hours.toString().padStart(2, '0');
+            if (minutesEl) minutesEl.textContent = minutes.toString().padStart(2, '0');
+            if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
             
             // If the count down is finished, clear the interval
             if (distance < 0) {
                 clearInterval(countdownInterval);
-                document.getElementById("days").textContent = "00";
-                document.getElementById("hours").textContent = "00";
-                document.getElementById("minutes").textContent = "00";
-                document.getElementById("seconds").textContent = "00";
+                if (daysEl) daysEl.textContent = "00";
+                if (hoursEl) hoursEl.textContent = "00";
+                if (minutesEl) minutesEl.textContent = "00";
+                if (secondsEl) secondsEl.textContent = "00";
             }
         }, 1000);
     }
@@ -434,18 +502,23 @@ document.addEventListener('DOMContentLoaded', () => {
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
             
             // Display the result
-            document.getElementById("eventDays").textContent = days.toString().padStart(2, '0');
-            document.getElementById("eventHours").textContent = hours.toString().padStart(2, '0');
-            document.getElementById("eventMinutes").textContent = minutes.toString().padStart(2, '0');
-            document.getElementById("eventSeconds").textContent = seconds.toString().padStart(2, '0');
+            const eventDaysEl = document.getElementById("eventDays");
+            const eventHoursEl = document.getElementById("eventHours");
+            const eventMinutesEl = document.getElementById("eventMinutes");
+            const eventSecondsEl = document.getElementById("eventSeconds");
+            
+            if (eventDaysEl) eventDaysEl.textContent = days.toString().padStart(2, '0');
+            if (eventHoursEl) eventHoursEl.textContent = hours.toString().padStart(2, '0');
+            if (eventMinutesEl) eventMinutesEl.textContent = minutes.toString().padStart(2, '0');
+            if (eventSecondsEl) eventSecondsEl.textContent = seconds.toString().padStart(2, '0');
             
             // If the count down is finished, clear the interval
             if (distance < 0) {
                 clearInterval(eventCountdownInterval);
-                document.getElementById("eventDays").textContent = "00";
-                document.getElementById("eventHours").textContent = "00";
-                document.getElementById("eventMinutes").textContent = "00";
-                document.getElementById("eventSeconds").textContent = "00";
+                if (eventDaysEl) eventDaysEl.textContent = "00";
+                if (eventHoursEl) eventHoursEl.textContent = "00";
+                if (eventMinutesEl) eventMinutesEl.textContent = "00";
+                if (eventSecondsEl) eventSecondsEl.textContent = "00";
             }
         }, 1000);
     }
@@ -455,37 +528,39 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Enhanced Form submissions with Supabase integration
     const contactForm = document.getElementById('contactForm');
-    contactForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = {
-            first_name: document.getElementById('firstName').value,
-            last_name: document.getElementById('lastName').value,
-            email: document.getElementById('email').value,
-            subject: document.getElementById('subject').value,
-            message: document.getElementById('message').value,
-            created_at: new Date().toISOString()
-        };
-        
-        try {
-            // Insert data into Supabase
-            const { data, error } = await supabase
-                .from('contacts')
-                .insert([formData]);
-                
-            if (error) {
-                throw error;
-            }
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
             
-            // Show contact success modal
-            showContactSuccessModal();
-            contactForm.reset();
-        } catch (error) {
-            console.error('Error submitting form:', error);
-            alert('There was an error submitting your message. Please try again.');
-        }
-    });
+            // Get form data
+            const formData = {
+                first_name: document.getElementById('firstName').value,
+                last_name: document.getElementById('lastName').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value,
+                created_at: new Date().toISOString()
+            };
+            
+            try {
+                // Insert data into Supabase
+                const { data, error } = await supabase
+                    .from('contacts')
+                    .insert([formData]);
+                    
+                if (error) {
+                    throw error;
+                }
+                
+                // Show contact success modal
+                showContactSuccessModal();
+                contactForm.reset();
+            } catch (error) {
+                console.error('Error submitting form:', error);
+                alert('There was an error submitting your message. Please try again.');
+            }
+        });
+    }
     
     // Function to show contact success modal
     function showContactSuccessModal() {
@@ -494,11 +569,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalMessage = document.querySelector('#successModal .success-message');
         
         // Set contact-specific content
-        modalTitle.textContent = 'Message Sent Successfully!';
-        modalMessage.textContent = 'Thank you for contacting us. We will get back to you soon!';
+        if (modalTitle) modalTitle.textContent = 'Message Sent Successfully!';
+        if (modalMessage) modalMessage.textContent = 'Thank you for contacting us. We will get back to you soon!';
         
         // Show modal
-        contactModal.classList.add('active');
+        if (contactModal) {
+            contactModal.classList.add('active');
+        }
     }
     
     // Enhanced Navigation to pages
@@ -577,109 +654,148 @@ document.addEventListener('DOMContentLoaded', () => {
     // Download Shortlisted Teams PDF Button
     const downloadShortlistedTeamsBtn = document.getElementById('downloadShortlistedTeamsBtn');
     
+    // Shortlisted Teams Page
+    const shortlistedTeamsPage = document.getElementById('shortlistedTeamsPage');
+    const backToHomeFromShortlistedTeams = document.getElementById('backToHomeFromShortlistedTeams');
+    const downloadResultsBtn = document.getElementById('downloadResultsBtn');
+    
     // Function to reset all active states
     function resetActiveStates() {
         // Remove active class from all pages
-        contactPage.classList.remove('active');
-        teamPage.classList.remove('active');
-        galleryPage.classList.remove('active');
-        updatesPage.classList.remove('active');
-        aboutPage.classList.remove('active');
-        eventsPage.classList.remove('active');
-        rideHackPage.classList.remove('active');
-        webDevTeamPage.classList.remove('active');
-        contentTeamPage.classList.remove('active');
+        const pages = [
+            contactPage, teamPage, galleryPage, updatesPage, 
+            aboutPage, eventsPage, rideHackPage, webDevTeamPage, 
+            contentTeamPage, shortlistedTeamsPage
+        ];
+        
+        pages.forEach(page => {
+            if (page) page.classList.remove('active');
+        });
         
         // Hide main content
-        mainContent.style.display = 'none';
+        if (mainContent) {
+            mainContent.style.display = 'none';
+        }
     }
     
     function showContactPage() {
         resetActiveStates();
-        contactPage.classList.add('active');
-        window.scrollTo(0, 0);
-        updateActiveNav('contact');
+        if (contactPage) {
+            contactPage.classList.add('active');
+            window.scrollTo(0, 0);
+            updateActiveNav('contact');
+        }
     }
     
     function showTeamPage() {
         resetActiveStates();
-        teamPage.classList.add('active');
-        window.scrollTo(0, 0);
-        updateActiveNav('team');
+        if (teamPage) {
+            teamPage.classList.add('active');
+            window.scrollTo(0, 0);
+            updateActiveNav('team');
+        }
     }
     
     function showGalleryPage() {
         resetActiveStates();
-        galleryPage.classList.add('active');
-        window.scrollTo(0, 0);
-        updateActiveNav('gallery');
+        if (galleryPage) {
+            galleryPage.classList.add('active');
+            window.scrollTo(0, 0);
+            updateActiveNav('gallery');
+        }
     }
     
     function showUpdatesPage() {
         resetActiveStates();
-        updatesPage.classList.add('active');
-        window.scrollTo(0, 0);
-        updateActiveNav('updates');
+        if (updatesPage) {
+            updatesPage.classList.add('active');
+            window.scrollTo(0, 0);
+            updateActiveNav('updates');
+        }
     }
     
     function showAboutPage() {
         resetActiveStates();
-        aboutPage.classList.add('active');
-        window.scrollTo(0, 0);
-        updateActiveNav('about');
+        if (aboutPage) {
+            aboutPage.classList.add('active');
+            window.scrollTo(0, 0);
+            updateActiveNav('about');
+        }
     }
     
     function showEventsPage() {
         resetActiveStates();
-        eventsPage.classList.add('active');
-        window.scrollTo(0, 0);
-        updateActiveNav('events');
+        if (eventsPage) {
+            eventsPage.classList.add('active');
+            window.scrollTo(0, 0);
+            updateActiveNav('events');
+        }
     }
     
     function showRideHackPage() {
         resetActiveStates();
-        rideHackPage.classList.add('active');
-        window.scrollTo(0, 0);
+        if (rideHackPage) {
+            rideHackPage.classList.add('active');
+            window.scrollTo(0, 0);
+        }
     }
     
     function showWebDevTeamPage() {
         resetActiveStates();
-        webDevTeamPage.classList.add('active');
-        window.scrollTo(0, 0);
+        if (webDevTeamPage) {
+            webDevTeamPage.classList.add('active');
+            window.scrollTo(0, 0);
+        }
     }
     
     function showContentTeamPage() {
         resetActiveStates();
-        contentTeamPage.classList.add('active');
-        window.scrollTo(0, 0);
+        if (contentTeamPage) {
+            contentTeamPage.classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    }
+    
+    function showShortlistedTeamsPage() {
+        resetActiveStates();
+        if (shortlistedTeamsPage) {
+            shortlistedTeamsPage.classList.add('active');
+            window.scrollTo(0, 0);
+        }
     }
     
     // Function to show Content Team Modal
     function showContentTeamModal() {
-        contentTeamModal.classList.add('active');
+        if (contentTeamModal) {
+            contentTeamModal.classList.add('active');
+        }
     }
     
     // Function to show Brochure Coming Soon Modal
     function showBrochureComingSoonModal() {
-        brochureComingSoonModal.classList.add('active');
+        if (brochureComingSoonModal) {
+            brochureComingSoonModal.classList.add('active');
+        }
     }
     
     function showMainContent() {
         // Remove active class from all pages
-        contactPage.classList.remove('active');
-        teamPage.classList.remove('active');
-        galleryPage.classList.remove('active');
-        updatesPage.classList.remove('active');
-        aboutPage.classList.remove('active');
-        eventsPage.classList.remove('active');
-        rideHackPage.classList.remove('active');
-        webDevTeamPage.classList.remove('active');
-        contentTeamPage.classList.remove('active');
+        const pages = [
+            contactPage, teamPage, galleryPage, updatesPage, 
+            aboutPage, eventsPage, rideHackPage, webDevTeamPage, 
+            contentTeamPage, shortlistedTeamsPage
+        ];
+        
+        pages.forEach(page => {
+            if (page) page.classList.remove('active');
+        });
         
         // Show main content
-        mainContent.style.display = 'block';
-        window.scrollTo(0, 0);
-        updateActiveNav('home');
+        if (mainContent) {
+            mainContent.style.display = 'block';
+            window.scrollTo(0, 0);
+            updateActiveNav('home');
+        }
     }
     
     // Function to update active navigation
@@ -891,26 +1007,34 @@ document.addEventListener('DOMContentLoaded', () => {
     // Content Team Modal
     if (contentTeamModalClose) {
         contentTeamModalClose.addEventListener('click', () => {
-            contentTeamModal.classList.remove('active');
+            if (contentTeamModal) {
+                contentTeamModal.classList.remove('active');
+            }
         });
     }
     
     if (contentTeamModalButton) {
         contentTeamModalButton.addEventListener('click', () => {
-            contentTeamModal.classList.remove('active');
+            if (contentTeamModal) {
+                contentTeamModal.classList.remove('active');
+            }
         });
     }
     
     // Brochure Coming Soon Modal
     if (brochureComingSoonClose) {
         brochureComingSoonClose.addEventListener('click', () => {
-            brochureComingSoonModal.classList.remove('active');
+            if (brochureComingSoonModal) {
+                brochureComingSoonModal.classList.remove('active');
+            }
         });
     }
     
     if (brochureComingSoonButton) {
         brochureComingSoonButton.addEventListener('click', () => {
-            brochureComingSoonModal.classList.remove('active');
+            if (brochureComingSoonModal) {
+                brochureComingSoonModal.classList.remove('active');
+            }
         });
     }
     
@@ -921,53 +1045,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Download Shortlisted Teams PDF
+    // Download Shortlisted Teams PDF Button - now navigates to the shortlisted teams page
     if (downloadShortlistedTeamsBtn) {
         downloadShortlistedTeamsBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            // Create a sample PDF content (you should replace this with actual PDF URL)
-            const pdfUrl = 'https://drive.google.com/file/d/1example/view'; // Replace with actual PDF URL
-            
-            // Create a temporary link to download the PDF
-            const link = document.createElement('a');
-            link.href = pdfUrl;
-            link.download = 'RIDE_Hack_25_Shortlisted_Teams.pdf';
-            link.target = '_blank';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
-            
-            // Show success message
-            alert('Downloading Shortlisted Teams PDF...');
+            showShortlistedTeamsPage();
         });
     }
     
     // Enhanced Scroll to top button
     const scrollTopBtn = document.getElementById('scrollTop');
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 300) {
-            scrollTopBtn.classList.add('visible');
-        } else {
-            scrollTopBtn.classList.remove('visible');
-        }
-    });
-    
-    scrollTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    if (scrollTopBtn) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
         });
-    });
+        
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
     
     // Enhanced Navbar scroll effect
     const navbar = document.getElementById('navbar');
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
-        }
-    });
+    if (navbar) {
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    }
     
     // Enhanced Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1042,27 +1157,37 @@ document.addEventListener('DOMContentLoaded', () => {
     // Open gallery lightbox
     function openGalleryLightbox(index) {
         currentImageIndex = index;
-        galleryLightboxImage.src = galleryImages[currentImageIndex];
-        galleryLightboxModal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling
+        if (galleryLightboxImage) {
+            galleryLightboxImage.src = galleryImages[currentImageIndex];
+        }
+        if (galleryLightboxModal) {
+            galleryLightboxModal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent scrolling
+        }
     }
     
     // Close gallery lightbox
     function closeGalleryLightbox() {
-        galleryLightboxModal.classList.remove('active');
-        document.body.style.overflow = ''; // Enable scrolling
+        if (galleryLightboxModal) {
+            galleryLightboxModal.classList.remove('active');
+            document.body.style.overflow = ''; // Enable scrolling
+        }
     }
     
     // Show previous image
     function showPrevImage() {
         currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-        galleryLightboxImage.src = galleryImages[currentImageIndex];
+        if (galleryLightboxImage) {
+            galleryLightboxImage.src = galleryImages[currentImageIndex];
+        }
     }
     
     // Show next image
     function showNextImage() {
         currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-        galleryLightboxImage.src = galleryImages[currentImageIndex];
+        if (galleryLightboxImage) {
+            galleryLightboxImage.src = galleryImages[currentImageIndex];
+        }
     }
     
     // Add event listeners to gallery items
@@ -1073,20 +1198,30 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
     // Add event listeners to gallery lightbox controls
-    galleryLightboxClose.addEventListener('click', closeGalleryLightbox);
-    galleryLightboxPrev.addEventListener('click', showPrevImage);
-    galleryLightboxNext.addEventListener('click', showNextImage);
+    if (galleryLightboxClose) {
+        galleryLightboxClose.addEventListener('click', closeGalleryLightbox);
+    }
+    
+    if (galleryLightboxPrev) {
+        galleryLightboxPrev.addEventListener('click', showPrevImage);
+    }
+    
+    if (galleryLightboxNext) {
+        galleryLightboxNext.addEventListener('click', showNextImage);
+    }
     
     // Close lightbox when clicking outside the image
-    galleryLightboxModal.addEventListener('click', (e) => {
-        if (e.target === galleryLightboxModal) {
-            closeGalleryLightbox();
-        }
-    });
+    if (galleryLightboxModal) {
+        galleryLightboxModal.addEventListener('click', (e) => {
+            if (e.target === galleryLightboxModal) {
+                closeGalleryLightbox();
+            }
+        });
+    }
     
     // Keyboard navigation for gallery lightbox
     document.addEventListener('keydown', (e) => {
-        if (galleryLightboxModal.classList.contains('active')) {
+        if (galleryLightboxModal && galleryLightboxModal.classList.contains('active')) {
             if (e.key === 'Escape') {
                 closeGalleryLightbox();
             } else if (e.key === 'ArrowLeft') {
@@ -1111,18 +1246,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkLaterBtn = document.getElementById('checkLaterBtn');
     
     function showShortlistedModal() {
-        shortlistedModal.classList.add('active');
+        if (shortlistedModal) {
+            shortlistedModal.classList.add('active');
+        }
     }
     
     function closeShortlistedModal() {
-        shortlistedModal.classList.remove('active');
+        if (shortlistedModal) {
+            shortlistedModal.classList.remove('active');
+        }
     }
     
     if (checkResultsBtn) {
         checkResultsBtn.addEventListener('click', (e) => {
             e.preventDefault();
             closeShortlistedModal();
-            showUpdatesPage();
+            showShortlistedTeamsPage();
         });
     }
     
@@ -1134,11 +1273,41 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Close modal when clicking outside
-    shortlistedModal.addEventListener('click', (e) => {
-        if (e.target === shortlistedModal) {
-            closeShortlistedModal();
-        }
-    });
+    if (shortlistedModal) {
+        shortlistedModal.addEventListener('click', (e) => {
+            if (e.target === shortlistedModal) {
+                closeShortlistedModal();
+            }
+        });
+    }
+    
+    // Back button for shortlisted teams page
+    if (backToHomeFromShortlistedTeams) {
+        backToHomeFromShortlistedTeams.addEventListener('click', (e) => {
+            e.preventDefault();
+            showUpdatesPage();
+        });
+    }
+    
+    // Download results button
+    if (downloadResultsBtn) {
+        downloadResultsBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+      
+            
+            // Create a temporary link to download the PDF
+            const link = document.createElement('a');
+            link.href = pdfUrl;
+            link.download = 'RIDE_Hack_25_Shortlisted_Teams.pdf';
+            link.target = '_blank';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show success message
+            alert('Downloading Shortlisted Teams PDF...');
+        });
+    }
     
     // Initialize page
     showMainContent();
