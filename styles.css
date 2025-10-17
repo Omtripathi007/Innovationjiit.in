@@ -2649,7 +2649,6 @@ footer {
     min-height: 100vh;
     background: var(--dark);
     position: relative;
-    overflow: hidden;
 }
 .contact-page.active {
     display: block;
@@ -5444,53 +5443,6 @@ footer {
     .map-container {
         height: 150px;
     }
-    
-    /* Shortlisted Modal Mobile Responsive */
-    .shortlisted-content {
-        padding: 30px 20px;
-        max-width: 90%;
-    }
-    
-    .shortlisted-title {
-        font-size: 32px;
-    }
-    
-    .shortlisted-subtitle {
-        font-size: 20px;
-    }
-    
-    .shortlisted-message {
-        font-size: 16px;
-    }
-    
-    .shortlisted-stats {
-        gap: 15px;
-    }
-    
-    .stat-item {
-        min-width: 80px;
-        padding: 12px;
-    }
-    
-    .stat-number {
-        font-size: 20px;
-    }
-    
-    .stat-label {
-        font-size: 12px;
-    }
-    
-    .shortlisted-actions {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .shortlisted-check-btn,
-    .shortlisted-later-btn {
-        width: 100%;
-        padding: 12px 20px;
-        font-size: 14px;
-    }
 }
 @media (max-width: 480px) {
     nav {
@@ -6498,5 +6450,389 @@ footer {
     
     .map-container {
         height: 150px;
+    }
+}
+
+/* Shortlisted Teams Page Styles */
+.shortlisted-teams-page {
+    display: none;
+    min-height: 100vh;
+    background: var(--dark);
+    position: relative;
+}
+
+.shortlisted-teams-page.active {
+    display: block;
+}
+
+.shortlisted-teams-hero {
+    height: 50vh;
+    background: linear-gradient(rgba(10, 14, 39, 0.7), rgba(10, 14, 39, 0.9)), url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.shortlisted-teams-hero-content {
+    text-align: center;
+    z-index: 2;
+    max-width: 800px;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.shortlisted-teams-hero-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #ffffff, #e0e0e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.shortlisted-teams-hero-subtitle {
+    font-size: 1.8rem;
+    color: var(--accent);
+}
+
+.shortlisted-teams-container {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.shortlisted-teams-intro {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.shortlisted-teams-intro-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #ffffff, #e0e0e0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.shortlisted-teams-intro-text {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+.shortlisted-teams-stats {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.shortlisted-teams-stats .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(0, 86, 179, 0.1);
+    border: 1px solid rgba(0, 86, 179, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    min-width: 120px;
+    transition: all 0.3s ease;
+}
+
+.shortlisted-teams-stats .stat-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 86, 179, 0.2);
+    border-color: var(--primary);
+}
+
+.shortlisted-teams-stats .stat-number {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.shortlisted-teams-stats .stat-label {
+    font-size: 14px;
+    color: var(--text-dim);
+}
+
+.shortlisted-teams-table-container {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 20px;
+    padding: 30px;
+    margin-bottom: 60px;
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.shortlisted-teams-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0;
+}
+
+.shortlisted-teams-table th,
+.shortlisted-teams-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.shortlisted-teams-table th {
+    background: rgba(0, 86, 179, 0.2);
+    color: var(--primary);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.shortlisted-teams-table tr:nth-child(even) {
+    background: rgba(0, 86, 179, 0.05);
+}
+
+.shortlisted-teams-table tr:hover {
+    background: rgba(0, 86, 179, 0.1);
+}
+
+.shortlisted-teams-table td:first-child {
+    font-weight: 600;
+    color: var(--accent);
+    width: 60px;
+}
+
+.shortlisted-teams-table td:nth-child(2) {
+    font-weight: 500;
+    min-width: 200px;
+}
+
+.shortlisted-teams-table td:nth-child(3) {
+    min-width: 150px;
+}
+
+.shortlisted-teams-table td:nth-child(4) {
+    min-width: 200px;
+}
+
+.download-results-section {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.download-results-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.download-results-text {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.download-results-btn {
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 16px;
+    background: var(--gradient);
+    color: white;
+    box-shadow: 0 5px 20px rgba(0, 86, 179, 0.4);
+}
+
+.download-results-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 86, 179, 0.6);
+}
+
+/* Responsive adjustments for Shortlisted Teams Page */
+@media (max-width: 1024px) {
+    .shortlisted-teams-hero-title {
+        font-size: 3.5rem;
+    }
+    
+    .shortlisted-teams-intro-title {
+        font-size: 2.2rem;
+    }
+    
+    .shortlisted-teams-table td:nth-child(2),
+    .shortlisted-teams-table td:nth-child(3),
+    .shortlisted-teams-table td:nth-child(4) {
+        min-width: 150px;
+    }
+}
+
+@media (max-width: 768px) {
+    .shortlisted-teams-hero {
+        height: 40vh;
+    }
+    
+    .shortlisted-teams-hero-title {
+        font-size: 2.8rem;
+    }
+    
+    .shortlisted-teams-hero-subtitle {
+        font-size: 1.3rem;
+    }
+    
+    .shortlisted-teams-container {
+        padding: 60px 15px;
+    }
+    
+    .shortlisted-teams-intro-title {
+        font-size: 1.8rem;
+    }
+    
+    .shortlisted-teams-intro-text {
+        font-size: 1rem;
+    }
+    
+    .shortlisted-teams-stats {
+        gap: 15px;
+    }
+    
+    .shortlisted-teams-stats .stat-item {
+        min-width: 100px;
+        padding: 15px;
+    }
+    
+    .shortlisted-teams-table-container {
+        padding: 20px 15px;
+    }
+    
+    .shortlisted-teams-table th,
+    .shortlisted-teams-table td {
+        padding: 10px 8px;
+        font-size: 14px;
+    }
+    
+    .shortlisted-teams-table td:first-child {
+        width: 40px;
+    }
+    
+    .download-results-title {
+        font-size: 1.6rem;
+    }
+    
+    .download-results-text {
+        font-size: 1rem;
+    }
+    
+    .download-results-btn {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .shortlisted-teams-hero {
+        height: 35vh;
+    }
+    
+    .shortlisted-teams-hero-title {
+        font-size: 2.2rem;
+    }
+    
+    .shortlisted-teams-hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .shortlisted-teams-container {
+        padding: 40px 10px;
+    }
+    
+    .shortlisted-teams-intro-title {
+        font-size: 1.5rem;
+    }
+    
+    .shortlisted-teams-intro-text {
+        font-size: 0.9rem;
+    }
+    
+    .shortlisted-teams-stats {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .shortlisted-teams-stats .stat-item {
+        width: 80%;
+        min-width: unset;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .shortlisted-teams-table-container {
+        padding: 15px 10px;
+    }
+    
+    .shortlisted-teams-table th,
+    .shortlisted-teams-table td {
+        padding: 8px 5px;
+        font-size: 12px;
+    }
+    
+    .shortlisted-teams-table td:first-child {
+        width: 30px;
+    }
+    
+    .download-results-title {
+        font-size: 1.4rem;
+    }
+    
+    .download-results-text {
+        font-size: 0.9rem;
+    }
+    
+    .download-results-btn {
+        padding: 10px 20px;
+        font-size: 13px;
     }
 }
