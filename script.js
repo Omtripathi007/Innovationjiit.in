@@ -15,13 +15,14 @@ document.addEventListener('DOMContentLoaded', () => {
             index++;
             setTimeout(typeWriter, 300);
         } else {
-            // After typing JIIT, hide the loader and show main content
+            // After typing JIIT, show the shortlisted teams modal
             setTimeout(() => {
                 const loader = document.getElementById('loader');
                 loader.style.opacity = '0';
                 setTimeout(() => {
                     loader.style.display = 'none';
-                    // No popup shown, website opens normally
+                    // Show the shortlisted teams modal
+                    showShortlistedModal();
                 }, 500);
             }, 1500);
         }
@@ -1103,6 +1104,41 @@ document.addEventListener('DOMContentLoaded', () => {
             showRideHackPage();
         });
     }
+    
+    // Shortlisted Teams Modal Functions
+    const shortlistedModal = document.getElementById('shortlistedModal');
+    const checkResultsBtn = document.getElementById('checkResultsBtn');
+    const checkLaterBtn = document.getElementById('checkLaterBtn');
+    
+    function showShortlistedModal() {
+        shortlistedModal.classList.add('active');
+    }
+    
+    function closeShortlistedModal() {
+        shortlistedModal.classList.remove('active');
+    }
+    
+    if (checkResultsBtn) {
+        checkResultsBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeShortlistedModal();
+            showUpdatesPage();
+        });
+    }
+    
+    if (checkLaterBtn) {
+        checkLaterBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            closeShortlistedModal();
+        });
+    }
+    
+    // Close modal when clicking outside
+    shortlistedModal.addEventListener('click', (e) => {
+        if (e.target === shortlistedModal) {
+            closeShortlistedModal();
+        }
+    });
     
     // Initialize page
     showMainContent();
