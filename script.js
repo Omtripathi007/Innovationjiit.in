@@ -15,16 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
             index++;
             setTimeout(typeWriter, 300);
         } else {
-            // After typing JIIT, hide the loader and show the Ride Hack popup
+            // After typing JIIT, hide the loader and show main content
             setTimeout(() => {
                 const loader = document.getElementById('loader');
                 loader.style.opacity = '0';
                 setTimeout(() => {
                     loader.style.display = 'none';
-                    // Show Ride Hack popup after loader disappears
-                    setTimeout(() => {
-                        showRideHackPopup();
-                    }, 500);
+                    // No popup shown, website opens normally
                 }, 500);
             }, 1500);
         }
@@ -232,31 +229,27 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
     
-    // Enhanced Ride Hack Popup Modal
-    const ridehackPopupModal = document.getElementById('ridehackPopupModal');
-    const ridehackPopupClose = document.getElementById('ridehackPopupClose');
-    const ridehackPopupRegister = document.getElementById('ridehackPopupRegister');
-    const ridehackPopupLearn = document.getElementById('ridehackPopupLearn');
+    // Enhanced Registration Closed Modal
+    const registrationClosedModal = document.getElementById('registrationClosedModal');
+    const registrationClosedClose = document.getElementById('registrationClosedClose');
+    const registrationClosedButton = document.getElementById('registrationClosedButton');
     
-    function showRideHackPopup() {
-        ridehackPopupModal.classList.add('active');
+    function showRegistrationClosedModal() {
+        registrationClosedModal.classList.add('active');
     }
     
-    function closeRideHackPopup() {
-        ridehackPopupModal.classList.remove('active');
+    function closeRegistrationClosedModal() {
+        registrationClosedModal.classList.remove('active');
     }
     
-    ridehackPopupClose.addEventListener('click', closeRideHackPopup);
+    registrationClosedClose.addEventListener('click', closeRegistrationClosedModal);
+    registrationClosedButton.addEventListener('click', closeRegistrationClosedModal);
     
-    ridehackPopupRegister.addEventListener('click', () => {
-        closeRideHackPopup();
-        showRegistrationModal();
-    });
-    
-    ridehackPopupLearn.addEventListener('click', (e) => {
-        e.preventDefault();
-        closeRideHackPopup();
-        showRideHackPage();
+    // Close registration modal when clicking outside
+    registrationClosedModal.addEventListener('click', (e) => {
+        if (e.target === registrationClosedModal) {
+            closeRegistrationClosedModal();
+        }
     });
     
     // Enhanced Registration Modal
@@ -575,10 +568,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const contentTeamModalButton = document.getElementById('contentTeamModalButton');
     
     // Brochure Coming Soon Modal
-    const brochureComingSoonModal = document.getElementById('brochureComingSoonModal');
+    const brochureComingSoonModal = document.getElementById('brchureComingSoonModal');
     const brochureComingSoonClose = document.getElementById('brochureComingSoonClose');
     const brochureComingSoonButton = document.getElementById('brochureComingSoonButton');
     const downloadBrochureBtn = document.getElementById('downloadBrochureBtn');
+    
+    // Download Shortlisted Teams PDF Button
+    const downloadShortlistedTeamsBtn = document.getElementById('downloadShortlistedTeamsBtn');
     
     // Function to reset all active states
     function resetActiveStates() {
@@ -800,25 +796,25 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Register buttons - now open registration modal
+    // Register buttons - now show registration closed modal
     if (registerBtn) {
         registerBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            showRegistrationModal();
+            showRegistrationClosedModal();
         });
     }
     
     if (eventsPageRegisterBtn) {
         eventsPageRegisterBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            showRegistrationModal();
+            showRegistrationClosedModal();
         });
     }
     
     if (rideHackRegisterBtn) {
         rideHackRegisterBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            showRegistrationModal();
+            showRegistrationClosedModal();
         });
     }
     
@@ -921,6 +917,27 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadBrochureBtn.addEventListener('click', (e) => {
             e.preventDefault();
             showBrochureComingSoonModal();
+        });
+    }
+    
+    // Download Shortlisted Teams PDF
+    if (downloadShortlistedTeamsBtn) {
+        downloadShortlistedTeamsBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            // Create a sample PDF content (you should replace this with actual PDF URL)
+            const pdfUrl = 'https://drive.google.com/file/d/1example/view'; // Replace with actual PDF URL
+            
+            // Create a temporary link to download the PDF
+            const link = document.createElement('a');
+            link.href = pdfUrl;
+            link.download = 'RIDE_Hack_25_Shortlisted_Teams.pdf';
+            link.target = '_blank';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            
+            // Show success message
+            alert('Downloading Shortlisted Teams PDF...');
         });
     }
     
