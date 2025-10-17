@@ -34,48 +34,18 @@
         <div class="typewriter-subtitle">Innovation</div>
     </div>
     
-    <!-- Ride Hack 25 Popup Modal -->
-    <div class="ridehack-popup-modal" id="ridehackPopupModal">
-        <div class="ridehack-popup-content">
-            <button class="ridehack-popup-close" id="ridehackPopupClose">
+    <!-- Registration Closed Modal -->
+    <div class="registration-closed-modal" id="registrationClosedModal">
+        <div class="registration-closed-content">
+            <button class="registration-closed-close" id="registrationClosedClose">
                 <i class="fas fa-times"></i>
             </button>
-            <div class="ridehack-popup-header">
-                <div class="ridehack-popup-icon">
-                    <img src="ChatGPT Image Aug 9, 2025 at 10_55_53 AM.png" alt="Innovation Logo" class="innovation-logo">
-                </div>
-                <h2 class="ridehack-popup-title">RIDE Hack'25</h2>
-                <p class="ridehack-popup-subtitle">Flagship Innovation Challenge</p>
+            <div class="registration-closed-icon">
+                <i class="fas fa-lock"></i>
             </div>
-            <div class="ridehack-popup-body">
-                <div class="ridehack-popup-details">
-                    <div class="ridehack-popup-date">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>November 1, 2025</span>
-                    </div>
-                    <div class="ridehack-popup-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>JIIT Noida Campus</span>
-                    </div>
-                    <div class="ridehack-popup-prize">
-                        <i class="fas fa-trophy"></i>
-                        <span>Prize Pool: ₹2.5 Lakh</span>
-                    </div>
-                </div>
-                <p class="ridehack-popup-description">
-                    Join us for the most exciting innovation challenge of the year! RIDE Hack'25 brings together creative minds to solve real-world problems through technology and innovation.
-                </p>
-                <div class="ridehack-popup-highlights">
-                    <div class="highlight-item">
-                      
-                        <span></span>
-                    </div>
-                </div>
-            </div>
-            <div class="ridehack-popup-footer">
-                <button class="ridehack-popup-register" id="ridehackPopupRegister">Register Now</button>
-                <button class="ridehack-popup-learn" id="ridehackPopupLearn">Learn More</button>
-            </div>
+            <h2 class="registration-closed-title">Registration Closed</h2>
+            <p class="registration-closed-message">Registrations for RIDE Hack'25 are now closed. Thank you for your interest!</p>
+            <button class="registration-closed-button" id="registrationClosedButton">Got It</button>
         </div>
     </div>
     
@@ -117,7 +87,6 @@
             </form>
         </div>
     </div>
-</div>
     
     <!-- Success Modal -->
     <div class="success-modal" id="successModal">
@@ -549,7 +518,7 @@
                        Join us for our flagship RIDE Hack'25 where students, developers, designers, and entrepreneurs come together to build innovative solutions to real-world problems. The event will feature hands-on workshops, mentorship from industry experts, and exciting prizes for the winning teams.
                     </div>
                     <div class="event-actions">
-                        <button class="btn btn-primary" id="registerBtn">Register Now</button>
+                        <button class="btn btn-secondary disabled" id="registerBtn" disabled>Registration Closed</button>
                         <a href="#" id="rideHackDetailBtn" class="btn btn-secondary">View Details</a>
                     </div>
                 </div>
@@ -802,7 +771,7 @@
 Join us for our flagship RIDE Hack'25 where students, developers, designers, and entrepreneurs come together to build innovative solutions to real-world problems. The event will feature hands-on workshops, mentorship from industry experts, and exciting prizes for the winning teams.
                 </div>
                 <div class="event-actions">
-                    <button class="btn btn-primary" id="eventsPageRegisterBtn">Register Now</button>
+                    <button class="btn btn-secondary disabled" id="eventsPageRegisterBtn" disabled>Registration Closed</button>
                     <a href="#" id="eventsPageRideHackDetailBtn" class="btn btn-secondary">View Details</a>
                 </div>
             </div>
@@ -927,11 +896,11 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                 
                 <!-- Register Now Section -->
                 <div class="detail-section">
-                    <h3 class="detail-title">Register Now</h3>
+                    <h3 class="detail-title">Registration Status</h3>
                     <div class="register-container">
-                        <p class="register-info">Registration is open to all students and professionals. Teams can consist of 2-4 members.</p>
+                        <p class="register-info">Registrations for RIDE Hack'25 are now closed. Thank you for your interest!</p>
                         <div class="register-actions">
-                            <button class="btn btn-primary" id="rideHackRegisterBtn">Register for RIDE Hack'25</button>
+                            <button class="btn btn-secondary disabled" disabled>Registration Closed</button>
                             <a href="https://1drv.ms/w/c/7197233b58d54a04/EagZhAuJHDNPrmvkA2OwzCEBXfNQPYo1B06gWfiYs539_Q?e=3cbREf"><button class="btn btn-secondary" id="downlodBrochureBtn" >Download Brochure</button></a>
                         </div>
                     </div>
@@ -1491,6 +1460,40 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
         
         <div class="updates-container">
             <div class="updates-list">
+                <!-- New Update: RIDE Hack Internal Round Shortlisted Teams -->
+                <div class="update-card" id="rideHackShortlistedUpdateCard">
+                    <div class="update-date">
+                        <span class="update-day">26</span>
+                        <span class="update-month">AUG</span>
+                    </div>
+                    <div class="update-content">
+                        <h3 class="update-title">RIDE Hack'25 - Internal Round Shortlisted Teams</h3>
+                        <p class="update-description">
+                            Congratulations to all the teams who have been shortlisted for the internal round of RIDE Hack'25! 
+                            These innovative teams have demonstrated exceptional problem-solving skills and creative thinking. 
+                            The shortlisted teams will now proceed to the next round where they will present their solutions to our panel of expert judges.
+                        </p>
+                        <div class="update-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-users"></i>
+                                <span>50+ Teams Shortlisted</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-calendar"></i>
+                                <span>Next Round: Sept 1, 2025</span>
+                            </div>
+                        </div>
+                        <div class="update-actions">
+                                <a href="RIDEHack'25_Shortlisted Teams.pdf" download>
+
+                            <button class="update-download-btn" id="downloadShortlistedTeamsBtn">
+                                <i class="fas fa-download"></i>
+                                Download Shortlisted Teams PDF
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
                 <div class="update-card" id="rideHackUpdateCard">
                     <div class="update-date">
                         <span class="update-day">1</span>
