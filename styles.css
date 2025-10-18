@@ -193,552 +193,6 @@ h1, h2, h3, h4, h5, h6 {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Enhanced Modal Styles for Mobile */
-@media (max-width: 768px) {
-    .shortlisted-modal,
-    .registration-modal,
-    .success-modal,
-    .coming-soon-modal,
-    .simple-coming-soon-modal,
-    .gallery-lightbox-modal {
-        padding: 15px;
-    }
-    
-    .shortlisted-content,
-    .registration-content,
-    .success-content,
-    .coming-soon-content,
-    .simple-coming-soon-content {
-        padding: 30px 20px;
-        max-width: 95%;
-        max-height: 90vh;
-        overflow-y: auto;
-        border-radius: 15px;
-    }
-    
-    .shortlisted-title,
-    .registration-title,
-    .success-title,
-    .coming-soon-title,
-    .simple-coming-soon-title {
-        font-size: 28px;
-        margin-bottom: 15px;
-    }
-    
-    .shortlisted-subtitle,
-    .registration-subtitle,
-    .success-message,
-    .coming-soon-message,
-    .simple-coming-soon-message {
-        font-size: 16px;
-        margin-bottom: 20px;
-    }
-    
-    .shortlisted-stats {
-        gap: 15px;
-        margin-bottom: 20px;
-    }
-    
-    .stat-item {
-        min-width: 80px;
-        padding: 12px;
-    }
-    
-    .shortlisted-actions,
-    .registration-actions {
-        flex-direction: column;
-        gap: 15px;
-    }
-    
-    .shortlisted-check-btn,
-    .shortlisted-later-btn,
-    .registration-submit-btn,
-    .success-button,
-    .coming-soon-button,
-    .simple-coming-soon-button {
-        width: 100%;
-        padding: 12px 20px;
-        font-size: 14px;
-    }
-    
-    .shortlisted-icon,
-    .registration-icon,
-    .success-icon,
-    .coming-soon-icon,
-    .simple-coming-soon-icon {
-        width: 70px;
-        height: 70px;
-        font-size: 32px;
-        margin-bottom: 15px;
-    }
-    
-    .form-row {
-        grid-template-columns: 1fr;
-        gap: 15px;
-    }
-    
-    .form-group {
-        margin-bottom: 15px;
-    }
-    
-    .form-group input {
-        padding: 12px;
-        font-size: 14px;
-    }
-}
-
-/* Enhanced Gallery Lightbox for Mobile */
-@media (max-width: 768px) {
-    .gallery-lightbox-content {
-        max-width: 95%;
-        max-height: 90vh;
-    }
-    
-    .gallery-lightbox-image-container {
-        height: 60vh;
-    }
-    
-    .gallery-lightbox-nav {
-        padding: 0 10px;
-    }
-    
-    .gallery-lightbox-prev,
-    .gallery-lightbox-next {
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-}
-
-/* Enhanced Update Card Button */
-.update-read-more-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background: var(--gradient);
-    color: white;
-    border: none;
-    border-radius: 30px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    margin-top: 15px;
-}
-
-.update-read-more-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.4);
-}
-
-/* Enhanced Countdown Timer */
-.countdown-item {
-    background: rgba(0, 86, 179, 0.15);
-    border: 1px solid rgba(0, 86, 179, 0.3);
-    border-radius: 15px;
-    padding: 20px;
-    min-width: 100px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.countdown-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 86, 179, 0.2);
-    border-color: var(--primary);
-}
-
-.countdown-value {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 48px;
-    font-weight: 800;
-    color: var(--primary);
-    line-height: 1;
-    margin-bottom: 10px;
-    position: relative;
-    z-index: 2;
-    background: linear-gradient(135deg, #00d4ff, #0099ff);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
-    letter-spacing: 2px;
-}
-
-.countdown-label {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-dim);
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    z-index: 2;
-}
-
-/* Mobile Countdown Timer */
-@media (max-width: 768px) {
-    .countdown-item {
-        min-width: 70px;
-        padding: 15px;
-    }
-    
-    .countdown-value {
-        font-size: 32px;
-    }
-    
-    .countdown-label {
-        font-size: 12px;
-    }
-}
-
-/* Enhanced Mobile Navigation */
-@media (max-width: 768px) {
-    .nav-container {
-        padding: 0 15px;
-    }
-    
-    .logo-img {
-        height: 40px;
-    }
-    
-    .logo-text span {
-        font-size: 18px;
-    }
-    
-    .menu-toggle {
-        width: 40px;
-        height: 40px;
-    }
-    
-    .mobile-menu {
-        width: 85%;
-        max-width: 300px;
-    }
-    
-    .mobile-menu-links {
-        gap: 20px;
-    }
-    
-    .mobile-nav-link {
-        font-size: 16px;
-        padding: 12px 0;
-    }
-}
-
-/* Enhanced Event Card */
-.event-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    padding: 30px;
-    margin-bottom: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-}
-
-.event-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 86, 179, 0.2);
-    border-color: var(--primary);
-}
-
-.event-header {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    align-items: center;
-}
-
-.event-date {
-    background: var(--gradient);
-    color: white;
-    border-radius: 15px;
-    padding: 15px;
-    text-align: center;
-    min-width: 100px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    flex-shrink: 0;
-    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
-}
-
-.event-date .day {
-    font-size: 28px;
-    display: block;
-    font-weight: 800;
-}
-
-.event-date .month {
-    font-size: 16px;
-    margin-top: 5px;
-}
-
-.event-info {
-    flex: 1;
-    min-width: 0;
-}
-
-.event-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: var(--light);
-}
-
-.event-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 15px;
-}
-
-.event-meta-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--accent);
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.event-description {
-    font-size: 16px;
-    opacity: 0.9;
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-.event-actions {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-/* Mobile Event Card */
-@media (max-width: 768px) {
-    .event-card {
-        padding: 20px;
-        gap: 15px;
-    }
-    
-    .event-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 15px;
-    }
-    
-    .event-date {
-        align-self: flex-start;
-        padding: 12px;
-        min-width: 80px;
-    }
-    
-    .event-date .day {
-        font-size: 24px;
-    }
-    
-    .event-date .month {
-        font-size: 14px;
-    }
-    
-    .event-title {
-        font-size: 20px;
-    }
-    
-    .event-meta {
-        gap: 10px;
-    }
-    
-    .event-meta-item {
-        font-size: 12px;
-    }
-    
-    .event-description {
-        font-size: 14px;
-    }
-    
-    .event-actions {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .event-actions .btn {
-        width: 100%;
-    }
-}
-
-/* Enhanced Update Card */
-.update-card {
-    display: flex;
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 20px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
-    margin-bottom: 30px;
-}
-
-.update-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 86, 179, 0.2);
-    border-color: var(--primary);
-}
-
-.update-date {
-    background: var(--gradient);
-    color: white;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-width: 100px;
-    text-align: center;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 700;
-    flex-shrink: 0;
-}
-
-.update-day {
-    font-size: 32px;
-    font-weight: 800;
-    line-height: 1;
-}
-
-.update-month {
-    font-size: 16px;
-    font-weight: 600;
-    margin-top: 5px;
-}
-
-.update-content {
-    padding: 25px;
-    flex: 1;
-}
-
-.update-title {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 24px;
-    font-weight: 700;
-    margin-bottom: 15px;
-    color: var(--primary);
-}
-
-.update-description {
-    font-size: 16px;
-    line-height: 1.6;
-    color: var(--text-light);
-    margin-bottom: 20px;
-}
-
-.update-highlights {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-bottom: 20px;
-}
-
-.update-highlights .highlight-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(0, 86, 179, 0.1);
-    border: 1px solid rgba(0, 86, 179, 0.3);
-    border-radius: 50px;
-    padding: 8px 15px;
-    transition: all 0.3s ease;
-}
-
-.update-highlights .highlight-item:hover {
-    background: rgba(0, 86, 179, 0.2);
-    transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.2);
-}
-
-.update-highlights .highlight-item i {
-    color: var(--primary);
-    font-size: 16px;
-}
-
-.update-highlights .highlight-item span {
-    font-weight: 600;
-}
-
-.update-actions {
-    display: flex;
-    gap: 15px;
-    flex-wrap: wrap;
-}
-
-/* Mobile Update Card */
-@media (max-width: 768px) {
-    .update-card {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px;
-        gap: 15px;
-    }
-    
-    .update-date {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        padding: 10px 15px;
-        border-radius: 10px;
-        min-width: auto;
-        margin-bottom: 10px;
-    }
-    
-    .update-day {
-        font-size: 20px;
-    }
-    
-    .update-month {
-        font-size: 14px;
-    }
-    
-    .update-content {
-        padding: 15px;
-    }
-    
-    .update-title {
-        font-size: 18px;
-    }
-    
-    .update-description {
-        font-size: 14px;
-    }
-    
-    .update-highlights {
-        gap: 10px;
-    }
-    
-    .update-highlights .highlight-item {
-        padding: 6px 10px;
-        font-size: 12px;
-    }
-    
-    .update-actions {
-        flex-direction: column;
-        gap: 10px;
-    }
-    
-    .update-actions .btn {
-        width: 100%;
-    }
-}
-
 /* Shortlisted Teams Announcement Modal - IMPROVED FOR MOBILE */
 .shortlisted-modal {
     display: none;
@@ -4596,7 +4050,6 @@ footer {
     border-radius: 20px;
     padding: 50px;
     transition: all 0.3s ease;
-    backdrop-filter: blur(10px);
     position: relative;
     overflow: hidden;
 }
@@ -5293,6 +4746,13 @@ footer {
         padding: 30px 20px;
     }
     
+    .contact-info-card {
+        padding: 20px;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+    }
+    
     .contact-form-title {
         font-size: 20px;
         margin-bottom: 20px;
@@ -5480,23 +4940,13 @@ footer {
     }
     
     /* Gallery Lightbox Mobile - IMPROVED */
-    .gallery-lightbox-content {
-        max-width: 95%;
-        max-height: 90vh;
-    }
-    
     .gallery-lightbox-image-container {
         height: 50vh;
     }
     
-    .gallery-lightbox-nav {
-        padding: 0 10px;
-    }
-    
-    .gallery-lightbox-prev,
-    .gallery-lightbox-next {
-        width: 35px;
-        height: 35px;
+    .gallery-lightbox-image {
+        max-width: 95%;
+        max-height: 95%;
     }
     
     .updates-hero {
@@ -5632,6 +5082,1028 @@ footer {
         gap: 15px;
     }
     
+    .update-card {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+        border-radius: 15px;
+        gap: 15px;
+    }
+    
+    .update-date {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 10px 15px;
+        border-radius: 10px;
+        min-width: auto;
+        margin-bottom: 10px;
+    }
+    
+    .update-day {
+        font-size: 20px;
+    }
+    
+    .update-month {
+        font-size: 14px;
+    }
+    
+    .update-content {
+        padding: 0;
+    }
+    
+    .update-title {
+        font-size: 18px;
+    }
+    
+    .update-description {
+        font-size: 14px;
+    }
+    
+    /* Center text in hero banners for mobile */
+    .about-hero-content,
+    .events-hero-content,
+    .gallery-hero-content,
+    .updates-hero-content,
+    .contact-hero-content,
+    .team-hero-content,
+    .ride-hack-hero-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+        padding-top: 60px;
+    }
+    
+    /* Video adjustments for mobile */
+    .hero-video {
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    /* Ride Hack Event Detail Page Mobile */
+    .ride-hack-hero-title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+    
+    .ride-hack-hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .event-date-badge {
+        top: -40px;
+        right: 10px;
+        padding: 12px;
+    }
+    
+    .date-day {
+        font-size: 24px;
+    }
+    
+    .date-month {
+        font-size: 14px;
+    }
+    
+    .ride-hack-intro-title {
+        font-size: 1.6rem;
+    }
+    
+    .detail-title {
+        font-size: 1.3rem;
+    }
+    
+    .schedule-day {
+        padding: 20px;
+    }
+    
+    .schedule-day-title {
+        font-size: 1.2rem;
+    }
+    
+    .schedule-time {
+        min-width: 70px;
+        font-size: 12px;
+    }
+    
+    .schedule-activity {
+        font-size: 12px;
+    }
+    
+    .prize-position {
+        font-size: 1.3rem;
+    }
+    
+    .prize-amount {
+        font-size: 1rem;
+    }
+    
+    .register-info {
+        font-size: 0.9rem;
+    }
+    
+    /* Benefits Grid Mobile */
+    .benefits-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Timeline Mobile */
+    .timeline-item {
+        margin-bottom: 30px;
+    }
+    
+    .timeline-content {
+        padding: 15px;
+    }
+    
+    .timeline-title {
+        font-size: 16px;
+    }
+    
+    .timeline-date {
+        font-size: 12px;
+    }
+    
+    .timeline-desc {
+        font-size: 14px;
+    }
+    
+    /* Ride Hack Popup Modal Mobile */
+    .ridehack-popup-content {
+        padding: 25px 15px;
+        max-width: 90%;
+    }
+    
+    .ridehack-popup-title {
+        font-size: 32px;
+    }
+    
+    .ridehack-popup-subtitle {
+        font-size: 16px;
+    }
+    
+    .ridehack-popup-details {
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    
+    .ridehack-popup-date,
+    .ridehack-popup-location,
+    .ridehack-popup-prize {
+        font-size: 14px;
+    }
+    
+    .ridehack-popup-description {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    
+    .ridehack-popup-highlights {
+        gap: 8px;
+    }
+    
+    .ridehack-popup-highlights .highlight-item {
+        padding: 6px 10px;
+        font-size: 12px;
+    }
+    
+    .ridehack-popup-footer {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .ridehack-popup-register,
+    .ridehack-popup-learn {
+        width: 100%;
+        font-size: 14px;
+    }
+    
+    /* Registration Modal Mobile */
+    .registration-content {
+        padding: 40px 25px;
+        max-width: 90%;
+    }
+    
+    .registration-title {
+        font-size: 28px;
+    }
+    
+    .registration-subtitle {
+        font-size: 16px;
+    }
+    
+    .registration-form .form-row {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .registration-form .form-group input {
+        padding: 12px;
+        font-size: 14px;
+    }
+    
+    .registration-submit-btn {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    /* Registration Success Modal Mobile */
+    .registration-success-content {
+        padding: 40px 25px;
+        max-width: 90%;
+    }
+    
+    .registration-success-title {
+        font-size: 24px;
+    }
+    
+    .registration-success-subtitle {
+        font-size: 16px;
+    }
+    
+    .registration-success-button {
+        padding: 10px 12px;
+        font-size: 14px;
+    }
+    
+    /* Gallery Lightbox Mobile */
+    .gallery-lightbox-content {
+        max-width: 95%;
+    }
+    
+    .gallery-lightbox-image-container {
+        height: 40vh;
+    }
+    
+    .gallery-lightbox-nav {
+        padding: 0 10px;
+    }
+    
+    .gallery-lightbox-prev,
+    .gallery-lightbox-next {
+        width: 35px;
+        height: 35px;
+    }
+    
+    /* What We Do Section for mobile - IMPROVED */
+    .whatwedo-carousel-container {
+        max-width: 95%;
+        margin: 0 auto 40px;
+        height: 200px;
+    }
+    
+    .whatwedo-carousel-track {
+        animation: carouselSlide 7200s linear infinite; /* Changed to match desktop speed (2 hours) */
+    }
+    
+    .whatwedo-carousel-slide {
+        padding: 8px;
+    }
+    
+    .whatwedo-carousel-slide img {
+        height: 180px;
+        border-radius: 10px;
+    }
+    
+    /* Team member photos for mobile - IMPROVED */
+    .circular-photo {
+        width: 120px;
+        height: 120px;
+    }
+    
+    .circular-photo img {
+        object-position: center top;
+        transform: scale(1.15);
+    }
+    
+    /* Team Projects Section Mobile */
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .project-card {
+        padding: 15px;
+    }
+    
+    .project-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+    
+    .project-title {
+        font-size: 16px;
+    }
+    
+    .project-description {
+        font-size: 12px;
+    }
+    
+    /* Department Teams for very small screens */
+    .department-teams {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .department-team-card {
+        padding: 20px 15px;
+    }
+    
+    .department-team-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .department-team-title {
+        font-size: 18px;
+    }
+    
+    .department-team-description {
+        font-size: 13px;
+    }
+    
+    .department-team-btn {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    
+    /* Google Map for very small screens */
+    .contact-map {
+        margin-top: 20px;
+        order: 3;
+    }
+    
+    .map-container {
+        height: 150px;
+    }
+}
+@media (max-width: 480px) {
+    nav {
+        padding: 12px 10px;
+        border-radius: 0 0 15px 15px;
+    }
+    
+    .logo {
+        font-size: 16px;
+    }
+    
+    .logo-img {
+        height: 35px;
+    }
+    
+    .menu-toggle {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .menu-toggle span {
+        width: 20px;
+        height: 3px;
+    }
+    
+    .menu-toggle span:nth-child(1) {
+        top: 12px;
+    }
+    
+    .menu-toggle span:nth-child(2) {
+        top: 20px;
+    }
+    
+    .menu-toggle span:nth-child(3) {
+        top: 28px;
+    }
+    
+    span:nth-child(1) .menu-toggle.active {
+        top: 20px;
+    }
+    
+    .menu-toggle.active span:nth-child(3) {
+        top: 20px;
+    }
+    
+    .hero {
+        height: 60vh;
+        min-height: 500px;
+    }
+    
+    .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .section-title {
+        font-size: 28px;
+    }
+    
+    .about-cube {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .cube-face {
+        width: 200px;
+        height: 200px;
+        font-size: 18px;
+    }
+    
+    .cube-face:nth-child(1) { transform: rotateY(0deg) translateZ(100px); }
+    .cube-face:nth-child(2) { transform: rotateY(90deg) translateZ(100px); }
+    .cube-face:nth-child(3) { transform: rotateY(180deg) translateZ(100px); }
+    .cube-face:nth-child(4) { transform: rotateY(-90deg) translateZ(100px); }
+    .cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(100px); }
+    .cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(100px); }
+    
+    footer {
+        padding: 30px 10px 15px;
+    }
+    
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .footer-column {
+        padding: 12px;
+        margin-bottom: 10px;
+    }
+    
+    .footer-column h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+    
+    .contact-item {
+        gap: 8px;
+    }
+    
+    .contact-item p {
+        font-size: 13px;
+    }
+    
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+    
+    .footer-links a {
+        font-size: 12px;
+        padding: 3px 8px;
+    }
+    
+    .social-icons {
+        gap: 8px;
+        margin-top: 10px;
+    }
+    
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+        font-size: 14px;
+    }
+    
+    .copyright {
+        margin-top: 15px;
+        font-size: 11px;
+        padding-top: 15px;
+    }
+    
+    .coming-soon-content {
+        padding: 25px 15px;
+    }
+    
+    .coming-soon-title {
+        font-size: 28px;
+    }
+    
+    .coming-soon-message {
+        font-size: 14px;
+    }
+    
+    .countdown-item {
+        min-width: 70px;
+        padding: 12px;
+    }
+    
+    .countdown-value {
+        font-size: 24px;
+    }
+    
+    .contact-hero {
+        height: 30vh;
+    }
+    
+    .contact-hero-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .contact-hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .contact-info-card {
+        padding: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        text-align: left;
+    }
+    
+    .contact-form-section {
+        padding: 25px 15px;
+    }
+    
+    .contact-form-title {
+        font-size: 18px;
+    }
+    
+    .team-hero {
+        height: 35vh;
+    }
+    
+    .team-hero-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .team-hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .team-section-title {
+        font-size: 1.6rem;
+    }
+    
+    .member-avatar {
+        padding: 12px;
+    }
+    
+    .member-photo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .member-name {
+        font-size: 16px;
+    }
+    
+    .member-role {
+        font-size: 13px;
+    }
+    
+    .member-bio {
+        font-size: 12px;
+    }
+    
+    .gallery-hero {
+        height: 30vh;
+    }
+    
+    .gallery-hero-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .gallery-hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .gallery-section-title {
+        font-size: 1.6rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+        gap: 10px;
+    }
+    
+    .gallery-item {
+        height: 150px;
+    }
+    
+    .updates-hero {
+        height: 30vh;
+    }
+    
+    .updates-hero-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .updates-hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .back-button-container {
+        bottom: 15px;
+        left: 15px;
+    }
+    
+    .sexy-back-button {
+        padding: 10px 15px;
+        font-size: 11px;
+    }
+    
+    .about-hero {
+        height: 35vh;
+    }
+    
+    .about-hero-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .about-hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .about-intro-title,
+    .activities-title {
+        font-size: 1.4rem;
+    }
+    
+    .activity-title {
+        font-size: 1.2rem;
+    }
+    
+    .highlight-item {
+        padding: 6px 10px;
+        font-size: 0.8rem;
+    }
+    
+    .events-hero {
+        height: 35vh;
+    }
+    
+    .events-hero-title {
+        font-size: 1.8rem;
+        line-height: 1.2;
+    }
+    
+    .events-hero-subtitle {
+        font-size: 0.9rem;
+    }
+    
+    .events-intro-title {
+        font-size: 1.4rem;
+    }
+    
+    .event-title {
+        font-size: 1.2rem;
+    }
+    
+    .event-countdown .countdown-value {
+        font-size: 1rem;
+    }
+    
+    .cta-title {
+        font-size: 1.2rem;
+    }
+    
+    .cta-text {
+        font-size: 0.8rem;
+    }
+    
+    /* Even smaller event card on very small screens */
+    .event-card {
+        padding: 15px;
+        gap: 12px;
+    }
+    
+    .event-date {
+        padding: 10px;
+        min-width: 80px;
+    }
+    
+    .event-date .day {
+        font-size: 18px;
+    }
+    
+    .event-date .month {
+        font-size: 14px;
+    }
+    
+    .event-title {
+        font-size: 18px;
+    }
+    
+    .event-description {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+    
+    .event-actions .btn {
+        padding: 12px 15px;
+        font-size: 13px;
+    }
+    
+    /* Event Countdown Timer for very small screens - IMPROVED */
+    .event-countdown-section {
+        padding: 15px;
+        margin: 15px 0;
+    }
+    
+    .countdown-title {
+        font-size: 18px;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+    
+    .countdown-timer {
+        gap: 10px;
+    }
+    
+    .countdown-item {
+        min-width: 70px;
+        padding: 12px;
+        margin-bottom: 8px;
+    }
+    
+    .countdown-value {
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: 6px;
+        line-height: 1;
+        background: linear-gradient(135deg, #00d4ff, #0099ff);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
+        letter-spacing: 2px;
+    }
+    
+    .countdown-label {
+        font-size: 11px;
+        font-weight: 600;
+        color: #00d4ff;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    
+    /* Innovation Spotlight for very small screens */
+    .innovation-spotlight {
+        padding: 30px 15px;
+    }
+    
+    .innovation-spotlight-title {
+        font-size: 24px;
+    }
+    
+    .innovation-card {
+        padding: 15px;
+    }
+    
+    .innovation-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+    
+    .innovation-card-title {
+        font-size: 18px;
+    }
+    
+    .innovation-card-description {
+        font-size: 13px;
+    }
+    
+    /* Further adjust banner titles for very small screens */
+    .about-hero-title,
+    .events-hero-title,
+    .gallery-hero-title,
+    .updates-hero-title,
+    .contact-hero-title,
+    .team-hero-title,
+    .ride-hack-hero-title {
+        font-size: 1.6rem;
+        padding-top: 60px;
+        line-height: 1.2;
+    }
+    
+    .about-hero-subtitle,
+    .events-hero-subtitle,
+    .gallery-hero-subtitle,
+    .updates-hero-subtitle,
+    .contact-hero-subtitle,
+    .team-hero-subtitle,
+    .ride-hack-hero-subtitle {
+        font-size: 0.8rem;
+    }
+    
+    /* Updates page update cards for very small screens */
+    .update-card {
+        padding: 12px;
+    }
+    
+    .update-date {
+        padding: 8px;
+    }
+    
+    .update-day {
+        font-size: 16px;
+    }
+    
+    .update-month {
+        font-size: 12px;
+    }
+    
+    .update-content {
+        padding: 12px;
+    }
+    
+    .update-title {
+        font-size: 16px;
+    }
+    
+    .update-description {
+        font-size: 12px;
+    }
+    
+    /* Ensure text is centered in hero banners for very small screens */
+    .about-hero-content,
+    .events-hero-content,
+    .gallery-hero-content,
+    .updates-hero-content,
+    .contact-hero-content,
+    .team-hero-content,
+    .ride-hack-hero-content {
+        padding-top: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        text-align: center;
+    }
+    
+    /* Video adjustments for very small screens */
+    .hero-video {
+        object-fit: cover;
+        object-position: center top;
+    }
+    
+    /* Ride Hack Event Detail Page for very small screens */
+    .ride-hack-intro-title {
+        font-size: 1.4rem;
+    }
+    
+    .detail-title {
+        font-size: 1.1rem;
+    }
+    
+    .schedule-day {
+        padding: 15px;
+    }
+    
+    .schedule-day-title {
+        font-size: 1rem;
+    }
+    
+    .schedule-time {
+        min-width: 60px;
+        font-size: 11px;
+    }
+    
+    .schedule-activity {
+        font-size: 11px;
+    }
+    
+    .prize-position {
+        font-size: 1.1rem;
+    }
+    
+    .prize-amount {
+        font-size: 0.9rem;
+    }
+    
+    .register-info {
+        font-size: 0.8rem;
+    }
+    
+    /* Ride Hack Popup Modal for very small screens */
+    .ridehack-popup-content {
+        padding: 20px 12px;
+        max-width: 95%;
+    }
+    
+    .ridehack-popup-title {
+        font-size: 24px;
+    }
+    
+    .ridehack-popup-subtitle {
+        font-size: 14px;
+    }
+    
+    .ridehack-popup-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 36px;
+    }
+    
+    .ridehack-popup-description {
+        font-size: 13px;
+    }
+    
+    .ridehack-popup-highlights .highlight-item {
+        padding: 6px 10px;
+        font-size: 11px;
+    }
+    
+    /* Registration Modal for very small screens */
+    .registration-content {
+        padding: 30px 20px;
+        max-width: 95%;
+    }
+    
+    .registration-title {
+        font-size: 24px;
+    }
+    
+    .registration-subtitle {
+        font-size: 14px;
+    }
+    
+    .registration-form .form-group input {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    .registration-submit-btn {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    /* Registration Success Modal for very small screens */
+    .registration-success-content {
+        padding: 30px 20px;
+        max-width: 95%;
+    }
+    
+    .registration-success-title {
+        font-size: 24px;
+    }
+    
+    .registration-success-subtitle {
+        font-size: 14px;
+    }
+    
+    .registration-success-button {
+        padding: 10px 12px;
+        font-size: 13px;
+    }
+    
+    /* Gallery Lightbox for very small screens */
+    .gallery-lightbox-content {
+        max-width: 98%;
+    }
+    
+    .gallery-lightbox-image-container {
+        height: 35vh;
+    }
+    
+    .gallery-lightbox-nav {
+        padding: 0 5px;
+    }
+    
+    .gallery-lightbox-prev,
+    .gallery-lightbox-next {
+        width: 30px;
+        height: 30px;
+    }
+    
+    /* What We Do Section for very small screens - IMPROVED */
+    .whatwedo-carousel-container {
+        max-width: 95%;
+        margin: 0 auto 30px;
+        height: 150px;
+    }
+    
+    .whatwedo-carousel-track {
+        animation: carouselSlide 7200s linear infinite; /* Changed to match desktop speed (2 hours) */
+    }
+    
+    .whatwedo-carousel-slide {
+        padding: 6px;
+    }
+    
+    .whatwedo-carousel-slide img {
+        height: 140px;
+        border-radius: 8px;
+    }
+    
+    /* Enhanced Update Section for Mobile */
     .update-card {
         flex-direction: column;
         align-items: flex-start;
@@ -6362,5 +6834,123 @@ footer {
     .download-results-btn {
         padding: 10px 20px;
         font-size: 13px;
+    }
+}
+
+/* Mobile Modal Improvements */
+@media (max-width: 768px) {
+    .shortlisted-modal,
+    .registration-closed-modal,
+    .registration-modal,
+    .success-modal,
+    .coming-soon-modal,
+    .simple-coming-soon-modal,
+    .gallery-lightbox-modal {
+        padding: 10px;
+    }
+    
+    .shortlisted-content,
+    .registration-closed-content,
+    .registration-content,
+    .success-content,
+    .coming-soon-content,
+    .simple-coming-soon-content {
+        padding: 30px 20px;
+        max-height: 90vh;
+        overflow-y: auto;
+        border-radius: 15px;
+    }
+    
+    .shortlisted-title,
+    .registration-closed-title,
+    .registration-title,
+    .success-title,
+    .coming-soon-title,
+    .simple-coming-soon-title {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .shortlisted-subtitle,
+    .registration-closed-message,
+    .registration-subtitle,
+    .success-message,
+    .coming-soon-message,
+    .simple-coming-soon-message {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+    
+    .shortlisted-actions,
+    .registration-closed-button,
+    .registration-submit-btn,
+    .success-button,
+    .coming-soon-button,
+    .simple-coming-soon-button {
+        padding: 12px 20px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    
+    .shortlisted-stats {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .stat-item {
+        min-width: 80px;
+        padding: 10px;
+    }
+    
+    .stat-number {
+        font-size: 20px;
+    }
+    
+    .stat-label {
+        font-size: 12px;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+    
+    .form-group {
+        margin-bottom: 15px;
+    }
+    
+    .form-group label {
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 10px;
+        font-size: 14px;
+    }
+    
+    .gallery-lightbox-content {
+        max-width: 95%;
+    }
+    
+    .gallery-lightbox-image-container {
+        height: 40vh;
+    }
+    
+    .gallery-lightbox-image {
+        max-width: 95%;
+        max-height: 95%;
+    }
+    
+    .gallery-lightbox-nav {
+        padding: 0 10px;
+    }
+    
+    .gallery-lightbox-prev,
+    .gallery-lightbox-next {
+        width: 35px;
+        height: 35px;
     }
 }
