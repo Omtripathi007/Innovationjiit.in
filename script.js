@@ -484,8 +484,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Enhanced Event Countdown Timer (for RIDE Hack'25)
     function startEventCountdown() {
-        // Set the date we're counting down to (November 1, 2025)
-        const eventDate = new Date("November 1, 2025 09:00:00").getTime();
+        // Set the date we're counting down to (November 1, 2025 at 10:00 AM)
+        const eventDate = new Date("November 1, 2025 10:00:00").getTime();
         
         // Update the count down every 1 second
         const eventCountdownInterval = setInterval(function() {
