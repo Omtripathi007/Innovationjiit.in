@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpyZHhyb3NteWFzYWV4YXR1ZHJhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc1NjgwMjgsImV4cCI6MjA3MzE0NDAyOH0.tjVr4aAxNvnfoQX7iJNe5FkxZM9keXLwzpN-wCda7q0';
     const supabase = window.supabase.createClient(supabaseUrl, supabaseKey);
     
+    // RIDE Hack'25 Postponement Modal
+    const postponementModal = document.getElementById('postponementModal');
+    const acknowledgeBtn = document.getElementById('acknowledgePostponementBtn');
+    
     // Enhanced Typewriter Loading Effect
     const typewriterText = document.getElementById('typewriter-text');
     const text = "JIIT";
@@ -15,14 +19,18 @@ document.addEventListener('DOMContentLoaded', () => {
             index++;
             setTimeout(typeWriter, 300);
         } else {
-            // After typing JIIT, show the shortlisted teams modal
+            // After typing JIIT, hide the loader
             setTimeout(() => {
                 const loader = document.getElementById('loader');
                 loader.style.opacity = '0';
                 setTimeout(() => {
                     loader.style.display = 'none';
-                    // Show the shortlisted teams modal
-                    showShortlistedModal();
+                    // Show the postponement modal after loader disappears
+                    setTimeout(() => {
+                        if (postponementModal) {
+                            postponementModal.classList.add('active');
+                        }
+                    }, 500);
                 }, 500);
             }, 1500);
         }
@@ -30,6 +38,30 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Start typewriter effect after a short delay
     setTimeout(typeWriter, 500);
+    
+    // Close the postponement modal when acknowledge button is clicked
+    if (acknowledgeBtn) {
+        acknowledgeBtn.addEventListener('click', function() {
+            postponementModal.classList.remove('active');
+            // After closing postponement modal, show the shortlisted teams modal
+            setTimeout(() => {
+                showShortlistedModal();
+            }, 500);
+        });
+    }
+    
+    // Also close when clicking outside the modal content
+    if (postponementModal) {
+        postponementModal.addEventListener('click', function(e) {
+            if (e.target === postponementModal) {
+                postponementModal.classList.remove('active');
+                // After closing postponement modal, show the shortlisted teams modal
+                setTimeout(() => {
+                    showShortlistedModal();
+                }, 500);
+            }
+        });
+    }
     
     // 3D Interactive Video Banner
     const hero3dContainer = document.getElementById('hero3dContainer');
@@ -484,8 +516,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Enhanced Event Countdown Timer (for RIDE Hack'25)
     function startEventCountdown() {
-        // Set the date we're counting down to (November 1, 2025 at 10:00 AM)
-        const eventDate = new Date("November 1, 2025 10:00:00").getTime();
+        // Set the date we're counting down to (November 15, 2025 at 10:00 AM) - Updated to new date
+        const eventDate = new Date("November 15, 2025 10:00:00").getTime();
         
         // Update the count down every 1 second
         const eventCountdownInterval = setInterval(function() {
@@ -1084,23 +1116,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-   
     // Enhanced Smooth scrolling for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-        const targetId = this.getAttribute('href');
-        if (targetId === '#') return;
-        
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            e.preventDefault();
-            window.scrollTo({
-                top: targetElement.offsetTop - 80,
-                behavior: 'smooth'
-            });
-        }
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === '#') return;
+            
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
     });
-});
+    
     // Newsletter form submission
     const newsletterForm = document.querySelector('.newsletter-form');
     if (newsletterForm) {
