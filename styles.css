@@ -6954,3 +6954,270 @@ footer {
         height: 35px;
     }
 }
+/* popup change*/
+/* RIDE Hack'25 Postponement Modal Styles */
+.postponement-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.postponement-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.postponement-content {
+    position: relative;
+    background: linear-gradient(135deg, rgba(0, 86, 179, 0.2), rgba(255, 107, 107, 0.2));
+    border: 2px solid var(--primary);
+    border-radius: 20px;
+    max-width: 600px;
+    width: 90%;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 86, 179, 0.4);
+    transform: scale(0.7);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+.postponement-modal.active .postponement-content {
+    transform: scale(1);
+}
+
+.postponement-pulse {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(0, 86, 179, 0.2) 0%, rgba(255, 255, 255, 0) 70%);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(0.95);
+        opacity: 0.7;
+    }
+}
+
+.postponement-header {
+    text-align: center;
+    margin-bottom: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.postponement-icon {
+    width: 80px;
+    height: 80px;
+    background: var(--gradient);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    color: white;
+    margin: 0 auto 15px;
+    box-shadow: 0 10px 30px rgba(0, 86, 179, 0.5);
+    animation: shake 2s infinite;
+}
+
+@keyframes shake {
+    0%, 100% { transform: rotate(0deg); }
+    10%, 30%, 50%, 70%, 90% { transform: rotate(-5deg); }
+    20%, 40%, 60%, 80% { transform: rotate(5deg); }
+}
+
+.postponement-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin: 0 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.postponement-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 0;
+    color: var(--accent);
+}
+
+.postponement-body {
+    position: relative;
+    z-index: 1;
+}
+
+.postponement-message {
+    background-color: rgba(0, 86, 179, 0.1);
+    border: 1px solid rgba(0, 86, 179, 0.3);
+    border-radius: 15px;
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.postponement-highlight {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0 0 15px;
+    line-height: 1.4;
+    color: var(--text-light);
+}
+
+.postponement-detail {
+    font-size: 16px;
+    margin: 0 0 15px;
+    line-height: 1.4;
+    color: var(--text-light);
+}
+
+.postponement-advice {
+    font-size: 16px;
+    margin: 0;
+    font-style: italic;
+    line-height: 1.4;
+    color: var(--text-light);
+}
+
+.postponement-dates {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.date-card {
+    background-color: rgba(0, 86, 179, 0.1);
+    border: 1px solid rgba(0, 86, 179, 0.3);
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    flex: 1;
+}
+
+.date-label {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 5px;
+    color: var(--text-dim);
+}
+
+.date-value {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-light);
+}
+
+.date-status {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    display: inline-block;
+}
+
+.cancelled {
+    background-color: rgba(255, 107, 107, 0.2);
+    color: var(--secondary);
+}
+
+.confirmed {
+    background-color: rgba(78, 205, 196, 0.2);
+    color: var(--accent);
+}
+
+.date-arrow {
+    font-size: 24px;
+    margin: 0 15px;
+    color: var(--primary);
+}
+
+.postponement-actions {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.postponement-acknowledge-btn {
+    background: var(--gradient);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 5px 20px rgba(0, 86, 179, 0.4);
+}
+
+.postponement-acknowledge-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0, 86, 179, 0.6);
+}
+
+.postponement-acknowledge-btn i {
+    font-size: 18px;
+}
+
+/* Media queries for responsive design */
+@media (max-width: 768px) {
+    .postponement-content {
+        padding: 20px;
+    }
+    
+    .postponement-title {
+        font-size: 24px;
+    }
+    
+    .postponement-subtitle {
+        font-size: 18px;
+    }
+    
+    .postponement-highlight {
+        font-size: 16px;
+    }
+    
+    .postponement-dates {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .date-arrow {
+        transform: rotate(90deg);
+        margin: 0;
+    }
+}
