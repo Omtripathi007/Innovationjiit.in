@@ -966,15 +966,6 @@ document.addEventListener('DOMContentLoaded', () => {
             showRegistrationClosedModal();
         });
     }
-    
-    // Innovate Event button - still shows coming soon
-    if (innovateEventBtn) {
-        innovateEventBtn.addEventListener('click', (e) => {
-            e.preventDefault();
-            showSimpleComingSoonModal();
-        });
-    }
-    
     // Logo link to homepage - FIXED
     if (logoLink) {
         logoLink.addEventListener('click', (e) => {
