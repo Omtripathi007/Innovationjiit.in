@@ -1343,3 +1343,111 @@ document.addEventListener('DOMContentLoaded', () => {
     // Initialize page
     showMainContent();
 });
+//innovate 3.0
+// Innovate 3.0 Popup
+document.addEventListener('DOMContentLoaded', function() {
+    // Show Innovate 3.0 popup on page load
+    setTimeout(function() {
+        document.getElementById('innovatePopupModal').classList.add('active');
+    }, 2000);
+    
+    // Close Innovate 3.0 popup
+    document.getElementById('innovatePopupClose').addEventListener('click', function() {
+        document.getElementById('innovatePopupModal').classList.remove('active');
+    });
+    
+    document.getElementById('innovatePopupLater').addEventListener('click', function() {
+        document.getElementById('innovatePopupModal').classList.remove('active');
+    });
+    
+    // Open Innovate 3.0 page from popup
+    document.getElementById('innovatePopupRegister').addEventListener('click', function() {
+        document.getElementById('innovatePopupModal').classList.remove('active');
+        showPage('innovate');
+    });
+    
+    // Innovate 3.0 event button in events page
+    document.getElementById('innovateEventBtn').addEventListener('click', function() {
+        showPage('innovate');
+    });
+    
+    // Back to Home from Innovate 3.0
+    document.getElementById('backToHomeFromInnovate').addEventListener('click', function(e) {
+        e.preventDefault();
+        showPage('home');
+    });
+    
+    // Update navigation to include Innovate 3.0
+    function updateNavigation() {
+        const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const page = this.getAttribute('data-page');
+                if (page === 'innovate') {
+                    showPage('innovate');
+                } else {
+                    showPage(page);
+                }
+            });
+        });
+    }
+    
+    updateNavigation();
+    
+    // Function to show a specific page
+    function showPage(pageId) {
+        // Hide all pages
+        const pages = [
+            'mainContent', 'aboutPage', 'eventsPage', 'rideHackPage', 
+            'contactPage', 'teamPage', 'galleryPage', 'updatesPage', 
+            'shortlistedTeamsPage', 'innovatePage'
+        ];
+        
+        pages.forEach(id => {
+            const page = document.getElementById(id);
+            if (page) {
+                page.classList.remove('active');
+                page.style.display = 'none';
+            }
+        });
+        
+        // Show the requested page
+        const targetPage = document.getElementById(pageId + 'Page');
+        if (targetPage) {
+            targetPage.classList.add('active');
+            targetPage.style.display = 'block';
+        } else if (pageId === 'home') {
+            const mainContent = document.getElementById('mainContent');
+            if (mainContent) {
+                mainContent.classList.add('active');
+                mainContent.style.display = 'block';
+            }
+        }
+        
+        // Update navigation active state
+        updateActiveNav(pageId);
+        
+        // Scroll to top
+        window.scrollTo(0, 0);
+    }
+    
+    // Function to update active navigation state
+    function updateActiveNav(pageId) {
+        const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('data-page') === pageId) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Close mobile menu if open
+        const mobileMenu = document.getElementById('mobileMenu');
+        const menuToggle = document.getElementById('menuToggle');
+        if (mobileMenu && mobileMenu.classList.contains('active')) {
+            mobileMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+        }
+    }
+});
