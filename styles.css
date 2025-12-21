@@ -7546,6 +7546,7 @@ footer {
     opacity: 1;
 }
 .innovate-popup-later {
+    text-decoration:none;
     background: transparent;
     color: var(--light);
     border: 2px solid var(--primary);
@@ -8103,6 +8104,7 @@ footer {
     
     .innovate-popup-register,
     .innovate-popup-later {
+        text-decoration: none;
         padding: 12px 20px;
         font-size: 14px;
     }
@@ -8231,7 +8233,7 @@ footer {
     
     .innovate-popup-register,
     .innovate-popup-later {
-        text-decoration:none;
+        text-decoration: none;
         padding: 10px 15px;
         font-size: 12px;
     }
