@@ -8524,3 +8524,273 @@ footer {
         font-size: 0.9rem;
     }
 }
+/* Logo Integration Styles for Innovate 3.0 Page */
+
+/* Hero Section Logos */
+.innovate-hero-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.jiit-logo {
+    height: 80px;
+    width: auto;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.jiit-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
+}
+
+.innovation-logo {
+    height: 80px;
+    width: auto;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.innovation-logo:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.4));
+}
+
+/* Intro Section Logos */
+.innovate-intro-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.innovate-intro-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.jiit-logo-small {
+    height: 60px;
+    width: auto;
+    filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.2));
+    transition: all 0.3s ease;
+}
+
+.jiit-logo-small:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+}
+
+.innovation-logo-small {
+    height: 60px;
+    width: auto;
+    filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.2));
+    transition: all 0.3s ease;
+}
+
+.innovation-logo-small:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.3));
+}
+
+/* Detail Section Logos */
+.detail-section-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.detail-section-logos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+}
+
+.jiit-logo-tiny {
+    height: 40px;
+    width: auto;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+    transition: all 0.3s ease;
+}
+
+.jiit-logo-tiny:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+}
+
+.innovation-logo-tiny {
+    height: 40px;
+    width: auto;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.15));
+    transition: all 0.3s ease;
+}
+
+.innovation-logo-tiny:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+}
+
+/* Responsive adjustments for logos */
+@media (max-width: 1024px) {
+    .innovate-hero-logos {
+        gap: 30px;
+    }
+    
+    .jiit-logo,
+    .innovation-logo {
+        height: 70px;
+    }
+    
+    .innovate-intro-logos {
+        gap: 25px;
+    }
+    
+    .jiit-logo-small,
+    .innovation-logo-small {
+        height: 50px;
+    }
+    
+    .detail-section-logos {
+        gap: 20px;
+    }
+    
+    .jiit-logo-tiny,
+    .innovation-logo-tiny {
+        height: 35px;
+    }
+}
+
+@media (max-width: 768px) {
+    .innovate-hero-logos {
+        gap: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .jiit-logo,
+    .innovation-logo {
+        height: 60px;
+    }
+    
+    .innovate-intro-logos {
+        gap: 20px;
+        margin-bottom: 15px;
+    }
+    
+    .jiit-logo-small,
+    .innovation-logo-small {
+        height: 45px;
+    }
+    
+    .detail-section-logos {
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .jiit-logo-tiny,
+    .innovation-logo-tiny {
+        height: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .innovate-hero-logos {
+        gap: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .jiit-logo,
+    .innovation-logo {
+        height: 50px;
+    }
+    
+    .innovate-intro-logos {
+        gap: 15px;
+        margin-bottom: 10px;
+    }
+    
+    .jiit-logo-small,
+    .innovation-logo-small {
+        height: 40px;
+    }
+    
+    .detail-section-logos {
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .jiit-logo-tiny,
+    .innovation-logo-tiny {
+        height: 25px;
+    }
+}
+
+/* Logo animation effects */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Logo glow effect on hover */
+.jiit-logo:hover,
+.innovation-logo:hover,
+.jiit-logo-small:hover,
+.innovation-logo-small:hover,
+.jiit-logo-tiny:hover,
+.innovation-logo-tiny:hover {
+    filter: drop-shadow(0 0 15px rgba(0, 86, 179, 0.5));
+}
+
+/* Logo container background */
+.innovate-hero-logos,
+.innovate-intro-logos,
+.detail-section-logos {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 15px 25px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.innovate-hero-logos:hover,
+.innovate-intro-logos:hover,
+.detail-section-logos:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 86, 179, 0.2);
+}
+
+/* Adjustments for smaller screens */
+@media (max-width: 768px) {
+    .innovate-hero-logos,
+    .innovate-intro-logos,
+    .detail-section-logos {
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .innovate-hero-logos,
+    .innovate-intro-logos,
+    .detail-section-logos {
+        padding: 8px 12px;
+    }
+}
