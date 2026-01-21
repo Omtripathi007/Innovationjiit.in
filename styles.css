@@ -7517,7 +7517,7 @@ footer {
     flex-wrap: wrap;
 }
 .innovate-popup-register,
-.innovate-popup-register-btn {
+.innovate-popup-later {
     padding: clamp(12px, 2.5vw, 15px) clamp(25px, 5vw, 40px);
     border-radius: 50px;
     font-family: 'Montserrat', sans-serif;
@@ -7537,8 +7537,7 @@ footer {
     color: white;
     box-shadow: 0 5px 20px rgba(0, 86, 179, 0.4);
 }
-.innovate-popup-register::before,
-.innovate-popup-register-btn::before {
+.innovate-popup-register::before {
     content: '';
     position: absolute;
     top: 0;
@@ -7550,23 +7549,21 @@ footer {
     z-index: -1;
     transition: all 0.3s ease;
 }
-.innovate-popup-register:hover,
-.innovate-popup-register-btn:hover {
+.innovate-popup-register:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 30px rgba(0, 86, 179, 0.6);
 }
-.innovate-popup-register:hover::before,
-.innovate-popup-register-btn:hover::before {
+.innovate-popup-register:hover::before {
     opacity: 1;
 }
-.innovate-popup-register-btn {
+.innovate-popup-later {
     text-decoration: none;
     background: transparent;
     color: var(--light);
     border: 2px solid var(--primary);
     box-shadow: none;
 }
-.innovate-popup-register-btn::before {
+.innovate-popup-later::before {
     content: '';
     position: absolute;
     top: 0;
@@ -7578,12 +7575,12 @@ footer {
     z-index: -1;
     transition: all 0.3s ease;
 }
-.innovate-popup-register-btn:hover {
+.innovate-popup-later:hover {
     background: var(--gradient);
     color: white;
     box-shadow: 0 10px 30px rgba(0, 86, 179, 0.6);
 }
-.innovate-popup-register-btn:hover::before {
+.innovate-popup-later:hover::before {
     opacity: 1;
 }
 /* Innovate 3.0 Page Styles */
