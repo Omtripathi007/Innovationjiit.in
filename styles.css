@@ -8547,3 +8547,266 @@ footer {
 .innovation-logo-hero {
     display: none;
 }
+
+
+/* Climate Data Hackathon Page Styles */
+.event-date-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient);
+    color: white;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 20px auto 0;
+    box-shadow: 0 10px 30px rgba(0, 86, 179, 0.3);
+}
+
+.date-day {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.date-month {
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: 5px;
+}
+
+.date-year {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-top: 5px;
+}
+
+.innovate-intro-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+.innovation-logo-side {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.round-themes {
+    margin-top: 20px;
+}
+
+.round-themes h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.theme-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.theme-tag {
+    background: rgba(0, 86, 179, 0.1);
+    border: 1px solid rgba(0, 86, 179, 0.3);
+    border-radius: 20px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--primary);
+    transition: all 0.3s ease;
+}
+
+.theme-tag:hover {
+    background: rgba(0, 86, 179, 0.2);
+    transform: translateY(-3px);
+}
+
+.prizes-info {
+    text-align: center;
+    padding: 20px;
+    background: rgba(0, 86, 179, 0.1);
+    border-radius: 15px;
+    margin-top: 20px;
+}
+
+.prize-pool {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.prize-pool i {
+    font-size: 2rem;
+}
+
+.register-section {
+    text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(0, 86, 179, 0.05);
+    border-radius: 15px;
+}
+
+.register-section h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.register-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gradient);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 86, 179, 0.3);
+}
+
+.register-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 86, 179, 0.5);
+}
+
+.download-section {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(0, 86, 179, 0.05);
+    border-radius: 15px;
+}
+
+.download-section h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.download-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gradient);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3);
+}
+
+.download-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 86, 179, 0.5);
+}
+
+.round-note {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 10px 15px;
+    background: rgba(255, 107, 107, 0.1);
+    border-left: 3px solid var(--accent);
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+.round-note i {
+    color: var(--accent);
+}
+
+.sexy-back-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--gradient);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0, 86, 179, 0.3);
+}
+
+.sexy-back-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 86, 179, 0.5);
+}
+
+.back-button-container {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+/* Responsive adjustments for the Climate Data Hackathon page */
+@media (max-width: 768px) {
+    .innovate-intro-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .innovation-logo-side {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .event-date-badge {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .date-day {
+        font-size: 2rem;
+    }
+    
+    .date-month {
+        font-size: 1rem;
+    }
+    
+    .date-year {
+        font-size: 0.9rem;
+    }
+    
+    .theme-tags {
+        justify-content: center;
+    }
+    
+    .prize-pool {
+        font-size: 1.2rem;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .prize-pool i {
+        font-size: 1.5rem;
+    }
+}
