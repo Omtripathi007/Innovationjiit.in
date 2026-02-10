@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innovation - JIIT Noida</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <!-- Three.js for 3D effects -->
@@ -12,59 +15,62 @@
     <!-- Supabase Integration -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
 </head>
+
 <body>
-<!-- Innovate 3.0 Popup Modal -->
-<div class="innovate-popup-modal" id="innovatePopupModal">
-    <div class="innovate-popup-content">
-        <button class="innovate-popup-close" id="innovatePopupClose">
-            <i class="fas fa-times"></i>
-        </button>
-        <div class="innovate-popup-header">
-            <div class="innovate-popup-icon">
-                <i class="fas fa-leaf"></i>
+    <!-- Innovate 3.0 Popup Modal -->
+    <div class="innovate-popup-modal" id="innovatePopupModal">
+        <div class="innovate-popup-content">
+            <button class="innovate-popup-close" id="innovatePopupClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="innovate-popup-header">
+                <div class="innovate-popup-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <h2 class="innovate-popup-title">Climate Data Hackathon</h2>
+                <p class="innovate-popup-subtitle">Air Pollution Track</p>
             </div>
-            <h2 class="innovate-popup-title">Climate Data Hackathon</h2>
-            <p class="innovate-popup-subtitle">Air Pollution Track</p>
-        </div>
-        <div class="innovate-popup-body">
-            <div class="innovate-popup-details">
-                <div class="innovate-popup-date">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span>Application Deadline: January 31, 2026 | Event: February 21, 2026</span>
+            <div class="innovate-popup-body">
+                <div class="innovate-popup-details">
+                    <div class="innovate-popup-date">
+                        <i class="fas fa-calendar-alt"></i>
+                        <span>Application Deadline: January 31, 2026 | Event: February 21, 2026</span>
+                    </div>
+                    <div class="innovate-popup-location">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Jaypee Institute of Information Technology</span>
+                    </div>
+                    <div class="innovate-popup-format">
+                        <i class="fas fa-globe"></i>
+                        <span>In Partnership with Climate Collective Foundation</span>
+                    </div>
                 </div>
-                <div class="innovate-popup-location">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <span>Jaypee Institute of Information Technology</span>
+                <div class="innovate-popup-description">
+                    🎉 <strong>Congratulations to all participants!</strong> 🚀 tackling air pollution with AI and
+                    data-driven innovation was a huge success. Check out the results below!
                 </div>
-                <div class="innovate-popup-format">
-                    <i class="fas fa-globe"></i>
-                    <span>In Partnership with Climate Collective Foundation</span>
+                <div class="innovate-popup-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-rupee-sign"></i>
+                        <span>Cash Prize: Rs 1,00,000</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-brain"></i>
+                        <span>AI & Data-Driven Innovation</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-users"></i>
+                        <span>Exclusive for JIIT Students</span>
+                    </div>
                 </div>
             </div>
-            <div class="innovate-popup-description">
-                🚀 Exciting News for Jaypee Institute of Information Technology Students! Tackle air pollution with AI and data-driven innovation in this exclusive hackathon and get a chance to win a cash prize of Rs 1,00,000!
+            <div class="innovate-popup-footer">
+                <button class="innovate-popup-register" id="innovatePopupRegister">Know More</button>
+                <button class="innovate-popup-later" id="innovatePopupLater"
+                    onclick="window.location.href='climatehackathon.html'">Show Result</button>
             </div>
-            <div class="innovate-popup-highlights">
-                <div class="highlight-item">
-                    <i class="fas fa-rupee-sign"></i>
-                    <span>Cash Prize: Rs 1,00,000</span>
-                </div>
-                <div class="highlight-item">
-                    <i class="fas fa-brain"></i>
-                    <span>AI & Data-Driven Innovation</span>
-                </div>
-                <div class="highlight-item">
-                    <i class="fas fa-users"></i>
-                    <span>Exclusive for JIIT Students</span>
-                </div>
-            </div>
-        </div>
-        <div class="innovate-popup-footer">
-            <button class="innovate-popup-register" id="innovatePopupRegister">Know More</button>
-            <button class="innovate-popup-later" id="innovatePopupLater" onclick="window.open('https://forms.gle/3phGp3UUmDywFTBu5', '_blank')">Register Now</button>
         </div>
     </div>
-</div>
     <!-- Animated Background -->
     <div class="animated-bg">
         <div class="shape shape-1"></div>
@@ -76,7 +82,7 @@
         <div class="shape shape-7"></div>
         <div class="shape shape-8"></div>
     </div>
-    
+
     <!-- Typewriter Loading Screen -->
     <div class="loader-wrapper" id="loader">
         <div class="typewriter-container">
@@ -85,9 +91,9 @@
         </div>
         <div class="typewriter-subtitle">Innovation</div>
     </div>
-    
-   
-    
+
+
+
     <!-- Registration Closed Modal -->
     <div class="registration-closed-modal" id="registrationClosedModal">
         <div class="registration-closed-content">
@@ -98,11 +104,12 @@
                 <i class="fas fa-lock"></i>
             </div>
             <h2 class="registration-closed-title">Registration Closed</h2>
-            <p class="registration-closed-message">Registrations for RIDE Hack'25 are now closed. Thank you for your interest!</p>
+            <p class="registration-closed-message">Registrations for RIDE Hack'25 are now closed. Thank you for your
+                interest!</p>
             <button class="registration-closed-button" id="registrationClosedButton">Got It</button>
         </div>
     </div>
-    
+
     <!-- Registration Modal -->
     <div class="registration-modal" id="registrationModal">
         <div class="registration-content">
@@ -114,8 +121,9 @@
             </div>
             <h2 class="registration-title">Register for RIDE Hack'25</h2>
             <p class="registration-subtitle">Fill in your details to register</p>
-            <form action="" id="registrationForm" ></form>
-            <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfJY1Wfc40z-OUXnPVql9Xq6BMWtc6p7vNOadM8ijiKH-wg2A/formResponse">
+            <form action="" id="registrationForm"></form>
+            <form
+                action="https://docs.google.com/forms/u/0/d/e/1FAIpQLSfJY1Wfc40z-OUXnPVql9Xq6BMWtc6p7vNOadM8ijiKH-wg2A/formResponse">
                 <div class="form-row">
                     <div class="form-group">
                         <label for="regFullName">Full Name</label>
@@ -133,7 +141,8 @@
                     </div>
                     <div class="form-group">
                         <label for="regContact">Contact Number</label>
-                        <input type="tel" id="regContact" name="entry.605546011" pattern="[0-9]{10}" maxlength="10" required>
+                        <input type="tel" id="regContact" name="entry.605546011" pattern="[0-9]{10}" maxlength="10"
+                            required>
                         <small class="form-hint">Enter 10-digit mobile number</small>
                     </div>
                 </div>
@@ -141,7 +150,7 @@
             </form>
         </div>
     </div>
-    
+
     <!-- Success Modal -->
     <div class="success-modal" id="successModal">
         <div class="success-content">
@@ -156,7 +165,7 @@
             <button class="success-button" id="successButton">Got It</button>
         </div>
     </div>
-    
+
     <!-- Registration Success Modal (No Timer) -->
     <div class="registration-success-modal" id="registrationSuccessModal">
         <div class="registration-success-content">
@@ -170,7 +179,7 @@
             <p class="registration-success-message">You are being redirected to Google Form...</p>
         </div>
     </div>
-    
+
     <!-- Coming Soon Modal -->
     <div class="coming-soon-modal" id="comingSoonModal">
         <div class="coming-soon-content">
@@ -181,7 +190,8 @@
                 <i class="fas fa-rocket"></i>
             </div>
             <h2 class="coming-soon-title">Coming Soon!</h2>
-            <p class="coming-soon-message">We're working hard to bring you an amazing experience. Stay tuned for updates!</p>
+            <p class="coming-soon-message">We're working hard to bring you an amazing experience. Stay tuned for
+                updates!</p>
             <div class="countdown-container">
                 <div class="countdown-item">
                     <span class="countdown-value" id="days">00</span>
@@ -203,7 +213,7 @@
             <button class="coming-soon-button" id="comingSoonButton">Notify Me</button>
         </div>
     </div>
-    
+
     <!-- Simple Coming Soon Modal -->
     <div class="simple-coming-soon-modal" id="simpleComingSoonModal">
         <div class="simple-coming-soon-content">
@@ -214,11 +224,12 @@
                 <i class="fas fa-rocket"></i>
             </div>
             <h2 class="simple-coming-soon-title">Coming Soon!</h2>
-            <p class="simple-coming-soon-message">We're working hard to bring you this event. Stay tuned for updates!</p>
+            <p class="simple-coming-soon-message">We're working hard to bring you this event. Stay tuned for updates!
+            </p>
             <button class="simple-coming-soon-button" id="simpleComingSoonButton">Got It</button>
         </div>
     </div>
-    
+
     <!-- Gallery Lightbox Modal -->
     <div class="gallery-lightbox-modal" id="galleryLightboxModal">
         <div class="gallery-lightbox-content">
@@ -238,7 +249,7 @@
             </div>
         </div>
     </div>
-    
+
     <!-- Content Team Coming Soon Modal -->
     <div class="simple-coming-soon-modal" id="contentTeamModal">
         <div class="simple-coming-soon-content">
@@ -253,7 +264,7 @@
             <button class="simple-coming-soon-button" id="contentTeamModalButton">Got It</button>
         </div>
     </div>
-    
+
     <!-- Brochure Coming Soon Modal -->
     <div class="simple-coming-soon-modal" id="brchureComingSoonModal">
         <div class="simple-coming-soon-content">
@@ -268,7 +279,7 @@
             <button class="simple-coming-soon-button" id="brochureComingSoonButton">Got It</button>
         </div>
     </div>
-    
+
     <!-- Enhanced Navigation -->
     <nav id="navbar">
         <div class="nav-container">
@@ -311,11 +322,12 @@
                 <li><a href="#" class="mobile-nav-link" data-page="updates">Updates</a></li>
                 <li><a href="#" class="mobile-nav-link" data-page="team">Team</a></li>
                 <li><a href="#" class="mobile-nav-link" data-page="contact">Contact</a></li>
-                <li><a href="#" class="mobile-nav-link" id="mobileRideHackNavBtn" data-page="ridehack"><strong>RIDE HACK</strong></a></li>
+                <li><a href="#" class="mobile-nav-link" id="mobileRideHackNavBtn" data-page="ridehack"><strong>RIDE
+                            HACK</strong></a></li>
             </ul>
         </div>
     </nav>
-    
+
     <!-- Main Content -->
     <div id="mainContent">
         <!-- Hero Section with 3D Interactive Video Background -->
@@ -337,7 +349,7 @@
                     <p class="hero-location"><a href="https://www.jiit.ac.in" target="_blank">JIIT NOIDA</a></p>
                 </div>
             </div>
-            
+
             <!-- Enhanced Floating Elements -->
             <div class="floating-elements">
                 <div class="floating-element element-1">
@@ -366,7 +378,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- Enhanced About Section -->
         <section id="about" class="about">
             <div class="section-header">
@@ -374,7 +386,9 @@
             </div>
             <div class="about-content">
                 <div class="about-text">
-                    <p>We are the RIDE Innovation at JIIT Noida—an innovation ecosystem offering start-up , maker spaces, and advanced prototyping and AI labs. We empower pre-startup and startup teams with infrastructure, mentorship, and expert guidance to turn ideas into impact.</p>
+                    <p>We are the RIDE Innovation at JIIT Noida—an innovation ecosystem offering start-up , maker
+                        spaces, and advanced prototyping and AI labs. We empower pre-startup and startup teams with
+                        infrastructure, mentorship, and expert guidance to turn ideas into impact.</p>
                     <div class="about-features">
                         <div class="feature-item">
                             <div class="feature-icon">
@@ -436,19 +450,23 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- Enhanced What We Do Section -->
         <section id="whatwedo" class="whatwedo">
             <div class="section-header">
                 <div class="section-subtitle">Our Activities</div>
                 <h2 class="section-title">What We Do</h2>
             </div>
-            
+
             <!-- Description Paragraph -->
             <div class="whatwedo-description">
-                <p>At the Innovation Hub, JIIT Noida, we nurture ideas and transform them into impactful solutions through mentorship, modern labs, and startup support. We host flagship events like RIDE-Hack, Startup Weekend, and the E-Summit, along with regular workshops, innovation challenges, and expert sessions. Our mission is to connect students with industry and academy, foster creativity, and build a strong culture of research, innovation, and entrepreneurship.</p>
+                <p>At the Innovation Hub, JIIT Noida, we nurture ideas and transform them into impactful solutions
+                    through mentorship, modern labs, and startup support. We host flagship events like RIDE-Hack,
+                    Startup Weekend, and the E-Summit, along with regular workshops, innovation challenges, and expert
+                    sessions. Our mission is to connect students with industry and academy, foster creativity, and build
+                    a strong culture of research, innovation, and entrepreneurship.</p>
             </div>
-            
+
             <!-- Single Photo Carousel (slowed down, continuous loop) -->
             <div class="whatwedo-carousel-container">
                 <div class="whatwedo-carousel-track">
@@ -540,7 +558,7 @@
                 </div>
             </div>
         </section>
-        
+
         <!-- Enhanced Events Section -->
         <section id="events" class="events">
             <div class="section-header">
@@ -569,15 +587,18 @@
                         </div>
                     </div>
                     <div class="event-description">
-Join us for our flagship RIDE Hack'25 where students, developers, designers, and entrepreneurs come together to build innovative solutions to real-world problems. The event will feature hands-on workshops, mentorship from industry experts, and exciting prizes for the winning teams.
+                        Join us for our flagship RIDE Hack'25 where students, developers, designers, and entrepreneurs
+                        come together to build innovative solutions to real-world problems. The event will feature
+                        hands-on workshops, mentorship from industry experts, and exciting prizes for the winning teams.
                     </div>
                     <div class="event-actions">
-                        <button class="btn btn-secondary disabled" id="registerBtn" disabled>Registration Closed</button>
+                        <button class="btn btn-secondary disabled" id="registerBtn" disabled>Registration
+                            Closed</button>
                         <a href="#" id="rideHackDetailBtn" class="btn btn-secondary">View Details</a>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Event Countdown Section -->
             <div class="event-countdown-section">
                 <div class="countdown-title">
@@ -602,7 +623,7 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                     </div>
                 </div>
             </div>
-            
+
             <!-- New Innovation Spotlight Section -->
             <div class="innovation-spotlight">
                 <div class="innovation-spotlight-header">
@@ -615,7 +636,8 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                             <i class="fas fa-robot"></i>
                         </div>
                         <h3 class="innovation-card-title">AI-Powered Solutions</h3>
-                        <p class="innovation-card-description">Exploring the frontiers of artificial intelligence to solve complex problems.</p>
+                        <p class="innovation-card-description">Exploring the frontiers of artificial intelligence to
+                            solve complex problems.</p>
                         <div class="innovation-card-footer">
                             <span class="innovation-tag">Machine Learning</span>
                             <span class="innovation-tag">Neural Networks</span>
@@ -626,7 +648,8 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                             <i class="fas fa-leaf"></i>
                         </div>
                         <h3 class="innovation-card-title">Sustainable Tech</h3>
-                        <p class="innovation-card-description">Developing eco-friendly technologies for a greener future.</p>
+                        <p class="innovation-card-description">Developing eco-friendly technologies for a greener
+                            future.</p>
                         <div class="innovation-card-footer">
                             <span class="innovation-tag">Green Energy</span>
                             <span class="innovation-tag">Circular Economy</span>
@@ -637,7 +660,8 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                             <i class="fas fa-vr-cardboard"></i>
                         </div>
                         <h3 class="innovation-card-title">Immersive Experiences</h3>
-                        <p class="innovation-card-description">Creating virtual and augmented reality solutions for education and industry.</p>
+                        <p class="innovation-card-description">Creating virtual and augmented reality solutions for
+                            education and industry.</p>
                         <div class="innovation-card-footer">
                             <span class="innovation-tag">VR/AR</span>
                             <span class="innovation-tag">Metaverse</span>
@@ -646,7 +670,7 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                 </div>
             </div>
         </section>
-        
+
         <!--  Footer -->
         <footer>
             <div class="footer-container">
@@ -661,10 +685,11 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                     <div class="social-icons">
                         <a href="https://www.facebook.com/jiitofficial/"><i class="fab fa-facebook-f"></i></a>
                         <a href="https://www.instagram.com/innovation.jiit/"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.linkedin.com/company/innovation-jiit/posts/?feedView=all"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://www.linkedin.com/company/innovation-jiit/posts/?feedView=all"><i
+                                class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Quick Links</h3>
                     <ul class="footer-links">
@@ -677,7 +702,7 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                         <li><a href="#" data-page="contact">Contact</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-column">
                     <h3>Get In Touch</h3>
                     <div class="contact-info">
@@ -702,13 +727,13 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                     </div>
                 </div>
             </div>
-            
+
             <div class="copyright">
                 <p>&copy; 2025 Innovation, JIIT Noida. All Rights Reserved.</p>
             </div>
         </footer>
     </div>
-    
+
     <!-- About Page -->
     <div id="aboutPage" class="about-page">
         <div class="about-hero">
@@ -717,18 +742,20 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                 <p class="about-hero-subtitle">Pioneering the future of technology and entrepreneurship</p>
             </div>
         </div>
-        
+
         <div class="about-container">
             <div class="about-intro">
                 <h2 class="about-intro-title">Who We Are</h2>
                 <p class="about-intro-text">
-                    The JIIT Innovation is a space where creativity meets technology. We empower students and innovators with labs, mentorship, and resources to turn ideas into real-world solutions, fostering a strong culture of research and entrepreneurship.
+                    The JIIT Innovation is a space where creativity meets technology. We empower students and innovators
+                    with labs, mentorship, and resources to turn ideas into real-world solutions, fostering a strong
+                    culture of research and entrepreneurship.
                 </p>
             </div>
-            
+
             <div class="about-activities">
                 <h2 class="activities-title">Our Flagship Activities</h2>
-                
+
                 <div class="activity-card">
                     <div class="activity-image">
                         <img src="ridehack.jpeg" alt="RIDE Hack">
@@ -736,7 +763,10 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                     <div class="activity-content">
                         <h3 class="activity-title">RIDE Hack</h3>
                         <p class="activity-description">
-                            RIDE Hack is the flagship hackathon of the JIIT Innovation, designed to bring together creative minds to solve real-world problems through technology and innovation. It provides a platform for students to showcase their skills, build prototypes, and pitch ideas, while receiving mentorship from experts and exposure to industry.
+                            RIDE Hack is the flagship hackathon of the JIIT Innovation, designed to bring together
+                            creative minds to solve real-world problems through technology and innovation. It provides a
+                            platform for students to showcase their skills, build prototypes, and pitch ideas, while
+                            receiving mentorship from experts and exposure to industry.
                         </p>
                         <div class="activity-highlights">
                             <div class="highlight-item">
@@ -750,7 +780,7 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="activity-card reverse">
                     <div class="activity-image">
                         <img src="WhatsApp Image 2025-08-08 at 19.20.12-2.jpeg" alt="Hackathon">
@@ -758,7 +788,8 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                     <div class="activity-content">
                         <h3 class="activity-title">Innovate</h3>
                         <p class="activity-description">
-                            An exciting event by the JIIT Innovation where students team up to create innovative tech solutions for real-world problems, guided by mentors and industry experts.
+                            An exciting event by the JIIT Innovation where students team up to create innovative tech
+                            solutions for real-world problems, guided by mentors and industry experts.
                         </p>
                         <div class="activity-highlights">
                             <div class="highlight-item">
@@ -778,7 +809,7 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                 </div>
             </div>
         </div>
-        
+
         <div class="back-button-container">
             <a href="#" id="backToHomeFromAbout" class="sexy-back-button">
                 <i class="fas fa-arrow-left"></i>
@@ -786,7 +817,7 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
             </a>
         </div>
     </div>
-    
+
     <!-- Events Page -->
     <div id="eventsPage" class="events-page">
         <div class="events-hero">
@@ -795,9 +826,9 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                 <p class="events-hero-subtitle">Join us for exciting innovation experiences</p>
             </div>
         </div>
-        
 
-        
+
+
         <div class="events-container">
             <div class="event-card">
                 <div class="event-header">
@@ -824,16 +855,19 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                     </div>
                 </div>
                 <div class="event-description">
-Join us for our flagship RIDE Hack'25 where students, developers, designers, and entrepreneurs come together to build innovative solutions to real-world problems. The event will feature hands-on workshops, mentorship from industry experts, and exciting prizes for the winning teams.
+                    Join us for our flagship RIDE Hack'25 where students, developers, designers, and entrepreneurs come
+                    together to build innovative solutions to real-world problems. The event will feature hands-on
+                    workshops, mentorship from industry experts, and exciting prizes for the winning teams.
                 </div>
                 <div class="event-actions">
-                    <button class="btn btn-secondary disabled" id="eventsPageRegisterBtn" disabled>Registration Closed</button>
+                    <button class="btn btn-secondary disabled" id="eventsPageRegisterBtn" disabled>Registration
+                        Closed</button>
                     <a href="#" id="eventsPageRideHackDetailBtn" class="btn btn-secondary">View Details</a>
                 </div>
             </div>
-            
+
             <!-- New Event: Innovate 3.0 -->
-            
+
             <div class="event-card">
                 <div class="event-header">
                     <div class="event-date">
@@ -859,47 +893,52 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                     </div>
                 </div>
                 <div class="event-description">
-Innovate 3.0 is a next-generation innovation and hackathon platform designed to bring together creative minds, developers, designers, and problem-solvers to build impactful solutions for real-world challenges.
+                    Innovate 3.0 is a next-generation innovation and hackathon platform designed to bring together
+                    creative minds, developers, designers, and problem-solvers to build impactful solutions for
+                    real-world challenges.
                 </div>
                 <div class="event-actions">
-                    <button class="btn btn-secondary disabled" id="eventsPageRegisterBtn" disabled>Registration Closed</button>
+                    <button class="btn btn-secondary disabled" id="eventsPageRegisterBtn" disabled>Registration
+                        Closed</button>
                 </div>
             </div>
         </div>
-            
+
         <div class="events-container">
-    <div class="event-card">
-        <div class="event-header">
-            <div class="event-date">
-                <span class="day">21</span>
-                <span class="month">Feb</span>
-            </div>
-            <div class="event-info">
-                <h3 class="event-title">CLIMATE DATA HACKATHON DELHI 2026</h3>
-                <div class="event-meta">
-                    <div class="event-meta-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>21 Feb 2026</span>
+            <div class="event-card">
+                <div class="event-header">
+                    <div class="event-date">
+                        <span class="day">21</span>
+                        <span class="month">Feb</span>
                     </div>
-                    <div class="event-meta-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>JAYPEE INSTITUTE OF INFORMATION TECHNOLOGY NOIDA</span>
+                    <div class="event-info">
+                        <h3 class="event-title">CLIMATE DATA HACKATHON DELHI 2026</h3>
+                        <div class="event-meta">
+                            <div class="event-meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>21 Feb 2026</span>
+                            </div>
+                            <div class="event-meta-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>JAYPEE INSTITUTE OF INFORMATION TECHNOLOGY NOIDA</span>
+                            </div>
+                            <div class="event-meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>Open to All</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="event-meta-item">
-                        <i class="fas fa-users"></i>
-                        <span>Open to All</span>
-                    </div>
+                </div>
+                <div class="event-description">
+                    Jaypee Institute of Information Technology has partnered with Climate Collective Foundation to host
+                    the Climate Data Hackathon Delhi (Air Pollution Track) exclusively for our students!
+                </div>
+                <div class="event-actions">
+                    <button class="btn btn-primary" id="innovateEventBtn">Know More</button>
+                    <a href="climatehackathon.html" class="btn btn-secondary">Show Result</a>
                 </div>
             </div>
         </div>
-        <div class="event-description">
-            Jaypee Institute of Information Technology has partnered with Climate Collective Foundation to host the Climate Data Hackathon Delhi (Air Pollution Track) exclusively for our students!
-        </div>
-        <div class="event-actions">
-            <button class="btn btn-primary" id="innovateEventBtn">Know More</button>
-        </div>
-    </div>
-</div>
         <div class="back-button-container">
             <a href="#" id="backToHomeFromEvents" class="sexy-back-button">
                 <i class="fas fa-arrow-left"></i>
@@ -907,7 +946,7 @@ Innovate 3.0 is a next-generation innovation and hackathon platform designed to 
             </a>
         </div>
     </div>
-    
+
     <!-- Ride Hack Event Detail Page -->
     <div id="rideHackPage" class="ride-hack-page">
         <div class="ride-hack-hero">
@@ -915,21 +954,23 @@ Innovate 3.0 is a next-generation innovation and hackathon platform designed to 
                 <h1 class="ride-hack-hero-title">RIDE Hack'25</h1>
                 <p class="ride-hack-hero-subtitle">Innovation Challenge</p>
                 <div class="event-date-badge">
-                  
+
                 </div>
             </div>
         </div>
-        
+
         <div class="ride-hack-container">
             <div class="ride-hack-intro">
                 <h2 class="ride-hack-intro-title">About RIDE Hack'25</h2>
                 <p class="ride-hack-intro-text">
-                    RIDE Hack'25 is the flagship hackathon of the JIIT Innovation, designed to bring together creative minds to solve real-world problems through technology and innovation. The event will feature hands-on workshops, mentorship from industry experts, and exciting prizes for the winning teams.
+                    RIDE Hack'25 is the flagship hackathon of the JIIT Innovation, designed to bring together creative
+                    minds to solve real-world problems through technology and innovation. The event will feature
+                    hands-on workshops, mentorship from industry experts, and exciting prizes for the winning teams.
                 </p>
             </div>
-            
+
             <div class="ride-hack-details">
-                
+
                 <!-- Why Participate Section -->
                 <div class="detail-section enhanced-section">
                     <h3 class="detail-title">Why Participate?</h3>
@@ -964,7 +1005,7 @@ Innovate 3.0 is a next-generation innovation and hackathon platform designed to 
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Prizes & Rewards Section -->
                 <div class="detail-section">
                     <h3 class="detail-title">Prizes & Rewards</h3>
@@ -983,21 +1024,24 @@ Innovate 3.0 is a next-generation innovation and hackathon platform designed to 
                         </div>
                     </div>
                 </div>
-                
+
                 <!-- Register Now Section -->
                 <div class="detail-section">
                     <h3 class="detail-title">Registration Status</h3>
                     <div class="register-container">
-                        <p class="register-info">Registrations for RIDE Hack'25 are now closed. Thank you for your interest!</p>
+                        <p class="register-info">Registrations for RIDE Hack'25 are now closed. Thank you for your
+                            interest!</p>
                         <div class="register-actions">
                             <button class="btn btn-secondary disabled" disabled>Registration Closed</button>
-                            <a href="https://1drv.ms/w/c/7197233b58d54a04/EagZhAuJHDNPrmvkA2OwzCEBXfNQPYo1B06gWfiYs539_Q?e=3cbREf"><button class="btn btn-secondary" id="downlodBrochureBtn" >Download Brochure</button></a>
+                            <a
+                                href="https://1drv.ms/w/c/7197233b58d54a04/EagZhAuJHDNPrmvkA2OwzCEBXfNQPYo1B06gWfiYs539_Q?e=3cbREf"><button
+                                    class="btn btn-secondary" id="downlodBrochureBtn">Download Brochure</button></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <div class="back-button-container">
             <a href="#" id="backToHomeFromRideHack" class="sexy-back-button">
                 <i class="fas fa-arrow-left"></i>
@@ -1005,7 +1049,7 @@ Innovate 3.0 is a next-generation innovation and hackathon platform designed to 
             </a>
         </div>
     </div>
-    
+
     <!-- Contact Page -->
     <div id="contactPage" class="contact-page">
         <div class="contact-hero">
@@ -1014,7 +1058,7 @@ Innovate 3.0 is a next-generation innovation and hackathon platform designed to 
                 <p class="contact-hero-subtitle">We'd love to hear from you</p>
             </div>
         </div>
-        
+
         <div class="contact-container">
             <div class="contact-info-section">
                 <div class="contact-info-card">
@@ -1023,9 +1067,9 @@ Innovate 3.0 is a next-generation innovation and hackathon platform designed to 
                     </div>
                     <h3 class="contact-info-title">Visit Us</h3>
                     <p class="contact-info-text">RIDE,
-JIIT WISH TOWN CAMPUS NOIDA</p>
+                        JIIT WISH TOWN CAMPUS NOIDA</p>
                 </div>
-                
+
                 <div class="contact-info-card">
                     <div class="contact-info-icon">
                         <i class="fas fa-phone"></i>
@@ -1036,7 +1080,7 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                         <p>YASH: +91 7210000082</p>
                     </div>
                 </div>
-                
+
                 <div class="contact-info-card">
                     <div class="contact-info-icon">
                         <i class="fas fa-envelope"></i>
@@ -1047,27 +1091,25 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                         <p></p>
                     </div>
                 </div>
-                
-             <!-- Google Map for Laptop View -->
+
+                <!-- Google Map for Laptop View -->
                 <div class="contact-map">
                     <h3 class="contact-info-title">Our Location</h3>
                     <div class="map-container">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.498412435515!2d77.3716!3d28.6199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceff5a4e3e4d5%3A0x9a3b5d4c3e2f1a0!2sJaypee%20Institute%20of%20Information%20Technology!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" 
-                            width="100%" 
-                            height="250" 
-                            style="border:0; border-radius: 15px;" 
-                            allowfullscreen="" 
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.498412435515!2d77.3716!3d28.6199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceff5a4e3e4d5%3A0x9a3b5d4c3e2f1a0!2sJaypee%20Institute%20of%20Information%20Technology!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                            width="100%" height="250" style="border:0; border-radius: 15px;" allowfullscreen=""
                             loading="lazy">
                         </iframe>
                     </div>
                 </div>
             </div>
-            
+
             <div class="contact-form-section">
                 <h2 class="contact-form-title">Send Us a Message</h2>
                 <form id="contactForm"></form>
-                <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScf8Sx7t81lDiOHmkNIjBxALA30a-u078lnbCa_Aq1tSaeAxA/formResponse">
+                <form
+                    action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScf8Sx7t81lDiOHmkNIjBxALA30a-u078lnbCa_Aq1tSaeAxA/formResponse">
                     <div class="form-row">
                         <div class="form-group">
                             <label for="firstName">First Name</label>
@@ -1094,7 +1136,7 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                 </form>
             </div>
         </div>
-        
+
         <div class="back-button-container">
             <a href="#" id="backToHome" class="sexy-back-button">
                 <i class="fas fa-arrow-left"></i>
@@ -1102,7 +1144,7 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
             </a>
         </div>
     </div>
-    
+
     <!-- Team Page -->
     <div id="teamPage" class="team-page">
         <div class="team-hero">
@@ -1111,7 +1153,7 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                 <p class="team-hero-subtitle">The minds behind the innovation</p>
             </div>
         </div>
-        
+
         <div class="team-container">
             <!-- Faculty Coordinator Section -->
             <div class="team-section">
@@ -1125,7 +1167,8 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                             <div class="member-info">
                                 <h3 class="member-name">Mukesh Saraswat</h3>
                                 <p class="member-role">Faculty Coordinator</p>
-                                <p class="member-bio">Leading the Innovation with 24+ years of experience in technology and entrepreneurship education.</p>
+                                <p class="member-bio">Leading the Innovation with 24+ years of experience in technology
+                                    and entrepreneurship education.</p>
                                 <div class="member-social">
                                     <a href="mailto:mukesh.saraswat@mail.jiit.ac.in"><i class="fas fa-envelope"></i></a>
                                 </div>
@@ -1140,16 +1183,18 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                             <div class="member-info">
                                 <h3 class="member-name">Akanksha Mehendiratta</h3>
                                 <p class="member-role">Faculty Coordinator</p>
-                                <p class="member-bio">Bringing expertise in innovation management and student mentorship to foster entrepreneurial growth.</p>
+                                <p class="member-bio">Bringing expertise in innovation management and student mentorship
+                                    to foster entrepreneurial growth.</p>
                                 <div class="member-social">
-                                    <a href="mailto:akanksha.mehndiratta@mail.jilt.ac.in"><i class="fas fa-envelope"></i></a>
+                                    <a href="mailto:akanksha.mehndiratta@mail.jilt.ac.in"><i
+                                            class="fas fa-envelope"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Leadership Team Section -->
             <div class="team-section">
                 <h2 class="team-section-title">Leadership Team</h2>
@@ -1162,10 +1207,12 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                             <div class="member-info">
                                 <h3 class="member-name">𝐃𝐈𝐕𝐘𝐀𝐍𝐒𝐇 𝐃𝐔𝐒𝐄𝐉𝐀</h3>
                                 <p class="member-role">Head of the Innovation Club</p>
-                                <p class="member-bio">Leading with creativity, collaboration, and a drive to turn bold ideas into real impact.</p>
+                                <p class="member-bio">Leading with creativity, collaboration, and a drive to turn bold
+                                    ideas into real impact.</p>
                                 <div class="member-social">
-                                    <a href="https://www.instagram.com/_divyansshh._/"><i class="fab fa-instagram"></i></a>
-                                                   <a href="mailto:9923102025@mail.jiit.ac.in"><i class="fas fa-envelope"></i></a>
+                                    <a href="https://www.instagram.com/_divyansshh._/"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="mailto:9923102025@mail.jiit.ac.in"><i class="fas fa-envelope"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1178,17 +1225,19 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                             <div class="member-info">
                                 <h3 class="member-name">𝐘𝐀𝐒𝐇 𝐀𝐆𝐆𝐀𝐑𝐖𝐀𝐋</h3>
                                 <p class="member-role">Coordinator of the Innovation Club</p>
-                                <p class="member-bio">The bridge between ideas and execution, driving teamwork, precision, and creative impact."</p>
+                                <p class="member-bio">The bridge between ideas and execution, driving teamwork,
+                                    precision, and creative impact."</p>
                                 <div class="member-social">
-                                    <a href="https://www.instagram.com/_.yash.aggarwal._/"><i class="fab fa-instagram"></i></a>
-                                                   <a href="mailto:9922102055@mail.jiit.ac.in"><i class="fas fa-envelope"></i></a>
+                                    <a href="https://www.instagram.com/_.yash.aggarwal._/"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="mailto:9922102055@mail.jiit.ac.in"><i class="fas fa-envelope"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <!-- Department Teams Section -->
             <div class="team-section">
                 <h2 class="team-section-title">Department Teams</h2>
@@ -1197,17 +1246,21 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                         <div class="department-team-icon">
                             <i class="fas fa-code"></i>
                         </div>
-                        <div><h3 class="department-team-title">Web Development Team</h3>
-                        <p class="department-team-description">Creating digital experiences that power our innovation ecosystem</p>
-                        <a href="cdevelopments.html"><button class="department-team-btn">View Team</button></div></a>
+                        <div>
+                            <h3 class="department-team-title">Web Development Team</h3>
+                            <p class="department-team-description">Creating digital experiences that power our
+                                innovation ecosystem</p>
+                            <a href="cdevelopments.html"><button class="department-team-btn">View Team</button>
+                        </div></a>
                     </div>
-                    
+
                     <div class="department-team-card" id="contentTeamCard">
                         <div class="department-team-icon">
                             <i class="fas fa-pen-fancy"></i>
                         </div>
                         <h3 class="department-team-title">Design Team</h3>
-                        <p class="department-team-description">Crafting compelling narratives that communicate our vision</p>
+                        <p class="department-team-description">Crafting compelling narratives that communicate our
+                            vision</p>
                         <a href="cdesign.html"><button class="department-team-btn">View Team</button></a>
                     </div>
                     <div class="department-team-card" id="webDevTeamCard">
@@ -1215,24 +1268,26 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                             <i class="fas fa-code"></i>
                         </div>
                         <h3 class="department-team-title">Management Team</h3>
-                        <p class="department-team-description">Creating digital experiences that power our innovation ecosystem</p>
+                        <p class="department-team-description">Creating digital experiences that power our innovation
+                            ecosystem</p>
                         <a href="cmanagement.html"><button class="department-team-btn">View Team</button></a>
                     </div>
-                    </div><br><br>
-                    
-                    <div class="department-team-card" id="contentTeamCard">
-                        <div class="department-team-icon">
-                            <i class="fas fa-pen-fancy"></i>
-                        </div>
-                        <h3 class="department-team-title">Social Team</h3>
-                        <p class="department-team-description">Crafting compelling narratives that communicate our vision</p>
-                        <a href="csocial.html"><button class="department-team-btn">View Team</button></a>
+                </div><br><br>
+
+                <div class="department-team-card" id="contentTeamCard">
+                    <div class="department-team-icon">
+                        <i class="fas fa-pen-fancy"></i>
                     </div>
+                    <h3 class="department-team-title">Social Team</h3>
+                    <p class="department-team-description">Crafting compelling narratives that communicate our vision
+                    </p>
+                    <a href="csocial.html"><button class="department-team-btn">View Team</button></a>
                 </div>
             </div>
-        </div>       
+        </div>
     </div>
-    
+    </div>
+
     <!-- Web Development Team Page -->
     <div id="webDevTeamPage" class="team-page">
         <div class="team-hero">
@@ -1241,17 +1296,20 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                 <p class="team-hero-subtitle">Building digital solutions for innovation</p>
             </div>
         </div>
-        
+
         <div class="team-container">
             <div class="team-intro">
                 <h2 class="team-intro-title">Our Web Development Team</h2>
                 <p class="team-intro-text">
-                    Our Web Development Team is responsible for creating and maintaining all digital platforms for the Innovation Club. 
-                    From our official website to event registration systems, they ensure our digital presence is cutting-edge, 
-                    user-friendly, and secure. With expertise in modern web technologies, they bring our innovation vision to life online.
+                    Our Web Development Team is responsible for creating and maintaining all digital platforms for the
+                    Innovation Club.
+                    From our official website to event registration systems, they ensure our digital presence is
+                    cutting-edge,
+                    user-friendly, and secure. With expertise in modern web technologies, they bring our innovation
+                    vision to life online.
                 </p>
             </div>
-            
+
             <div class="team-section">
                 <h2 class="team-section-title">Team Members</h2>
                 <div class="team-grid">
@@ -1263,10 +1321,13 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                             <div class="member-info">
                                 <h3 class="member-name">KARTIK GULERIA</h3>
                                 <p class="member-role">Lead Web Developer</p>
-                                <p class="member-bio">Full-stack developer with React & cloud expertise, building scalable products and startup-ready solutions.</p>
+                                <p class="member-bio">Full-stack developer with React & cloud expertise, building
+                                    scalable products and startup-ready solutions.</p>
                                 <div class="member-social">
-                                    <a href="https://www.instagram.com/kartik._.097/"><i class="fab fa-instagram"></i></a>
-                                    <a href="https://www.linkedin.com/in/kartik-guleria-b61602306/"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/kartik._.097/"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="https://www.linkedin.com/in/kartik-guleria-b61602306/"><i
+                                            class="fab fa-linkedin"></i></a>
                                     <a href="mailto:kartikguleria12@gmail.com"><i class="fas fa-envelope"></i></a>
                                 </div>
                             </div>
@@ -1280,11 +1341,14 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                             <div class="member-info">
                                 <h3 class="member-name">Om Tripathi</h3>
                                 <p class="member-role">Frontend Developer</p>
-                                <p class="member-bio">Frontend developer with a keen eye for design, turning complex requirements into intuitive and engaging interfaces.</p>
+                                <p class="member-bio">Frontend developer with a keen eye for design, turning complex
+                                    requirements into intuitive and engaging interfaces.</p>
                                 <div class="member-social">
-                                    <a href="https://www.instagram.com/_om_tripathi_007/"><i class="fab fa-instagram"></i></a>
-                                    <a href="https://www.linkedin.com/in/om-tripathi-155b24380/"><i class="fab fa-linkedin"></i></a>
-                            
+                                    <a href="https://www.instagram.com/_om_tripathi_007/"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="https://www.linkedin.com/in/om-tripathi-155b24380/"><i
+                                            class="fab fa-linkedin"></i></a>
+
                                 </div>
                             </div>
                         </div>
@@ -1297,18 +1361,20 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                             <div class="member-info">
                                 <h3 class="member-name">Shivay Agarwal</h3>
                                 <p class="member-role">Backend Developer</p>
-                                <p class="member-bio">Database and server-side architecture expert. Ensures our applications are scalable, secure, and performant.</p>
+                                <p class="member-bio">Database and server-side architecture expert. Ensures our
+                                    applications are scalable, secure, and performant.</p>
                                 <div class="member-social">
-                                   
-                                   <a href="https://www.instagram.com/shivayagarwal_08/"><i class="fab fa-instagram"></i></a>
-                             
+
+                                    <a href="https://www.instagram.com/shivayagarwal_08/"><i
+                                            class="fab fa-instagram"></i></a>
+
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
             <div class="team-projects">
                 <h2 class="team-section-title">Our Projects</h2>
                 <div class="projects-grid">
@@ -1317,26 +1383,29 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                             <i class="fas fa-globe"></i>
                         </div>
                         <h3 class="project-title">Innovation Club Website</h3>
-                        <p class="project-description">Official website showcasing our events, team, and innovation initiatives.</p>
+                        <p class="project-description">Official website showcasing our events, team, and innovation
+                            initiatives.</p>
                     </div>
                     <div class="project-card">
                         <div class="project-icon">
                             <i class="fas fa-calendar-check"></i>
                         </div>
                         <h3 class="project-title">Event Registration System</h3>
-                        <p class="project-description">Seamless registration platform for all our events and workshops.</p>
+                        <p class="project-description">Seamless registration platform for all our events and workshops.
+                        </p>
                     </div>
                     <div class="project-card">
                         <div class="project-icon">
                             <i class="fas fa-trophy"></i>
                         </div>
                         <h3 class="project-title">Hackathon Portal</h3>
-                        <p class="project-description">Comprehensive platform for managing our flagship hackathon events.</p>
+                        <p class="project-description">Comprehensive platform for managing our flagship hackathon
+                            events.</p>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <div class="back-button-container">
             <a href="#" id="backToTeamFromWebDev" class="sexy-back-button">
                 <i class="fas fa-arrow-left"></i>
@@ -1344,7 +1413,7 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
             </a>
         </div>
     </div>
-    
+
     <!-- Content Team Page -->
     <div id="contentTeamPage" class="team-page">
         <div class="team-hero">
@@ -1353,17 +1422,18 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                 <p class="team-hero-subtitle">Crafting stories that inspire innovation</p>
             </div>
         </div>
-        
+
         <div class="team-container">
             <div class="team-intro">
                 <h2 class="team-intro-title">Our Content Team</h2>
                 <p class="team-intro-text">
-                    The Content Team is the voice of the Innovation Club. They create compelling narratives that communicate 
-                    our vision, showcase our achievements, and engage our community. From social media content to event 
+                    The Content Team is the voice of the Innovation Club. They create compelling narratives that
+                    communicate
+                    our vision, showcase our achievements, and engage our community. From social media content to event
                     documentation, they ensure our message reaches and resonates with our audience.
                 </p>
             </div>
-            
+
             <div class="team-section">
                 <h2 class="team-section-title">Team Members</h2>
                 <div class="team-grid">
@@ -1375,7 +1445,8 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                             <div class="member-info">
                                 <h3 class="member-name">Neha Patel</h3>
                                 <p class="member-role">Content Lead</p>
-                                <p class="member-bio">Strategic storyteller with a background in marketing communications. Crafts narratives that inspire and engage.</p>
+                                <p class="member-bio">Strategic storyteller with a background in marketing
+                                    communications. Crafts narratives that inspire and engage.</p>
                                 <div class="member-social">
                                     <a href="#"><i class="fab fa-instagram"></i></a>
                                     <a href="#"><i class="fab fa-linkedin"></i></a>
@@ -1392,7 +1463,8 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                             <div class="member-info">
                                 <h3 class="member-name">Karan Singh</h3>
                                 <p class="member-role">Social Media Manager</p>
-                                <p class="member-bio">Digital native with expertise in creating viral content. Manages our online presence across platforms.</p>
+                                <p class="member-bio">Digital native with expertise in creating viral content. Manages
+                                    our online presence across platforms.</p>
                                 <div class="member-social">
                                     <a href="#"><i class="fab fa-instagram"></i></a>
                                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -1409,7 +1481,8 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                             <div class="member-info">
                                 <h3 class="member-name">Sneha Reddy</h3>
                                 <p class="member-role">Visual Content Creator</p>
-                                <p class="member-bio">Creative designer specializing in visual storytelling. Creates graphics and videos that capture our innovation journey.</p>
+                                <p class="member-bio">Creative designer specializing in visual storytelling. Creates
+                                    graphics and videos that capture our innovation journey.</p>
                                 <div class="member-social">
                                     <a href="#"><i class="fab fa-instagram"></i></a>
                                     <a href="#"><i class="fab fa-behance"></i></a>
@@ -1420,7 +1493,7 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                     </div>
                 </div>
             </div>
-            
+
             <div class="team-projects">
                 <h2 class="team-section-title">Our Work</h2>
                 <div class="projects-grid">
@@ -1429,26 +1502,29 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                             <i class="fas fa-newspaper"></i>
                         </div>
                         <h3 class="project-title">Blog & Articles</h3>
-                        <p class="project-description">Thought leadership content on innovation, technology, and entrepreneurship.</p>
+                        <p class="project-description">Thought leadership content on innovation, technology, and
+                            entrepreneurship.</p>
                     </div>
                     <div class="project-card">
                         <div class="project-icon">
                             <i class="fas fa-video"></i>
                         </div>
                         <h3 class="project-title">Event Documentation</h3>
-                        <p class="project-description">Comprehensive coverage of our events through photos, videos, and recaps.</p>
+                        <p class="project-description">Comprehensive coverage of our events through photos, videos, and
+                            recaps.</p>
                     </div>
                     <div class="project-card">
                         <div class="project-icon">
                             <i class="fas fa-hashtag"></i>
                         </div>
                         <h3 class="project-title">Social Media Campaigns</h3>
-                        <p class="project-description">Engaging campaigns that build our community and amplify our message.</p>
+                        <p class="project-description">Engaging campaigns that build our community and amplify our
+                            message.</p>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <div class="back-button-container">
             <a href="#" id="backToTeamFromContent" class="sexy-back-button">
                 <i class="fas fa-arrow-left"></i>
@@ -1456,7 +1532,7 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
             </a>
         </div>
     </div>
-    
+
     <!-- Gallery Page -->
     <div id="galleryPage" class="gallery-page">
         <!-- Hero Section -->
@@ -1539,7 +1615,7 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
             </a>
         </div>
     </div>
-    
+
     <!-- Updates Page -->
     <div id="updatesPage" class="updates-page">
         <div class="updates-hero">
@@ -1548,7 +1624,7 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                 <p class="updates-hero-subtitle">Stay informed about our innovations</p>
             </div>
         </div>
-        
+
         <div class="updates-container">
             <div class="updates-list">
                 <!-- New Update: RIDE Hack Internal Round Shortlisted Teams -->
@@ -1560,9 +1636,12 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                     <div class="update-content">
                         <h3 class="update-title">RIDE Hack'25 - Internal Round Shortlisted Teams</h3>
                         <p class="update-description">
-                            Congratulations to all the teams who have been shortlisted for the internal round of RIDE Hack'25! 
-                            These innovative teams have demonstrated exceptional problem-solving skills and creative thinking. 
-                            The shortlisted teams will now proceed to the next round where they will present their solutions to our panel of expert judges.
+                            Congratulations to all the teams who have been shortlisted for the internal round of RIDE
+                            Hack'25!
+                            These innovative teams have demonstrated exceptional problem-solving skills and creative
+                            thinking.
+                            The shortlisted teams will now proceed to the next round where they will present their
+                            solutions to our panel of expert judges.
                         </p>
                         <div class="update-highlights">
                             <div class="highlight-item">
@@ -1575,16 +1654,16 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                             </div>
                         </div>
                         <div class="update-actions">
-                                <a href="RIDEHack'25_Shortlisted Teams.pdf" download>
+                            <a href="RIDEHack'25_Shortlisted Teams.pdf" download>
 
-                            <button class="update-download-btn" id="downloadShortlistedTeamsBtn">
-                                <i class="fas fa-download"></i>
-                                Check shortlisted teams
-                            </button>
+                                <button class="update-download-btn" id="downloadShortlistedTeamsBtn">
+                                    <i class="fas fa-download"></i>
+                                    Check shortlisted teams
+                                </button>
                         </div>
                     </div>
                 </div>
-                
+
                 <div class="update-card" id="rideHackUpdateCard">
                     <div class="update-date">
                         <span class="update-day">15</span>
@@ -1593,14 +1672,17 @@ JIIT WISH TOWN CAMPUS NOIDA</p>
                     <div class="update-content">
                         <h3 class="update-title">RIDE Hack'25 Event</h3>
                         <p class="update-description">
-Join us for our flagship RIDE Hack'25 where students, developers, designers, and entrepreneurs come together to build innovative solutions to real-world problems. The event will feature hands-on workshops, mentorship from industry experts, and exciting prizes for the winning teams.
+                            Join us for our flagship RIDE Hack'25 where students, developers, designers, and
+                            entrepreneurs come together to build innovative solutions to real-world problems. The event
+                            will feature hands-on workshops, mentorship from industry experts, and exciting prizes for
+                            the winning teams.
                         </p>
                         <button class="update-read-more-btn" id="rideHackUpdateBtn">Read More</button>
                     </div>
                 </div>
             </div>
         </div>
-        
+
         <div class="back-button-container">
             <a href="#" id="backToHomeFromUpdates" class="sexy-back-button">
                 <i class="fas fa-arrow-left"></i>
@@ -1608,7 +1690,7 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
             </a>
         </div>
     </div>
-    
+
     <!-- Shortlisted Teams Page -->
     <div id="shortlistedTeamsPage" class="shortlisted-teams-page">
         <div class="shortlisted-teams-hero">
@@ -1617,15 +1699,17 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                 <p class="shortlisted-teams-hero-subtitle">RIDE Hack'25</p>
             </div>
         </div>
-        
+
         <div class="shortlisted-teams-container">
             <div class="shortlisted-teams-intro">
                 <h2 class="shortlisted-teams-intro-title">Congratulations to All Shortlisted Teams!</h2>
                 <p class="shortlisted-teams-intro-text">
-                    We're excited to announce the shortlisted teams for RIDE Hack'25. These innovative teams have demonstrated exceptional problem-solving skills and creative thinking. The shortlisted teams will now proceed to the next round where they will present their solutions to our panel of expert judges.
+                    We're excited to announce the shortlisted teams for RIDE Hack'25. These innovative teams have
+                    demonstrated exceptional problem-solving skills and creative thinking. The shortlisted teams will
+                    now proceed to the next round where they will present their solutions to our panel of expert judges.
                 </p>
             </div>
-            
+
             <div class="shortlisted-teams-stats">
                 <div class="stat-item">
                     <span class="stat-number">55</span>
@@ -1640,7 +1724,7 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                     <span class="stat-label">Prize Pool</span>
                 </div>
             </div>
-            
+
             <div class="shortlisted-teams-table-container">
                 <div class="table-responsive">
                     <table class="shortlisted-teams-table">
@@ -1987,18 +2071,19 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
                     </table>
                 </div>
             </div>
-            
-           <div class="download-results-section">
-    <h3 class="download-results-title">Download Results</h3>
-    <p class="download-results-text">Download the complete list of shortlisted teams for RIDE Hack'25</p>
-    <a href="RIDEHack'25_Shortlisted Teams.pdf" download class="btn btn-primary download-results-btn" id="downloadResultsBtn">
-        <i class="fas fa-download"></i>
-        Download Shortlisted Teams PDF
-    </a>
-</div>
+
+            <div class="download-results-section">
+                <h3 class="download-results-title">Download Results</h3>
+                <p class="download-results-text">Download the complete list of shortlisted teams for RIDE Hack'25</p>
+                <a href="RIDEHack'25_Shortlisted Teams.pdf" download class="btn btn-primary download-results-btn"
+                    id="downloadResultsBtn">
+                    <i class="fas fa-download"></i>
+                    Download Shortlisted Teams PDF
+                </a>
+            </div>
 
         </div>
-        
+
         <div class="back-button-container">
             <a href="#" id="backToHomeFromShortlistedTeams" class="sexy-back-button">
                 <i class="fas fa-arrow-left"></i>
@@ -2006,210 +2091,241 @@ Join us for our flagship RIDE Hack'25 where students, developers, designers, and
             </a>
         </div>
     </div>
-    
+
     <!-- Scroll to Top -->
     <div class="scroll-top" id="scrollTop">
         <i class="fas fa-arrow-up"></i>
     </div>
 
-<!-- Climate Data Hackathon Delhi 2026 Page -->
-<div id="innovatePage" class="innovate-page">
-    <div class="innovate-hero">
-        <div class="innovate-hero-content">
-            <h1 class="innovate-hero-title">Climate Data Hackathon</h1>
-            <p class="innovate-hero-subtitle">Delhi 2026 - Data and AI to Solve for Air Pollution</p>
-            <div class="event-date-badge">
-                <span class="date-day"></span>
-                <span class="date-month"></span>
-                <span class="date-year"></span>
+    <!-- Climate Data Hackathon Delhi 2026 Page -->
+    <div id="innovatePage" class="innovate-page">
+        <div class="innovate-hero">
+            <div class="innovate-hero-content">
+                <h1 class="innovate-hero-title">Climate Data Hackathon</h1>
+                <p class="innovate-hero-subtitle">Delhi 2026 - Data and AI to Solve for Air Pollution</p>
+                <div class="event-date-badge">
+                    <span class="date-day"></span>
+                    <span class="date-month"></span>
+                    <span class="date-year"></span>
+                </div>
             </div>
         </div>
-    </div>
-    
-    <div class="innovate-container">
-        <div class="innovate-intro">
-            <div class="innovate-intro-header">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShFtwqOkJ-ykmQXiKh4MFr534kdI70Gsqtpg&s" class="innovation-logo-side">
-                <h2 class="innovate-intro-title">Climate Data Hackathon Delhi 2026</h2>
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShFtwqOkJ-ykmQXiKh4MFr534kdI70Gsqtpg&s" alt="Climate Hackathon Logo" class="innovation-logo-side">
-            </div>
-            <p class="innovate-intro-text">
-                🚀 Exciting News for Jaypee Institute of Information Technology Students! Jaypee Institute of Information Technology has partnered with Climate Collective Foundation to host the Climate Data Hackathon Delhi (Air Pollution Track) exclusively for our students! Tackle air pollution with AI and data-driven innovation, and get a chance to win a cash prize of Rs 1,00,000.
-            </p>
-        </div>
-        
-        <!-- Problem Statement Section -->
-        <div class="innovate-details">
-            <div class="detail-section">
-                <h3 class="detail-title">The Challenge</h3>
-                <p class="detail-description">
-                    Delhi-NCR remains among the world's most polluted regions, with air quality reaching hazardous levels during certain times of the year. This hackathon challenges students to leverage data and technology to create community-scale solutions to monitor, predict, and reduce air pollution in the region.
+
+        <div class="innovate-container">
+            <div class="innovate-intro">
+                <div class="innovate-intro-header">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShFtwqOkJ-ykmQXiKh4MFr534kdI70Gsqtpg&s"
+                        class="innovation-logo-side">
+                    <h2 class="innovate-intro-title">Climate Data Hackathon Delhi 2026</h2>
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShFtwqOkJ-ykmQXiKh4MFr534kdI70Gsqtpg&s"
+                        alt="Climate Hackathon Logo" class="innovation-logo-side">
+                </div>
+                <p class="innovate-intro-text">
+                    🎉 <strong>The Climate Data Hackathon Delhi 2026 has concluded!</strong> 🚀 We are thrilled by the
+                    incredible innovation shown by the students of JIIT Noida. In partnership with Climate Collective
+                    Foundation, this event was a huge success. <strong>Check out the qualified participants
+                        below!</strong>
                 </p>
-                
-                <div class="round-section">
-                    <h4 class="round-title">Focus Areas</h4>
-                    <p class="round-description">
-                        Participants are encouraged to develop innovative solutions that address various aspects of air pollution in Delhi-NCR. Your solutions should leverage data analysis, artificial intelligence, and emerging technologies to create impactful interventions.
+            </div>
+
+            <!-- Result Showcase Section -->
+            <div class="innovate-details">
+                <div class="detail-section result-section"
+                    style="border-left: 4px solid #00ff7f; background: rgba(0, 255, 127, 0.05); margin-bottom: 30px;">
+                    <h3 class="detail-title" style="color: #00ff7f;">🎉 Results are Out!</h3>
+                    <p class="detail-description">
+                        Congratulations to all the participants for their outstanding contributions and innovative
+                        solutions! The competition was fierce, and the results are finally here.
                     </p>
-                    <div class="round-themes">
-                        <h5>Potential Solution Areas:</h5>
-                        <div class="theme-tags">
-                            <span class="theme-tag">Air Quality Monitoring</span>
-                            <span class="theme-tag">Pollution Prediction Models</span>
-                            <span class="theme-tag">Source Identification</span>
-                            <span class="theme-tag">Health Impact Assessment</span>
-                            <span class="theme-tag">Public Awareness Tools</span>
-                            <span class="theme-tag">Policy Recommendation Systems</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Event Details Section -->
-            <div class="detail-section">
-                <h3 class="detail-title">Event Details</h3>
-                <div class="guidelines-list">
-                    <div class="guideline-item">
-                        <i class="fas fa-calendar-alt"></i>
-                        <p>Hackathon Date: February 21, 2026</p>
-                    </div>
-                    <div class="guideline-item">
-                        <i class="fas fa-clock"></i>
-                        <p>Application Deadline: January 31, 2026</p>
-                    </div>
-                    <div class="guideline-item">
-                        <i class="fas fa-university"></i>
-                        <p>Hosted by: Jaypee Institute of Information Technology</p>
-                    </div>
-                    <div class="guideline-item">
-                        <i class="fas fa-handshake"></i>
-                        <p>Supported by: EPAM</p>
-                    </div>
-                    <div class="guideline-item">
-                        <i class="fas fa-globe"></i>
-                        <p>Part of: Delhi Climate Innovation Week</p>
-                    </div>
-                </div>
-                
-                <div class="duration-section">
-                    <h4 class="duration-title">Event Timeline</h4>
-                    <div class="duration-details">
-                        <div class="duration-item">
-                            <i class="fas fa-file-alt"></i>
-                            <span>Application Period: Until January 31, 2026</span>
-                        </div>
-                        <div class="duration-item">
-                            <i class="fas fa-laptop-code"></i>
-                            <span>Hackathon Day: February 21, 2026</span>
-                        </div>
-                        <div class="duration-item">
-                            <i class="fas fa-trophy"></i>
-                            <span>Results and Prize Distribution: N/A </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Eligibility Section -->
-            <div class="detail-section">
-                <h3 class="detail-title">Eligibility</h3>
-                <div class="team-formation-list">
-                    <div class="team-item">
-                        <div class="team-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <p>Open to all undergraduate (UG), postgraduate (PG), and PhD students</p>
-                    </div>
-                    <div class="team-item">
-                        <div class="team-icon">
-                            <i class="fas fa-university"></i>
-                        </div>
-                        <p>Exclusively for Jaypee Institute of Information Technology students</p>
-                    </div>
-                    <div class="team-item">
-                        <div class="team-icon">
-                            <i class="fas fa-users"></i>
-                        </div>
-                        <p>Guidelines will be provided after registration</p>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Prizes Section -->
-            <div class="detail-section">
-                <h3 class="detail-title">Prizes & Rewards</h3>
-                <div class="prizes-info">
-                    <div class="prize-pool">
+                    <a href="climatehackathon.html" class="register-btn"
+                        style="background: #00ff7f; color: #0a0e27; display: inline-flex; align-items: center; gap: 10px;">
                         <i class="fas fa-trophy"></i>
-                        <span>CASH PRIZE OF 1 LAKH RUPEES for the winning team!</span>
-                    </div>
-                    <p>Winners will also receive recognition from Climate Collective Foundation and EPAM, along with potential opportunities for further development of their solutions.</p>
-                </div>
-            </div>
-            
-            <!-- Registration Section -->
-            <div class="detail-section">
-                <h3 class="detail-title">Registration</h3>
-                <div class="important-dates">
-                    <div class="date-card">
-                        <div class="date-label">Registration Deadline</div>
-                        <div class="date-value">January 31, 2026</div>
-                    </div>
-                    <div class="date-card">
-                        <div class="date-label">Hackathon Date</div>
-                        <div class="date-value">February 21, 2026</div>
-                    </div>
-                </div>
-                
-                <div class="register-section">
-                    <h4>Apply Now!</h4>
-                    <p>Don't miss this opportunity to make a real impact on Delhi's air quality while showcasing your skills and innovation.</p>
-                    <a href="https://forms.gle/3phGp3UUmDywFTBu5" class="register-btn" target="_blank">
-                        <i class="fas fa-external-link-alt"></i>
-                        <span>Register Here</span>
+                        <span>Show Result</span>
                     </a>
                 </div>
             </div>
-            
-            <!-- Contact Section -->
-            <div class="detail-section">
-                <h3 class="detail-title">Organisers</h3>
-                <div class="contact-details">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-university"></i>
+
+            <!-- Problem Statement Section -->
+            <div class="innovate-details">
+                <div class="detail-section">
+                    <h3 class="detail-title">The Challenge</h3>
+                    <p class="detail-description">
+                        Delhi-NCR remains among the world's most polluted regions, with air quality reaching hazardous
+                        levels during certain times of the year. This hackathon challenges students to leverage data and
+                        technology to create community-scale solutions to monitor, predict, and reduce air pollution in
+                        the region.
+                    </p>
+
+                    <div class="round-section">
+                        <h4 class="round-title">Focus Areas</h4>
+                        <p class="round-description">
+                            Participants are encouraged to develop innovative solutions that address various aspects of
+                            air pollution in Delhi-NCR. Your solutions should leverage data analysis, artificial
+                            intelligence, and emerging technologies to create impactful interventions.
+                        </p>
+                        <div class="round-themes">
+                            <h5>Potential Solution Areas:</h5>
+                            <div class="theme-tags">
+                                <span class="theme-tag">Air Quality Monitoring</span>
+                                <span class="theme-tag">Pollution Prediction Models</span>
+                                <span class="theme-tag">Source Identification</span>
+                                <span class="theme-tag">Health Impact Assessment</span>
+                                <span class="theme-tag">Public Awareness Tools</span>
+                                <span class="theme-tag">Policy Recommendation Systems</span>
+                            </div>
                         </div>
-                        <p>Hosted by: Jaypee Institute of Information Technology</p>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-handshake"></i>
-                        </div>
-                        <p>Supported by: EPAM</p>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-leaf"></i>
-                        </div>
-                        <p>Organized by: Climate Collective Foundation</p>
                     </div>
                 </div>
-                
-                <div class="download-section">
-                    <h4>Part of Delhi Climate Innovation Week</h4>
-                    <p>This hackathon is part of the larger Delhi Climate Innovation Week initiative aimed at fostering climate solutions in the region.</p>
+
+                <!-- Event Details Section -->
+                <div class="detail-section">
+                    <h3 class="detail-title">Event Details</h3>
+                    <div class="guidelines-list">
+                        <div class="guideline-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <p>Hackathon Date: February 21, 2026</p>
+                        </div>
+                        <div class="guideline-item">
+                            <i class="fas fa-clock"></i>
+                            <p>Application Deadline: January 31, 2026</p>
+                        </div>
+                        <div class="guideline-item">
+                            <i class="fas fa-university"></i>
+                            <p>Hosted by: Jaypee Institute of Information Technology</p>
+                        </div>
+                        <div class="guideline-item">
+                            <i class="fas fa-handshake"></i>
+                            <p>Supported by: EPAM</p>
+                        </div>
+                        <div class="guideline-item">
+                            <i class="fas fa-globe"></i>
+                            <p>Part of: Delhi Climate Innovation Week</p>
+                        </div>
+                    </div>
+
+                    <div class="duration-section">
+                        <h4 class="duration-title">Event Timeline</h4>
+                        <div class="duration-details">
+                            <div class="duration-item">
+                                <i class="fas fa-file-alt"></i>
+                                <span>Application Period: Until January 31, 2026</span>
+                            </div>
+                            <div class="duration-item">
+                                <i class="fas fa-laptop-code"></i>
+                                <span>Hackathon Day: February 21, 2026</span>
+                            </div>
+                            <div class="duration-item">
+                                <i class="fas fa-trophy"></i>
+                                <span>Results and Prize Distribution: N/A </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Eligibility Section -->
+                <div class="detail-section">
+                    <h3 class="detail-title">Eligibility</h3>
+                    <div class="team-formation-list">
+                        <div class="team-item">
+                            <div class="team-icon">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <p>Open to all undergraduate (UG), postgraduate (PG), and PhD students</p>
+                        </div>
+                        <div class="team-item">
+                            <div class="team-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <p>Exclusively for Jaypee Institute of Information Technology students</p>
+                        </div>
+                        <div class="team-item">
+                            <div class="team-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <p>Guidelines will be provided after registration</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Prizes Section -->
+                <div class="detail-section">
+                    <h3 class="detail-title">Prizes & Rewards</h3>
+                    <div class="prizes-info">
+                        <div class="prize-pool">
+                            <i class="fas fa-trophy"></i>
+                            <span>CASH PRIZE OF 1 LAKH RUPEES for the winning team!</span>
+                        </div>
+                        <p>Winners will also receive recognition from Climate Collective Foundation and EPAM, along with
+                            potential opportunities for further development of their solutions.</p>
+                    </div>
+                </div>
+
+                <!-- Registration Section -->
+                <div class="detail-section">
+                    <h3 class="detail-title">Registration</h3>
+                    <div class="important-dates">
+                        <div class="date-card">
+                            <div class="date-label">Registration Deadline</div>
+                            <div class="date-value">January 31, 2026</div>
+                        </div>
+                        <div class="date-card">
+                            <div class="date-label">Hackathon Date</div>
+                            <div class="date-value">February 21, 2026</div>
+                        </div>
+                    </div>
+
+                    <div class="register-section">
+                        <h4>Results are Out!</h4>
+                        <p>Congratulations to everyone who participated. Click below to view the list of qualified
+                            participants.</p>
+                        <a href="climatehackathon.html" class="register-btn">
+                            <i class="fas fa-list-alt"></i>
+                            <span>View Results</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="detail-section">
+                    <h3 class="detail-title">Organisers</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <p>Hosted by: Jaypee Institute of Information Technology</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <p>Supported by: EPAM</p>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-leaf"></i>
+                            </div>
+                            <p>Organized by: Climate Collective Foundation</p>
+                        </div>
+                    </div>
+
+                    <div class="download-section">
+                        <h4>Part of Delhi Climate Innovation Week</h4>
+                        <p>This hackathon is part of the larger Delhi Climate Innovation Week initiative aimed at
+                            fostering climate solutions in the region.</p>
+                    </div>
                 </div>
             </div>
         </div>
+
+        <div class="back-button-container">
+            <a href="#" id="backToHomeFromInnovate" class="sexy-back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Home</span>
+            </a>
+        </div>
     </div>
-    
-    <div class="back-button-container">
-        <a href="#" id="backToHomeFromInnovate" class="sexy-back-button">
-            <i class="fas fa-arrow-left"></i>
-            <span>Back to Home</span>
-        </a>
-    </div>
-</div>
     <script src="script.js"></script>
 </body>
+
 </html>

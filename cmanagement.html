@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,14 +9,17 @@
     <style>
         :root {
             --primary-color: #0056b3;
-            --secondary-color: #00d4ff; /* Updated blue to match navigation bar */
+            --secondary-color: #00d4ff;
+            /* Updated blue to match navigation bar */
             --dark: #0a0e27;
             --light: #ffffff;
             --text-color: #333;
             --gradient: linear-gradient(135deg, #0056b3, #0099ff);
             --gradient-2: linear-gradient(135deg, #00d4ff, #0099ff);
-            --nav-blue: #00d4ff; /* Navigation bar blue */
-            --nav-red: #ff3b30; /* Navigation bar red */
+            --nav-blue: #00d4ff;
+            /* Navigation bar blue */
+            --nav-red: #ff3b30;
+            /* Navigation bar red */
         }
 
         * {
@@ -26,18 +30,20 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0a0e27 0%, #1a237e 100%); /* Changed to match page background */
+            background: linear-gradient(135deg, #0a0e27 0%, #1a237e 100%);
+            /* Changed to match page background */
             color: var(--text-color);
             line-height: 1.6;
             overflow-x: hidden;
         }
+
         /*logo text*/
         .kona {
             font-family: 'Kona', sans-serif;
             background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
             background-clip: text;
             -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent ;
+            -webkit-text-fill-color: transparent;
             text-shadow: #FC466B 0px 0px 20px;
         }
 
@@ -55,8 +61,10 @@
             z-index: 1000;
             backdrop-filter: blur(10px);
             border-bottom: 1px solid rgba(0, 86, 179, 0.3);
-            border-radius: 0 0 20px 20px; /* Added rounded bottom corners */
-            box-shadow: 0 5px 20px rgba(0, 86, 179, 0.2); /* Added shadow for depth */
+            border-radius: 0 0 20px 20px;
+            /* Added rounded bottom corners */
+            box-shadow: 0 5px 20px rgba(0, 86, 179, 0.2);
+            /* Added shadow for depth */
         }
 
         .nav-container {
@@ -156,7 +164,8 @@
             position: relative;
             min-height: 100vh;
             color: var(--light);
-            padding-top: 70px; /* Space for fixed nav */
+            padding-top: 70px;
+            /* Space for fixed nav */
         }
 
         .team-page::before {
@@ -166,7 +175,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: 
+            background-image:
                 radial-gradient(2px 2px at 20px 30px, rgba(255, 255, 255, 0.8), transparent),
                 radial-gradient(2px 2px at 40px 70px, rgba(255, 255, 255, 0.6), transparent),
                 radial-gradient(1px 1px at 50px 160px, rgba(255, 255, 255, 0.8), transparent),
@@ -338,7 +347,8 @@
             height: 100px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid var(--nav-blue); /* Updated to nav blue */
+            border: 3px solid var(--nav-blue);
+            /* Updated to nav blue */
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
             flex-shrink: 0;
         }
@@ -362,7 +372,8 @@
 
         .member-role {
             font-size: 1rem;
-            color: var(--nav-blue); /* Updated to nav blue */
+            color: var(--nav-blue);
+            /* Updated to nav blue */
             margin-bottom: 10px;
             font-weight: 500;
         }
@@ -430,7 +441,8 @@
             margin: 0 auto 15px;
             border-radius: 50%;
             overflow: hidden;
-            border: 2px solid var(--nav-blue); /* Updated to nav blue */
+            border: 2px solid var(--nav-blue);
+            /* Updated to nav blue */
             box-shadow: 0 0 15px rgba(0, 212, 255, 0.3);
         }
 
@@ -443,7 +455,8 @@
         .core-member-name {
             font-size: 1.1rem;
             font-weight: 600;
-            color: var(--nav-blue); /* Updated to nav blue */
+            color: var(--nav-blue);
+            /* Updated to nav blue */
             margin: 0;
         }
 
@@ -477,26 +490,30 @@
         @media (max-width: 768px) {
             nav {
                 padding: 12px 15px;
-                border-radius: 0 0 15px 15px; /* Adjusted for mobile */
+                border-radius: 0 0 15px 15px;
+                /* Adjusted for mobile */
             }
-            
+
             .nav-links {
-                display: none; /* Hide nav links on mobile */
+                display: none;
+                /* Hide nav links on mobile */
             }
-            
+
             .logo span {
-                display: none; /* Hide logo text on mobile */
+                display: none;
+                /* Hide logo text on mobile */
             }
-            
+
             .ride-hack-btn {
                 padding: 8px 15px;
                 font-size: 13px;
             }
-            
+
             .team-page {
-                padding-top: 60px; /* Adjust for smaller nav */
+                padding-top: 60px;
+                /* Adjust for smaller nav */
             }
-            
+
             .team-hero {
                 height: 35vh;
                 min-height: 300px;
@@ -565,6 +582,7 @@
         }
     </style>
 </head>
+
 <body>
     <nav>
         <div class="nav-container">
@@ -572,10 +590,12 @@
                 <div class="log-img">
                     <img src="ChatGPT Image Aug 9, 2025 at 10_55_53 AM.png" alt="Innovation Logo" class="logo-img">
                 </div>
-                <span class="kona"><h2>Innovation</h2></span>
+                <span class="kona">
+                    <h2>Innovation</h2>
+                </span>
             </div>
-  
-            <a href="#" class="ride-hack-btn">RIDE HACK</a>
+
+            <a href="climatehackathon.html" class="ride-hack-btn">Show Result</a>
         </div>
     </nav>
 
@@ -586,17 +606,18 @@
                 <p class="team-hero-subtitle">Leading with vision and strategic excellence</p>
             </div>
         </div>
-        
+
         <div class="team-container">
             <div class="team-intro">
                 <h2 class="team-intro-title">Our Management Team</h2>
                 <p class="team-intro-text">
-                    Our Management Team is the backbone of the Innovation Club, providing strategic direction, 
-                    operational oversight, and organizational leadership. With diverse expertise in project management, 
-                    finance, and operations, they ensure the club runs efficiently and achieves its mission of fostering innovation.
+                    Our Management Team is the backbone of the Innovation Club, providing strategic direction,
+                    operational oversight, and organizational leadership. With diverse expertise in project management,
+                    finance, and operations, they ensure the club runs efficiently and achieves its mission of fostering
+                    innovation.
                 </p>
             </div>
-            
+
             <!-- Leadership Section -->
             <div class="team-section">
                 <h2 class="team-section-title">Leadership</h2><br><br>
@@ -609,7 +630,8 @@
                             <div class="member-info">
                                 <h3 class="member-name">UTKARSH AGARWAL</h3>
                                 <p class="member-role">Team Lead</p>
-                                <p class="member-bio">Strategic leader with a passion for innovation and organizational excellence, driving the club's vision forward.</p>
+                                <p class="member-bio">Strategic leader with a passion for innovation and organizational
+                                    excellence, driving the club's vision forward.</p>
                                 <div class="member-social">
                                 </div>
                             </div>
@@ -623,7 +645,8 @@
                             <div class="member-info">
                                 <h3 class="member-name">HARSHIT GUPTA</h3>
                                 <p class="member-role">Team Lead</p>
-                                <p class="member-bio">Operational expert ensuring seamless execution of projects and efficient resource allocation across all initiatives.</p>
+                                <p class="member-bio">Operational expert ensuring seamless execution of projects and
+                                    efficient resource allocation across all initiatives.</p>
                                 <div class="member-social">
                                 </div>
                             </div>
@@ -631,7 +654,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <!-- Core Team Section -->
             <div class="team-section">
                 <h2 class="team-section-title">Core Team members</h2><br><br>
@@ -735,16 +758,17 @@
                 </div>
             </div>
         </div>
-     <!-- button -->
+        <!-- button -->
     </div>
 
     <script>
         // Simple back button functionality
-        document.getElementById('backToHomeFromTeam').addEventListener('click', function(e) {
+        document.getElementById('backToHomeFromTeam').addEventListener('click', function (e) {
             e.preventDefault();
             // In a real application, this would navigate back to the home page
             alert('Navigating back to home page...');
         });
     </script>
 </body>
+
 </html>
