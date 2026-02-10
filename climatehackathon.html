@@ -209,6 +209,143 @@
                 transform: translateY(0);
             }
         }
+
+        /* New Info Sections */
+        .info-section {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .info-card {
+            background: var(--glass);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .info-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+
+        .info-header i {
+            font-size: 1.5rem;
+        }
+
+        .info-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        .info-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .notif-box {
+            margin-top: 20px;
+            background: rgba(0, 255, 127, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #00ff7f;
+            border: 1px solid rgba(0, 255, 127, 0.2);
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .timeline-entry {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .t-date {
+            min-width: 150px;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        .t-desc {
+            color: #eee;
+            font-size: 0.95rem;
+        }
+
+        .timeline-entry.highlight .t-date {
+            color: var(--accent-red);
+        }
+
+        .timeline-entry.finale .t-desc {
+            font-weight: bold;
+            color: white;
+            text-decoration: underline;
+        }
+
+        .mentorship-p {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: #aaa;
+            font-style: italic;
+        }
+
+        .final-congrats {
+            text-align: center;
+            padding: 40px;
+            background: var(--glass);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .final-congrats p {
+            font-size: 1.2rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .t-date {
+                min-width: 100px;
+            }
+        }
     </style>
 </head>
 
@@ -236,7 +373,6 @@
                     <tr>
                         <th>#</th>
                         <th>Name</th>
-                        <th>Contact</th>
                         <th>Email</th>
                         <th>Gender</th>
                         <th>Status</th>
@@ -246,6 +382,64 @@
                     <!-- Data will be injected here -->
                 </tbody>
             </table>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="info-grid">
+            <!-- Next Steps -->
+            <div class="info-card">
+                <div class="info-header">
+                    <i class="fas fa-arrow-right"></i>
+                    <h3>What to do Next?</h3>
+                </div>
+                <ul class="info-list">
+                    <li>Online Kickoff Session/AMA (Date and Link will be shared on WA Group)</li>
+                    <li>All team members are requested to join the WhatsApp group individually so we can communicate
+                        with each
+                        person directly.</li>
+                    <li><strong>Join the WhatsApp Channel (Mandatory)</strong> - All official communication will be
+                        shared
+                        via WhatsApp.</li>
+                </ul>
+                <div class="notif-box">
+                    <i class="fab fa-whatsapp"></i>
+                    <p>Join whatsapp groups send to your mail ids</p>
+                </div>
+            </div>
+
+            <!-- Timelines -->
+            <div class="info-card">
+                <div class="info-header">
+                    <i class="fas fa-clock"></i>
+                    <h3>Important Timelines</h3>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-entry">
+                        <div class="t-date">Feb 11 – Feb 20</div>
+                        <div class="t-desc">Hackathon Period & Build Sprint</div>
+                    </div>
+                    <div class="timeline-entry highlight">
+                        <div class="t-date">Feb 21</div>
+                        <div class="t-desc">College Pitch Day & Finale Shortlist</div>
+                    </div>
+                    <div class="timeline-entry">
+                        <div class="t-date">Feb 22 – Feb 24</div>
+                        <div class="t-desc">Mentorship for Shortlisted Teams</div>
+                    </div>
+                    <div class="timeline-entry finale">
+                        <div class="t-date">Feb 25</div>
+                        <div class="t-desc">Climate Data Hackathon Finale</div>
+                    </div>
+                </div>
+                <p class="mentorship-p">Selected teams for Finale will receive mentorship support to refine their
+                    prototype
+                    ideas and solutions.</p>
+            </div>
+        </div>
+
+        <div class="final-congrats">
+            <p>Once again, congratulations on making it to the next round! We look forward to your innovative ideas.</p>
         </div>
     </div>
 
@@ -375,7 +569,6 @@
             tr.innerHTML = `
                 <td>${index + 1}</td>
                 <td>${row[0]}</td>
-                <td>${row[1]}</td>
                 <td>${row[2]}</td>
                 <td>${row[3]}</td>
                 <td><span class="status-badge">${row[4]}</span></td>
