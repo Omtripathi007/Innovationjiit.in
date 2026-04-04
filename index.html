@@ -17,57 +17,61 @@
 </head>
 
 <body>
-    <!-- Innovate 3.0 Popup Modal -->
+    <!-- Upcoming Events Popup Modal -->
     <div class="innovate-popup-modal" id="innovatePopupModal">
-        <div class="innovate-popup-content">
-            <button class="innovate-popup-close" id="innovatePopupClose">
+        <div class="innovate-popup-content" style="max-width: 600px;">
+            <button class="innovate-popup-close" id="innovatePopupClose" onclick="document.getElementById('innovatePopupModal').classList.remove('active')">
                 <i class="fas fa-times"></i>
             </button>
             <div class="innovate-popup-header">
                 <div class="innovate-popup-icon">
-                    <i class="fas fa-leaf"></i>
+                    <i class="fas fa-calendar-check"></i>
                 </div>
-                <h2 class="innovate-popup-title">Climate Data Hackathon</h2>
-                <p class="innovate-popup-subtitle">Air Pollution Track</p>
+                <h2 class="innovate-popup-title">Upcoming Events</h2>
+                <p class="innovate-popup-subtitle">Mark your calendars for these exciting events!</p>
             </div>
-            <div class="innovate-popup-body">
-                <div class="innovate-popup-details">
-                    <div class="innovate-popup-date">
-                        <i class="fas fa-calendar-alt"></i>
-                        <span>Application Deadline: January 31, 2026 | Event: February 21, 2026</span>
+            <div class="innovate-popup-body" style="max-height: 400px; overflow-y: auto; padding-right: 15px; margin-top: 20px;">
+                <div class="innovate-popup-details" style="display: flex; flex-direction: column; gap: 15px;">
+                    <div class="innovate-popup-date" style="align-items: flex-start;">
+                        <i class="fas fa-calendar-alt" style="margin-top: 5px; color: #00d2ff;"></i>
+                        <span style="font-size: 1.05rem;"><strong>04 April 2026:</strong> AI-Powered Solution Expo: Demo Days for AI/I4.0 Prototypes</span>
                     </div>
-                    <div class="innovate-popup-location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <span>Jaypee Institute of Information Technology</span>
+                    <div class="innovate-popup-date" style="align-items: flex-start;">
+                        <i class="fas fa-calendar-alt" style="margin-top: 5px; color: #00d2ff;"></i>
+                        <span style="font-size: 1.05rem;"><strong>06 April 2026:</strong> Field/Exposure Visit to Incubation Units/ Patent Facilitation/ Tech Transfer Centres</span>
                     </div>
-                    <div class="innovate-popup-format">
-                        <i class="fas fa-globe"></i>
-                        <span>In Partnership with Climate Collective Foundation</span>
+                    <div class="innovate-popup-date" style="align-items: flex-start;">
+                        <i class="fas fa-calendar-alt" style="margin-top: 5px; color: #00d2ff;"></i>
+                        <span style="font-size: 1.05rem;"><strong>09 April 2026:</strong> Session on Start-up Legal & Ethical Steps</span>
                     </div>
-                </div>
-                <div class="innovate-popup-description">
-                    🎉 <strong>Congratulations to all participants!</strong> 🚀 tackling air pollution with AI and
-                    data-driven innovation was a huge success. Check out the results below!
-                </div>
-                <div class="innovate-popup-highlights">
-                    <div class="highlight-item">
-                        <i class="fas fa-rupee-sign"></i>
-                        <span>Cash Prize: Rs 1,00,000</span>
+                    <div class="innovate-popup-date" style="align-items: flex-start;">
+                        <i class="fas fa-calendar-alt" style="margin-top: 5px; color: #00d2ff;"></i>
+                        <span style="font-size: 1.05rem;"><strong>18-19 April 2026:</strong> Organize Inter/Intra Institutional B-Plan Competition (Intra Hackathon)</span>
                     </div>
-                    <div class="highlight-item">
-                        <i class="fas fa-brain"></i>
-                        <span>AI & Data-Driven Innovation</span>
+                    <div class="innovate-popup-date" style="align-items: flex-start;">
+                        <i class="fas fa-calendar-alt" style="margin-top: 5px; color: #00d2ff;"></i>
+                        <span style="font-size: 1.05rem;"><strong>18-19 April 2026:</strong> Mentoring Event: Demo Day/Poster Presentation of Business Plans & Mentor Linkages</span>
                     </div>
-                    <div class="highlight-item">
-                        <i class="fas fa-users"></i>
-                        <span>Exclusive for JIIT Students</span>
+                    <div class="innovate-popup-date" style="align-items: flex-start;">
+                        <i class="fas fa-calendar-alt" style="margin-top: 5px; color: #00d2ff;"></i>
+                        <span style="font-size: 1.05rem;"><strong>21 April 2026:</strong> Workshop on Product-Market fit; Prototype/Process Design and MVP Development</span>
+                    </div>
+                    <div class="innovate-popup-date" style="align-items: flex-start;">
+                        <i class="fas fa-calendar-alt" style="margin-top: 5px; color: #00d2ff;"></i>
+                        <span style="font-size: 1.05rem;"><strong>05 May 2026:</strong> Session/Workshop on Business Model Canvas (BMC) & Business Model Fit</span>
+                    </div>
+                    <div class="innovate-popup-date" style="align-items: flex-start;">
+                        <i class="fas fa-calendar-alt" style="margin-top: 5px; color: #00d2ff;"></i>
+                        <span style="font-size: 1.05rem;"><strong>05 May 2026:</strong> Workshop on Raising Capital and Finance Management for Start-ups</span>
+                    </div>
+                    <div class="innovate-popup-date" style="align-items: flex-start;">
+                        <i class="fas fa-calendar-alt" style="margin-top: 5px; color: #00d2ff;"></i>
+                        <span style="font-size: 1.05rem;"><strong>05 May 2026:</strong> Workshop: Protecting IPR and IP Management for Start-ups</span>
                     </div>
                 </div>
             </div>
-            <div class="innovate-popup-footer">
-                <button class="innovate-popup-register" id="innovatePopupRegister">Know More</button>
-                <button class="innovate-popup-later" id="innovatePopupLater"
-                    onclick="window.location.href='climatehackathon.html'">Show Result</button>
+            <div class="innovate-popup-footer" style="justify-content: center; margin-top: 25px;">
+                <button class="innovate-popup-later" id="innovatePopupLater" style="width: 100%; border-radius: 8px; background: linear-gradient(135deg, #0056b3, #00d2ff); color: white; padding: 12px 24px; font-weight: 600; cursor: pointer; transition: transform 0.3s ease, box-shadow 0.3s ease; box-shadow: 0 5px 15px rgba(0, 86, 179, 0.3); border: none;" onclick="document.getElementById('innovatePopupModal').classList.remove('active')">Got it!</button>
             </div>
         </div>
     </div>
