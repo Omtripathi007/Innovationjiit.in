@@ -88,6 +88,51 @@
             </div>
         </div>
     </div>
+    
+    <!-- CodeAi Hackathon Popup Modal -->
+    <div class="innovate-popup-modal" id="codeAiPopupModal">
+        <div class="innovate-popup-content" style="max-width: 600px;">
+            <button class="innovate-popup-close" id="codeAiPopupClose" onclick="document.getElementById('codeAiPopupModal').classList.remove('active'); document.getElementById('innovatePopupModal').classList.add('active');">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="innovate-popup-header">
+                <div class="innovate-popup-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <h2 class="innovate-popup-title">CodeAi Hackathon</h2>
+                <p class="innovate-popup-subtitle">Intra-Institutional Hackathon</p>
+            </div>
+            <div class="innovate-popup-body">
+                <p class="innovate-popup-description" style="text-align: center;">
+                    Join us for an exciting ultimate coding challenge!<br>
+                    Showcase your skills and win amazing prizes.
+                </p>
+                <div class="innovate-popup-highlights">
+                    <div class="highlight-item">
+                        <i class="fas fa-users"></i>
+                        <span>Intra Hackathon</span>
+                    </div>
+                    <div class="highlight-item" style="border: 2px solid #FFD700; background: rgba(255, 215, 0, 0.15); box-shadow: 0 0 15px rgba(255, 215, 0, 0.2) inset;">
+                        <i class="fas fa-trophy" style="color: #FFD700; text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);"></i>
+                        <span style="color: #FFD700; font-weight: 800; font-size: 1.1rem;">Prizes ₹9000+</span>
+                    </div>
+                    <div class="highlight-item">
+                        <i class="fas fa-certificate"></i>
+                        <span>Certificates</span>
+                    </div>
+                </div>
+            </div>
+            <div class="innovate-popup-footer">
+                <button class="innovate-popup-register" onclick="document.getElementById('codeAiPopupModal').classList.remove('active'); document.getElementById('simpleComingSoonModal').classList.add('active');">
+                    <i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Register Now
+                </button>
+                <button class="innovate-popup-later" onclick="document.getElementById('codeAiPopupModal').classList.remove('active'); document.getElementById('innovatePopupModal').classList.add('active');">
+                    Remind Me Later
+                </button>
+            </div>
+        </div>
+    </div>
+    
     <!-- Animated Background -->
     <div class="animated-bg">
         <div class="shape shape-1"></div>
@@ -962,10 +1007,47 @@
                 <p class="events-hero-subtitle">Join us for exciting innovation experiences</p>
             </div>
         </div>
-
-
-
+        <h2 style="text-align: center; color: #00d2ff; margin: 40px 0 20px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-size: 2.2rem; letter-spacing: 2px;"><i class="fas fa-bolt"></i> Live Events</h2>
         <div class="events-container">
+            <!-- CodeAi Hackathon -->
+            <div class="event-card">
+                <div class="event-header">
+                    <div class="event-date" style="background: var(--gradient); color: white; border: none;">
+                        <span class="day" style="color: white; font-size: 1.5rem;"><i class="fas fa-rocket"></i></span>
+                        <span class="month" style="color: rgba(255,255,255,0.9);">Soon</span>
+                    </div>
+                    <div class="event-info">
+                        <h3 class="event-title">CodeAi Hackathon</h3>
+                        <div class="event-meta">
+                            <div class="event-meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>Coming Soon</span>
+                            </div>
+                            <div class="event-meta-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>JIIT NOIDA</span>
+                            </div>
+                            <div class="event-meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>Intra-Institutional</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="event-description">
+                    <div style="margin-bottom: 15px; display: inline-block; padding: 5px 15px; background: rgba(255, 215, 0, 0.1); border: 1px solid rgba(255, 215, 0, 0.3); border-radius: 20px;">
+                        <span style="color: #FFD700; font-weight: 800; font-size: 1.1rem;"><i class="fas fa-trophy"></i> Prizes worth ₹9000+!</span>
+                    </div><br>
+                    Get ready for the ultimate coding challenge! Join us for our exclusive intra-hackathon event where you can showcase your coding and AI skills. Certificates for all participants.
+                </div>
+                <div class="event-actions">
+                    <button class="btn btn-primary" onclick="document.getElementById('simpleComingSoonModal').classList.add('active');"><i class="fas fa-paper-plane" style="margin-right: 5px;"></i> Register Now</button>
+                </div>
+            </div>
+        </div>
+
+        <h2 style="text-align: center; color: #6c757d; margin: 60px 0 20px; font-family: 'Montserrat', sans-serif; text-transform: uppercase; font-size: 2.2rem; letter-spacing: 2px;"><i class="fas fa-archive"></i> Past Events</h2>
+        <div class="events-container" style="opacity: 0.6; filter: grayscale(100%);">
             <div class="event-card">
                 <div class="event-header">
                     <div class="event-date">
@@ -1040,7 +1122,7 @@
             </div>
         </div>
 
-        <div class="events-container">
+        <div class="events-container" style="opacity: 0.6; filter: grayscale(100%);">
             <div class="event-card">
                 <div class="event-header">
                     <div class="event-date">

@@ -1337,11 +1337,16 @@ document.addEventListener('DOMContentLoaded', () => {
 //innovate 3.0
 // Innovate 3.0 Popup
 document.addEventListener('DOMContentLoaded', function() {
-    // Show Innovate 3.0 popup on page load
+    // Show CodeAi Hackathon popup on page load (replaces old innovate popup behavior)
     setTimeout(function() {
-        document.getElementById('innovatePopupModal').classList.add('active');
+        if(document.getElementById('codeAiPopupModal')) {
+            document.getElementById('codeAiPopupModal').classList.add('active');
+        } else {
+            // Fallback
+            document.getElementById('innovatePopupModal').classList.add('active');
+        }
     }, 2000);
-    
+
     // Close Innovate 3.0 popup
     document.getElementById('innovatePopupClose').addEventListener('click', function() {
         document.getElementById('innovatePopupModal').classList.remove('active');
