@@ -1441,4 +1441,90 @@ document.addEventListener('DOMContentLoaded', function() {
             menuToggle.classList.remove('active');
         }
     }
+
+    // --- Automatic Archiving of Past Events ---
+    function autoArchiveEvents() {
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        // 1. Popup Events
+        const popupLiveSection = document.querySelectorAll('.innovate-popup-details')[0];
+        const popupArchiveSection = document.querySelectorAll('.innovate-popup-details')[1];
+
+        if (popupLiveSection && popupArchiveSection) {
+            const popupEvents = Array.from(popupLiveSection.querySelectorAll('.innovate-popup-date'));
+            popupEvents.forEach(evt => {
+                const dateSpan = evt.querySelector('span strong');
+                if (dateSpan) {
+                    let dateString = dateSpan.innerText.replace(":", "").trim();
+                    let parts = dateString.split(" ");
+                    if(parts.length >= 3) {
+                        let datePart = parts[0];
+                        let monthPart = parts[1];
+                        let yearPart = parts[2];
+                        if (datePart.includes("-")) {
+                            datePart = datePart.split("-")[1];
+                        }
+                        const eventDate = new Date(`${monthPart} ${datePart}, ${yearPart}`);
+                        if (eventDate < today) {
+                            popupArchiveSection.appendChild(evt);
+                            const icon = evt.querySelector('i');
+                            const textObj = evt.querySelector('span');
+                            if(icon) icon.style.color = '#6c757d';
+                            if(textObj) {
+                                textObj.style.color = '#888';
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        // 2. Main Page Events
+        const mainLiveSection = document.querySelectorAll('.events-container')[0];
+        const mainArchiveSection = document.querySelectorAll('.events-container')[1];
+
+        if (mainLiveSection && mainArchiveSection) {
+            const mainEvents = Array.from(mainLiveSection.querySelectorAll('.event-card'));
+            mainEvents.forEach(evt => {
+                const dateMeta = evt.querySelector('.event-meta-item span');
+                if (dateMeta) {
+                    const eventDateStr = dateMeta.innerText.trim();
+                    const match = eventDateStr.match(/([a-zA-Z]+)\s+(\d+)(?:-(\d+))?,\s+(\d+)/);
+                    let eventDate;
+                    if(match) {
+                        const month = match[1];
+                        const day = match[3] || match[2];
+                        const year = match[4];
+                        eventDate = new Date(`${month} ${day}, ${year}`);
+                    } else {
+                        eventDate = new Date(eventDateStr);
+                    }
+
+                    if (eventDate && eventDate < today) {
+                        mainArchiveSection.appendChild(evt);
+                        evt.classList.add('archive-card');
+                        evt.style.opacity = '0.6';
+                        evt.style.filter = 'grayscale(100%)';
+                        
+                        const dateBox = evt.querySelector('.event-date');
+                        if (dateBox) {
+                            dateBox.style.background = 'rgba(108, 117, 125, 0.1)';
+                            dateBox.style.borderColor = 'rgba(108, 117, 125, 0.2)';
+                            const day = dateBox.querySelector('.day');
+                            const monthBox = dateBox.querySelector('.month');
+                            if(day) day.style.color = '#6c757d';
+                            if(monthBox) monthBox.style.color = '#888';
+                        }
+                        
+                        const title = evt.querySelector('.event-title');
+                        if (title) title.style.color = '#888';
+                    }
+                }
+            });
+        }
+    }
+    
+    // Run the script parameterizes
+    autoArchiveEvents();
 });
