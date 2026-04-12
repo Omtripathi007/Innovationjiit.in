@@ -42,7 +42,7 @@
                         </div>
                         <div class="innovate-popup-date" style="align-items: flex-start;">
                             <i class="fas fa-calendar-alt" style="margin-top: 5px; color: #00d2ff;"></i>
-                            <span style="font-size: 1.05rem;"><strong>18-19 April 2026:</strong> Mentoring Event: Demo Day/Poster Presentation of Business Plans & Mentor Linkages</span>
+                            <span style="font-size: 1.05rem;"><strong>25-26 April 2026:</strong> CodeAi Hackathon — Intra-Institutional AI Hackathon</span>
                         </div>
                         <div class="innovate-popup-date" style="align-items: flex-start;">
                             <i class="fas fa-calendar-alt" style="margin-top: 5px; color: #00d2ff;"></i>
@@ -119,8 +119,8 @@
                 </div>
             </div>
             <div class="innovate-popup-footer">
-                <button class="innovate-popup-register" onclick="document.getElementById('codeAiPopupModal').classList.remove('active'); document.getElementById('simpleComingSoonModal').classList.add('active');">
-                    <i class="fas fa-paper-plane" style="margin-right: 8px;"></i> Register Now
+                <button class="innovate-popup-register" id="codeAiPopupLearnMore">
+                    <i class="fas fa-info-circle" style="margin-right: 8px;"></i> Learn More
                 </button>
                 <button class="innovate-popup-later" onclick="document.getElementById('codeAiPopupModal').classList.remove('active'); document.getElementById('innovatePopupModal').classList.add('active');">
                     Remind Me Later
@@ -645,22 +645,29 @@
 
                 <!-- Event 4 -->
 
-                <!-- Event 5 -->
-                <div class="event-card">
+                <!-- Event 5 - CodeAi Hackathon -->
+                <div class="event-card" style="border: 1px solid rgba(0,210,255,0.3);">
                     <div class="event-header">
-                        <div class="event-date" style="min-width: 140px;">
-                            <span class="day" style="font-size: 24px;">18-19</span>
-                            <span class="month">APR</span>
+                        <div class="event-date" style="background: var(--gradient); border: none; min-width: 140px;">
+                            <span class="day" style="font-size: 24px; color: white;">25-26</span>
+                            <span class="month" style="color: rgba(255,255,255,0.9);">APR</span>
                         </div>
                         <div class="event-info">
-                            <h3 class="event-title">Mentoring Event: Demo Day/Poster Presentation of Business Plans & Mentor Linkages</h3>
+                            <h3 class="event-title">CodeAi Hackathon</h3>
                             <div class="event-meta">
                                 <div class="event-meta-item">
                                     <i class="fas fa-calendar-alt"></i>
-                                    <span>April 18-19, 2026</span>
+                                    <span>April 25-26, 2026</span>
+                                </div>
+                                <div class="event-meta-item">
+                                    <i class="fas fa-trophy" style="color: #FFD700;"></i>
+                                    <span style="color: #FFD700;">Prizes ₹9000+</span>
                                 </div>
                             </div>
                         </div>
+                    </div>
+                    <div class="event-actions" style="padding: 10px 20px 15px;">
+                        <button class="btn btn-primary" id="codeAiHomePageBtn"><i class="fas fa-info-circle" style="margin-right: 5px;"></i> View Details</button>
                     </div>
                 </div>
 
@@ -992,15 +999,15 @@
             <div class="event-card">
                 <div class="event-header">
                     <div class="event-date" style="background: var(--gradient); color: white; border: none;">
-                        <span class="day" style="color: white; font-size: 1.5rem;"><i class="fas fa-rocket"></i></span>
-                        <span class="month" style="color: rgba(255,255,255,0.9);">18-19</span>
+                        <span class="day" style="color: white; font-size: 1.5rem;"><i class="fas fa-robot"></i></span>
+                        <span class="month" style="color: rgba(255,255,255,0.9);">25-26</span>
                     </div>
                     <div class="event-info">
                         <h3 class="event-title">CodeAi Hackathon</h3>
                         <div class="event-meta">
                             <div class="event-meta-item">
                                 <i class="fas fa-calendar-alt"></i>
-                                <span>18-19 April 2026</span>
+                                <span>25-26 April 2026</span>
                             </div>
                             <div class="event-meta-item">
                                 <i class="fas fa-map-marker-alt"></i>
@@ -1020,7 +1027,7 @@
                     Get ready for the ultimate coding challenge! Join us for our exclusive intra-hackathon event where you can showcase your coding and AI skills. Certificates for all participants.
                 </div>
                 <div class="event-actions">
-                    <button class="btn btn-primary" onclick="document.getElementById('simpleComingSoonModal').classList.add('active');"><i class="fas fa-paper-plane" style="margin-right: 5px;"></i> Register Now</button>
+                    <button class="btn btn-primary" id="codeAiEventsPageBtn"><i class="fas fa-info-circle" style="margin-right: 5px;"></i> View Details</button>
                 </div>
             </div>
         </div>
@@ -2522,6 +2529,195 @@
             </a>
         </div>
     </div>
+
+    <!-- CodeAi Hackathon Page -->
+    <div id="codeAiPage" class="innovate-page">
+        <!-- Neural Mesh Dynamic Overlay -->
+        <div class="codeai-mesh-overlay"></div>
+
+        <div class="innovate-hero">
+            <div class="innovate-hero-content reveal-up">
+                <h1 class="innovate-hero-title" style="background: linear-gradient(135deg, #00f2ff, #7000ff); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">CodeAi Hackathon</h1>
+                <p class="innovate-hero-subtitle" style="color: var(--codeai-cyan); text-transform: uppercase; letter-spacing: 4px; font-weight: 700; font-size: 1.1rem;">Intra-Institutional AI Hackathon — JIIT NOIDA</p>
+                <div class="codeai-hero-badges reveal-up">
+                    <span class="codeai-badge"><i class="fas fa-calendar-alt"></i> 25–26 April 2026</span>
+                    <span class="codeai-badge prize-badge"><i class="fas fa-trophy"></i> Prizes ₹9000+</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="innovate-container">
+            <!-- About Section -->
+            <div class="innovate-intro reveal-up" style="max-width: 900px; margin: 0 auto 100px;">
+                <h2 class="innovate-intro-title" style="color: white; font-size: 2.5rem; margin-bottom: 25px;">The Future is Coded by You</h2>
+                <p class="innovate-intro-text" style="color: var(--text-dim); font-size: 1.2rem; line-height: 1.8;">
+                    🚀 CodeAi is an exclusive 2-day marathon of innovation at JIIT NOIDA. We invite all students to push the boundaries of Artificial Intelligence across three specialized tracks. Whether you're a cybersecurity enthusiast, an NLP wizard, or a healthcare innovator, this is your platform to build solutions that matter.
+                </p>
+                <div style="margin-top: 40px;">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSftWf1YmPqm7Z3AwtJsf6uBpY1_CtGgVdlr4pKqUgYX8rZt_w/viewform" target="_blank" class="codeai-btn codeai-btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        <span>Secure Your Spot Now</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Tracks Section -->
+            <div class="codeai-track-grid">
+                <!-- Track 1 -->
+                <div class="codeai-track-card reveal-up">
+                    <span class="track-number">01</span>
+                    <div>
+                        <div class="track-icon-box">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h3>AI in Cybersecurity</h3>
+                        <p><strong>AI vs AI: Deepfake & Synthetic Media Attacks.</strong> Dive into the frontier of digital defense. Build systems to detect deepfakes, defend against voice cloning, or analyze synthetic identity fraud risks.</p>
+                        <div class="theme-tags" style="margin-bottom: 0;">
+                            <span class="theme-tag" style="background: rgba(0,242,255,0.1); color: var(--codeai-cyan); border: 1px solid rgba(0,242,255,0.2);">Deepfake Detection</span>
+                            <span class="theme-tag" style="background: rgba(0,242,255,0.1); color: var(--codeai-cyan); border: 1px solid rgba(0,242,255,0.2);">AI Defense</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <a href="Instructions for Track 1 AI in Cybersecurity.docx" download class="codeai-btn codeai-btn-outline" style="width: 100%; justify-content: center;">
+                            <i class="fas fa-file-download"></i>
+                            <span>Brief Case</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Track 2 -->
+                <div class="codeai-track-card reveal-up">
+                    <span class="track-number">02</span>
+                    <div>
+                        <div class="track-icon-box" style="background: linear-gradient(135deg, #a855f7, #7000ff);">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>NLP Innovation</h3>
+                        <p><strong>Natural Language Processing (NLP).</strong> Revolutionize how we communicate with machines. Develop advanced LLM applications, sentiment analyzers, or multilingual translation tools.</p>
+                        <div class="theme-tags" style="margin-bottom: 0;">
+                            <span class="theme-tag" style="background: rgba(168,85,247,0.1); color: #c084fc; border: 1px solid rgba(168,85,247,0.2);">LLM Apps</span>
+                            <span class="theme-tag" style="background: rgba(168,85,247,0.1); color: #c084fc; border: 1px solid rgba(168,85,247,0.2);">Text Intelligence</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <a href="Instructions for Track 2 Natural Language Processing.docx" download class="codeai-btn codeai-btn-outline" style="width: 100%; justify-content: center; border-color: rgba(168,85,247,0.4); color: #a855f7;">
+                            <i class="fas fa-file-download"></i>
+                            <span>Brief Case</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Track 3 -->
+                <div class="codeai-track-card reveal-up">
+                    <span class="track-number">03</span>
+                    <div>
+                        <div class="track-icon-box" style="background: linear-gradient(135deg, #00ff88, #00b359);">
+                            <i class="fas fa-notes-medical"></i>
+                        </div>
+                        <h3>Healthcare AI</h3>
+                        <p><strong>Healthcare Application.</strong> Leverage AI to save lives. Innovate in medical diagnosis, patient monitoring, predictive analytics, or smart pharmaceutical solutions.</p>
+                        <div class="theme-tags" style="margin-bottom: 0;">
+                            <span class="theme-tag" style="background: rgba(0,255,136,0.1); color: #4ade80; border: 1px solid rgba(0,255,136,0.2);">MedTech</span>
+                            <span class="theme-tag" style="background: rgba(0,255,136,0.1); color: #4ade80; border: 1px solid rgba(0,255,136,0.2);">Diagnostics</span>
+                        </div>
+                    </div>
+                    <div style="margin-top: 30px;">
+                        <a href="Instructions for Track 3 Healthcare Application.docx" download class="codeai-btn codeai-btn-outline" style="width: 100%; justify-content: center; border-color: rgba(0,255,136,0.4); color: #00ff88;">
+                            <i class="fas fa-file-download"></i>
+                            <span>Brief Case</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Victory Podium Prize Section -->
+            <div class="codeai-prizes-container reveal-up">
+                <h2 style="text-align: center; color: white; font-size: 2.5rem; margin-bottom: 10px;">The Champion's Circle</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 40px;">Recognizing exceptional innovation and technical excellence</p>
+                
+                <div class="codeai-prizes-grid">
+                    <!-- 2nd Prize -->
+                    <div class="prize-card-premium rank-2">
+                        <div class="prize-rank">2nd Prize</div>
+                        <div class="prize-icon-wrapper">
+                            <i class="fas fa-medal"></i>
+                        </div>
+                        <div class="prize-amount">₹2,500<span>/-</span></div>
+                        <p style="font-size: 0.9rem; color: var(--text-dim);">Silver Certification</p>
+                    </div>
+
+                    <!-- 1st Prize -->
+                    <div class="prize-card-premium rank-1">
+                        <div class="prize-rank">1st Prize</div>
+                        <div class="prize-icon-wrapper">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <div class="prize-amount">₹5,000<span>/-</span></div>
+                        <p style="font-size: 1rem; color: white; font-weight: 600;">Overall Winner</p>
+                    </div>
+
+                    <!-- 3rd Prize -->
+                    <div class="prize-card-premium rank-3">
+                        <div class="prize-rank">3rd Prize</div>
+                        <div class="prize-icon-wrapper">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <div class="prize-amount">₹1,500<span>/-</span></div>
+                        <p style="font-size: 0.9rem; color: var(--text-dim);">Bronze Certification</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Stats -->
+            <div class="innovate-details reveal-up" style="margin-top: 40px;">
+                <div class="codeai-track-card" style="flex-direction: row; flex-wrap: wrap; gap: 40px; align-items: center; justify-content: space-around;">
+                    <div style="text-align: center;">
+                        <i class="fas fa-users" style="font-size: 2rem; color: var(--codeai-cyan); margin-bottom: 10px;"></i>
+                        <h4 style="color: white; font-size: 1.2rem;">All JIIT Students</h4>
+                        <p style="margin: 0; font-size: 0.9rem;">Eligibility</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-award" style="font-size: 2rem; color: #ffca2c; margin-bottom: 10px;"></i>
+                        <h4 style="color: white; font-size: 1.2rem;">₹9000+ Pool</h4>
+                        <p style="margin: 0; font-size: 0.9rem;">Cash Prizes</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-certificate" style="font-size: 2rem; color: #4ecdc4; margin-bottom: 10px;"></i>
+                        <h4 style="color: white; font-size: 1.2rem;">Official Certs</h4>
+                        <p style="margin: 0; font-size: 0.9rem;">To All Participants</p>
+                    </div>
+                    <div style="text-align: center;">
+                        <i class="fas fa-map-marked-alt" style="font-size: 2rem; color: #ff6b6b; margin-bottom: 10px;"></i>
+                        <h4 style="color: white; font-size: 1.2rem;">JIIT Noida</h4>
+                        <p style="margin: 0; font-size: 0.9rem;">On-Campus Venue</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- New Multi-High Impact CTA Section -->
+            <div class="codeai-cta-section reveal-up">
+                <div class="codeai-cta-card">
+                    <h2>Don't Just Watch the Future. <span>Code It.</span></h2>
+                    <p>Join the elite league of AI innovators at JIIT Noida. This is your chance to turn your wild ideas into reality, compete for glory, and win amazing prizes.</p>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLSftWf1YmPqm7Z3AwtJsf6uBpY1_CtGgVdlr4pKqUgYX8rZt_w/viewform" target="_blank" class="codeai-btn-premium pulse-glow">
+                        <i class="fas fa-fire"></i>
+                        <span>Register Now & Win ₹9000+</span>
+                    </a>
+                    <div style="margin-top: 30px; color: rgba(255,255,255,0.4); font-size: 0.9rem; font-style: italic;">
+                        <i class="fas fa-info-circle" style="margin-right: 5px;"></i> Limited spots available—registration closes soon!
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-button-container reveal-up" style="margin-bottom: 80px;">
+            <a href="#" id="backToHomeFromCodeAi" class="codeai-btn codeai-btn-outline" style="border-radius: 50px; padding: 12px 35px;">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Events</span>
+            </a>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 

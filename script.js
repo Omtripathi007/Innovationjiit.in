@@ -697,7 +697,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const pages = [
             contactPage, teamPage, galleryPage, updatesPage, 
             aboutPage, eventsPage, rideHackPage, webDevTeamPage, 
-            contentTeamPage, shortlistedTeamsPage
+            contentTeamPage, shortlistedTeamsPage,
+            document.getElementById('codeAiPage')
         ];
         
         pages.forEach(page => {
@@ -796,6 +797,25 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
+    function showCodeAiPage() {
+        resetActiveStates();
+        const codeAiPage = document.getElementById('codeAiPage');
+        if (codeAiPage) {
+            codeAiPage.classList.add('active');
+            window.scrollTo(0, 0);
+            
+            // Trigger entrance animations
+            setTimeout(() => {
+                const reveals = codeAiPage.querySelectorAll('.reveal-up');
+                reveals.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('revealed');
+                    }, index * 100);
+                });
+            }, 100);
+        }
+    }
+    
     // Function to show Content Team Modal
     function showContentTeamModal() {
         if (contentTeamModal) {
@@ -815,7 +835,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const pages = [
             contactPage, teamPage, galleryPage, updatesPage, 
             aboutPage, eventsPage, rideHackPage, webDevTeamPage, 
-            contentTeamPage, shortlistedTeamsPage
+            contentTeamPage, shortlistedTeamsPage,
+            document.getElementById('codeAiPage')
         ];
         
         pages.forEach(page => {
@@ -927,6 +948,41 @@ document.addEventListener('DOMContentLoaded', () => {
         backToHomeFromEvents.addEventListener('click', (e) => {
             e.preventDefault();
             showMainContent();
+        });
+    }
+    
+    // CodeAI page navigation
+    const codeAiEventsPageBtn = document.getElementById('codeAiEventsPageBtn');
+    const codeAiHomePageBtn = document.getElementById('codeAiHomePageBtn');
+    const codeAiPopupLearnMore = document.getElementById('codeAiPopupLearnMore');
+    const backToHomeFromCodeAi = document.getElementById('backToHomeFromCodeAi');
+    
+    if (codeAiEventsPageBtn) {
+        codeAiEventsPageBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showCodeAiPage();
+        });
+    }
+    
+    if (codeAiHomePageBtn) {
+        codeAiHomePageBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showCodeAiPage();
+        });
+    }
+    
+    if (codeAiPopupLearnMore) {
+        codeAiPopupLearnMore.addEventListener('click', (e) => {
+            e.preventDefault();
+            document.getElementById('codeAiPopupModal').classList.remove('active');
+            showCodeAiPage();
+        });
+    }
+    
+    if (backToHomeFromCodeAi) {
+        backToHomeFromCodeAi.addEventListener('click', (e) => {
+            e.preventDefault();
+            showEventsPage();
         });
     }
     
@@ -1397,7 +1453,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const pages = [
             'mainContent', 'aboutPage', 'eventsPage', 'rideHackPage', 
             'contactPage', 'teamPage', 'galleryPage', 'updatesPage', 
-            'shortlistedTeamsPage', 'innovatePage'
+            'shortlistedTeamsPage', 'innovatePage', 'codeAiPage'
         ];
         
         pages.forEach(id => {
