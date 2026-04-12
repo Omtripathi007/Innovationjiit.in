@@ -9959,3 +9959,21 @@ footer {
     position: relative;
     z-index: 1002;
 }
+
+/* CodeAI Heading Mobile Cutting Fix */
+@media (max-width: 480px) {
+    #codeAiPage .innovate-hero-title {
+        font-size: 2.8rem;
+        line-height: 1.1;
+        margin-bottom: 20px;
+    }
+    
+    #codeAiPage .innovate-hero-subtitle {
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+    }
+    
+    .innovate-hero-content {
+        padding: 0 15px;
+    }
+}
