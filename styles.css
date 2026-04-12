@@ -9908,3 +9908,54 @@ footer {
         width: 280px;
     }
 }
+
+/* Fix for CodeAI Click-Blocking and Z-Index */
+.codeai-track-card {
+    position: relative;
+    z-index: 5;
+    pointer-events: auto;
+}
+
+#codeAiPage .back-button-container {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    z-index: 5;
+    margin: 80px 0;
+    display: flex;
+    justify-content: center;
+}
+
+#codeAiPage {
+    pointer-events: auto !important;
+}
+
+/* Ensure no invisible modal blocks clicks */
+.innovate-popup-modal:not(.active) {
+    display: none !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+}
+
+/* CRITICAL FIX: Prevent mobile menu from blocking clicks when closed */
+.mobile-menu {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.mobile-menu.active {
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* Redundant safety for briefcase buttons */
+.codeai-btn-outline {
+    position: relative;
+    z-index: 1002; /* Higher than mobile-menu's 1001 */
+    pointer-events: auto !important;
+}
+
+#codeAiPage .codeai-track-card {
+    position: relative;
+    z-index: 1002;
+}

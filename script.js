@@ -799,6 +799,12 @@ document.addEventListener('DOMContentLoaded', () => {
     
     function showCodeAiPage() {
         resetActiveStates();
+        // Close the popup modal if it's open
+        const popupModal = document.getElementById('innovatePopupModal');
+        if (popupModal) {
+            popupModal.classList.remove('active');
+        }
+        
         const codeAiPage = document.getElementById('codeAiPage');
         if (codeAiPage) {
             codeAiPage.classList.add('active');
