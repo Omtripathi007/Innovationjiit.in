@@ -9977,3 +9977,73 @@ footer {
         padding: 0 15px;
     }
 }
+
+/* CodeAI Specialization Panels */
+.panel-details {
+    margin-top: 25px;
+    text-align: left;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}
+.panel-group {
+    margin-bottom: 25px;
+}
+.panel-group:last-child {
+    margin-bottom: 0;
+}
+.panel-group h4 {
+    color: var(--codeai-cyan);
+    font-size: 1rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.panel-group ul {
+    list-style: none;
+    padding-left: 0;
+}
+.panel-group ul li {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 8px;
+    position: relative;
+    padding-left: 18px;
+}
+.panel-group ul li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--codeai-cyan);
+    font-weight: bold;
+}
+.coordinator-item {
+    background: rgba(0, 242, 255, 0.05);
+    border: 1px solid rgba(0, 242, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.coordinator-item:hover {
+    transform: translateX(8px);
+    border-color: var(--codeai-cyan);
+    background: rgba(0, 242, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(0, 242, 255, 0.1);
+}
+.coordinator-item p {
+    margin: 0 !important;
+    font-size: 0.95rem !important;
+    color: white !important;
+    font-weight: 600 !important;
+}
+.coordinator-item .email {
+    font-size: 0.85rem !important;
+    color: var(--codeai-cyan) !important;
+    opacity: 0.9;
+    font-weight: 400 !important;
+    word-break: break-all;
+}
