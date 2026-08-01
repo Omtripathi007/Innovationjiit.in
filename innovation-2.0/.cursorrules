@@ -1,14 +1,259 @@
-You are working on an existing production website.
+Innovation JIIT 2.0 — Homepage Redesign Implementation Plan
+🎯 Goal
 
-Rules:
+Transform the homepage from a traditional college club website into a modern developer ecosystem that feels:
 
-- Work ONLY inside the `innovation-2.0` directory.
-- Never modify files outside this directory.
-- This project uses only HTML, CSS, and Vanilla JavaScript.
-- Never introduce React, Vue, Angular, Tailwind CSS, Bootstrap, jQuery, npm packages, or any build tools.
-- Preserve all existing functionality.
-- Preserve IDs, classes, and JavaScript hooks unless explicitly instructed.
-- Never delete existing content; redesign its presentation instead.
-- Work section by section.
-- Explain your plan before editing code.
-- Keep code clean, modular, responsive, accessible, and performant.
+Student-built
+Community-driven
+Friendly
+Innovative
+Premium
+Clean
+Interactive
+
+without losing any existing information or functionality.
+
+Phase 0 — Code Audit & Setup (No UI Changes)
+Objectives
+Understand the current HTML structure.
+Map CSS and JS dependencies.
+Identify IDs/classes used by JavaScript.
+Create a safe redesign foundation.
+Deliverables
+Homepage design system (CSS variables)
+Consistent spacing scale
+Color palette
+Border radius scale
+Shadow system
+Animation timing variables
+Accessibility improvements (focus styles, skip link)
+Phase 1 — Global Design System
+
+Create a unified visual language.
+
+Color Palette
+Background      #0D1117
+Surface         #161B22
+Cards           #21262D
+Border          #30363D
+
+Primary         #58A6FF
+Success         #3FB950
+Warning         #F2CC60
+
+Heading         #F0F6FC
+Text            #C9D1D9
+Muted           #8B949E
+Typography
+Keep existing font initially.
+Introduce a clear hierarchy:
+Hero: 56–72px
+Section Titles: 36–48px
+Card Titles: 22–26px
+Body: 16–18px
+Spacing
+
+Adopt an 8px spacing system for consistency.
+
+Phase 2 — Navigation
+Keep
+All links
+Existing routing
+Existing JS
+Improve
+Sticky navbar
+Glass/blur effect on scroll
+Better spacing
+Active link indicator
+Smooth hover states
+Mobile navigation refinement
+
+No content changes.
+
+Phase 3 — Hero (Most Important)
+Objective
+
+Create a strong first impression.
+
+Preserve
+Existing headline
+Existing CTA buttons
+Existing messaging
+Existing functionality
+Redesign
+Split layout
+Larger typography
+Better whitespace
+Improved CTA hierarchy
+Developer-inspired background (subtle grid/dots)
+Smooth entrance animations
+Optional scroll indicator
+
+This section defines the entire design language.
+
+Phase 4 — About Innovation JIIT
+
+Transform into a modern introduction.
+
+Instead of long paragraphs:
+
+Better typography
+Two-column layout
+Highlight key points
+Add visual emphasis
+Improve readability
+Phase 5 — Domains / Activities
+
+Convert activities into feature cards.
+
+Each card includes:
+
+Icon
+Title
+Description
+Hover animation
+Consistent spacing
+
+Inspired by Hack Club's clean card layouts.
+
+Phase 6 — Events
+
+Modernize event presentation.
+
+Instead of stacked content:
+
+Featured upcoming event
+Responsive event cards
+Date badges
+CTA buttons
+Better hierarchy
+
+Past events remain accessible.
+
+Phase 7 — Innovation Spotlight / Projects
+
+Present projects like GitHub repositories.
+
+Each card contains:
+
+Project title
+Short description
+Technologies
+Category badge
+CTA
+
+GitHub-inspired, but unique.
+
+Phase 8 — Statistics
+
+Redesign using modern stat cards.
+
+Each card contains:
+
+Large animated number
+Label
+Supporting icon
+
+Improve readability and visual impact.
+
+Phase 9 — Gallery
+
+Replace traditional layout with:
+
+Responsive masonry/grid
+Larger images
+Hover zoom
+Better spacing
+Optional lightbox (using existing JS if possible)
+
+Preserve all images.
+
+Phase 10 — Team
+
+Modern contributor cards.
+
+Each card:
+
+Photo
+Name
+Role
+Social icons (if available)
+Hover elevation
+
+Consistent styling.
+
+Phase 11 — Contact & Footer
+
+Improve visual hierarchy.
+
+Include:
+
+Strong "Join Innovation JIIT" CTA
+Contact information
+Social links
+Footer navigation
+
+Keep all links unchanged.
+
+Phase 12 — Motion & Micro-interactions
+
+Introduce lightweight interactions:
+
+Fade-in on scroll
+Hover elevation
+Button ripple/hover
+Smooth scrolling
+Animated counters
+Card transitions
+
+Respect prefers-reduced-motion.
+
+Phase 13 — Mobile & Accessibility
+
+Test and refine:
+
+Mobile navigation
+Touch targets
+Responsive layouts
+Keyboard navigation
+Focus states
+Semantic HTML
+Color contrast
+Phase 14 — Performance
+
+Optimize:
+
+CSS organization
+Image loading
+Animation performance
+Remove unused CSS (only if safe)
+Minimize layout shifts
+Phase 15 — Final Review
+
+Validate:
+
+Visual consistency
+Responsiveness
+Accessibility
+Performance
+Existing functionality
+Content preservation
+Design Principles (Inspired by Hack Club, Not Copied)
+Community-first: Showcase people, projects, and events.
+Storytelling: Guide users from "What is Innovation JIIT?" → "What do we do?" → "How can I join?"
+Generous whitespace: Let sections breathe.
+Bold typography: Clear, confident headings.
+Modern cards: Rounded, clean, with subtle shadows.
+Developer-friendly feel: Use subtle code-inspired accents and badges, not a literal GitHub clone.
+Meaningful motion: Every animation should support usability, not distract.
+Files Expected to Change
+innovation-2.0/index.html
+Main homepage CSS file(s)
+Homepage JavaScript file(s) (only where necessary for UI interactions)
+Files That Should Not Change
+Backend code
+Other pages
+Routing
+APIs
+Existing content and copy (unless you explicitly approve edits)
+Project structure
