@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Climate Hackathon Results - Innovation Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&family=Roboto:wght@400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #00d4ff;
+            --secondary-color: #0056b3;
+            --dark: #0a0e27;
+            --light: #ffffff;
+            --accent-red: #ff3b30;
+            --glass: rgba(255, 255, 255, 0.05);
+            --gradient: linear-gradient(135deg, #00d4ff, #0056b3);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #0a0e27 0%, #1a237e 100%);
+            color: var(--light);
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        nav {
+            background: rgba(10, 14, 39, 0.98);
+            padding: 15px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+        }
+
+        .logo span {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.2rem;
+            background: linear-gradient(90deg, #FC466B 0%, #3F5EFB 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .home-btn {
+            background: var(--accent-red);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 59, 48, 0.3);
+        }
+
+        .home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 59, 48, 0.5);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 120px 20px 60px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            background: linear-gradient(to right, #fff, #00d4ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .congrats-banner {
+            background: var(--glass);
+            display: inline-block;
+            padding: 15px 40px;
+            border-radius: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary-color);
+            animation: fadeInDown 1s ease-out;
+        }
+
+        .congrats-banner h2 {
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        /* Table Container */
+        .table-container {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .results-table-wrapper {
+            background: var(--glass);
+            border-radius: 20px;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            overflow-x: auto;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            color: #e0e0e0;
+        }
+
+        th {
+            text-align: left;
+            padding: 20px;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            color: var(--primary-color);
+        }
+
+        td {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            font-size: 0.95rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover td {
+            background: rgba(0, 212, 255, 0.05);
+            color: white;
+        }
+
+        .status-badge {
+            background: rgba(0, 255, 127, 0.1);
+            color: #00ff7f;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border: 1px solid rgba(0, 255, 127, 0.2);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .congrats-banner {
+                padding: 10px 20px;
+            }
+
+            .congrats-banner h2 {
+                font-size: 1.1rem;
+            }
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* New Info Sections */
+        .info-section {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .info-card {
+            background: var(--glass);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .info-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            color: var(--primary-color);
+        }
+
+        .info-header i {
+            font-size: 1.5rem;
+        }
+
+        .info-header h3 {
+            font-family: 'Montserrat', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-list {
+            list-style: none;
+        }
+
+        .info-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.6;
+            color: #ccc;
+        }
+
+        .info-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .notif-box {
+            margin-top: 20px;
+            background: rgba(0, 255, 127, 0.1);
+            padding: 15px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #00ff7f;
+            border: 1px solid rgba(0, 255, 127, 0.2);
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .timeline-entry {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .t-date {
+            min-width: 150px;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
+
+        .t-desc {
+            color: #eee;
+            font-size: 0.95rem;
+        }
+
+        .timeline-entry.highlight .t-date {
+            color: var(--accent-red);
+        }
+
+        .timeline-entry.finale .t-desc {
+            font-weight: bold;
+            color: white;
+            text-decoration: underline;
+        }
+
+        .mentorship-p {
+            margin-top: 25px;
+            font-size: 0.9rem;
+            color: #aaa;
+            font-style: italic;
+        }
+
+        .final-congrats {
+            text-align: center;
+            padding: 40px;
+            background: var(--glass);
+            border-radius: 20px;
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .final-congrats p {
+            font-size: 1.2rem;
+            color: white;
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .t-date {
+                min-width: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <a href="../index.html" class="logo">
+            <img src="../assets/images/ChatGPT Image Aug 9, 2025 at 10_55_53 AM.png" alt="Innovation Logo">
+            <span>Innovation</span>
+        </a>
+        <a href="../index.html" class="home-btn">Back to Home</a>
+    </nav>
+
+    <section class="hero">
+        <div class="congrats-banner">
+            <h2>🎉 CONGRATULATIONS TO ALL PARTICIPANTS!</h2>
+        </div>
+        <h1>Climate Hackathon Results</h1>
+        <p>Air Pollution Track - JIIT Noida</p>
+    </section>
+
+    <div class="table-container">
+        <div class="results-table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Gender</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody id="resultsTableBody">
+                    <!-- Data will be injected here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="info-section">
+        <div class="info-grid">
+            <!-- Next Steps -->
+            <div class="info-card">
+                <div class="info-header">
+                    <i class="fas fa-arrow-right"></i>
+                    <h3>What to do Next?</h3>
+                </div>
+                <ul class="info-list">
+                    <li>Online Kickoff Session/AMA (Date and Link will be shared on WA Group)</li>
+                    <li>All team members are requested to join the WhatsApp group individually so we can communicate
+                        with each
+                        person directly.</li>
+                    <li><strong>Join the WhatsApp Channel (Mandatory)</strong> - All official communication will be
+                        shared
+                        via WhatsApp.</li>
+                </ul>
+                <div class="notif-box">
+                    <i class="fab fa-whatsapp"></i>
+                    <p>Kindly join the WhatsApp group using the link sent via email to all shortlisted candidates.</p>
+                </div>
+            </div>
+
+            <!-- Timelines -->
+            <div class="info-card">
+                <div class="info-header">
+                    <i class="fas fa-clock"></i>
+                    <h3>Important Timelines</h3>
+                </div>
+                <div class="timeline">
+                    <div class="timeline-entry">
+                        <div class="t-date">Feb 11 – Feb 20</div>
+                        <div class="t-desc">Hackathon Period & Build Sprint</div>
+                    </div>
+                    <div class="timeline-entry highlight">
+                        <div class="t-date">Feb 21</div>
+                        <div class="t-desc">College Pitch Day & Finale Shortlist</div>
+                    </div>
+                    <div class="timeline-entry">
+                        <div class="t-date">Feb 22 – Feb 24</div>
+                        <div class="t-desc">Mentorship for Shortlisted Teams</div>
+                    </div>
+                    <div class="timeline-entry finale">
+                        <div class="t-date">Feb 25</div>
+                        <div class="t-desc">Climate Data Hackathon Finale</div>
+                    </div>
+                </div>
+                <p class="mentorship-p">Selected teams for Finale will receive mentorship support to refine their
+                    prototype
+                    ideas and solutions.</p>
+            </div>
+        </div>
+
+        <div class="final-congrats">
+            <p>Once again, congratulations on making it to the next round! We look forward to your innovative ideas.</p>
+        </div>
+    </div>
+
+    <script>
+        const results = [
+            ["Grishma keshan", "9311825940", "992501030139@mail.jiit.ac.in", "Female", "Qualified"],
+            ["PRABUDDHA SAXENA", "9479979748", "prabuddha02.04@gmail.com", "Male", "Qualified"],
+            ["Aditya Gupta", "7827772075", "adityaindia2005@gmail.com", "Male", "Qualified"],
+            ["Ayush Chhabra", "9910215156", "chhabraprof@gmail.com", "Male", "Qualified"],
+            ["DEV GUPTA", "6397728867", "gupta.dev.com@gmail.com", "Male", "Qualified"],
+            ["Om Tripathi", "8115564963", "om22092006@gmail.com", "Male", "Qualified"],
+            ["Aditya Pandey", "9810960307", "techaditya.workmail@gmail.com", "Male", "Qualified"],
+            ["Sanjoli Agarwal", "8393860833", "2501270047@mail.jiit.ac.in", "Female", "Qualified"],
+            ["Naman Manjhi", "62606193919", "namanmanjhi50@gmail.com", "Male", "Qualified"],
+            ["Gajanan Ji Sarvesh", "9318460283", "gajanan.teams@gmail.com", "Male", "Qualified"],
+            ["Utkarsh Singh", "8171529005", "ustsingh@gmail.com", "Male", "Qualified"],
+            ["Aryan Chauhan", "9758229149", "aryanch6910@gmail.com", "Male", "Qualified"],
+            ["kaustubh tiwari", "7877332296", "kaustubht10@gmail.com", "Male", "Qualified"],
+            ["Keshvi Goyal", "8209386878", "keshvigoyal62@gmail.com", "Female", "Qualified"],
+            ["Aarnav Madan", "9599255540", "992501210038@mail.jiit.ac.in", "Male", "Qualified"],
+            ["Manan Jindal", "6350073557", "mananjindal09@gmail.com", "Male", "Qualified"],
+            ["Amya Rastogi", "9810612184", "2401020001@mail.jiit.ac.in", "Female", "Qualified"],
+            ["Shreya Bhatt", "7678466177", "bhattshreya716@gmail.com", "Female", "Qualified"],
+            ["Mahika jain", "8130150136", "official.mahika11@gmail.com", "Female", "Qualified"],
+            ["Anirudh tandon", "8077326053", "anirudhtandon172007@gmail.com", "Male", "Qualified"],
+            ["Mahi Ahalawat", "8595055179", "2501270021@mail.jiit.ac.in", "Female", "Qualified"],
+            ["Pranav Gupta", "9115697355", "pranavgupta37535@gmail.com", "Male", "Qualified"],
+            ["Neeshal Dhawan", "9910155335", "dhawanneeshal@gmail.com", "Female", "Qualified"],
+            ["Palak Singhal", "8178645986", "992501210024@mail.jiit.ac.in", "Female", "Qualified"],
+            ["ABHINABV CHAUDHARY", "9760150238", "abhinav.chaudhary4745@gmail.com", "Male", "Qualified"],
+            ["Muskan Gaur", "9354640086", "2025.muskangaur@gmail.com", "Female", "Qualified"],
+            ["Manaswi Mishra", "9129791555", "manaswimishra04@gmail.com", "Female", "Qualified"],
+            ["Mukul Aggarwal", "8826132515", "me.is.mukul@gmail.com", "Male", "Qualified"],
+            ["Manav Gupta", "9958425926", "manav.gupta2007fbd@gmail.com", "Male", "Qualified"],
+            ["Nishchal swami", "9680632652", "nischalswami3636@gmail.com", "Male", "Qualified"],
+            ["Yashree Srivastava", "9569666084", "Yashree.sri07@gmail.com", "Female", "Qualified"],
+            ["Vandni Birla", "9910993144", "birla.vandni2007@gmail.com", "Female", "Qualified"],
+            ["Devansh Pandey", "9119643283", "devanshpandeyay16@gmail.com", "Male", "Qualified"],
+            ["Shubh Mittal", "9654691961", "992501040105@mail.jiit.ac.in", "Male", "Qualified"],
+            ["Piyush Jaiswal", "6396978853", "ironstarkpj@gmail.com", "Male", "Qualified"],
+            ["Shiva Rathor", "9286230313", "2501030119@mail.jiit.ac.in", "Male", "Qualified"],
+            ["Ritika jain", "9772966317", "jritika1457@gmail.com", "Female", "Qualified"],
+            ["Prakash Raj Pandey", "9650766241", "prakashrajpandey9@gmail.com", "Male", "Qualified"],
+            ["Nishita Rastogi", "8700616459", "nishitarastogi357@gmail.com", "Female", "Qualified"],
+            ["NISHANT DWIVEDI", "9125007419", "idwivedi1204@gmail.com", "Male", "Qualified"],
+            ["Saanvi Grover", "7303552946", "saanvigrover2007@gmail.com", "Female", "Qualified"],
+            ["Sakshi Singh", "8957307148", "its.sakshii.me@gmail.com", "Female", "Qualified"],
+            ["Nikhil Joshi", "7669933692", "nikhil.joshi1205@gmail.com", "Male", "Qualified"],
+            ["Tejas sangvi", "9891811753", "Tejassangvi7@gmail.com", "Male", "Qualified"],
+            ["Arushi", "9034836678", "arushibhutani2007@gmail.com", "Female", "Qualified"],
+            ["Kushagra Dixit", "7017003975", "kushagradixit428@gmail.com", "Male", "Qualified"],
+            ["Priya Upadhyay", "8707672654", "priyaupadhyay947@gmail.com", "Female", "Qualified"],
+            ["Aryan Jha", "9818909809", "ajstylesvlog@gmail.com", "Male", "Qualified"],
+            ["Prajjwal Arya", "8791969352", "prajjwalarya2020@gmail.com", "Male", "Qualified"],
+            ["Ridhima Sachdeva", "9318376065", "ridhimasachdeva022@gmail.com", "Female", "Qualified"],
+            ["Shivansh Chaturvedi", "7869686833", "chaturvedi.shivansh2005@gmail.com", "Male", "Qualified"],
+            ["Satvik Saluja", "7428980600", "satviksaluja2507@gmail.com", "Male", "Qualified"],
+            ["Aastha Kapoor", "8448169027", "23517121@mail.jiit.ac.in", "Female", "Qualified"],
+            ["Sridhar Iyer", "8459426375", "sviyer2027@gmail.com", "Male", "Qualified"],
+            ["Shivansh Gupta", "7291029144", "shivansh.random@gmail.com", "Male", "Qualified"],
+            ["Manish Sharma", "8766245068", "992501030108@mail.jiit.ac.in", "Male", "Qualified"],
+            ["Khushi Garg", "8800243626", "khushigarg5479@gmail.com", "Female", "Qualified"],
+            ["Yashashvi pratap singh", "9335135472", "992501030019@gmail.com", "Male", "Qualified"],
+            ["Riya", "9310269083", "riyasharma905142@gmail.com", "Female", "Qualified"],
+            ["Aaditi Bhandari", "9311557068", "aaditibhandarig@gmail.com", "Female", "Qualified"],
+            ["Tanisha Jain", "9559873621", "992401030218@mail.jiit.ac.in", "Female", "Qualified"],
+            ["Kaushiki Gupta", "7668489299", "992501030160@mail.jiit.ac.in", "Female", "Qualified"],
+            ["Aryan Varshney", "9149342829", "arv.coder@gmail.com", "Male", "Qualified"],
+            ["Amogh Shukla", "8009486029", "amoghshuk547@gmail.com", "Male", "Qualified"],
+            ["Aryansh Agarwal", "9528472096", "2501030300@mail.jiit.ac.in", "Male", "Qualified"],
+            ["Asti Bajaj", "6388028783", "astibajaj21@gmail.com", "Female", "Qualified"],
+            ["Harman Singh Sandhu", "9971976648", "harman2504sandhu@gmail.com", "Male", "Qualified"],
+            ["AAYUSH GUPTA", "7011471235", "9923103320@mail.jiit.ac.in", "Male", "Qualified"],
+            ["HITESH KANWAR", "9015026593", "hiteshkanwar2007@gmail.com", "Male", "Qualified"],
+            ["Pulkit Sukhija", "8750433486", "pulkitsukhija09@gmail.com", "Male", "Qualified"],
+            ["DHRUVI GUPTA", "9354026922", "technerd.dg@gmail.com", "Female", "Qualified"],
+            ["Pranav S Nair", "9958870448", "992501220036@mail.jiit.ac.in", "Male", "Qualified"],
+            ["Palak Verma", "9650815088", "palakverma20052007@gmail.com", "Female", "Qualified"],
+            ["Uttkarsh Thakur", "7898759354", "uttkarshthakur66.ut@gmail.com", "Male", "Qualified"],
+            ["Md Hamza Akhtar", "7488830684", "hmzakt11@gmail.com", "Male", "Qualified"],
+            ["Arein Jain", "9871484003", "jain.arein@gmail.com", "Male", "Qualified"],
+            ["Prisha Singh", "8076508761", "992401040005@mail.jiit.ac.in", "Female", "Qualified"],
+            ["Chandrima Nath", "8707758291", "chandrimanath04@gmail.com", "Female", "Qualified"],
+            ["Tejas Yadav", "7678696722", "2501200118@mail.jiit.ac.in", "Male", "Qualified"],
+            ["Akshita Bhardwaj", "8178072885", "2408030004@mail.jiit.ac.in", "Female", "Qualified"],
+            ["Krish Agarwal", "9051315749", "krishagarwal.shyam26@gmail.com", "Male", "Qualified"],
+            ["Divyam Jain", "7891061650", "divyam0536@gmail.com", "Male", "Qualified"],
+            ["Priyan Saxena", "8076892724", "priyansaxena24@gmail.com", "Female", "Qualified"],
+            ["Sarthak Sabharwal", "8287133885", "saaarthak.codes@gmail.com", "Male", "Qualified"],
+            ["Luv Bansal", "9582030630", "992401030079@mail.jiit.ac.in", "Male", "Qualified"],
+            ["Rishika Aggarwal", "7889545337", "aggarwalrishika468@gmail.com", "Female", "Qualified"],
+            ["Sampada Sharma", "9911154977", "sampadasharma555@gmail.com", "Female", "Qualified"],
+            ["Sanjayan Pratap Singh", "9555151754", "sanjayan100099@gmail.com", "Male", "Qualified"],
+            ["Pari Mittal", "9311136434", "992501230032@mail.jiit.ac.in", "Female", "Qualified"],
+            ["Piyush Arora", "8527483466", "piyusharora311@gmail.com", "Male", "Qualified"],
+            ["YUG THAKRAL", "8950096370", "992401030187@mail.jiit.ac.in", "Male", "Qualified"],
+            ["HITEN GUPTA", "8368115773", "992501030094@mail.jiit.ac.in", "Male", "Qualified"],
+            ["Preet Lalit", "7895272118", "992501030237@mail.jiit.ac.in", "Female", "Qualified"],
+            ["Shivam Kansal", "9310944700", "992510170120@mail.jiit.ac.in", "Male", "Qualified"],
+            ["Krishna Agrawal", "8962023994", "agrawalkrishna763@gmail.com", "Male", "Qualified"],
+            ["Tanshvi", "9528235759", "tanshvi60@gmail.com", "Female", "Qualified"],
+            ["Shrestha Tiwari", "7982946187", "shresthtiwari2007@gmail.com", "Male", "Qualified"],
+            ["Siddhant awasthi", "9307036600", "siddhantawasthi175@gmail.com", "Male", "Qualified"],
+            ["Jigyasa Srivastava", "9044349399", "2401030380@mail.jiit.ac.in", "Female", "Qualified"],
+            ["Palak Chauhan", "8168761671", "cpalak011@gmail.com", "Female", "Qualified"],
+            ["Chirag Choudhary", "9351177917", "chirag14080606@gmail.com", "Male", "Qualified"],
+            ["Ayushi Sharma", "8218073899", "992510170042@mail.jiit.ac.in", "Female", "Qualified"],
+            ["Gunagya", "7042825179", "992501220025@mail.jiit.ac.in", "Male", "Qualified"],
+            ["Kritika Singh", "8299745661", "kritikasinghbaghel11@gmail.com", "Female", "Qualified"],
+            ["Shaurya Chaudhary", "9818002059", "ishaana725@gmail.com", "Male", "Qualified"],
+            ["Ayaansh Rawat", "9045124164", "ayaanshrawat892@gmail.com", "Male", "Qualified"],
+            ["Atharva Singh", "8736070460", "atharvasinghtony@gmail.com", "Male", "Qualified"],
+            ["Radhika Aggarwal", "9458927954", "radhikaaggarwal.0808@gmail.com", "Female", "Qualified"],
+            ["Harshit Chauhan", "9953075872", "harshitchauhanb@gmail.com", "Male", "Qualified"],
+            ["Shweta Sajwan", "9910998606", "shwetasajwan05@gmail.com", "Female", "Qualified"],
+            ["Harsh Kumar Bihani", "8766299492", "bihaniharshkumar@gmail.com", "Male", "Qualified"],
+            ["Ishan Gupta", "8527189364", "ishangupta3121@gmail.com", "Male", "Qualified"],
+            ["Hardik Kumar Singh", "9911190177", "22802014@mail.jiit.ac.in", "Male", "Qualified"],
+            ["Mitull Goel", "9958385678", "mitullgoel@gmail.com", "Male", "Qualified"],
+            ["Akshat Jain", "7042254883", "akshat.j0961@gmail.com", "Male", "Qualified"],
+            ["Arvind shekhawat", "9783711459", "992401030004@mail.jiit.ac.in", "Male", "Qualified"]
+        ];
+
+        const tableBody = document.getElementById('resultsTableBody');
+        results.forEach((row, index) => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${row[0]}</td>
+                <td>${row[2]}</td>
+                <td>${row[3]}</td>
+                <td><span class="status-badge">${row[4]}</span></td>
+            `;
+            tableBody.appendChild(tr);
+        });
+    </script>
+</body>
+
+</html>
