@@ -1,0 +1,14 @@
+You are working on an existing production website.
+
+Rules:
+
+- Work ONLY inside the `innovation-2.0` directory.
+- Never modify files outside this directory.
+- This project uses only HTML, CSS, and Vanilla JavaScript.
+- Never introduce React, Vue, Angular, Tailwind CSS, Bootstrap, jQuery, npm packages, or any build tools.
+- Preserve all existing functionality.
+- Preserve IDs, classes, and JavaScript hooks unless explicitly instructed.
+- Never delete existing content; redesign its presentation instead.
+- Work section by section.
+- Explain your plan before editing code.
+- Keep code clean, modular, responsive, accessible, and performant.
