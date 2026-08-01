@@ -1223,18 +1223,18 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Gallery images array
     const galleryImages = [
-        'kk1.JPG',
-        'kk2.JPG',
-        'kk3.JPG',
-        'kk39.JPG',
-        'kk4.JPG',
-        'kk5.JPG',
-        'WhatsApp Image 2025-08-08 at 19.20.11.jpeg',
-        'WhatsApp Image 2025-08-08 at 19.20.12-2.jpeg',
-        'WhatsApp Image 2025-08-08 at 19.20.09.jpeg',
-        'WhatsApp Image 2025-08-08 at 18.57.09.jpeg',
-        'WhatsApp Image 2025-08-08 at 19.20.12-3.jpeg',
-        'WhatsApp Image 2025-08-08 at 19.20.12.jpeg'
+        'assets/images/kk1.JPG',
+        'assets/images/kk2.JPG',
+        'assets/images/kk3.JPG',
+        'assets/images/kk39.JPG',
+        'assets/images/kk4.JPG',
+        'assets/images/kk5.JPG',
+        'assets/images/WhatsApp Image 2025-08-08 at 19.20.11.jpeg',
+        'assets/images/WhatsApp Image 2025-08-08 at 19.20.12-2.jpeg',
+        'assets/images/WhatsApp Image 2025-08-08 at 19.20.09.jpeg',
+        'assets/images/WhatsApp Image 2025-08-08 at 18.57.09.jpeg',
+        'assets/images/WhatsApp Image 2025-08-08 at 19.20.12-3.jpeg',
+        'assets/images/WhatsApp Image 2025-08-08 at 19.20.12.jpeg'
     ];
     
     let currentImageIndex = 0;

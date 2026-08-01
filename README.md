@@ -51,18 +51,39 @@ A modern, responsive website for the Innovation Club at JIIT Noida, showcasing t
 - **Font Awesome**: Icon library
 - **Google Fonts**: Custom typography (Montserrat & Roboto)
 
-## 📁 File Structure
+## 📁 Repository Structure
+
+This repo contains **two website versions** — only the root is deployed live.
 
 ```
-├── index.html          # Main HTML file
-├── styles.css          # Complete stylesheet
-├── script.js          # JavaScript functionality
-├── assets/             # Images and media files
-│   ├── ChatGPT Image Aug 9, 2025 at 10_55_53 AM.png
-│   ├── ridehack.jpeg
-│   └── [Gallery Images]
-└── README.md           # This file
+/                           ← 🟢 LIVE DEPLOYMENT (v1 — Current Site)
+├── index.html              # Main entry point (served by host)
+├── css/
+│   └── styles.css          # Global stylesheet
+├── js/
+│   └── script.js           # JavaScript functionality
+├── pages/                  # Secondary HTML pages
+│   ├── cdesign.html
+│   ├── cdevelopments.html
+│   ├── cmanagement.html
+│   ├── csocial.html
+│   └── climatehackathon.html
+├── assets/
+│   ├── images/             # All site images
+│   └── docs/               # Downloadable documents
+│
+└── innovation-2.0/         ← 🚧 IN DEVELOPMENT (v2 — Not Deployed)
+    ├── index.html
+    ├── css/styles.css
+    ├── js/script.js
+    ├── pages/
+    └── assets/
+        ├── images/
+        └── fonts/
 ```
+
+> **Note:** `innovation-2.0/` is a parallel development workspace.  
+> It is **not deployed**. To preview it locally: `http://localhost:8080/innovation-2.0/`
 
 ## 🚀 Getting Started
 

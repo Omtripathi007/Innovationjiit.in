@@ -515,7 +515,7 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('ridehack.jpeg') center/cover no-repeat;
+    background: url('../assets/images/ridehack.jpeg') center/cover no-repeat;
     opacity: 0.1;
     z-index: -1;
 }
@@ -4391,7 +4391,7 @@ footer {
 }
 .ride-hack-hero {
     height: 50vh;
-    background: linear-gradient(rgba(10, 14, 39, 0.7), rgba(10, 14, 39, 0.9)), url('ridehack.jpeg');
+    background: linear-gradient(rgba(10, 14, 39, 0.7), rgba(10, 14, 39, 0.9)), url('../assets/images/ridehack.jpeg');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -4615,7 +4615,7 @@ footer {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('ridehack.jpeg') center/cover no-repeat;
+    background: url('../assets/images/ridehack.jpeg') center/cover no-repeat;
     opacity: 0.05;
     z-index: -1;
 }
@@ -9646,7 +9646,7 @@ footer {
 #codeAiPage .innovate-hero {
     background: 
         linear-gradient(to bottom, rgba(5, 8, 22, 0.8), rgba(5, 8, 22, 0.4)),
-        url('codeai_bg.png');
+        url('../assets/images/codeai_bg.png');
     background-size: cover;
     background-position: center bottom;
     background-attachment: fixed;
