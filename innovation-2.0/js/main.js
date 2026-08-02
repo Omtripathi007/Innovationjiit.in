@@ -38,7 +38,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe all animated elements
-document.querySelectorAll('.stat-card, .project-card, .domain-item, .team-photo-wrapper, .cta-content, .mission-panel, .list-item, .timeline-item, .quote-card, .photo-frame, .story-photo, .magazine-block, .photo-large, .photo-double, .photo-full-wrapper, .moodboard-paper, .subsection, .dev-subsection, .project-card, .sticky-note, .social-subsection, .collage-photo, .timeline-event, .featured-event, .wall-photo, .wall-note, .impact-stat, .editorial-break, .editorial-quote, .editorial-fact, .memory-transition, .event-img, .event-info, .featured-project, .projects-medium, .projects-small, .investment-highlight, .projects-cta').forEach(el => {
+document.querySelectorAll('.stat-card, .project-card, .domain-item, .team-photo-wrapper, .cta-content, .mission-panel, .list-item, .timeline-item, .quote-card, .photo-frame, .story-photo, .magazine-block, .photo-large, .photo-double, .photo-full-wrapper, .moodboard-paper, .subsection, .dev-subsection, .project-card, .sticky-note, .social-subsection, .collage-photo, .timeline-event, .featured-event, .wall-photo, .wall-note, .impact-stat, .editorial-break, .editorial-quote, .editorial-fact, .memory-transition, .event-img, .event-info, .featured-project, .projects-medium, .projects-small, .investment-highlight, .projects-cta, .gallery-hero, .polaroid-item, .layered-photo, .scrap-photo, .collage-item, .pin-item, .pin-photo, .full-image, .spread-photo, .closing-photo').forEach(el => {
     el.style.animationPlayState = 'paused';
     observer.observe(el);
 });
@@ -263,6 +263,80 @@ if (investmentHighlight) {
     
     highlightObserver.observe(investmentHighlight);
 }
+
+// ============================================
+// GALLERY PAGE ANIMATIONS
+// ============================================
+
+const galleryPhotos = document.querySelectorAll('.polaroid-item, .layered-photo, .scrap-photo, .collage-item, .pin-item, .pin-photo');
+
+galleryPhotos.forEach((photo, index) => {
+    photo.style.opacity = '0';
+    photo.style.transform = photo.style.transform || 'translateY(30px)';
+    photo.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    
+    const photoObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Random delay for natural feel (0-100ms)
+                const randomDelay = Math.random() * 100;
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    // Reset to original rotation after fade in
+                    const originalTransform = entry.target.classList.contains('polaroid-1') ? 'rotate(-3deg)' :
+                                            entry.target.classList.contains('polaroid-2') ? 'rotate(2deg)' :
+                                            entry.target.classList.contains('polaroid-3') ? 'rotate(-2deg)' :
+                                            entry.target.classList.contains('polaroid-4') ? 'rotate(3deg)' :
+                                            entry.target.classList.contains('polaroid-5') ? 'rotate(-1deg)' :
+                                            entry.target.classList.contains('polaroid-6') ? 'rotate(1deg)' : 'rotate(0deg)';
+                    entry.target.style.transform = originalTransform;
+                }, randomDelay);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    photoObserver.observe(photo);
+});
+
+const editorialMoments = document.querySelectorAll('.editorial-moment');
+
+editorialMoments.forEach((moment, index) => {
+    moment.style.opacity = '0';
+    moment.style.transform = 'translateY(20px)';
+    moment.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    
+    const momentObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, Math.random() * 50);
+            }
+        });
+    }, { threshold: 0.2 });
+    
+    momentObserver.observe(moment);
+});
+
+const fullWidthMoments = document.querySelectorAll('.full-image, .spread-photo, .closing-photo');
+
+fullWidthMoments.forEach((moment, index) => {
+    moment.style.opacity = '0';
+    moment.style.transform = 'scale(0.95)';
+    moment.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    
+    const fullObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'scale(1)';
+            }
+        });
+    }, { threshold: 0.15 });
+    
+    fullObserver.observe(moment);
+});
 
 // ============================================
 // ADD SUBTLE ROTATION ON HOVER
