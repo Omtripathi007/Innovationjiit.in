@@ -389,7 +389,73 @@ if (stickers.length > 0) {
     });
 }
 
+// ============================================
+// RIDE HACK CARD IMAGE SLIDER
+// ============================================
+(function initCardSlider() {
+    function setup() {
+        const slider  = document.getElementById('rideHackSlider');
+        if (!slider) return;
+
+        const track   = slider.querySelector('.card-slider-track');
+        const slides  = slider.querySelectorAll('.card-slide');
+        const dots    = slider.querySelectorAll('.slider-dot');
+        const prevBtn = slider.querySelector('.slider-prev');
+        const nextBtn = slider.querySelector('.slider-next');
+
+        let current  = 0;
+        const total  = slides.length;
+        let autoTimer = null;
+
+        function goTo(idx) {
+            current = (idx + total) % total;
+            track.style.transform = `translateX(-${current * 100}%)`;
+            dots.forEach((d, i) => d.classList.toggle('active', i === current));
+        }
+
+        function next() { goTo(current + 1); }
+        function prev() { goTo(current - 1); }
+
+        function startAuto() {
+            stopAuto();
+            autoTimer = setInterval(next, 4000);
+        }
+        function stopAuto() {
+            clearInterval(autoTimer);
+        }
+
+        nextBtn && nextBtn.addEventListener('click', () => { next(); startAuto(); });
+        prevBtn && prevBtn.addEventListener('click', () => { prev(); startAuto(); });
+
+        dots.forEach((dot, i) => {
+            dot.addEventListener('click', () => { goTo(i); startAuto(); });
+        });
+
+        // Pause on hover
+        slider.addEventListener('mouseenter', stopAuto);
+        slider.addEventListener('mouseleave', startAuto);
+
+        // Swipe support
+        let touchStartX = 0;
+        slider.addEventListener('touchstart', e => { touchStartX = e.touches[0].clientX; }, { passive: true });
+        slider.addEventListener('touchend', e => {
+            const diff = touchStartX - e.changedTouches[0].clientX;
+            if (Math.abs(diff) > 40) { diff > 0 ? next() : prev(); startAuto(); }
+        });
+
+        goTo(0);
+        startAuto();
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setup);
+    } else {
+        setup();
+    }
+})();
+
 console.log('🎨 Editorial Innovation Club experience loaded');
+
 
 // ============================================
 // UNIVERSAL JOIN US MODALPOPUP HANDLER

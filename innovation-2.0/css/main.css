@@ -768,7 +768,12 @@ a {
 .project-featured {
     grid-row: span 2;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+}
+
+.project-featured .project-image-wrapper {
+    height: 340px;
+    flex-shrink: 0;
 }
 
 .project-image-wrapper {
@@ -802,6 +807,122 @@ a {
     padding: var(--spacing-xl);
     flex: 1;
 }
+
+/* ---- Featured card rich content ---- */
+.project-featured-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    gap: var(--spacing-sm);
+}
+
+.featured-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+}
+
+.featured-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.featured-tag {
+    font-family: var(--font-accent);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: var(--radius-full);
+    background: var(--color-bg-accent);
+    color: var(--color-text-secondary);
+    border: 1px solid rgba(0,0,0,0.08);
+    letter-spacing: 0.3px;
+}
+
+/* Stats row */
+.featured-stats {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    background: var(--color-bg-accent);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin: var(--spacing-xs) 0;
+}
+
+.featured-stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+}
+
+.stat-number {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--color-accent-coral);
+    line-height: 1;
+}
+
+.stat-label {
+    font-family: var(--font-accent);
+    font-size: 0.7rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+.featured-stat-divider {
+    width: 1px;
+    height: 36px;
+    background: rgba(0,0,0,0.1);
+    flex-shrink: 0;
+}
+
+/* CTA button */
+.featured-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 14px var(--spacing-lg);
+    background: var(--color-text-primary);
+    color: var(--color-bg-secondary);
+    border-radius: var(--radius-lg);
+    font-family: var(--font-accent);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+.featured-cta svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.featured-cta:hover {
+    background: var(--color-accent-coral);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 107, 107, 0.35);
+}
+
+.featured-cta:hover svg {
+    transform: translateX(4px);
+}
+/* ---- End featured content ---- */
+
 
 .project-badge {
     display: inline-block;
@@ -859,8 +980,126 @@ a {
     top: 20px;
     right: 20px;
     font-size: 2rem;
-    z-index:3;
+    z-index: 3;
 }
+
+/* ---- Card Image Slider ---- */
+.card-slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.card-slider-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+.card-slide {
+    min-width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.card-slide .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 0.55s ease;
+    display: block;
+}
+
+/* Pause scale-on-hover for the slider card specifically */
+.project-featured:hover .card-slide .project-image {
+    transform: scale(1.04);
+}
+
+/* Arrow Buttons */
+.slider-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    color: var(--color-text-primary);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+    transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    outline: none;
+    padding: 0;
+}
+
+.slider-arrow svg {
+    width: 18px;
+    height: 18px;
+    display: block;
+    flex-shrink: 0;
+}
+
+.slider-arrow:hover {
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+
+.slider-prev {
+    left: 12px;
+}
+
+.slider-next {
+    right: 12px;
+}
+
+.slider-arrow:active {
+    transform: translateY(-50%) scale(0.92);
+}
+
+/* Dot Indicators */
+.slider-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 7px;
+    z-index: 10;
+}
+
+.slider-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    background: rgba(255, 255, 255, 0.5);
+    transition: background 0.3s ease, transform 0.3s ease, width 0.3s ease;
+    outline: none;
+}
+
+.slider-dot.active {
+    background: #ffffff;
+    width: 22px;
+    border-radius: 4px;
+}
+
+.slider-dot:hover:not(.active) {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+/* ---- End Card Slider ---- */
 
 .project-2, .project-3 {
     display: flex;
@@ -882,11 +1121,10 @@ a {
     
     .project-featured {
         grid-row: span 1;
-        flex-direction: column;
     }
     
     .project-featured .project-image-wrapper {
-        height: 300px;
+        height: 260px;
     }
 }
 
