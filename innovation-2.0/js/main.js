@@ -38,7 +38,7 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 // Observe all animated elements
-document.querySelectorAll('.stat-card, .project-card, .domain-item, .team-photo-wrapper, .cta-content, .mission-panel, .list-item, .timeline-item, .quote-card, .photo-frame, .story-photo, .magazine-block, .photo-large, .photo-double, .photo-full-wrapper, .moodboard-paper, .subsection, .dev-subsection, .project-card, .sticky-note, .social-subsection, .collage-photo, .timeline-event, .featured-event, .wall-photo, .wall-note, .impact-stat, .editorial-break, .editorial-quote, .editorial-fact, .memory-transition, .event-img, .event-info').forEach(el => {
+document.querySelectorAll('.stat-card, .project-card, .domain-item, .team-photo-wrapper, .cta-content, .mission-panel, .list-item, .timeline-item, .quote-card, .photo-frame, .story-photo, .magazine-block, .photo-large, .photo-double, .photo-full-wrapper, .moodboard-paper, .subsection, .dev-subsection, .project-card, .sticky-note, .social-subsection, .collage-photo, .timeline-event, .featured-event, .wall-photo, .wall-note, .impact-stat, .editorial-break, .editorial-quote, .editorial-fact, .memory-transition, .event-img, .event-info, .featured-project, .projects-medium, .projects-small, .investment-highlight, .projects-cta').forEach(el => {
     el.style.animationPlayState = 'paused';
     observer.observe(el);
 });
@@ -198,6 +198,71 @@ eventInfos.forEach((info, index) => {
     
     infoObserver.observe(info);
 });
+
+// ============================================
+// PROJECTS PAGE ANIMATIONS
+// ============================================
+
+const projectCards = document.querySelectorAll('.project-card');
+
+projectCards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(30px)';
+    card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+    
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // Stagger cards with small random delay
+                const randomDelay = Math.random() * 100;
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, randomDelay);
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    cardObserver.observe(card);
+});
+
+const featuredProject = document.querySelector('.featured-project');
+
+if (featuredProject) {
+    featuredProject.style.opacity = '0';
+    featuredProject.style.transform = 'translateY(40px)';
+    featuredProject.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+    
+    const featuredObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    featuredObserver.observe(featuredProject);
+}
+
+const investmentHighlight = document.querySelector('.investment-highlight');
+
+if (investmentHighlight) {
+    investmentHighlight.style.opacity = '0';
+    investmentHighlight.style.transform = 'scale(0.95)';
+    investmentHighlight.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+    
+    const highlightObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'scale(1)';
+            }
+        });
+    }, { threshold: 0.15 });
+    
+    highlightObserver.observe(investmentHighlight);
+}
 
 // ============================================
 // ADD SUBTLE ROTATION ON HOVER
