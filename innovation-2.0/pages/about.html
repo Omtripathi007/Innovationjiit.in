@@ -3,219 +3,623 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Innovation Club at JIIT Noida - Learn about our mission, vision, and the team behind the innovation.">
-    <meta name="keywords" content="About Innovation Club, JIIT Noida, mission, vision, team">
+    <meta name="description" content="About Innovation Club JIIT Noida - Our story, mission, vision, and what makes us different.">
     
-    <title>About Us - Innovation Club</title>
+    <title>About - Innovation Club</title>
     
-    <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/main.css">
 </head>
 <body>
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="sr-only" style="position: absolute; top: -40px; left: 0; background: var(--color-primary-light); color: white; padding: 8px; z-index: 10000; transition: top 0.3s;" onfocus="this.style.top = '0'" onblur="this.style.top = '-40px'">
-        Skip to main content
-    </a>
-    
-    <!-- Navigation Container (injected by JavaScript) -->
-    <div id="navbar-container"></div>
-    
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="container hero__content">
-                <span class="badge badge--primary mb-4 fade-in">About Us</span>
-                <h1 id="hero-title" class="hero__title fade-in">
-                    About<br>
-                    <span class="text-gradient">Innovation Club</span>
-                </h1>
-                <p class="hero__description fade-in">
-                    Learn about our mission, vision, and the passionate team driving innovation at JIIT Noida.
-                </p>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="nav-logo-text">Innovation</span>
+            </a>
+            <div class="nav-links">
+                <a href="about.html" class="nav-link">About</a>
+                <a href="domains.html" class="nav-link">Domains</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="contact.html" class="nav-link nav-cta">Join Us</a>
             </div>
-        </section>
+        </div>
+    </nav>
+    
+    <!-- Hero - Editorial Style -->
+    <section class="about-hero">
+        <div class="hero-deco-1">
+            <svg viewBox="0 0 100 100" class="deco-circle">
+                <circle cx="50" cy="50" r="40" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-dasharray="5,5"/>
+            </svg>
+        </div>
         
-        <!-- Mission Section -->
-        <section class="section" aria-labelledby="mission-title">
-            <div class="container">
-                <div class="grid grid-2" style="align-items: center;">
-                    <div class="slide-in-left">
-                        <span class="badge badge--secondary mb-4">Our Mission</span>
-                        <h2 id="mission-title" class="heading-2 mb-6">
-                            Empowering Students to Innovate
-                        </h2>
-                        <p class="text-body mb-4">
-                            Innovation Club at JIIT Noida is dedicated to fostering a culture of creativity, 
-                            entrepreneurship, and technological excellence among students. We believe that 
-                            every student has the potential to create impactful solutions.
-                        </p>
-                        <p class="text-body mb-6">
-                            Through workshops, hackathons, mentorship programs, and collaborative projects, 
-                            we provide the platform and resources needed to transform ideas into reality.
-                        </p>
-                        <div class="flex gap-4 flex-wrap">
-                            <div class="card card--gradient" style="padding: var(--spacing-4);">
-                                <div class="heading-4 text-gradient">Vision</div>
-                                <p class="text-sm text-muted">To be the leading student innovation hub in India</p>
-                            </div>
-                            <div class="card card--gradient" style="padding: var(--spacing-4);">
-                                <div class="heading-4 text-gradient">Values</div>
-                                <p class="text-sm text-muted">Innovation, Collaboration, Excellence</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slide-in-right">
-                        <div class="card card--gradient" style="padding: var(--spacing-8);">
-                            <h3 class="heading-3 mb-4">What We Do</h3>
-                            <ul style="display: flex; flex-direction: column; gap: var(--spacing-4);">
-                                <li class="flex items-center gap-4">
-                                    <span style="font-size: 1.5rem;">🎯</span>
-                                    <span>Organize hackathons and coding competitions</span>
-                                </li>
-                                <li class="flex items-center gap-4">
-                                    <span style="font-size: 1.5rem;">📚</span>
-                                    <span>Conduct workshops and technical sessions</span>
-                                </li>
-                                <li class="flex items-center gap-4">
-                                    <span style="font-size: 1.5rem;">🤝</span>
-                                    <span>Foster collaboration among students</span>
-                                </li>
-                                <li class="flex items-center gap-4">
-                                    <span style="font-size: 1.5rem;">🚀</span>
-                                    <span>Support startup initiatives and projects</span>
-                                </li>
-                                <li class="flex items-center gap-4">
-                                    <span style="font-size: 1.5rem;">🏆</span>
-                                    <span>Represent JIIT at national competitions</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+        <div class="hero-wrapper">
+            <div class="hero-visual">
+                <div class="photo-frame">
+                    <div class="frame-tape"></div>
+                    <img src="../assets/images/gallery/WhatsApp Image 2025-08-08 at 19.20.12.jpeg" alt="Innovation Club" class="hero-photo">
+                </div>
+                <div class="hero-sticker">
+                    <span>✨</span>
                 </div>
             </div>
-        </section>
-        
-        <!-- History Timeline -->
-        <section class="section" aria-labelledby="history-title">
-            <div class="container">
-                <div class="text-center mb-12">
-                    <span class="badge badge--primary mb-4">Our Journey</span>
-                    <h2 id="history-title" class="heading-2 slide-in-left">
-                        Innovation Club Timeline
-                    </h2>
-                    <p class="text-lg text-muted max-w-2xl mx-auto slide-in-right">
-                        From humble beginnings to becoming JIIT's premier innovation hub.
+            
+            <div class="hero-editorial">
+                <span class="chapter-number">Chapter 01</span>
+                <h1 class="chapter-title">Our Story</h1>
+                <p class="chapter-subtitle">
+                    Born from a simple idea: students should build things that matter. 
+                    What started as a small group of passionate innovators has grown into 
+                    a community of 200+ makers, dreamers, and doers.
+                </p>
+                
+                <div class="chapter-doodle">
+                    <svg viewBox="0 0 100 100" class="doodle-arrow">
+                        <path d="M10,50 L90,50 M85,45 L90,50 L85,55" fill="none" stroke="#4ecdc4" stroke-width="3" stroke-linecap="round"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Our Story - Narrative Layout -->
+    <section class="story-narrative">
+        <div class="story-wrapper">
+            <div class="story-text">
+                <span class="story-label">The Beginning</span>
+                <h2 class="story-title">How It All Started</h2>
+                
+                <div class="story-paragraphs">
+                    <p class="story-paragraph">
+                        Innovation Club was founded with a singular vision: to create a space where students could 
+                        transform their wildest ideas into reality. We noticed something missing at JIIT Noida — 
+                        a place where creativity met technology, where passion met purpose.
+                    </p>
+                    
+                    <p class="story-paragraph">
+                        So we built it. Starting with just a handful of students meeting in classrooms, 
+                        we organized our first hackathon. The energy was electric. Teams worked through the night, 
+                        building solutions they actually cared about. That moment confirmed what we believed: 
+                        students have incredible potential — they just need the right environment.
+                    </p>
+                    
+                    <p class="story-paragraph">
+                        Today, we're more than a club. We're a movement. A community of 200+ innovators across 
+                        four domains, hosting hackathons, workshops, and events that inspire. We've built 50+ 
+                        projects, won 15+ awards, and most importantly — made lifelong friendships along the way.
                     </p>
                 </div>
                 
-                <div class="timeline">
-                    <div class="timeline__item fade-in">
-                        <div class="timeline__marker"></div>
-                        <div class="timeline__content">
-                            <div class="timeline__date">2020</div>
-                            <h3 class="timeline__title">Club Founded</h3>
-                            <p class="timeline__description">
-                                Innovation Club was established with a vision to foster creativity and 
-                                entrepreneurship among JIIT students.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline__item fade-in">
-                        <div class="timeline__marker"></div>
-                        <div class="timeline__content">
-                            <div class="timeline__date">2021</div>
-                            <h3 class="timeline__title">First Hackathon</h3>
-                            <p class="timeline__description">
-                                Organized our first major hackathon with over 100 participants, 
-                                setting the foundation for future events.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline__item fade-in">
-                        <div class="timeline__marker"></div>
-                        <div class="timeline__content">
-                            <div class="timeline__date">2022</div>
-                            <h3 class="timeline__title">Team Expansion</h3>
-                            <p class="timeline__description">
-                                Expanded to include specialized teams: Design, Development, 
-                                Management, and Social Media.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline__item fade-in">
-                        <div class="timeline__marker"></div>
-                        <div class="timeline__content">
-                            <div class="timeline__date">2023</div>
-                            <h3 class="timeline__title">National Recognition</h3>
-                            <p class="timeline__description">
-                                Won multiple awards at national-level competitions and 
-                                established partnerships with industry leaders.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline__item fade-in">
-                        <div class="timeline__marker"></div>
-                        <div class="timeline__content">
-                            <div class="timeline__date">2024</div>
-                            <h3 class="timeline__title">Community Growth</h3>
-                            <p class="timeline__description">
-                                Grew to 200+ active members and launched multiple 
-                                successful initiatives and projects.
-                            </p>
-                        </div>
-                    </div>
-                    
-                    <div class="timeline__item fade-in">
-                        <div class="timeline__marker"></div>
-                        <div class="timeline__content">
-                            <div class="timeline__date">2025</div>
-                            <h3 class="timeline__title">Continuing Excellence</h3>
-                            <p class="timeline__description">
-                                Today, we continue to push boundaries, organize impactful events, 
-                                and inspire the next generation of innovators.
-                            </p>
-                        </div>
-                    </div>
+                <div class="story-highlight">
+                    <span class="highlight-text">"Innovation isn't just about technology — it's about people."</span>
                 </div>
             </div>
-        </section>
-        
-        <!-- CTA Section -->
-        <section class="section cta" aria-labelledby="cta-title">
-            <div class="container">
-                <div class="card cta__card scale-in">
-                    <h2 id="cta-title" class="cta__title">
-                        Want to Learn More?
-                    </h2>
-                    <p class="cta__description">
-                        Interested in joining Innovation Club or have questions? 
-                        Reach out to us through our contact page.
+            
+            <div class="story-visuals">
+                <div class="story-photo story-photo-1">
+                    <div class="photo-pin"></div>
+                    <img src="../assets/images/gallery/WhatsApp Image 2025-08-08 at 19.20.11.jpeg" alt="Early days" class="story-img">
+                    <div class="photo-label">2019</div>
+                </div>
+                
+                <div class="story-photo story-photo-2">
+                    <div class="photo-pin"></div>
+                    <img src="../assets/images/gallery/WhatsApp Image 2025-08-08 at 19.20.12-2.jpeg" alt="Growing community" class="story-img">
+                    <div class="photo-label">2023</div>
+                </div>
+                
+                <div class="story-doodle">
+                    <svg viewBox="0 0 100 100" class="doodle-star">
+                        <circle cx="50" cy="50" r="30" fill="none" stroke="#ffe66d" stroke-width="3"/>
+                        <circle cx="50" cy="50" r="15" fill="#ffe66d"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- What We Actually Do - Magazine Composition -->
+    <section class="what-we-do-magazine">
+        <div class="magazine-wrapper">
+            <div class="magazine-header">
+                <div class="header-decoration">
+                    <svg viewBox="0 0 100 100" class="deco-scribble">
+                        <path d="M10,50 Q30,20 50,50 T90,50" fill="none" stroke="#ff6b6b" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="magazine-label">In Action</span>
+                <h2 class="magazine-title">What We Actually Do</h2>
+                <p class="magazine-subtitle">Beyond the meetings — real work happening on campus</p>
+            </div>
+            
+            <!-- Block 1: Large landscape image -->
+            <div class="magazine-block block-1">
+                <div class="block-content">
+                    <span class="block-tag">WORKSHOPS</span>
+                    <h3 class="block-heading">Hands-On Learning Sessions</h3>
+                    <p class="block-paragraph">
+                        We don't just talk about innovation — we do it. Our workshops bring students together 
+                        to learn practical skills, collaborate on real projects, and build things that matter. 
+                        From design thinking to technical deep-dives, every session is crafted to leave you 
+                        with something tangible.
                     </p>
-                    <div class="flex justify-center gap-4 flex-wrap">
-                        <a href="contact.html" class="button button--secondary">
-                            <span>Contact Us</span>
-                            <span aria-hidden="true">→</span>
-                        </a>
+                    <div class="block-arrow">
+                        <svg viewBox="0 0 50 50" class="arrow-svg">
+                            <path d="M10,25 L40,25 M35,20 L40,25 L35,30" fill="none" stroke="#4ecdc4" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                </div>
+                <div class="block-visual">
+                    <div class="photo-large">
+                        <div class="photo-tape-large"></div>
+                        <img src="../assets/images/gallery/kk1.JPG" alt="Workshop" class="block-img-large">
+                        <div class="photo-caption-large">Students collaborating during a design workshop</div>
+                    </div>
+                    <div class="sticker-float">
+                        <span>🎨</span>
                     </div>
                 </div>
             </div>
-        </section>
-    </main>
+            
+            <!-- Block 2: Two overlapping portrait images -->
+            <div class="magazine-block block-2">
+                <div class="block-visual-double">
+                    <div class="photo-double photo-left">
+                        <div class="photo-pin"></div>
+                        <img src="../assets/images/gallery/kk2.JPG" alt="Hackathon" class="block-img-double">
+                        <div class="photo-caption">48-hour build</div>
+                    </div>
+                    <div class="photo-double photo-right">
+                        <div class="photo-pin"></div>
+                        <img src="../assets/images/gallery/kk3.JPG" alt="Team" class="block-img-double">
+                        <div class="photo-caption">Team presentation</div>
+                    </div>
+                    <div class="handwritten-label">
+                        <span>HACKATHONS</span>
+                    </div>
+                </div>
+                <div class="block-content-centered">
+                    <h3 class="block-heading">Building Through Competition</h3>
+                    <p class="block-paragraph">
+                        Our hackathons are where ideas become reality. Students form teams, pick problems they 
+                        care about, and spend focused time building solutions. It's intense, it's challenging, 
+                        and it's incredibly rewarding. The best part? You leave with a project you're proud of.
+                    </p>
+                    <div class="pull-quote">
+                        <span class="quote-mark">"</span>
+                        <span class="quote-text">The energy during our hackathons is electric</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Block 3: Large image with handwritten caption -->
+            <div class="magazine-block block-3">
+                <div class="block-content-full">
+                    <span class="block-tag-inline">COMMUNITY</span>
+                    <h3 class="block-heading-large">More Than a Club — A Movement</h3>
+                    <p class="block-paragraph">
+                        We're building something bigger than weekly meetings. A community where students support 
+                        each other, celebrate wins together, and grow collectively. From late-night coding sessions 
+                        to casual coffee meetups, the connections you make here last beyond graduation.
+                    </p>
+                </div>
+                <div class="block-visual-full">
+                    <div class="photo-full-wrapper">
+                        <div class="tape-corner"></div>
+                        <img src="../assets/images/gallery/kk4.JPG" alt="Community" class="block-img-full">
+                        <div class="handwritten-caption">
+                            <svg viewBox="0 0 200 50" class="caption-underline">
+                                <path d="M10,25 Q50,15 100,25 T190,25" fill="none" stroke="#ffe66d" stroke-width="3" stroke-linecap="round"/>
+                            </svg>
+                            <span class="caption-text">Together we build</span>
+                        </div>
+                    </div>
+                    <div class="decoration-stars">
+                        <svg viewBox="0 0 30 30" class="star-1">
+                            <polygon points="15,3 18,12 27,12 20,18 23,27 15,21 7,27 10,18 3,12 12,12" fill="#ff6b6b"/>
+                        </svg>
+                        <svg viewBox="0 0 30 30" class="star-2">
+                            <polygon points="15,3 18,12 27,12 20,18 23,27 15,21 7,27 10,18 3,12 12,12" fill="#4ecdc4"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     
-    <!-- Footer Container (injected by JavaScript) -->
-    <div id="footer-container"></div>
+    <!-- Mission & Vision - Split Layout -->
+    <section class="mission-split">
+        <div class="mission-wrapper">
+            <div class="mission-panel mission-left">
+                <div class="panel-sticker">🎯</div>
+                <span class="panel-label">Mission</span>
+                <h2 class="panel-title">What We Stand For</h2>
+                <p class="panel-text">
+                    To foster a culture of innovation where every student feels empowered to 
+                    build, create, and lead. We believe the best learning happens when you're 
+                    working on something you genuinely care about.
+                </p>
+                <div class="panel-deco">
+                    <svg viewBox="0 0 100 100" class="deco-lines">
+                        <line x1="10" y1="20" x2="90" y2="20" stroke="#ff6b6b" stroke-width="2"/>
+                        <line x1="10" y1="40" x2="90" y2="40" stroke="#ff6b6b" stroke-width="2"/>
+                        <line x1="10" y1="60" x2="90" y2="60" stroke="#ff6b6b" stroke-width="2"/>
+                    </svg>
+                </div>
+            </div>
+            
+            <div class="mission-panel mission-right">
+                <div class="panel-sticker">🚀</div>
+                <span class="panel-label">Vision</span>
+                <h2 class="panel-title">Where We're Going</h2>
+                <p class="panel-text">
+                    To become JIIT Noida's hub for student innovation — a place where ideas 
+                    become startups, where hackathons launch careers, and where every graduate 
+                    leaves with more than just a degree.
+                </p>
+                <div class="panel-deco">
+                    <svg viewBox="0 0 100 100" class="deco-lines">
+                        <line x1="10" y1="20" x2="90" y2="20" stroke="#4ecdc4" stroke-width="2"/>
+                        <line x1="10" y1="40" x2="90" y2="40" stroke="#4ecdc4" stroke-width="2"/>
+                        <line x1="10" y1="60" x2="90" y2="60" stroke="#4ecdc4" stroke-width="2"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
     
-    <!-- Scripts -->
-    <script src="../js/components.js"></script>
+    <!-- What Makes Us Different - List Layout -->
+    <section class="different-list">
+        <div class="different-wrapper">
+            <div class="different-header">
+                <span class="header-label">Our DNA</span>
+                <h2 class="header-title">What Makes Innovation Different</h2>
+                <p class="header-subtitle">We're not your typical college club</p>
+            </div>
+            
+            <div class="different-list-grid">
+                <div class="list-item different-item-1">
+                    <div class="item-number">01</div>
+                    <div class="item-content">
+                        <h3 class="item-title">Student-Led, Student-Run</h3>
+                        <p class="item-text">
+                            Everything we do — from hackathons to workshops — is conceptualized and 
+                            executed by students. No faculty oversight, no restrictions. Just pure 
+                            student passion driving every decision.
+                        </p>
+                    </div>
+                    <div class="item-doodle">
+                        <svg viewBox="0 0 50 50" class="mini-doodle">
+                            <circle cx="25" cy="25" r="20" fill="none" stroke="#ff6b6b" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="list-item different-item-2">
+                    <div class="item-number">02</div>
+                    <div class="item-content">
+                        <h3 class="item-title">No Prerequisites, No Barriers</h3>
+                        <p class="item-text">
+                            Whether you're a first-year student with zero coding experience or a 
+                            senior with multiple projects — there's a place for you. We don't gatekeep. 
+                            We grow together.
+                        </p>
+                    </div>
+                    <div class="item-doodle">
+                        <svg viewBox="0 0 50 50" class="mini-doodle">
+                            <rect x="10" y="10" width="30" height="30" fill="none" stroke="#4ecdc4" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="list-item different-item-3">
+                    <div class="item-number">03</div>
+                    <div class="item-content">
+                        <h3 class="item-title">Build Real Things, Not Resume Padding</h3>
+                        <p class="item-text">
+                            We don't do busy work. Every hackathon, every workshop, every project 
+                            is designed to create something meaningful. Skills you learn here translate 
+                            directly to the real world.
+                        </p>
+                    </div>
+                    <div class="item-doodle">
+                        <svg viewBox="0 0 50 50" class="mini-doodle">
+                            <polygon points="25,10 40,40 10,40" fill="none" stroke="#ffe66d" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+                
+                <div class="list-item different-item-4">
+                    <div class="item-number">04</div>
+                    <div class="item-content">
+                        <h3 class="item-title">Community Over Competition</h3>
+                        <p class="item-text">
+                            While we compete in hackathons, our culture is collaboration. Teams help 
+                            each other, seniors mentor juniors, and everyone celebrates each other's 
+                            wins. We rise together.
+                        </p>
+                    </div>
+                    <div class="item-doodle">
+                        <svg viewBox="0 0 50 50" class="mini-doodle">
+                            <path d="M10,40 L25,10 L40,40" fill="none" stroke="#9b59b6" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Timeline - Vertical Layout -->
+    <section class="timeline-vertical">
+        <div class="timeline-wrapper">
+            <div class="timeline-header">
+                <span class="timeline-label">Our Journey</span>
+                <h2 class="timeline-title">The Timeline</h2>
+            </div>
+            
+            <div class="timeline-items">
+                <div class="timeline-item">
+                    <div class="timeline-year">2019</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-event">Innovation Club Founded</h3>
+                        <p class="timeline-desc">
+                            Started with 10 passionate students and one simple idea: 
+                            students should build things that matter.
+                        </p>
+                        <div class="timeline-photo">
+                            <img src="../assets/images/gallery/WhatsApp Image 2025-08-08 at 18.57.09.jpeg" alt="2019" class="timeline-img">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2020</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-event">First Hackathon</h3>
+                        <p class="timeline-desc">
+                            Our inaugural hackathon brought together 50 students for 48 hours 
+                            of building, learning, and community.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2021</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-event">Four Domains Established</h3>
+                        <p class="timeline-desc">
+                            Formalized into Design, Development, Management, and Social Media 
+                            teams to better serve our growing community.
+                        </p>
+                        <div class="timeline-photo">
+                            <img src="../assets/images/gallery/WhatsApp Image 2025-08-08 at 19.20.09.jpeg" alt="2021" class="timeline-img">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2023</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-event">200+ Members Strong</h3>
+                        <p class="timeline-desc">
+                            Grew into JIIT Noida's largest innovation community, hosting 
+                            multiple hackathons and workshops throughout the year.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-event">Continuing Excellence</h3>
+                        <p class="timeline-desc">
+                            Today, we continue to push boundaries, organize impactful events, 
+                            and inspire the next generation of innovators.
+                        </p>
+                        <div class="timeline-photo">
+                            <img src="../assets/images/gallery/WhatsApp Image 2025-09-13 at 18.56.34.jpeg" alt="2025" class="timeline-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="timeline-doodle">
+                <svg viewBox="0 0 100 100" class="doodle-squiggle">
+                    <path d="M10,50 Q30,20 50,50 T90,50" fill="none" stroke="#ff6b6b" stroke-width="3" stroke-linecap="round"/>
+                </svg>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Community Impact - Editorial Numbers -->
+    <section class="impact-editorial">
+        <div class="impact-wrapper">
+            <div class="impact-visual">
+                <div class="impact-collage">
+                    <div class="impact-photo impact-1">
+                        <div class="photo-tape"></div>
+                        <img src="../assets/images/gallery/WhatsApp Image 2025-08-26 at 18.54.28.jpeg" alt="Impact" class="impact-img">
+                    </div>
+                    <div class="impact-photo impact-2">
+                        <div class="photo-tape"></div>
+                        <img src="../assets/images/gallery/WhatsApp Image 2025-08-26 at 18.51.00.jpeg" alt="Impact" class="impact-img">
+                    </div>
+                </div>
+                <div class="impact-sticker">
+                    <span>💫</span>
+                </div>
+            </div>
+            
+            <div class="impact-content">
+                <span class="impact-label">Our Impact</span>
+                <h2 class="impact-title">Numbers That Matter</h2>
+                
+                <div class="impact-stats">
+                    <div class="impact-stat">
+                        <span class="stat-big">200+</span>
+                        <span class="stat-desc">Active Members</span>
+                    </div>
+                    <div class="impact-stat">
+                        <span class="stat-big">50+</span>
+                        <span class="stat-desc">Projects Built</span>
+                    </div>
+                    <div class="impact-stat">
+                        <span class="stat-big">25+</span>
+                        <span class="stat-desc">Events Hosted</span>
+                    </div>
+                    <div class="impact-stat">
+                        <span class="stat-big">15+</span>
+                        <span class="stat-desc">Awards Won</span>
+                    </div>
+                </div>
+                
+                <p class="impact-text">
+                    But beyond the numbers, our real impact is in the students who've found their 
+                    passion, the projects that became startups, and the friendships that became 
+                    lifelong connections. Every number represents a story.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why Students Love Us - Quotes -->
+    <section class="love-quotes">
+        <div class="love-wrapper">
+            <div class="love-header">
+                <span class="love-label">Testimonials</span>
+                <h2 class="love-title">Why Students Love Innovation</h2>
+            </div>
+            
+            <div class="quotes-grid">
+                <div class="quote-card quote-1">
+                    <div class="quote-photo">
+                        <img src="../assets/images/teams/CORE - Abhinav Sinha.jpg" alt="Abhinav" class="quote-img">
+                        <div class="quote-pin"></div>
+                    </div>
+                    <div class="quote-content">
+                        <p class="quote-text">
+                            "Innovation Club gave me the confidence to build things I never thought I could. 
+                            The community is incredibly supportive, and I've learned more here than in any class."
+                        </p>
+                        <div class="quote-author">
+                            <span class="author-name">Abhinav</span>
+                            <span class="author-role">Core Team</span>
+                        </div>
+                    </div>
+                    <div class="quote-sticker">
+                        <span>⭐</span>
+                    </div>
+                </div>
+                
+                <div class="quote-card quote-2">
+                    <div class="quote-photo">
+                        <img src="../assets/images/teams/CORE - KAVYA AGARWAL BCG25228.png" alt="Kavya" class="quote-img">
+                        <div class="quote-pin"></div>
+                    </div>
+                    <div class="quote-content">
+                        <p class="quote-text">
+                            "The hackathons here are different. They're not just about winning — they're about 
+                            learning, collaborating, and building something you genuinely care about."
+                        </p>
+                        <div class="quote-author">
+                            <span class="author-name">Kavya</span>
+                            <span class="author-role">Core Team</span>
+                        </div>
+                    </div>
+                    <div class="quote-sticker">
+                        <span>💡</span>
+                    </div>
+                </div>
+                
+                <div class="quote-card quote-3">
+                    <div class="quote-photo">
+                        <img src="../assets/images/teams/CORE - Nikita Singh.jpg" alt="Nikita" class="quote-img">
+                        <div class="quote-pin"></div>
+                    </div>
+                    <div class="quote-content">
+                        <p class="quote-text">
+                            "Being part of Innovation Club feels like being part of a family. We celebrate 
+                            each other's wins, help each other through challenges, and grow together."
+                        </p>
+                        <div class="quote-author">
+                            <span class="author-name">Nikita</span>
+                            <span class="author-role">Core Team</span>
+                        </div>
+                    </div>
+                    <div class="quote-sticker">
+                        <span>❤️</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Final CTA - Editorial -->
+    <section class="about-cta">
+        <div class="cta-container">
+            <div class="cta-editorial-content">
+                <div class="cta-chapter">
+                    <span class="chapter-label">Chapter End</span>
+                </div>
+                
+                <h2 class="cta-headline">
+                    <span class="headline-italic">Your Story</span>
+                    <span class="headline-bold">Starts Here</span>
+                </h2>
+                
+                <p class="cta-description">
+                    We've told you our story. Now we want to hear yours. 
+                    Join Innovation Club and become part of something bigger than yourself.
+                </p>
+                
+                <div class="cta-actions">
+                    <a href="contact.html" class="cta-btn btn-primary">
+                        <span>Join the Club</span>
+                    </a>
+                    <a href="domains.html" class="cta-btn btn-secondary">
+                        <span>Explore Domains</span>
+                    </a>
+                </div>
+                
+                <div class="cta-decoration">
+                    <svg viewBox="0 0 100 100" class="deco-final">
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="#4ecdc4" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="25" fill="none" stroke="#ff6b6b" stroke-width="2"/>
+                        <circle cx="50" cy="50" r="10" fill="#ffe66d"/>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">Innovation</span>
+                <p class="footer-tagline">JIIT Noida</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="../index.html" class="footer-link">Home</a>
+                <a href="about.html" class="footer-link">About</a>
+                <a href="domains.html" class="footer-link">Domains</a>
+                <a href="events.html" class="footer-link">Events</a>
+                <a href="contact.html" class="footer-link">Contact</a>
+            </div>
+            
+            <div class="footer-copy">
+                <p>Made with passion by students, for students.</p>
+            </div>
+        </div>
+    </footer>
+    
     <script src="../js/main.js"></script>
 </body>
 </html>
