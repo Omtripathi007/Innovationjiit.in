@@ -1,0 +1,672 @@
+/**
+ * Innovation Club - Team Showcase Component Styles
+ * ==================================================
+ * Modular, CSS variable-driven styling designed to seamlessly 
+ * integrate into the existing design system or any standard layout.
+ */
+
+:root {
+    /* Standard Fallback Variables mapping directly to system tokens */
+    --bg-color: var(--color-bg-primary, #faf8f5);
+    --card-bg: var(--color-bg-secondary, #ffffff);
+    --text-color: var(--color-text-primary, #1a1a1a);
+    --text-muted: var(--color-text-muted, #71717a);
+    --primary-color: var(--color-accent-coral, #ff6b6b);
+    --primary-hover: #ff5252;
+    --primary-light: rgba(255, 107, 107, 0.12);
+    --primary-glow: rgba(255, 107, 107, 0.35);
+    --border-color: rgba(0, 0, 0, 0.08);
+    --accent-teal: var(--color-accent-teal, #4ecdc4);
+    --accent-yellow: var(--color-accent-yellow, #ffe66d);
+    --accent-purple: var(--color-accent-purple, #9b59b6);
+    --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.08);
+    --radius-full: 9999px;
+    --radius-card: var(--radius-xl, 24px);
+    --radius-btn: var(--radius-lg, 12px);
+    --font-display: var(--font-display, 'Playfair Display', Georgia, serif);
+    --font-body: var(--font-body, 'Inter', -apple-system, sans-serif);
+    --font-accent: var(--font-accent, 'Space Grotesk', -apple-system, sans-serif);
+    --transition-fast: 0.2s ease;
+    --transition-smooth: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ============================================
+   CONTAINER & LAYOUT
+   ============================================ */
+
+.team-page {
+    min-height: 100vh;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-body);
+}
+
+.team-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg, 1.5rem);
+}
+
+/* ============================================
+   HEADER SECTION
+   ============================================ */
+
+.team-header-section {
+    padding: var(--spacing-3xl, 5rem) 0 var(--spacing-xl, 2.5rem);
+    text-align: center;
+}
+
+.team-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.4rem 1.1rem;
+    background: var(--primary-light);
+    color: var(--primary-color);
+    font-family: var(--font-accent);
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: var(--radius-full);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+}
+
+.team-header-title {
+    font-family: var(--font-display);
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.team-header-title .text-highlight {
+    position: relative;
+    color: var(--primary-color);
+    display: inline-block;
+}
+
+.team-header-title .text-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: var(--accent-yellow);
+    z-index: -1;
+    opacity: 0.6;
+    border-radius: 4px;
+}
+
+.team-header-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    max-width: 620px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+/* ============================================
+   TEAM SHOWCASE COMPONENT CONTAINER
+   ============================================ */
+
+.team-showcase {
+    padding: 1rem 0 4rem;
+}
+
+/* ============================================
+   1. HERO DETAILS CARD (TOP FEATURED MEMBER)
+   ============================================ */
+
+.hero-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: 3rem;
+    margin-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 3.5rem;
+    align-items: center;
+    transition: opacity var(--transition-smooth), transform var(--transition-smooth);
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--primary-color), var(--accent-teal));
+}
+
+.hero-card.fade-out {
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.hero-card.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Left Column: Circular Avatar */
+.hero-card__avatar-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-card__avatar-wrapper {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    padding: 8px;
+    background: var(--card-bg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.hero-card__avatar-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 0 20px var(--primary-glow);
+    pointer-events: none;
+    animation: ringPulse 4s infinite ease-in-out;
+}
+
+@keyframes ringPulse {
+    0%, 100% { box-shadow: 0 0 15px var(--primary-glow); transform: scale(1); }
+    50% { box-shadow: 0 0 25px var(--primary-glow); transform: scale(1.02); }
+}
+
+.hero-card__avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    background-color: var(--primary-light);
+    display: block;
+}
+
+/* Right Column: Content Details */
+.hero-card__details-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+}
+
+.hero-card__badge-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.hero-card__badge {
+    padding: 0.35rem 0.9rem;
+    background: var(--primary-light);
+    color: var(--primary-color);
+    border-radius: var(--radius-full);
+    font-family: var(--font-accent);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.hero-card__role {
+    font-family: var(--font-accent);
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+.hero-card__title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+    font-weight: 700;
+    color: var(--text-color);
+    line-height: 1.25;
+}
+
+.hero-card__name-highlight {
+    color: var(--primary-color);
+    position: relative;
+    display: inline-block;
+    font-weight: 800;
+}
+
+.hero-card__tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 1.15rem;
+    color: var(--text-color);
+    border-left: 3px solid var(--accent-teal);
+    padding-left: 1rem;
+    margin: 0.25rem 0 0.5rem;
+    opacity: 0.9;
+}
+
+.hero-card__bio {
+    font-size: 1rem;
+    color: var(--text-muted);
+    line-height: 1.65;
+    max-width: 680px;
+}
+
+/* Social Bar */
+.hero-card__social-bar {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    margin-top: 0.75rem;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-fast);
+
+}
+
+.social-link:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px var(--primary-glow);
+}
+
+.social-link svg {
+    width: 18px;
+    height: 18px;
+    fill: currentColor;
+}
+
+/* ============================================
+   2. CATEGORY NAVIGATION TABS
+   ============================================ */
+
+.category-tabs-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2.5rem;
+}
+
+.category-tabs {
+    display: inline-flex;
+    align-items: center;
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem 0.6rem;
+    border-radius: var(--radius-full);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+    position: relative;
+    gap: 0.5rem;
+}
+
+.tab-btn {
+    border: none;
+    background: transparent;
+    color: var(--text-muted);
+    font-family: var(--font-accent);
+    font-size: 1.1rem;
+    font-weight: 700;
+    padding: 0.85rem 2.4rem;
+    border-radius: var(--radius-full);
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    position: relative;
+    z-index: 1;
+    outline: none;
+}
+
+.tab-btn:hover {
+    color: var(--text-color);
+}
+
+.tab-btn.active {
+    color: #ffffff;
+    background: var(--primary-color);
+    box-shadow: 0 6px 18px var(--primary-glow);
+}
+
+/* ============================================
+   3. INTERACTIVE AVATAR CAROUSEL / SCROLLER
+   ============================================ */
+
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 1rem 0;
+    max-width: 100%;
+}
+
+.carousel-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--card-bg);
+    border: 1.5px solid var(--border-color);
+    color: var(--text-color);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    z-index: 10;
+    flex-shrink: 0;
+    transition: all var(--transition-fast);
+    outline: none;
+}
+
+.carousel-arrow:hover {
+    background: var(--primary-color);
+    color: #ffffff;
+    border-color: var(--primary-color);
+    box-shadow: 0 8px 24px var(--primary-glow);
+    transform: scale(1.12);
+}
+
+.carousel-arrow:active {
+    transform: scale(0.96);
+}
+
+.carousel-arrow--left {
+    margin-right: 1rem;
+}
+
+.carousel-arrow--right {
+    margin-left: 1rem;
+}
+
+.carousel-scroller {
+    width: 100%;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1.5rem 0.5rem;
+    /* Hide scrollbars */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.carousel-scroller::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-track {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.25rem;
+    min-width: max-content;
+}
+
+/* Individual Avatar Card in Carousel */
+.avatar-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    transition: transform var(--transition-smooth), opacity var(--transition-smooth);
+    background: transparent;
+    border: none;
+    outline: none;
+    padding: 0.35rem;
+}
+
+.avatar-item__img-wrapper {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    padding: 4px;
+    background: var(--card-bg);
+    border: 2.5px solid transparent;
+    transition: all var(--transition-smooth);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.06);
+}
+
+.avatar-item__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    background-color: var(--primary-light);
+}
+
+.avatar-item__name {
+    font-family: var(--font-accent);
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-align: center;
+    white-space: nowrap;
+    transition: color var(--transition-fast);
+}
+
+/* Carousel Inactive Visuals */
+.avatar-item {
+    opacity: 0.65;
+    transform: scale(0.92);
+}
+
+.avatar-item:hover {
+    opacity: 0.9;
+    transform: scale(1.02);
+}
+
+/* Carousel Active Visuals */
+.avatar-item.active {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+.avatar-item.active .avatar-item__img-wrapper {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 24px var(--primary-glow);
+}
+
+.avatar-item.active .avatar-item__name {
+    color: var(--primary-color);
+    font-weight: 800;
+}
+
+/* ============================================
+   4. BOTTOM CTA SECTION
+   ============================================ */
+
+.team-cta-section {
+    padding: 4rem 0 5rem;
+}
+
+.team-cta-card {
+    background: linear-gradient(135deg, var(--card-bg) 0%, var(--bg-color) 100%);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    padding: 3.5rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.team-cta-card::after {
+    content: '';
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: var(--primary-light);
+    border-radius: 50%;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.team-cta-content {
+    position: relative;
+    z-index: 1;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.cta-subtitle {
+    font-family: var(--font-accent);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.cta-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    font-weight: 800;
+    color: var(--text-color);
+    margin-bottom: 1rem;
+}
+
+.cta-description {
+    font-size: 1.05rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 2rem;
+}
+
+.cta-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cta-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.8rem;
+    border-radius: var(--radius-btn);
+    font-family: var(--font-accent);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+}
+
+.cta-btn--primary {
+    background: var(--primary-color);
+    color: #ffffff;
+    box-shadow: 0 6px 18px var(--primary-glow);
+}
+
+.cta-btn--primary:hover {
+    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px var(--primary-glow);
+}
+
+.cta-btn--secondary {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+}
+
+.cta-btn--secondary:hover {
+    background: var(--bg-color);
+    border-color: var(--text-muted);
+    transform: translateY(-2px);
+}
+
+/* ============================================
+   RESPONSIVENESS (MOBILE & TABLET STACKING)
+   ============================================ */
+
+@media (max-width: 900px) {
+    .hero-card {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        padding: 2.25rem;
+        text-align: center;
+    }
+    
+    .hero-card__avatar-wrapper {
+        width: 180px;
+        height: 180px;
+    }
+    
+    .hero-card__badge-wrapper {
+        justify-content: center;
+    }
+
+    .hero-card__tagline {
+        border-left: none;
+        border-top: 2px solid var(--accent-teal);
+        border-bottom: 2px solid var(--accent-teal);
+        padding: 0.5rem 0;
+    }
+
+    .hero-card__social-bar {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .hero-card {
+        padding: 1.75rem 1.25rem;
+    }
+
+    .team-header-section {
+        padding: 3.5rem 0 1.5rem;
+    }
+
+    .category-tabs {
+        width: 100%;
+        justify-content: space-around;
+        padding: 0.25rem;
+    }
+
+    .tab-btn {
+        padding: 0.5rem 0.85rem;
+        font-size: 0.85rem;
+        flex: 1;
+        text-align: center;
+    }
+
+    .carousel-arrow {
+        width: 38px;
+        height: 38px;
+    }
+
+    .avatar-item__img-wrapper {
+        width: 68px;
+        height: 68px;
+    }
+
+    .avatar-item__name {
+        font-size: 0.78rem;
+    }
+}
