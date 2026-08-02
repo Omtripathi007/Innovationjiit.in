@@ -390,3 +390,221 @@ if (stickers.length > 0) {
 }
 
 console.log('🎨 Editorial Innovation Club experience loaded');
+
+// ============================================
+// UNIVERSAL JOIN US MODALPOPUP HANDLER
+// ============================================
+
+(function initGlobalJoinUsModal() {
+    function injectModalHTML() {
+        if (document.getElementById('joinUsOverlay')) return;
+
+        const modalContainer = document.createElement('div');
+        modalContainer.innerHTML = `
+        <div class="joinus-overlay" id="joinUsOverlay" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <div class="joinus-modal">
+                <button class="joinus-close" id="joinUsClose" aria-label="Close modal">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+                <div class="joinus-header">
+                    <span class="joinus-pill">Innovation Club JIIT</span>
+                    <h2 class="joinus-title" id="modalTitle">Join <span class="joinus-title-accent">Us</span></h2>
+                    <p class="joinus-subtitle">Fill in your details to get started with <strong>INNOVATION 26</strong></p>
+                </div>
+                <form class="joinus-form" id="joinUsForm" novalidate>
+                    <div class="joinus-field">
+                        <label class="joinus-label" for="jf-name">Full Name</label>
+                        <input class="joinus-input" type="text" id="jf-name" name="fullName" placeholder="e.g. Harshit Gupta" required>
+                    </div>
+                    <div class="joinus-field">
+                        <label class="joinus-label" for="jf-email">Email Address</label>
+                        <input class="joinus-input" type="email" id="jf-email" name="email" placeholder="you@example.com" required>
+                    </div>
+                    <div class="joinus-row">
+                        <div class="joinus-field">
+                            <label class="joinus-label" for="jf-mobile">Mobile No</label>
+                            <input class="joinus-input" type="tel" id="jf-mobile" name="mobile" placeholder="+91 XXXXXXXXXX" required>
+                        </div>
+                        <div class="joinus-field">
+                            <label class="joinus-label" for="jf-year">Year</label>
+                            <select class="joinus-input joinus-select" id="jf-year" name="year" required>
+                                <option value="" disabled selected>Select Year</option>
+                                <option value="1">1st Year</option>
+                                <option value="2">2nd Year</option>
+                                <option value="3">3rd Year</option>
+                                <option value="4">4th Year</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="joinus-field">
+                        <label class="joinus-label" for="jf-batch">Batch</label>
+                        <input class="joinus-input" type="text" id="jf-batch" name="batch" placeholder="e.g. F1, B2, A3" required>
+                    </div>
+                    <div class="joinus-field">
+                        <label class="joinus-label">Department Interested</label>
+                        <div class="joinus-dept-row" role="group" aria-label="Select department interest">
+                            <button type="button" class="joinus-dept-btn" data-dept="TECH">
+                                <span class="dept-icon">⚙️</span> TECH
+                            </button>
+                            <button type="button" class="joinus-dept-btn" data-dept="UI/UX">
+                                <span class="dept-icon">🎨</span> UI/UX
+                            </button>
+                            <button type="button" class="joinus-dept-btn" data-dept="MANAGEMENT">
+                                <span class="dept-icon">📊</span> MANAGEMENT
+                            </button>
+                        </div>
+                        <input type="hidden" id="jf-dept" name="department">
+                    </div>
+                    <button type="submit" class="joinus-submit" id="joinUsSubmit">
+                        <span class="joinus-submit-text">Submit Application</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                    </button>
+                    <div class="joinus-success" id="joinUsSuccess" aria-live="polite">
+                        <span class="success-icon">🎉</span>
+                        <p>Thank you! We'll be in touch soon.</p>
+                    </div>
+                </form>
+            </div>
+        </div>`;
+        document.body.appendChild(modalContainer.firstElementChild);
+    }
+
+    function setupModalController() {
+        injectModalHTML();
+
+        const overlay    = document.getElementById('joinUsOverlay');
+        const closeBtn   = document.getElementById('joinUsClose');
+        const joinForm   = document.getElementById('joinUsForm');
+        const deptInput  = document.getElementById('jf-dept');
+        const successBox = document.getElementById('joinUsSuccess');
+        const submitBtn  = document.getElementById('joinUsSubmit');
+
+        if (!overlay) return;
+
+        window.openGlobalJoinUsModal = function (deptHint) {
+            // Preselect department if hinted
+            if (deptHint) {
+                document.querySelectorAll('.joinus-dept-btn').forEach(btn => {
+                    const match = btn.dataset.dept === deptHint;
+                    btn.classList.toggle('selected', match);
+                    if (match && deptInput) deptInput.value = deptHint;
+                });
+            }
+
+            overlay.classList.add('is-open');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => {
+                const firstInput = overlay.querySelector('input, select');
+                if (firstInput) firstInput.focus();
+            }, 350);
+        };
+
+        window.closeGlobalJoinUsModal = function () {
+            overlay.classList.remove('is-open');
+            document.body.style.overflow = '';
+        };
+
+        // Close handlers
+        closeBtn && closeBtn.addEventListener('click', window.closeGlobalJoinUsModal);
+        overlay.addEventListener('click', e => {
+            if (e.target === overlay) window.closeGlobalJoinUsModal();
+        });
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape' && overlay.classList.contains('is-open')) {
+                window.closeGlobalJoinUsModal();
+            }
+        });
+
+        // Department pill toggles
+        document.querySelectorAll('.joinus-dept-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const already = btn.classList.contains('selected');
+                document.querySelectorAll('.joinus-dept-btn').forEach(b => b.classList.remove('selected'));
+                if (!already) {
+                    btn.classList.add('selected');
+                    deptInput && (deptInput.value = btn.dataset.dept);
+                } else {
+                    deptInput && (deptInput.value = '');
+                }
+            });
+        });
+
+        // Form submit
+        joinForm && joinForm.addEventListener('submit', e => {
+            e.preventDefault();
+            const inputs = joinForm.querySelectorAll('[required]');
+            let valid = true;
+            inputs.forEach(input => {
+                if (!input.value.trim()) {
+                    input.style.borderColor = '#ff5252';
+                    valid = false;
+                } else {
+                    input.style.borderColor = '';
+                }
+            });
+            if (!valid) return;
+
+            submitBtn.disabled = true;
+            submitBtn.querySelector('.joinus-submit-text').textContent = 'Submitting…';
+
+            setTimeout(() => {
+                joinForm.style.display = 'none';
+                successBox.classList.add('is-visible');
+
+                setTimeout(() => {
+                    window.closeGlobalJoinUsModal();
+                    setTimeout(() => {
+                        joinForm.style.display = '';
+                        joinForm.reset();
+                        document.querySelectorAll('.joinus-dept-btn').forEach(b => b.classList.remove('selected'));
+                        deptInput && (deptInput.value = '');
+                        successBox.classList.remove('is-visible');
+                        submitBtn.disabled = false;
+                        submitBtn.querySelector('.joinus-submit-text').textContent = 'Submit Application';
+                    }, 400);
+                }, 2500);
+            }, 1000);
+        });
+    }
+
+    // Universal Click Delegator for any "Join..." button/link
+    document.addEventListener('click', function (e) {
+        const trigger = e.target.closest('a, button, .joinus-trigger');
+        if (!trigger) return;
+
+        // Skip inside modal
+        if (trigger.closest('#joinUsOverlay')) return;
+
+        // Skip main nav links
+        if (trigger.classList.contains('nav-link') || trigger.classList.contains('footer-link')) return;
+
+        const text = (trigger.textContent || '').trim().toLowerCase();
+
+        // Check if button text matches "join", "join us", "join club", "join studio", etc.
+        const isJoinMatch = trigger.classList.contains('joinus-trigger') ||
+                            text.includes('join') ||
+                            (trigger.getAttribute('href') && trigger.getAttribute('href').includes('#contact') && text.includes('join'));
+
+        if (isJoinMatch) {
+            e.preventDefault();
+            let deptHint = null;
+            if (text.includes('design') || text.includes('ui/ux')) deptHint = 'UI/UX';
+            else if (text.includes('dev') || text.includes('code') || text.includes('tech')) deptHint = 'TECH';
+            else if (text.includes('manage')) deptHint = 'MANAGEMENT';
+
+            if (window.openGlobalJoinUsModal) {
+                window.openGlobalJoinUsModal(deptHint);
+            }
+        }
+    });
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupModalController);
+    } else {
+        setupModalController();
+    }
+})();
+
