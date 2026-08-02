@@ -6,56 +6,174 @@
     <meta name="description" content="Contact Innovation Club JIIT Noida - Get in touch with us for collaborations and inquiries.">
     <meta name="keywords" content="Contact, Innovation Club, JIIT Noida">
     
-    <title>Contact - Innovation Club</title>
+    <title>Contact Us - Innovation Club</title>
     
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Stylesheet -->
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/contact.css">
 </head>
 <body>
     <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="sr-only" style="position: absolute; top: -40px; left: 0; background: var(--color-primary-light); color: white; padding: 8px; z-index: 10000; transition: top 0.3s;" onfocus="this.style.top = '0'" onblur="this.style.top = '-40px'">
-        Skip to main content
-    </a>
+    <a href="#main-content" class="sr-only">Skip to main content</a>
     
-    <!-- Navigation Container (injected by JavaScript) -->
-    <div id="navbar-container"></div>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="nav-logo-text">Innovation</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="domains.html" class="nav-link">Domains</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="team.html" class="nav-link">Team</a>
+                <a href="contact.html" class="nav-link nav-cta active">Contact Us</a>
+            </div>
+        </div>
+    </nav>
     
     <!-- Main Content -->
     <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="container hero__content">
-                <span class="badge badge--secondary mb-4 fade-in">Contact</span>
-                <h1 id="hero-title" class="hero__title fade-in">
-                    Get in<br>
-                    <span class="text-gradient">Touch</span>
-                </h1>
-                <p class="hero__description fade-in">
-                    Have questions or want to collaborate? We'd love to hear from you.
-                </p>
-            </div>
-        </section>
         
-        <!-- Content Placeholder -->
-        <section class="section" aria-labelledby="content-title">
-            <div class="container">
-                <div class="text-center">
-                    <h2 id="content-title" class="heading-2">Coming Soon</h2>
-                    <p class="text-lg text-muted">This page is under construction. Check back soon!</p>
+        <!-- Contact Page Structure -->
+        <div id="contactPage" class="contact-page">
+            <div class="contact-hero">
+                <div class="contact-hero-content">
+                    <h1 class="contact-hero-title">Get In Touch</h1>
+                    <p class="contact-hero-subtitle">We'd love to hear from you</p>
                 </div>
             </div>
-        </section>
+
+            <div class="contact-container">
+                <div class="contact-info-section">
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h3 class="contact-info-title">Visit Us</h3>
+                            <p class="contact-info-text">RIDE,<br>JIIT WISH TOWN CAMPUS NOIDA</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h3 class="contact-info-title">Call Us</h3>
+                            <div class="phone-numbers">
+                                <p>Divyansh: +918107870800</p>
+                                <p>YASH: +91 7210000082</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h3 class="contact-info-title">Email Us</h3>
+                            <div class="contact-emails">
+                                <p>ride@mail.jiit.ac.in</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Google Map for Laptop View -->
+                    <div class="contact-map">
+                        <h3 class="contact-info-title">Our Location</h3>
+                        <div class="map-container">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.498412435515!2d77.3716!3d28.6199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ceff5a4e3e4d5%3A0x9a3b5d4c3e2f1a0!2sJaypee%20Institute%20of%20Information%20Technology!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                                width="100%" height="250" style="border:0; border-radius: 15px;" allowfullscreen=""
+                                loading="lazy">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-section">
+                    <h2 class="contact-form-title">Send Us a Message</h2>
+                    <form
+                        action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScf8Sx7t81lDiOHmkNIjBxALA30a-u078lnbCa_Aq1tSaeAxA/formResponse"
+                        method="POST"
+                        target="_blank">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="entry.1872101691" required placeholder="Enter your first name">
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="entry.1491932109" required placeholder="Enter your last name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="entry.1072851862" required placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Contact no</label>
+                            <input type="text" id="subject" name="entry.1615926104" required placeholder="+91 XXXXXXXXXX">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="entry.1062632425" required placeholder="Write your message here..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary contact-submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="back-button-container">
+                <a href="../index.html" id="backToHome" class="sexy-back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Home</span>
+                </a>
+            </div>
+        </div>
+
     </main>
     
-    <!-- Footer Container (injected by JavaScript) -->
-    <div id="footer-container"></div>
+    <!-- Footer Container -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">Innovation</span>
+                <p class="footer-tagline">JIIT Noida</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="../index.html" class="footer-link">Home</a>
+                <a href="about.html" class="footer-link">About</a>
+                <a href="domains.html" class="footer-link">Domains</a>
+                <a href="events.html" class="footer-link">Events</a>
+                <a href="projects.html" class="footer-link">Projects</a>
+                <a href="gallery.html" class="footer-link">Gallery</a>
+                <a href="team.html" class="footer-link">Team</a>
+                <a href="contact.html" class="footer-link">Contact</a>
+            </div>
+            
+            <div class="footer-copy">
+                <p>&copy; 2026 Innovation Club JIIT Noida. Made with passion by students, for students.</p>
+            </div>
+        </div>
+    </footer>
     
     <!-- Scripts -->
-    <script src="../js/components.js"></script>
     <script src="../js/main.js"></script>
 </body>
 </html>

@@ -3,59 +3,191 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Team - Innovation Club JIIT Noida. Meet our passionate members and leaders driving innovation.">
-    <meta name="keywords" content="Team, Members, Innovation Club, JIIT Noida">
+    <meta name="description" content="Team Showcase - Innovation Club JIIT Noida. Meet our mentors, leaders, and core team members driving innovation.">
+    <meta name="keywords" content="Team, Mentors, Team Leads, Core Team, Innovation Club, JIIT Noida">
     
-    <title>Team - Innovation Club</title>
+    <title>Team Showcase - Innovation Club</title>
     
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     
-    <!-- Stylesheet -->
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/team-showcase.css">
 </head>
 <body>
     <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="sr-only" style="position: absolute; top: -40px; left: 0; background: var(--color-primary-light); color: white; padding: 8px; z-index: 10000; transition: top 0.3s;" onfocus="this.style.top = '0'" onblur="this.style.top = '-40px'">
-        Skip to main content
-    </a>
+    <a href="#main-content" class="sr-only">Skip to main content</a>
     
-    <!-- Navigation Container (injected by JavaScript) -->
-    <div id="navbar-container"></div>
+    <!-- Navigation Bar -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../index.html" class="nav-logo">
+                <span class="nav-logo-text">Innovation</span>
+            </a>
+            <div class="nav-links">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="domains.html" class="nav-link">Domains</a>
+                <a href="events.html" class="nav-link">Events</a>
+                <a href="projects.html" class="nav-link">Projects</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="team.html" class="nav-link active">Team</a>
+                <a href="contact.html" class="nav-link nav-cta">Contact Us</a>
+            </div>
+        </div>
+    </nav>
     
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero" aria-labelledby="hero-title">
-            <div class="container hero__content">
-                <span class="badge badge--secondary mb-4 fade-in">Our Team</span>
-                <h1 id="hero-title" class="hero__title fade-in">
-                    Meet Our<br>
-                    <span class="text-gradient">Team</span>
+    <!-- Main Content Area -->
+    <main id="main-content" class="team-page">
+        
+        <!-- Header Banner Section -->
+        <section class="team-header-section">
+            <div class="team-container">
+                <span class="team-badge">Our People</span>
+                <h1 class="team-header-title">
+                    Meet Our <span class="text-highlight">Innovators</span>
                 </h1>
-                <p class="hero__description fade-in">
-                    The passionate individuals driving innovation at JIIT Noida.
+                <p class="team-header-subtitle">
+                    The visionaries, leaders, and creators driving technology, research, and community impact at Innovation Club JIIT Noida.
                 </p>
             </div>
         </section>
-        
-        <!-- Content Placeholder -->
-        <section class="section" aria-labelledby="content-title">
-            <div class="container">
-                <div class="text-center">
-                    <h2 id="content-title" class="heading-2">Coming Soon</h2>
-                    <p class="text-lg text-muted">This page is under construction. Check back soon!</p>
+
+        <!-- TEAM SHOWCASE COMPONENT -->
+        <section class="team-showcase" id="team-showcase">
+            <div class="team-container">
+                
+                <!-- 1. Hero Details Card (Top Featured Member Display) -->
+                <div class="hero-card" id="hero-card">
+                    <!-- Left Column: Circular Avatar Image -->
+                    <div class="hero-card__avatar-col">
+                        <div class="hero-card__avatar-wrapper">
+                            <img id="hero-avatar" class="hero-card__avatar" src="" alt="Featured Member">
+                            <div class="hero-card__avatar-ring"></div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Column: Member Details -->
+                    <div class="hero-card__details-col">
+                        <div class="hero-card__badge-wrapper">
+                            <span id="hero-category-badge" class="hero-card__badge">Category</span>
+                            <span id="hero-role-tag" class="hero-card__role">Role Title</span>
+                        </div>
+                        
+                        <h2 id="hero-name-title" class="hero-card__title">
+                            Hi, my name is <span id="hero-name-highlight" class="hero-card__name-highlight">Name</span>
+                        </h2>
+                        
+                        <blockquote id="hero-tagline" class="hero-card__tagline">
+                            "Tagline or quote placeholder"
+                        </blockquote>
+                        
+                        <p id="hero-bio" class="hero-card__bio">
+                            Detailed bio goes here...
+                        </p>
+
+                        <!-- Social Links Bar -->
+                        <div class="hero-card__social-bar" id="hero-social-bar">
+                            <!-- Injected dynamically via JS -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Category Navigation Tabs -->
+                <div class="category-tabs-wrapper">
+                    <nav class="category-tabs" aria-label="Team Categories" id="category-tabs">
+                        <button class="tab-btn active" data-category="Mentors">
+                            <span>Mentors</span>
+                        </button>
+                        <button class="tab-btn" data-category="Team Leads">
+                            <span>Team Leads</span>
+                        </button>
+                        <button class="tab-btn" data-category="Core Team">
+                            <span>Core Team</span>
+                        </button>
+                    </nav>
+                </div>
+
+                <!-- 3. Interactive Avatar Carousel / Scroller -->
+                <div class="carousel-wrapper">
+                    <button class="carousel-arrow carousel-arrow--left" id="carousel-prev" aria-label="Previous Members">
+                        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="15 18 9 12 15 6"></polyline>
+                        </svg>
+                    </button>
+
+                    <div class="carousel-scroller" id="carousel-scroller">
+                        <div class="carousel-track" id="carousel-track">
+                            <!-- Injected dynamically via JS -->
+                        </div>
+                    </div>
+
+                    <button class="carousel-arrow carousel-arrow--right" id="carousel-next" aria-label="Next Members">
+                        <svg viewBox="0 0 24 24" width="22" height="22" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 4. Bottom CTA Section -->
+        <section class="team-cta-section">
+            <div class="team-container">
+                <div class="team-cta-card">
+                    <div class="team-cta-content">
+                        <span class="cta-subtitle">Get Involved</span>
+                        <h2 class="cta-title">Ready to join our community?</h2>
+                        <p class="cta-description">
+                            Whether you're a beginner looking to learn or an experienced builder, there's a place for you in Innovation Club. Collaborate, build, and innovate with us.
+                        </p>
+                        <div class="cta-actions">
+                            <a href="contact.html" class="cta-btn cta-btn--primary">
+                                <span>Join the Club</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                            </a>
+                            <a href="projects.html" class="cta-btn cta-btn--secondary">
+                                <span>Explore Projects</span>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
+
     </main>
-    
-    <!-- Footer Container (injected by JavaScript) -->
-    <div id="footer-container"></div>
-    
+
+    <!-- 5. Footer Navigation Links -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-brand">
+                <span class="footer-logo">Innovation</span>
+                <p class="footer-tagline">JIIT Noida</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="../index.html" class="footer-link">Home</a>
+                <a href="about.html" class="footer-link">About</a>
+                <a href="domains.html" class="footer-link">Domains</a>
+                <a href="events.html" class="footer-link">Events</a>
+                <a href="projects.html" class="footer-link">Projects</a>
+                <a href="gallery.html" class="footer-link">Gallery</a>
+                <a href="team.html" class="footer-link">Team</a>
+                <a href="contact.html" class="footer-link">Contact</a>
+            </div>
+            
+            <div class="footer-copy">
+                <p>&copy; 2026 Innovation Club JIIT Noida. Made with passion by students, for students.</p>
+            </div>
+        </div>
+    </footer>
+
     <!-- Scripts -->
-    <script src="../js/components.js"></script>
     <script src="../js/main.js"></script>
+    <script src="../js/team-showcase.js"></script>
 </body>
 </html>
