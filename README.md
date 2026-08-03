@@ -1,164 +1,230 @@
-# Innovation - JIIT Noida Website
+# Innovation Club - JIIT Noida Website
 
-A modern, responsive website for the Innovation Club at JIIT Noida, showcasing their activities, events, and team members. The website features a dark theme with interactive 3D elements, smooth animations, and a comprehensive event management system.
+A modern, responsive website for Innovation Club at JIIT Noida, built with vanilla HTML, CSS, and JavaScript.
 
-## Features
+## 🎨 Design Philosophy
 
-### 🎨 Design & UI
-- **Modern Dark Theme**: Professional dark color scheme with blue and red accent colors
-- **Responsive Design**: Fully responsive layout that works seamlessly on desktop, tablet, and mobile devices
-- **Interactive Elements**: 3D particle system, animated backgrounds, and hover effects
-- **Smooth Animations**: Typewriter loading effect, floating elements, and page transitions
+This website follows a **quality-first approach** with:
+- **Mobile-first responsive design**
+- **Accessibility-first development** (WCAG AA compliant)
+- **Semantic HTML5** structure
+- **Modern CSS** (Grid, Flexbox, clamp(), CSS custom properties)
+- **Progressive enhancement**
+- **60 FPS animations** using GPU-accelerated properties
+- **Reusable component system**
+- **No external frameworks** (vanilla HTML/CSS/JS only)
 
-### 🚀 Key Sections
-- **Hero Section**: Eye-catching landing with 3D particle animation and floating elements
-- **About Section**: Information about the Innovation Club with an interactive 3D cube
-- **Events Section**: Details about upcoming events, especially RIDE Hack'25
-- **Gallery**: Photo gallery with lightbox functionality
-- **Team Page**: Information about faculty coordinators and student teams
-- **Updates Page**: Latest news and announcements
-- **Contact Page**: Contact form with location map
-
-### 🎯 Event Management
-- **RIDE Hack'25**: Complete event management system with:
-  - Live countdown timer (November 1, 2025, 10:00 AM)
-  - Registration system (currently closed)
-  - Prize information
-  - Shortlisted teams announcement
-  - Downloadable results PDF
-
-### 📱 Mobile Optimized
-- **Touch-Friendly Navigation**: Hamburger menu for mobile devices
-- **Optimized Modals**: Properly sized modals that fit within mobile screens
-- **Responsive Forms**: Mobile-optimized form layouts
-- **Touch Gestures**: Support for touch interactions on all interactive elements
-
-### 🔧 Technical Features
-- **Single Page Application (SPA)**: Smooth page transitions without full reloads
-- **3D Graphics**: Three.js integration for interactive particle effects
-- **Form Handling**: Integration with Google Forms and Supabase for data collection
-- **Real-time Countdown**: Live countdown timer for events
-- **Lightbox Gallery**: Full-screen image viewer with navigation controls
-
-## 🛠 Technologies Used
-
-- **HTML5**: Semantic markup for structure
-- **CSS3**: Modern styling with animations and transitions
-- **JavaScript**: Vanilla JS for interactivity
-- **Three.js**: 3D graphics and animations
-- **Supabase**: Backend database for form submissions
-- **Google Forms**: Alternative form submission method
-- **Font Awesome**: Icon library
-- **Google Fonts**: Custom typography (Montserrat & Roboto)
-
-## 📁 Repository Structure
-
-This repo contains **two website versions** — only the root is deployed live.
+## 📁 Project Structure
 
 ```
-/                           ← 🟢 LIVE DEPLOYMENT (v1 — Current Site)
-├── index.html              # Main entry point (served by host)
+innovation-2.0/
+├── index.html                          # Homepage
+├── pages/                              # All sub-pages
+│   ├── about.html                      # About page
+│   ├── domains.html                    # Domains/Teams page
+│   ├── events.html                     # Events page
+│   ├── gallery.html                    # Photo gallery
+│   ├── contact.html                    # Contact page
+│   ├── projects.html                   # Projects page
+│   └── team.html                       # Team members page
 ├── css/
-│   └── styles.css          # Global stylesheet
+│   └── main.css                        # Single CSS file with design system
 ├── js/
-│   └── script.js           # JavaScript functionality
-├── pages/                  # Secondary HTML pages
-│   ├── cdesign.html
-│   ├── cdevelopments.html
-│   ├── cmanagement.html
-│   ├── csocial.html
-│   └── climatehackathon.html
-├── assets/
-│   ├── images/             # All site images
-│   └── docs/               # Downloadable documents
-│
-└── innovation-2.0/         ← 🚧 IN DEVELOPMENT (v2 — Not Deployed)
-    ├── index.html
-    ├── css/styles.css
-    ├── js/script.js
-    ├── pages/
-    └── assets/
-        ├── images/
-        └── fonts/
+│   ├── components.js                   # Component injection (navbar/footer)
+│   └── main.js                         # Interactive logic
+├── assets/                             # Media assets
+│   ├── images/                         # Images organized by category
+│   │   ├── hero/                      # Hero section images
+│   │   ├── teams/                      # Team member photos
+│   │   ├── events/                     # Event-related images
+│   │   ├── gallery/                    # Photo gallery images
+│   │   └── miscellaneous/              # Other images
+│   ├── docs/                           # PDFs and documents
+│   ├── videos/                         # Video files
+│   └── fonts/                         # Custom fonts (if needed)
+└── README.md                           # This file
 ```
 
-> **Note:** `innovation-2.0/` is a parallel development workspace.  
-> It is **not deployed**. To preview it locally: `http://localhost:8080/innovation-2.0/`
+## 📄 Pages Overview
+
+- **Homepage** - Landing page with hero, features, domains, events, projects, and CTA sections
+- **About** - Club mission, vision, history timeline, and club introduction
+- **Domains** - Overview of all club domains (Design, Development, Management, Social Media)
+- **Events** - All events including hackathons, workshops, and competitions
+- **Gallery** - Photo gallery from events and club activities
+- **Contact** - Contact information and contact form
+- **Projects** - Showcase of projects built by club members
+- **Team** - Team members and leadership structure
+
+## 🎯 Design System
+
+### Color Palette
+- **Primary Gradient**: Purple (#7B2CBF) → Pink (#F72585)
+- **Secondary Gradient**: Blue (#4361EE) → Cyan (#4CC9F0)
+- **Accent Colors**: Coral (#FF6B6B), Mint (#00F5D4), Yellow (#FFD93D)
+- **Background**: Dark Navy (#0D1B2A)
+- **Text**: White (#FFFFFF), Light Gray (#E0E0E0)
+
+### Typography
+- **Headings**: 'Space Grotesk' (Google Fonts)
+- **Body**: 'Inter' (Google Fonts)
+- **Accent**: 'Nunito' (Google Fonts)
+
+### Spacing Scale
+- Base unit: 4px
+- Scale: 4, 8, 12, 16, 24, 32, 48, 64, 96px
+
+### Border Radius
+- Small: 8px
+- Medium: 16px
+- Large: 24px
+- Full: 50%
+
+## 🧩 Component System
+
+### CSS Components
+- **Buttons**: Primary, secondary, outline, text variants
+- **Cards**: Base, gradient, hover effects
+- **Navigation**: Desktop and mobile responsive
+- **Footer**: Multi-column with links
+- **Forms**: Accessible form elements
+- **Badges**: Status and role indicators
+- **Modals**: Accessible dialog system
+- **Timelines**: Vertical event timelines
+
+### JavaScript Components
+- **Component Injection**: Dynamic navbar/footer loading
+- **Scroll Animations**: Intersection Observer-based
+- **Modal System**: Accessible with focus trap
+- **Form Validation**: Client-side validation
+- **Mobile Menu**: Responsive navigation
+- **Smooth Scroll**: Anchor link scrolling
 
 ## 🚀 Getting Started
 
-1. **Clone or Download** the project files
-2. **Open `index.html`** in your web browser
-3. **The website will load** with all functionality intact
+### Prerequisites
+- No build tools required
+- Modern web browser
+- Local web server (optional, for testing)
 
-## 📱 Mobile Responsiveness
+### Local Development
+1. Clone the repository
+2. Open `index.html` in a web browser
+3. Or use a local server:
+   ```bash
+   # Using Python
+   python -m http.server 8000
+   
+   # Using Node.js
+   npx serve
+   ```
 
-The website is fully responsive and optimized for mobile devices:
+### Deployment
+This is a static site and can be deployed to:
+- GitHub Pages
+- Netlify
+- Vercel
+- Any static hosting service
 
-- **Navigation**: Hamburger menu for small screens
-- **Modals**: Properly sized modals that fit within mobile viewport
-- **Forms**: Mobile-optimized input fields and buttons
-- **Images**: Responsive images with proper aspect ratios
-- **Touch Support**: All interactive elements support touch gestures
+## ♿ Accessibility Features
+
+- Semantic HTML5 elements
+- Proper heading hierarchy
+- ARIA labels where needed
+- Keyboard navigation support
+- Focus indicators on interactive elements
+- Color contrast WCAG AA compliant
+- Screen reader friendly
+- Skip to main content link
+- `prefers-reduced-motion` support
+
+## 📱 Responsive Breakpoints
+
+- Mobile: < 768px
+- Tablet: 768px - 1024px
+- Desktop: > 1024px
+
+## ⚡ Performance Optimizations
+
+- CSS custom properties for theming
+- Minimal JavaScript (no frameworks)
+- Optimized images (use WebP format)
+- Lazy loading for images
+- Efficient CSS selectors
+- No render-blocking resources
+- Preconnect for external fonts
 
 ## 🎨 Customization
 
 ### Colors
-The color scheme is defined in CSS variables at the top of `styles.css`:
-
+Edit CSS custom properties in `css/main.css`:
 ```css
 :root {
-    --primary: #0056b3;
-    --secondary: #ff6b6b;
-    --accent: #4ecdc4;
-    --dark: #0a0e27;
-    --light: #f8f9fa;
-    /* ... more variables */
+    --color-primary-light: #7B2CBF;
+    --color-primary-dark: #F72585;
+    /* ... other colors */
 }
 ```
 
-### Fonts
-The website uses Google Fonts (Montserrat & Roboto). You can change the font imports in the HTML `<head>` section.
-
-### Event Details
-To update event information, modify the countdown timer in `script.js`:
-
-```javascript
-const eventDate = new Date("November 1, 2025 10:00:00").getTime();
+### Typography
+Change fonts in `css/main.css`:
+```css
+:root {
+    --font-family-heading: 'Space Grotesk', sans-serif;
+    --font-family-body: 'Inter', sans-serif;
+    /* ... other fonts */
+}
 ```
 
-## 🔧 Configuration
+### Content
+Edit HTML files directly. All content is in the HTML files, no database required.
 
-### Supabase Integration
-To use Supabase for form submissions:
+## 🔧 JavaScript Architecture
 
-1. Replace the Supabase URL and key in `script.js`
-2. Create the required tables (`registrations`, `contacts`, `newsletter_subscribers`)
-3. Update form field names to match your database schema
+### Component Injection
+The `js/components.js` file injects common components (navbar, footer) to avoid code duplication.
 
-### Google Forms Integration
-The website also supports Google Forms as a backup submission method. Update the form action URLs in the HTML to point to your Google Forms.
+### Interactive Features
+The `js/main.js` file handles:
+- Scroll animations
+- Modal system
+- Form validation
+- Smooth scrolling
+- Mobile menu
 
-## 📱 Browser Support
+## 📝 Code Quality Standards
 
-The website supports all modern browsers:
-- Chrome (Recommended)
-- Firefox
-- Safari
-- Edge
+- **Semantic HTML**: Proper use of HTML5 elements
+- **BEM CSS**: Block__Element--Modifier naming
+- **Accessibility**: WCAG AA compliant
+- **Performance**: 60 FPS animations, optimized rendering
+- **Comments**: Comprehensive code documentation
+- **No duplication**: DRY principle throughout
 
-## 🐛 Known Issues
+## 🌐 Browser Support
 
-1. **3D Effects**: Three.js may not work on very old browsers
-2. **Video Background**: Fallback image is provided for browsers that don't support video
-3. **Form Submission**: Requires internet connection for backend integration
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
 
 ## 📄 License
 
-This project is open source and available under the MIT License.
+This project is owned by Innovation Club, JIIT Noida.
 
-## 🤝 Contributing
+## 👥 Team
 
-Contributions are welcome! Please feel free to:
-- Report bugs
-- Suggest improvements
+- **Design Team**: UI/UX and visual design
+- **Development Team**: Frontend development
+- **Management Team**: Project coordination
+- **Social Media Team**: Content and community
+
+## 📞 Contact
+
+- Email: innovation@jiit.ac.in
+- Location: JIIT Noida, Sector 62, Noida, UP
+
+---
+
+Built with ❤️ by Innovation Club, JIIT Noida
