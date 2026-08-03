@@ -21,6 +21,63 @@ if (nav) {
 }
 
 // ============================================
+// MOBILE NAVIGATION TOGGLE
+// ============================================
+
+const navToggle = document.getElementById('navToggle');
+const navLinks = document.getElementById('navLinks');
+
+if (navToggle && navLinks) {
+    function toggleMobileMenu() {
+        const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+        navToggle.setAttribute('aria-expanded', !isExpanded);
+        navToggle.classList.toggle('active');
+        navLinks.classList.toggle('active');
+        document.body.classList.toggle('nav-open');
+    }
+
+    function closeMobileMenu() {
+        navToggle.setAttribute('aria-expanded', 'false');
+        navToggle.classList.remove('active');
+        navLinks.classList.remove('active');
+        document.body.classList.remove('nav-open');
+    }
+
+    navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        toggleMobileMenu();
+    });
+
+    // Close menu when link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            closeMobileMenu();
+        });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && !navToggle.contains(e.target)) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navLinks.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+
+    // Close menu if resized to desktop view
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768 && navLinks.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+}
+
+// ============================================
 // INTERSECTION OBSERVER FOR ANIMATIONS
 // ============================================
 
