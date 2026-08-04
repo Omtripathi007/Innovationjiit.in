@@ -10053,12 +10053,142 @@ footer {
    All structural styles are inherited from .innovate-popup-*
    ========================================================== */
 
-/* Center the description paragraph inside the SIH popup */
 #sihInternalsPopup .innovate-popup-description {
     text-align: center;
 }
 
-/* Stack buttons vertically on very small screens (< 400px) */
+.sih-register-btn {
+    background: linear-gradient(135deg, #ff9f1c, #ff6b35) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.35) !important;
+}
+
+.sih-register-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 35px rgba(255, 107, 53, 0.45) !important;
+}
+
+.sih-page {
+    background: linear-gradient(135deg, #07111f 0%, #101c34 45%, #030712 100%);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.sih-mesh-overlay {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle at 20% 20%, rgba(255, 159, 28, 0.16) 0, transparent 20%),
+                      radial-gradient(circle at 80% 20%, rgba(0, 183, 217, 0.16) 0, transparent 22%),
+                      radial-gradient(circle at 50% 80%, rgba(255, 107, 53, 0.12) 0, transparent 24%);
+    opacity: 0.9;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.sih-hero {
+    background: linear-gradient(to bottom, rgba(7, 17, 31, 0.75), rgba(7, 17, 31, 0.32)), url('../assets/images/ridehack/_SKL0258.jpg');
+    background-size: cover;
+    background-position: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.sih-title {
+    background: linear-gradient(135deg, #ffe28a, #ff9f1c, #ff6b35);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 30px rgba(255, 159, 28, 0.25);
+}
+
+.sih-badge {
+    background: rgba(255, 159, 28, 0.12);
+    border-color: rgba(255, 159, 28, 0.35);
+    color: #ffd27a;
+}
+
+.sih-badge-alt {
+    background: rgba(0, 183, 217, 0.12);
+    border-color: rgba(0, 183, 217, 0.35);
+    color: #7de8ff;
+}
+
+.sih-btn {
+    padding: 16px 30px;
+    border-radius: 999px;
+    font-weight: 800;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.35s ease;
+}
+
+.sih-btn:hover {
+    transform: translateY(-4px);
+}
+
+.sih-btn-primary {
+    background: linear-gradient(135deg, #ff9f1c, #ff6b35);
+    color: white;
+    box-shadow: 0 15px 35px rgba(255, 107, 53, 0.35);
+}
+
+.sih-btn-primary:hover {
+    box-shadow: 0 20px 45px rgba(255, 107, 53, 0.45);
+}
+
+.sih-btn-outline {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #f8fbff;
+}
+
+.sih-btn-outline:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.35);
+}
+
+.sih-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 10px;
+}
+
+.sih-list li {
+    color: var(--text-light);
+    font-size: 0.95rem;
+    padding-left: 18px;
+    position: relative;
+}
+
+.sih-list li::before {
+    content: '✦';
+    position: absolute;
+    left: 0;
+    color: #ff9f1c;
+}
+
+.sih-cta-card {
+    background: radial-gradient(circle at top left, rgba(255, 159, 28, 0.14), transparent),
+                rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#sihPage .codeai-track-card:hover {
+    border-color: #ff9f1c;
+    box-shadow: 0 20px 45px rgba(255, 159, 28, 0.16), inset 0 0 20px rgba(255, 159, 28, 0.06);
+}
+
+#sihPage .track-icon-box {
+    box-shadow: 0 10px 25px rgba(255, 107, 53, 0.22);
+}
+
 @media (max-width: 400px) {
     #sihInternalsPopup .innovate-popup-footer {
         flex-direction: column;

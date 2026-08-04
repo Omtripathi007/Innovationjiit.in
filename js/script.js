@@ -756,12 +756,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    function showEventsPage() {
+    function showEventsPage(scrollTargetId = null) {
         resetActiveStates();
+        const sihPopup = document.getElementById('sihInternalsPopup');
+        if (sihPopup && sihPopup.classList.contains('active')) {
+            sihPopup.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
         if (eventsPage) {
             eventsPage.classList.add('active');
             window.scrollTo(0, 0);
             updateActiveNav('events');
+
+            if (scrollTargetId) {
+                setTimeout(() => {
+                    const target = document.getElementById(scrollTargetId);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    }
+                }, 250);
+            }
         }
     }
     
@@ -813,6 +828,34 @@ document.addEventListener('DOMContentLoaded', () => {
             // Trigger entrance animations
             setTimeout(() => {
                 const reveals = codeAiPage.querySelectorAll('.reveal-up');
+                reveals.forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('revealed');
+                    }, index * 100);
+                });
+            }, 100);
+        }
+    }
+
+    function showSihPage() {
+        resetActiveStates();
+        const popupModal = document.getElementById('innovatePopupModal');
+        if (popupModal) {
+            popupModal.classList.remove('active');
+        }
+
+        const sihPopup = document.getElementById('sihInternalsPopup');
+        if (sihPopup && sihPopup.classList.contains('active')) {
+            sihPopup.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        if (sihPage) {
+            sihPage.classList.add('active');
+            window.scrollTo(0, 0);
+
+            setTimeout(() => {
+                const reveals = sihPage.querySelectorAll('.reveal-up');
                 reveals.forEach((el, index) => {
                     setTimeout(() => {
                         el.classList.add('revealed');
@@ -987,6 +1030,30 @@ document.addEventListener('DOMContentLoaded', () => {
     
     if (backToHomeFromCodeAi) {
         backToHomeFromCodeAi.addEventListener('click', (e) => {
+            e.preventDefault();
+            showEventsPage();
+        });
+    }
+
+    const sihPopupKnowMore = document.getElementById('sihPopupKnowMore');
+    const sihKnowMoreBtn = document.getElementById('sihKnowMoreBtn');
+
+    if (sihPopupKnowMore) {
+        sihPopupKnowMore.addEventListener('click', (e) => {
+            e.preventDefault();
+            showEventsPage('sihEventCard');
+        });
+    }
+
+    if (sihKnowMoreBtn) {
+        sihKnowMoreBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            showSihPage();
+        });
+    }
+
+    if (backToHomeFromSih) {
+        backToHomeFromSih.addEventListener('click', (e) => {
             e.preventDefault();
             showEventsPage();
         });

@@ -182,8 +182,8 @@
                 <a href="https://forms.gle/V9psxvPiYvUT5mdo9" class="innovate-popup-register" id="sihPopupRegister" target="_blank" rel="noopener">
                     <i class="fas fa-pen" style="margin-right: 8px;"></i>Register Now
                 </a>
-                <!-- Secondary: Know More — update href when the info page is ready -->
-                <a href="https://www.sih.gov.in/" class="innovate-popup-later" id="sihPopupKnowMore" target="_blank" rel="noopener">
+                <!-- Secondary: Know More — opens the dedicated SIH event page -->
+                <a href="#" class="innovate-popup-later" id="sihPopupKnowMore">
                     <i class="fas fa-info-circle" style="margin-right: 8px;"></i>Know More
                 </a>
             </div>
@@ -1079,7 +1079,7 @@
         <div class="events-container">
             <!-- CodeAi Hackathon -->
 
-            <div class="event-card">
+            <div class="event-card" id="sihEventCard">
                 <div class="event-header">
                     <div class="event-date" style="background: var(--gradient); color: white; border: none;">
                         <span class="day" style="color: white; font-size: 1.5rem;"><i class="fas fa-robot"></i></span>
@@ -1110,7 +1110,14 @@
                     </div><br>
                     Get ready for the India's BIGGEST coding challenge! Join us for our exclusive All India-hackathon event where you can showcase your coding and AI skills. Certificates for all participants.
                 </div>
-                
+                <div class="event-actions">
+                    <a href="https://forms.gle/V9psxvPiYvUT5mdo9" target="_blank" rel="noopener" class="btn btn-primary sih-register-btn">
+                        <i class="fas fa-pen" style="margin-right: 5px;"></i> Register Now
+                    </a>
+                    <button class="btn btn-secondary" id="sihKnowMoreBtn">
+                        <i class="fas fa-info-circle" style="margin-right: 5px;"></i> Know More
+                    </button>
+                </div>
             </div>
 
 
@@ -2952,6 +2959,143 @@
 
         <div class="codeai-back-btn-wrapper reveal-up" style="margin: 80px 0; text-align: center;">
             <a href="#" class="sexy-back-button" id="backToHomeFromCodeAi" style="position: relative; z-index: 10;">
+                <i class="fas fa-arrow-left"></i>
+                BACK TO EVENTS
+            </a>
+        </div>
+    </div>
+
+    <!-- SIH Internal Hackathon Page -->
+    <div id="sihPage" class="innovate-page sih-page">
+        <div class="sih-mesh-overlay"></div>
+
+        <div class="innovate-hero sih-hero">
+            <div class="innovate-hero-content reveal-up">
+                <h1 class="innovate-hero-title sih-title">SIH Internal Hackathon</h1>
+                <p class="innovate-hero-subtitle" style="color: #ffe28a; text-transform: uppercase; letter-spacing: 4px; font-weight: 700; font-size: 1.05rem;">Smart India Hackathon — College Internals at JIIT 128</p>
+                <div class="codeai-hero-badges reveal-up">
+                    <span class="codeai-badge sih-badge"><i class="fas fa-calendar-alt"></i> Aug 04–15, 2026</span>
+                    <span class="codeai-badge prize-badge sih-badge-alt"><i class="fas fa-trophy"></i> National Innovation Challenge</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="innovate-container">
+            <div class="innovate-intro reveal-up" style="max-width: 900px; margin: 0 auto 90px;">
+                <h2 class="innovate-intro-title" style="color: white; font-size: 2.4rem; margin-bottom: 25px;">Build solutions that matter for India</h2>
+                <p class="innovate-intro-text" style="color: var(--text-dim); font-size: 1.15rem; line-height: 1.8;">
+                    Smart India Hackathon is a premier nationwide initiative that brings together students, institutions, mentors, and government departments to solve real-world challenges with technology. The JIIT 128 internal round is designed to help students experience the SIH spirit early, collaborate in teams, and develop ideas that can create meaningful impact.
+                </p>
+                <div style="margin-top: 40px; display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                    <a href="https://forms.gle/V9psxvPiYvUT5mdo9" target="_blank" rel="noopener" class="sih-btn sih-btn-primary">
+                        <i class="fas fa-rocket"></i>
+                        <span>Register Now</span>
+                    </a>
+                    <a href="https://www.sih.gov.in/" target="_blank" rel="noopener" class="sih-btn sih-btn-outline">
+                        <i class="fas fa-globe"></i>
+                        <span>Know More on Govt Website</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="codeai-track-grid">
+                <div class="codeai-track-card reveal-up">
+                    <span class="track-number">01</span>
+                    <div>
+                        <div class="track-icon-box" style="background: linear-gradient(135deg, #ff9f1c, #ff6b35);">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>What is SIH?</h3>
+                        <p>Smart India Hackathon is a flagship national innovation movement that encourages students to solve live challenges from industry and government departments through practical, scalable ideas.</p>
+                        <ul class="sih-list">
+                            <li>Nationwide innovation challenge</li>
+                            <li>Problem-solving with real impact</li>
+                            <li>Mentorship and industry exposure</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="codeai-track-card reveal-up">
+                    <span class="track-number">02</span>
+                    <div>
+                        <div class="track-icon-box" style="background: linear-gradient(135deg, #00b8d9, #0057ff);">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Why Participate?</h3>
+                        <p>Our internal SIH round helps students sharpen ideas, improve pitching, and experience the full innovation cycle before they compete on a larger stage.</p>
+                        <ul class="sih-list">
+                            <li>Team-based problem solving</li>
+                            <li>Mentor guidance and feedback</li>
+                            <li>Chance to represent JIIT nationally</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="codeai-track-card reveal-up">
+                    <span class="track-number">03</span>
+                    <div>
+                        <div class="track-icon-box" style="background: linear-gradient(135deg, #6ee7b7, #0f766e);">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3>Themes You Can Explore</h3>
+                        <p>The SIH journey is built around themes such as robotics and drones, clean and green technology, tourism, and other civic-tech challenges that matter to India.</p>
+                        <ul class="sih-list">
+                            <li>Robotics and Drones</li>
+                            <li>Clean & Green Technology</li>
+                            <li>Tourism and Social Impact</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="codeai-panels-section reveal-up" style="margin-top: 90px;">
+                <h2 style="text-align: center; color: white; font-size: 2.3rem; margin-bottom: 10px;">How the journey works</h2>
+                <p style="text-align: center; color: var(--text-dim); margin-bottom: 40px;">From campus ideation to national-level innovation, the SIH experience is built to nurture ideas into practical solutions.</p>
+                <div class="codeai-track-grid">
+                    <div class="codeai-track-card reveal-up">
+                        <div class="track-icon-box" style="background: linear-gradient(135deg, #ff9f1c, #ff6b35);">
+                            <i class="fas fa-pencil-alt"></i>
+                        </div>
+                        <h3>Campus Ideation</h3>
+                        <p>Students identify a real problem statement, form teams, and begin refining ideas around feasibility, urgency, and innovation.</p>
+                    </div>
+                    <div class="codeai-track-card reveal-up">
+                        <div class="track-icon-box" style="background: linear-gradient(135deg, #00b8d9, #0057ff);">
+                            <i class="fas fa-laptop-code"></i>
+                        </div>
+                        <h3>Prototype & Build</h3>
+                        <p>Teams work on a prototype, build a working solution, and get support from mentors, faculty, and innovation communities.</p>
+                    </div>
+                    <div class="codeai-track-card reveal-up">
+                        <div class="track-icon-box" style="background: linear-gradient(135deg, #6ee7b7, #0f766e);">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Showcase & Scale</h3>
+                        <p>The strongest ideas move forward to represent JIIT at the larger Smart India Hackathon ecosystem with measurable impact.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="codeai-cta-section reveal-up">
+                <div class="codeai-cta-card sih-cta-card">
+                    <h2>Ready to turn your idea into impact?</h2>
+                    <p>Register for the JIIT SIH internal round and take your first step toward solving real challenges with the spirit of India’s biggest innovation movement.</p>
+                    <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://forms.gle/V9psxvPiYvUT5mdo9" target="_blank" rel="noopener" class="codeai-btn-premium pulse-glow" style="background: linear-gradient(135deg, #ff9f1c, #ff6b35);">
+                            <i class="fas fa-fire"></i>
+                            <span>Register Now</span>
+                        </a>
+                        <a href="https://www.sih.gov.in/" target="_blank" rel="noopener" class="sih-btn sih-btn-outline" style="background: rgba(255, 255, 255, 0.06); border-color: rgba(255, 255, 255, 0.2); color: #fff;">
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                            <span>Visit SIH Government Website</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="codeai-back-btn-wrapper reveal-up" style="margin: 80px 0; text-align: center;">
+            <a href="#" class="sexy-back-button" id="backToHomeFromSih" style="position: relative; z-index: 10;">
                 <i class="fas fa-arrow-left"></i>
                 BACK TO EVENTS
             </a>
