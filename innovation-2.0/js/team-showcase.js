@@ -20,28 +20,28 @@
         // ── MENTORS ──────────────────────────────────────────────
         {
             id: 'm1',
-            name: 'Prof. Vikas Saxena',
-            role: 'Faculty Advisor',
+            name: 'Yash Agarwal',
+            role: 'Advisor',
             category: 'Mentors',
             tagline: 'Inspiring academic excellence, research, and technical leadership.',
             bio: 'Guiding Innovation Club JIIT Noida with over 20 years of research experience, empowering student developers to build impactful technological solutions.',
-            image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
+            image: 'https://images.unslash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
             socials: { linkedin: '#', github: '#', website: 'https://jiit.ac.in', email: 'mailto:vikas.saxena@jiit.ac.in' }
         },
         {
             id: 'm2',
-            name: 'Dr. Neetu Sardana',
-            role: 'Faculty Co-Coordinator',
+            name: 'Saloni Singhal',
+            role: 'Coordinator',
             category: 'Mentors',
             tagline: 'Fostering innovation mindset and student project incubation.',
             bio: 'Dedicated to bridging academia and industry through research mentorship, innovation hackathons, and technical domain growth.',
-            image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
+            image: 'https://images.unsplah.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80',
             socials: { linkedin: '#', website: 'https://jiit.ac.in', email: 'mailto:neetu.sardana@jiit.ac.in' }
         },
         {
             id: 'm3',
-            name: 'Dr. Devpriya Soni',
-            role: 'Technical Advisor',
+            name: 'Aditya Gupta',
+            role: '',
             category: 'Mentors',
             tagline: 'Empowering young developers to transform ideas into reality.',
             bio: 'Providing strategic technical guidance for competitive programming, full-stack development, and artificial intelligence domains.',
