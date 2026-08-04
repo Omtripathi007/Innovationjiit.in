@@ -20,18 +20,18 @@
         // ── MENTORS ──────────────────────────────────────────────
         {
             id: 'm1',
-            name: 'Prof. Vikas Saxena',
-            role: 'Faculty Advisor',
+            name: 'Yash Agarwal',
+            role: 'Advisor',
             category: 'Mentors',
             tagline: 'Inspiring academic excellence, research, and technical leadership.',
             bio: 'Guiding Innovation Club JIIT Noida with over 20 years of research experience, empowering student developers to build impactful technological solutions.',
-            image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80',
+            image: '',
             socials: { linkedin: '#', github: '#', website: 'https://jiit.ac.in', email: 'mailto:vikas.saxena@jiit.ac.in' }
         },
         {
             id: 'm2',
-            name: 'Dr. Neetu Sardana',
-            role: 'Faculty Co-Coordinator',
+            name: 'Saloni Singhal',
+            role: 'Coordinator',
             category: 'Mentors',
             tagline: 'Fostering innovation mindset and student project incubation.',
             bio: 'Dedicated to bridging academia and industry through research mentorship, innovation hackathons, and technical domain growth.',
@@ -40,20 +40,20 @@
         },
         {
             id: 'm3',
-            name: 'Dr. Devpriya Soni',
-            role: 'Technical Advisor',
+            name: 'Aditya Gupta',
+            role: '',
             category: 'Mentors',
             tagline: 'Empowering young developers to transform ideas into reality.',
             bio: 'Providing strategic technical guidance for competitive programming, full-stack development, and artificial intelligence domains.',
-            image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80',
+            image: '',
             socials: { linkedin: '#', github: '#', email: 'mailto:devpriya.soni@jiit.ac.in' }
         },
 
         // ── TEAM LEADS ───────────────────────────────────────────
         {
             id: 'l1',
-            name: 'Harshit Gupta',
-            role: 'Tech Lead',
+            name: 'Vitthal Singh',
+            role: 'Management Lead',
             category: 'Team Leads',
             tagline: 'Architecting scalable web applications & leading tech initiatives.',
             bio: 'Passionate about full-stack engineering, cloud architecture, and mentoring student developers across web and mobile platforms.',
@@ -62,7 +62,7 @@
         },
         {
             id: 'l2',
-            name: 'Isha Chawla',
+            name: 'Simran Singh',
             role: 'Management Lead',
             category: 'Team Leads',
             tagline: 'Driving team execution, community growth, and strategic vision.',
@@ -72,7 +72,7 @@
         },
         {
             id: 'l3',
-            name: 'Aditya Gupta',
+            name: 'Om Tripathi',
             role: 'Tech Lead',
             category: 'Team Leads',
             tagline: 'Building high-performance software systems & open source tools.',
@@ -82,18 +82,18 @@
         },
         {
             id: 'l4',
-            name: 'Devanshi Srivastava',
-            role: 'Creative Lead',
+            name: 'Shivay Agarwal',
+            role: 'Tech Lead',
             category: 'Team Leads',
             tagline: 'Crafting expressive UI/UX designs and visual brand identities.',
             bio: 'Leading creative design, editorial visual styling, and user experience research across all club digital products.',
-            image: '../assets/images/teams/lead - Devanshi Srivastava.jpg',
+            image: '../assets/images/teams/led - Devanshi Srivastava.jpg',
             socials: { linkedin: '#', instagram: '#', website: '#' }
         },
         {
             id: 'l5',
-            name: 'Aman Gupta',
-            role: 'Operations Lead',
+            name: 'Kartik Guleria',
+            role: 'Tech Lead',
             category: 'Team Leads',
             tagline: 'Streamlining event logistics, sponsorships, and outreach.',
             bio: 'Managing club logistics, sponsor relations, and event execution for seamless university hackathons.',
@@ -102,8 +102,8 @@
         },
         {
             id: 'l6',
-            name: 'Saumya Agarwal',
-            role: 'Communications Lead',
+            name: 'Aadya Shrivastava',
+            role: 'Social Lead',
             category: 'Team Leads',
             tagline: 'Connecting student communities through effective engagement.',
             bio: 'Heading community engagement, social communications, and media partnerships for Innovation Club.',
@@ -112,8 +112,8 @@
         },
         {
             id: 'l7',
-            name: 'Utaksha Agarwal',
-            role: 'Event Lead',
+            name: 'Varnika Gupta',
+            role: 'Design Lead',
             category: 'Team Leads',
             tagline: 'Orchestrating memorable hackathons & interactive workshops.',
             bio: 'Curating technical workshops, competitive hackathons, and speaker sessions for 500+ participants.',
@@ -122,8 +122,8 @@
         },
         {
             id: 'l8',
-            name: 'Yashdeep',
-            role: 'Project Lead',
+            name: 'Ikshit Bhardwaj',
+            role: 'Design Lead',
             category: 'Team Leads',
             tagline: 'Directing software lifecycles & practical code implementation.',
             bio: 'Overseeing development sprints, code reviews, and developer onboarding for active club projects.',
