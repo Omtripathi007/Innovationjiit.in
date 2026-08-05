@@ -1141,18 +1141,18 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // RIDE Hack navigation button
+    // SIH Internal navigation button
     if (rideHackNavBtn) {
         rideHackNavBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            showRideHackPage();
+            showSihPage();
         });
     }
     
     if (mobileRideHackNavBtn) {
         mobileRideHackNavBtn.addEventListener('click', (e) => {
             e.preventDefault();
-            showRideHackPage();
+            showSihPage();
         });
     }
     
