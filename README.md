@@ -228,3 +228,59 @@ This project is owned by Innovation Club, JIIT Noida.
 ---
 
 Built with ❤️ by Innovation Club, JIIT Noida
+
+
+
+
+
+
+
+
+
+
+ <div class="event-card">
+                    <div class="event-header">
+                    <div class="event-date">
+                        <span class="day">25-26</span>
+                        <span class="month">APR</span>
+                    </div>
+
+                    <div class="event-info">
+                        <h3 class="event-title">CodeAI Hackathon</h3>
+
+                        <div class="event-meta">
+                            <div class="event-meta-item">
+                                <i class="fas fa-calendar-alt"></i>
+                                <span>April 25-26, 2026</span>
+                            </div>
+
+                            <div class="event-meta-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span>JIIT NOIDA</span>
+                            </div>
+
+                            <div class="event-meta-item">
+                                <i class="fas fa-users"></i>
+                                <span>Intra-Institutional</span>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+        <div class="event-description">
+            CodeAI Hackathon brought together students to solve real-world problems
+            using Artificial Intelligence and emerging technologies. Participants
+            collaborated in teams, received mentorship from experts, competed for
+            exciting prizes, and showcased innovative solutions.
+        </div>
+
+        <div class="event-actions">
+            <button class="btn btn-secondary disabled" disabled>
+                Event Completed
+            </button>
+
+            <div class="event-actions">
+                    <button class="btn btn-primary" id="codeAiEventsPageBtn"><i class="fas fa-info-circle" style="margin-right: 5px;"></i> View Details</button>
+            </div>
+        </div>
+                </div>
