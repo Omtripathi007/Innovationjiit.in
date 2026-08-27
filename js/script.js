@@ -1466,15 +1466,40 @@ document.addEventListener('DOMContentLoaded', () => {
 //innovate 3.0
 // Innovate 3.0 Popup
 document.addEventListener('DOMContentLoaded', function() {
-    // Show CodeAi Hackathon popup on page load (replaces old innovate popup behavior)
+    // Show RIDE Hack 2026 popup on page load (priority popup)
     setTimeout(function() {
-        if(document.getElementById('codeAiPopupModal')) {
+        if(document.getElementById('rideHack26PopupModal')) {
+            document.getElementById('rideHack26PopupModal').classList.add('active');
+        } else if(document.getElementById('codeAiPopupModal')) {
             document.getElementById('codeAiPopupModal').classList.add('active');
         } else {
             // Fallback
             document.getElementById('innovatePopupModal').classList.add('active');
         }
     }, 2000);
+
+    // Close RIDE Hack 2026 popup
+    var rideHack26Close = document.getElementById('rideHack26PopupClose');
+    if (rideHack26Close) {
+        rideHack26Close.addEventListener('click', function() {
+            document.getElementById('rideHack26PopupModal').classList.remove('active');
+        });
+    }
+    var rideHack26Later = document.getElementById('rideHack26PopupLater');
+    if (rideHack26Later) {
+        rideHack26Later.addEventListener('click', function() {
+            document.getElementById('rideHack26PopupModal').classList.remove('active');
+        });
+    }
+    // Also close on backdrop click
+    var rideHack26Modal = document.getElementById('rideHack26PopupModal');
+    if (rideHack26Modal) {
+        rideHack26Modal.addEventListener('click', function(e) {
+            if (e.target === rideHack26Modal) {
+                rideHack26Modal.classList.remove('active');
+            }
+        });
+    }
 
     // Close Innovate 3.0 popup
     document.getElementById('innovatePopupClose').addEventListener('click', function() {
