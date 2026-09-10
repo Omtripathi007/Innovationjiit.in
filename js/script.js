@@ -1468,13 +1468,9 @@ document.addEventListener('DOMContentLoaded', () => {
 document.addEventListener('DOMContentLoaded', function() {
     // Show RIDE Hack 2026 popup on page load (priority popup)
     setTimeout(function() {
-        if(document.getElementById('rideHack26PopupModal')) {
-            document.getElementById('rideHack26PopupModal').classList.add('active');
-        } else if(document.getElementById('codeAiPopupModal')) {
-            document.getElementById('codeAiPopupModal').classList.add('active');
-        } else {
-            // Fallback
-            document.getElementById('innovatePopupModal').classList.add('active');
+        const rideHack26Modal = document.getElementById('rideHack26PopupModal');
+        if (rideHack26Modal) {
+            rideHack26Modal.classList.add('active');
         }
     }, 2000);
 
@@ -1501,32 +1497,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Close Innovate 3.0 popup
-    document.getElementById('innovatePopupClose').addEventListener('click', function() {
-        document.getElementById('innovatePopupModal').classList.remove('active');
-    });
-    
-    document.getElementById('innovatePopupLater').addEventListener('click', function() {
-        document.getElementById('innovatePopupModal').classList.remove('active');
-    });
-    
-    // Open Innovate 3.0 page from popup
-    document.getElementById('innovatePopupRegister').addEventListener('click', function() {
-        document.getElementById('innovatePopupModal').classList.remove('active');
-        showPage('innovate');
-    });
-    
-    // Innovate 3.0 event button in events page
-    document.getElementById('innovateEventBtn').addEventListener('click', function() {
-        showPage('innovate');
-    });
-    
-    // Back to Home from Innovate 3.0
-    document.getElementById('backToHomeFromInnovate').addEventListener('click', function(e) {
-        e.preventDefault();
-        showPage('home');
-    });
-    
     // Update navigation to include Innovate 3.0
     function updateNavigation() {
         const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
