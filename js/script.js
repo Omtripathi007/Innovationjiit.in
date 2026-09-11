@@ -1,4 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
+    const archiveEventsContainer = document.querySelector('.archive-events-container');
+
+    if (archiveEventsContainer) {
+        const archiveEvents = Array.from(archiveEventsContainer.querySelectorAll('.archive-card'));
+
+        archiveEvents.sort((firstEvent, secondEvent) => {
+            const getEventDate = (eventCard) => {
+                const dateText = eventCard.querySelector('.event-meta-item span')?.textContent.trim() || '';
+                const firstDate = dateText.replace(/[–-]\d{1,2}/, '');
+                return Date.parse(firstDate);
+            };
+
+            return getEventDate(secondEvent) - getEventDate(firstEvent);
+        });
+
+        archiveEvents.forEach((eventCard) => archiveEventsContainer.appendChild(eventCard));
+    }
+
     // Initialize Supabase
     const supabaseUrl = 'https://jrdxrosmyasaexatudra.supabase.co';
     const supabaseKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpyZHhyb3NteWFzYWV4YXR1ZHJhIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTc1NjgwMjgsImV4cCI6MjA3MzE0NDAyOH0.tjVr4aAxNvnfoQX7iJNe5FkxZM9keXLwzpN-wCda7q0';
