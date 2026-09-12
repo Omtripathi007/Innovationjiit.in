@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Development Team - Innovation Club</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/motion@11.11.17/dist/motion.js"></script>
     <style>
         :root {
             --primary-color: #0056b3;
@@ -313,7 +316,7 @@
         .team-member {
             background: rgba(255, 255, 255, 0.05);
             border-radius: 20px;
-            padding: 30px;
+            overflow: hidden;
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
@@ -328,28 +331,33 @@
 
         .member-avatar {
             display: flex;
-            align-items: center;
-            gap: 20px;
+            flex-direction: column;
+            padding: 30px;
         }
 
-        .member-photo {
-            width: 100px;
-            height: 100px;
+        .member-photo.circular-photo {
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid var(--nav-blue); /* Updated to nav blue */
+            border: 3px solid var(--nav-blue);
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
-            flex-shrink: 0;
+            margin: 0 auto 20px;
+            background: #111827;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
-        .member-photo img {
+        .member-photo.circular-photo img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center 20%;
         }
 
         .member-info {
-            flex: 1;
+            text-align: center;
         }
 
         .member-name {
@@ -361,7 +369,7 @@
 
         .member-role {
             font-size: 1rem;
-            color: var(--nav-blue); /* Updated to nav blue */
+            color: var(--nav-blue);
             margin-bottom: 10px;
             font-weight: 500;
         }
@@ -375,6 +383,7 @@
 
         .member-social {
             display: flex;
+            justify-content: center;
             gap: 15px;
         }
 
@@ -382,13 +391,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 36px;
-            height: 36px;
+            width: 42px;
+            height: 42px;
             border-radius: 50%;
             background: rgba(255, 255, 255, 0.1);
             color: var(--light);
             font-size: 1rem;
             transition: all 0.3s ease;
+            text-decoration: none;
         }
 
         .member-social a:hover {
@@ -570,160 +580,126 @@
 <body>
     <nav>
         <div class="nav-container">
-            <div class="logo">
+            <a href="../index.html" class="logo" style="text-decoration: none;">
                 <div class="log-img">
                     <img src="../assets/images/ChatGPT Image Aug 9, 2025 at 10_55_53 AM.png" alt="Innovation Logo" class="logo-img">
                 </div>
                 <span class="kona"><h2>Innovation</h2></span>
-            </div>
+            </a>
   
-            <a href="#" class="ride-hack-btn" onclick="window.location.href='../index.html';" >RIDE HACK</a>
+            <a href="../index.html" class="ride-hack-btn">RIDE HACK</a>
         </div>
     </nav>
 
-    <div id="webDevTeamPage" class="team-page">
+    <div id="webDevTeamPage" class="team-page" style="display: block;">
         <div class="team-hero">
             <div class="team-hero-content">
+                <div class="team-tech-kicker">
+                    <span class="tech-kicker-dot"></span>
+                    <span>ARCHITECTURE & ENGINEERING // CORE_LEADS</span>
+                </div>
                 <h1 class="team-hero-title">Web Development Team</h1>
-                <p class="team-hero-subtitle">Building digital solutions for innovation</p>
+                <p class="team-hero-subtitle">The engineering minds & system backend powering Innovationjiit.in</p>
             </div>
         </div>
-        
-        <div class="team-container">
-            <div class="team-intro">
-                <h2 class="team-intro-title"> Web Development Team</h2>
-                <p class="team-intro-text">
-                    Our Web Development Team is responsible for creating and maintaining all digital platforms for the Innovation Club. 
-                    From our official website to event registration systems, they ensure our digital presence is cutting-edge, 
-                    user-friendly, and secure. With expertise in modern web technologies, they bring our innovation vision to life online.
-                </p>
-            </div>
-            
-            <!-- Leadership Section -->
-            <div class="team-section">
-                <h2 class="team-section-title">LEADERSHIP</h2><br><br>
-                <div class="team-grid">
-                    <div class="team-member">
-                        <div class="member-avatar">
-                            <div class="member-photo circular-photo">
-                                <img src="../assets/images/lead- Raunak.jpg" alt="Team Lead">
-                            </div>
-                            <div class="member-info">
-                                <h3 class="member-name"><b>RAUNAK KHESHWARI</b></h3>
-                                <p class="member-role">TEAM LEAD</p>
-                                <p class="member-bio">Leading with technical expertise, innovation, and a passion for creating impactful digital solutions.</p>
-                                <div class="member-social">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <div class="member-avatar">
-                            <div class="member-photo circular-photo">
-                                <img src="../assets/images/lead - Devanshi Srivastava.jpg" alt="Team Coordinator">
-                            </div>
-                            <div class="member-info">
-                                <h3 class="member-name"><b>DEVANSHI SRIVASTAVA</b></h3>
-                                <p class="member-role">TEAM LEAD</p>
-                                <p class="member-bio">Ensuring seamless project execution, team collaboration, and timely delivery of all web initiatives.</p>
-                                <div class="member-social">
-                                    
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
+        <div class="team-container webdev-engineering-container">
+
+
+
+            <!-- THREE CORE LEADS SPOTLIGHT -->
+            <div class="team-section engineering-leads-section">
+                <div class="tier-header-badge" style="margin-bottom: 40px;">
+                    <span class="tier-level-code">CORE_TRIO</span>
+                    <span class="tier-title">ENGINEERING LEADS</span>
                 </div>
-            </div>
-            
-            <!-- Team Leads Section -->
-            <div class="team-section">
-                <h2 class="team-section-title">CORE TEAM</h2><br><br>
-                <div class="team-grid">
+
+                <div class="team-grid engineering-leads-grid">
+                    <!-- LEAD 1: OM TRIPATHI -->
                     <div class="team-member">
                         <div class="member-avatar">
                             <div class="member-photo circular-photo">
-                                <img src="../assets/images/core- KARTIK GULERIA.png" alt="Lead Developer">
-                            </div>
-                            <div class="member-info">
-                                <h3 class="member-name">KARTIK GULERIA</h3>
-                                <p class="member-role">Full-stack Developer</p>
-                                <p class="member-bio">Keen knowledge in React & cloud, working across different layers of the application.</p>
-                                <div class="member-social">
-                                    <a href="https://www.linkedin.com/in/kartik-guleria-b61602306?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
-                                    <a href="mailto:kartikguleria12@gmail.com"><i class="fas fa-envelope"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="team-member">
-                        <div class="member-avatar">
-                            <div class="member-photo circular-photo">
-                                <img src="../assets/images/OMDEV.jpeg" alt="Frontend Lead">
+                                <img src="../assets/images/miscellaneous/OMDEV.jpeg" alt="OM TRIPATHI" onerror="this.src='../assets/images/miscellaneous/saloni.jpeg'">
                             </div>
                             <div class="member-info">
                                 <h3 class="member-name">OM TRIPATHI</h3>
-                                <p class="member-role">Frontend Developer</p>
-                                <p class="member-bio">Translates designs into functional and responsive application interfaces.They are responsible for the user interface (UI) and user experience (UX),</p>
+                                <p class="member-role">Lead Frontend Architect & UI/UX Engineer</p>
+                                <p class="member-bio">Architect of the next-generation aesthetic, Framer Motion spring choreography, Three.js WebGL particle scene, and reactive component systems powering the Innovation JIIT portal.</p>
+                                <div class="lead-tech-stack" style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 25px;">
+                                    <span class="tech-pill">Frontend Architect</span>
+                                    <span class="tech-pill">Framer Motion</span>
+                                    <span class="tech-pill">Three.js</span>
+                                    <span class="tech-pill">UI/UX Systems</span>
+                                </div>
                                 <div class="member-social">
-                                    <a href="https://www.linkedin.com/in/om-tripathi-155b24380/"><i class="fab fa-linkedin"></i></a>
-                                    <a href="mailto:om22092006@gmail.com"><i class="fas fa-envelope"></i></a>
+                                    <a href="https://www.linkedin.com/in/om-tripathi-155b24380/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/_om_tripathi_007/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="mailto:om22092006@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+                    <!-- LEAD 2: SHIVAY AGARWAL -->
                     <div class="team-member">
                         <div class="member-avatar">
                             <div class="member-photo circular-photo">
-                                <img src="../assets/images/Shivay prsnl - Shivay Agarwal.jpg" alt="Backend Lead">
+                                <img src="../assets/images/miscellaneous/Shivay prsnl - Shivay Agarwal.jpg" alt="SHIVAY AGARWAL" onerror="this.src='../assets/images/innovate2025/shivayinnovate.png'">
                             </div>
                             <div class="member-info">
                                 <h3 class="member-name">SHIVAY AGARWAL</h3>
-                                <p class="member-role">Backend Developer</p>
-                                <p class="member-bio">Database and server-side architecture expert ensuring applications are scalable, secure, and performant.</p>
+                                <p class="member-role">Lead Backend Architect & Cloud Systems</p>
+                                <p class="member-bio">Engineered the server-side runtime, Supabase database integration, authentication pipelines, and high-throughput real-time data streams guaranteeing peak reliability for hackathon loads.</p>
+                                <div class="lead-tech-stack" style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 25px;">
+                                    <span class="tech-pill">Backend Architect</span>
+                                    <span class="tech-pill">Supabase Cloud</span>
+                                    <span class="tech-pill">PostgreSQL</span>
+                                    <span class="tech-pill">API Security</span>
+                                </div>
                                 <div class="member-social">
-                                    <a href="https://www.linkedin.com/in/shivay-agarwal-123178381?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"><i class="fab fa-linkedin"></i></a>
-                                    <a href="mailto:shivayagarwal08@gmail.com"><i class="fas fa-envelope"></i></a>
+                                    <a href="https://www.linkedin.com/in/shivay-agarwal-123178381" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/shivayagarwal_08/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="mailto:shivayagarwal08@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- LEAD 3: KARTIK GULERIA -->
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <div class="member-photo circular-photo">
+                                <img src="../assets/images/miscellaneous/kartikpic.jpg" alt="KARTIK GULERIA" onerror="this.src='../assets/images/teams/core- KARTIK GULERIA.png'">
+                            </div>
+                            <div class="member-info">
+                                <h3 class="member-name">KARTIK GULERIA</h3>
+                                <p class="member-role">Lead Full-Stack & Cloud Systems Engineer</p>
+                                <p class="member-bio">Full-stack system integrator linking dynamic client interfaces with scalable cloud services, driving technical consistency and high-performance infrastructure across web portals.</p>
+                                <div class="lead-tech-stack" style="display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 25px;">
+                                    <span class="tech-pill">Full-Stack Lead</span>
+                                    <span class="tech-pill">Cloud Deploy</span>
+                                    <span class="tech-pill">Microservices</span>
+                                    <span class="tech-pill">System Design</span>
+                                </div>
+                                <div class="member-social">
+                                    <a href="https://www.linkedin.com/in/kartik-guleria-b61602306/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                                    <a href="https://www.instagram.com/kartik._.097/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                    <a href="mailto:kartikguleria12@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
-            <!-- Additional Members Section -->
-            <div class="team-section">
-                
-                <div class="additional-members-grid">
-                    <div class="additional-member">
-                        <div class="additional-member-avatar">
-                            <div class="member-photo circular-photo">
-                                <img src="../assets/images/core - Lakshya Agrawal.jpg" alt="Team Member">
-                            </div>
-                        </div>
-                        <h3 class="additional-member-name">LAKSHAY AGARWAL</h3>
-                    </div>
-                    <div class="additional-member">
-                        <div class="additional-member-avatar">
-                            <div class="member-photo circular-photo">
-                                <img src="../assets/images/core- Aditya Gupta.jpg" alt="Team Member">
-                            </div>
-                        </div>
-                        <h3 class="additional-member-name">ADITYA GUPTA</h3>
-                    </div>
-                    <div class="additional-member">
-                        <div class="additional-member-avatar">
-                            <div class="member-photo circular-photo">
-                                <img src="../assets/images/core - Nalini Tiwari.jpeg" alt="Team Member">
-                            </div>
-                        </div>
-                        <h3 class="additional-member-name">NALINI TIWARI</h3>
-                    </div>
-                </div>
+
+            <!-- BACK BUTTON -->
+            <div class="back-button-container" style="margin-top: 50px; text-align: center;">
+                <a href="../index.html" class="sexy-back-button">
+                    <i class="fas fa-arrow-left"></i>
+                    <span>Back to Innovation Portal</span>
+                </a>
             </div>
         </div>
-        <!-- button-->
-        
-
+    </div>
 </body>
 </html>
