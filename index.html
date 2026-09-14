@@ -6,12 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Innovation - JIIT Noida</title>
     <link
-        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Montserrat:wght@300;400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <!-- Motion (Framer Motion Browser Engine) -->
-    <script src="https://cdn.jsdelivr.net/npm/motion@11.11.17/dist/motion.js"></script>
     <!-- Three.js for 3D effects -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <!-- Supabase Integration -->
@@ -19,9 +17,6 @@
 </head>
 
 <body>
-    <!-- Framer Motion Scroll Progress Indicator -->
-    <div id="scrollProgressBar" class="scroll-progress-bar"></div>
-
     <!-- Upcoming Events Popup Modal -->
     <!-- <div class="innovate-popup-modal" id="innovatePopupModal">
         <div class="innovate-popup-content" style="max-width: 600px;">
@@ -489,51 +484,19 @@
         <section id="home" class="hero">
             <div class="hero-3d-container" id="hero3dContainer">
                 <div class="hero-video-container">
-                    <video class="hero-video" autoplay muted loop playsinline preload="auto">
-                        <source src="https://cdn.dribbble.com/userupload/16335869/file/original-8410ddd85cabfc3943ecfbc1c9909ffd.mp4" type="video/mp4">
+                    <video class="hero-video" autoplay muted loop playsinline>
                         <!-- Fallback for browsers that don't support video -->
                         <div class="hero-fallback"></div>
                     </video>
                     <div class="carousel-overlay"></div>
-                    <div class="hero-cyber-grid"></div>
                 </div>
                 <div class="hero-3d-scene" id="hero3dScene"></div>
                 <div class="hero-content">
-                    <div class="hero-tech-badge">
-                        <span class="tech-badge-dot"></span>
-                        <span class="tech-badge-code">// HUB_INIT: ACTIVE</span>
-                        <span class="tech-badge-divider">|</span>
-                        <span class="tech-badge-text">RIDE INNOVATION JIIT</span>
-                    </div>
                     <div class="hero-title-container">
                         <h1 class="hero-title">Beyond Imagination</h1>
-                        <div class="hero-subtitle">
-                            <span class="subtitle-bracket">[</span>
-                            <span class="subtitle-text">Into Innovation</span>
-                            <span class="subtitle-bracket">]</span>
-                        </div>
+                        <div class="hero-subtitle">Into Innovation</div>
                     </div>
-                    <div class="hero-location-wrapper">
-                        <div class="hero-location">
-                            <span class="loc-radar-pulse"></span>
-                            <i class="fas fa-location-dot"></i>
-                            <a href="https://www.jiit.ac.in" target="_blank">JIIT NOIDA</a>
-                        </div>
-                    </div>
-                    <div class="hero-cta-group">
-                        <a href="#about" class="hero-tech-btn primary" data-page="about">
-                            <span class="btn-text">EXPLORE </span>
-                            <i class="fas fa-arrow-right"></i>
-                            <span class="btn-corner-tl"></span>
-                            <span class="btn-corner-br"></span>
-                        </a>
-                        <a href="#events" class="hero-tech-btn secondary" data-page="events">
-                            <span class="btn-text">VIEW EVENTS</span>
-                            <i class="fas fa-bolt"></i>
-                            <span class="btn-corner-tl"></span>
-                            <span class="btn-corner-br"></span>
-                        </a>
-                    </div>
+                    <p class="hero-location"><a href="https://www.jiit.ac.in" target="_blank">JIIT NOIDA</a></p>
                 </div>
             </div>
 
@@ -615,132 +578,24 @@
                         </div>
                     </div>
                 </div>
-                <div class="about-visual" id="aboutVisual">
-                    <!-- 3D Perspective Stage -->
-                    <div class="cube-stage">
-                        <!-- Floor Radar Pedestal & Glow Reflection -->
-                        <div class="cube-pedestal-grid"></div>
-                        <div class="cube-shadow-glow"></div>
-
-                        <!-- 3D Gyroscopic Rings -->
-                        <div class="cube-gyro-ring ring-1"></div>
-                        <div class="cube-gyro-ring ring-2"></div>
-
-                        <!-- Main 3D Glossy Cube -->
-                        <div class="about-cube" id="aboutCube">
-                            <!-- Inner Glowing Tech Nucleus -->
-                            <div class="cube-inner-core"></div>
-
-                            <!-- Face 1: Front (Innovation) -->
-                            <div class="cube-face face-front">
-                                <div class="glass-sheen"></div>
-                                <div class="face-corner tl"></div>
-                                <div class="face-corner br"></div>
-                                <div class="face-content">
-                                    <div class="face-icon"><i class="fas fa-lightbulb"></i></div>
-                                    <span class="face-title">INNOVATION</span>
-                                    <span class="face-tag">// CORE_ENGINE</span>
-                                </div>
-                            </div>
-
-                            <!-- Face 2: Right (Technology) -->
-                            <div class="cube-face face-right">
-                                <div class="glass-sheen"></div>
-                                <div class="face-corner tl"></div>
-                                <div class="face-corner br"></div>
-                                <div class="face-content">
-                                    <div class="face-icon"><i class="fas fa-microchip"></i></div>
-                                    <span class="face-title">TECHNOLOGY</span>
-                                    <span class="face-tag">// ARCHITECTURE</span>
-                                </div>
-                            </div>
-
-                            <!-- Face 3: Back (Future) -->
-                            <div class="cube-face face-back">
-                                <div class="glass-sheen"></div>
-                                <div class="face-corner tl"></div>
-                                <div class="face-corner br"></div>
-                                <div class="face-content">
-                                    <div class="face-icon"><i class="fas fa-rocket"></i></div>
-                                    <span class="face-title">FUTURE</span>
-                                    <span class="face-tag">// VELOCITY_X</span>
-                                </div>
-                            </div>
-
-                            <!-- Face 4: Left (Sport Energy) -->
-                            <div class="cube-face face-left">
-                                <div class="glass-sheen"></div>
-                                <div class="face-corner tl"></div>
-                                <div class="face-corner br"></div>
-                                <div class="face-content">
-                                    <div class="face-icon"><i class="fas fa-fire"></i></div>
-                                    <span class="face-title">PASSION</span>
-                                    <span class="face-tag">// SPORT_ENERGY</span>
-                                </div>
-                            </div>
-
-                            <!-- Face 5: Top (Research) -->
-                            <div class="cube-face face-top">
-                                <div class="glass-sheen"></div>
-                                <div class="face-corner tl"></div>
-                                <div class="face-corner br"></div>
-                                <div class="face-content">
-                                    <div class="face-icon"><i class="fas fa-atom"></i></div>
-                                    <span class="face-title">RESEARCH</span>
-                                    <span class="face-tag">// QUANTUM_LAB</span>
-                                </div>
-                            </div>
-
-                            <!-- Face 6: Bottom (Vision) -->
-                            <div class="cube-face face-bottom">
-                                <div class="glass-sheen"></div>
-                                <div class="face-corner tl"></div>
-                                <div class="face-corner br"></div>
-                                <div class="face-content">
-                                    <div class="face-icon"><i class="fas fa-compass"></i></div>
-                                    <span class="face-title">VISION</span>
-                                    <span class="face-tag">// EXPEDITION</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- 3D Orbiting Glossy Companion Shards (Aligned with website) -->
-                        <div class="floating-satellite sat-1" data-depth="1.4">
-                            <div class="sat-inner sat-fire">
-                                <i class="fas fa-bolt"></i>
-                                <span>SPEED</span>
-                            </div>
-                        </div>
-                        <div class="floating-satellite sat-2" data-depth="0.9">
-                            <div class="sat-inner sat-purple">
-                                <i class="fas fa-brain"></i>
-                                <span>AI LAB</span>
-                            </div>
-                        </div>
-                        <div class="floating-satellite sat-3" data-depth="1.2">
-                            <div class="sat-inner sat-cyan">
-                                <i class="fas fa-cube"></i>
-                                <span>WEB 3</span>
-                            </div>
-                        </div>
+                <div class="about-visual">
+                    <div class="about-cube" id="aboutCube">
+                        <div class="cube-face">Innovation</div>
+                        <div class="cube-face">Technology</div>
+                        <div class="cube-face">Future</div>
+                        <div class="cube-face">Growth</div>
+                        <div class="cube-face">Success</div>
+                        <div class="cube-face">Vision</div>
                     </div>
-
-                    <!-- Ambient Glowing Particles -->
                     <div class="about-particles">
-                        <div class="particle p-fire"></div>
-                        <div class="particle p-purple"></div>
-                        <div class="particle p-cyan"></div>
-                        <div class="particle p-orange"></div>
-                        <div class="particle p-fire"></div>
-                        <div class="particle p-purple"></div>
-                        <div class="particle p-cyan"></div>
-                        <div class="particle p-orange"></div>
-                    </div>
-
-                    <!-- Interactive Drag/Hover Badge -->
-                    <div class="cube-interactive-hint">
-                        <i class="fas fa-arrows-up-down-left-right"></i>
-                        <span>INTERACTIVE 3D &bull; DRAG OR HOVER</span>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
+                        <div class="particle"></div>
                     </div>
                 </div>
             </div>
@@ -1889,57 +1744,52 @@
 
 
 <!-------------------------------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------------    <!-- Team Page (Redesigned with Techie Nerve Wire Connections) -->
+<!-------------------------------------------------------------------------------------------------------->
+
+
+    <!-- Team Page -->
     <div id="teamPage" class="team-page">
         <div class="team-hero">
             <div class="team-hero-content">
-                <div class="team-tech-kicker">
-                    <span class="tech-kicker-dot"></span>
-                    
-                </div>
                 <h1 class="team-hero-title">Meet Our Team</h1>
-                <p class="team-hero-subtitle">The human neural network powering Innovation JIIT</p>
+                <p class="team-hero-subtitle">The minds behind the innovation</p>
             </div>
         </div>
 
-        <div class="team-container team-nerve-network">
-
-            <!-- LEVEL 1: Faculty Coordinators (Upper Node) -->
-            <div class="nerve-tier tier-faculty">
-                <div class="tier-header-badge">
-                    <span class="tier-level-code"></span>
-                    <span class="tier-title">FACULTY COORDINATORS</span>
-                </div>
-                <div class="nerve-node-grid tier-faculty-grid">
-                    <!-- Faculty 1 -->
+        <div class="team-container">
+            <!-- Faculty Coordinator Section -->
+            <div class="team-section">
+                <h2 class="team-section-title">Faculty Coordinators</h2>
+                <div class="team-grid">
                     <div class="team-member">
                         <div class="member-avatar">
                             <div class="member-photo circular-photo">
-                                <img src="assets/images/gallery/WhatsApp Image 2025-08-23 at 12.27.50.jpeg" alt="Dr. Mukesh Saraswat">
+                                <img src="assets\images\gallery\WhatsApp Image 2025-08-23 at 12.27.50.jpeg" alt="Faculty Coordinator">
                             </div>
                             <div class="member-info">
-                                <h3 class="member-name">Dr. Mukesh Saraswat</h3>
+                                <h3 class="member-name">Mukesh Saraswat</h3>
                                 <p class="member-role">Faculty Coordinator</p>
-                                <p class="member-bio">Leading the Innovation ecosystem with 24+ years of expertise in technology and entrepreneurship mentorship.</p>
+                                <p class="member-bio">Leading the Innovation with 24+ years of experience in technology
+                                    and entrepreneurship education.</p>
                                 <div class="member-social">
-                                    <a href="mailto:mukesh.saraswat@mail.jiit.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="mailto:mukesh.saraswat@mail.jiit.ac.in"><i class="fas fa-envelope"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Faculty 2 -->
                     <div class="team-member">
                         <div class="member-avatar">
                             <div class="member-photo circular-photo">
-                                <img src="assets/images/gallery/DSC_0360-1-2.jpg" alt="Dr. Akanksha Mehendiratta">
+                                <img src="assets\images\gallery\DSC_0360-1-2.jpg" alt="Faculty Coordinator">
                             </div>
                             <div class="member-info">
-                                <h3 class="member-name">Dr. Akanksha Mehendiratta</h3>
+                                <h3 class="member-name">Akanksha Mehendiratta</h3>
                                 <p class="member-role">Faculty Coordinator</p>
-                                <p class="member-bio">Bringing deep expertise in research incubation and student mentorship to foster entrepreneurial breakthroughs.</p>
+                                <p class="member-bio">Bringing expertise in innovation management and student mentorship
+                                    to foster entrepreneurial growth.</p>
                                 <div class="member-social">
-                                    <a href="mailto:akanksha.mehndiratta@mail.jiit.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="mailto:akanksha.mehndiratta@mail.jilt.ac.in"><i
+                                            class="fas fa-envelope"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1947,66 +1797,42 @@
                 </div>
             </div>
 
-            <!-- NERVE WIRE CONDUIT 1: Faculty -> Leadership -->
-            <div class="nerve-conduit">
-                <svg class="nerve-svg" viewBox="0 0 800 130" preserveAspectRatio="none" fill="none">
-                    <!-- Static Wire Traces -->
-                    <path class="nerve-path-trace" d="M 230 0 C 230 65, 400 35, 400 65" />
-                    <path class="nerve-path-trace" d="M 570 0 C 570 65, 400 35, 400 65" />
-                    <path class="nerve-path-trace" d="M 400 65 L 400 130" />
-                    <path class="nerve-path-trace" d="M 400 65 C 400 95, 230 75, 230 130" />
-                    <path class="nerve-path-trace" d="M 400 65 C 400 95, 570 75, 570 130" />
-
-                    <!-- Animated Moving Nerve Pulses -->
-                    <path class="nerve-path-pulse pulse-fast" d="M 230 0 C 230 65, 400 35, 400 65" />
-                    <path class="nerve-path-pulse pulse-fast" d="M 570 0 C 570 65, 400 35, 400 65" />
-                    <path class="nerve-path-pulse pulse-down" d="M 400 65 C 400 95, 230 75, 230 130" />
-                    <path class="nerve-path-pulse pulse-down" d="M 400 65 C 400 95, 570 75, 570 130" />
-
-                    <!-- Central Synaptic Junction Hub -->
-                    <circle cx="400" cy="65" r="7" class="nerve-hub-core" />
-                    <circle cx="400" cy="65" r="14" class="nerve-hub-pulse-ring" />
-                </svg>
-            </div>
-
-            <!-- LEVEL 2: Leadership Team (Middle Node) -->
-            <div class="nerve-tier tier-leadership">
-                <div class="tier-header-badge">
-                    <span class="tier-level-code"></span>
-                    <span class="tier-title">LEADERSHIP TEAM</span>
-                </div>
-                <div class="nerve-node-grid tier-leadership-grid">
-                    <!-- Leader 1 -->
+            <!-- Leadership Team Section -->
+            <div class="team-section">
+                <h2 class="team-section-title">Leadership Team</h2>
+                <div class="team-grid">
                     <div class="team-member">
                         <div class="member-avatar">
                             <div class="member-photo circular-photo">
-                                <img src="assets/images/miscellaneous/yash.jpeg" alt="Yash Aggarwal">
+                                <img src="assets\images\miscellaneous\yash.jpeg" alt="Team Member">
                             </div>
                             <div class="member-info">
-                                <h3 class="member-name">Yash Aggarwal</h3>
-                                <p class="member-role">Head of Innovation Club</p>
-                                <p class="member-bio">Leading with creativity, cross-department collaboration, and a relentless drive to turn bold ideas into impactful reality.</p>
+                                <h3 class="member-name">𝐘𝐀𝐒𝐇 𝐀𝐆𝐆𝐀𝐑𝐖𝐀𝐋</h3>
+                                <p class="member-role">Head of the Innovation Club</p>
+                                <p class="member-bio">Leading with creativity, collaboration, and a drive to turn bold
+                                    ideas into real impact.</p>
                                 <div class="member-social">
-                                    <a href="https://www.instagram.com/_.yash.aggarwal._/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
-                                    <a href="mailto:9922102055@mail.jiit.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="https://www.instagram.com/_.yash.aggarwal._/"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="mailto:9922102055@mail.jiit.ac.in"><i class="fas fa-envelope"></i></a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Leader 2 -->
                     <div class="team-member">
                         <div class="member-avatar">
                             <div class="member-photo circular-photo">
-                                <img src="assets/images/miscellaneous/saloni.jpeg" alt="Saloni Singhal">
+                                <img src="assets\images\miscellaneous\saloni.jpeg" alt="Team Member">
                             </div>
                             <div class="member-info">
-                                <h3 class="member-name">Saloni Singhal</h3>
-                                <p class="member-role">Coordinator of Innovation Club</p>
-                                <p class="member-bio">The bridge between conceptual ideas and operational execution, driving teamwork, precision, and organizational impact.</p>
+                                <h3 class="member-name">SALONI SINGHAL</h3>
+                                <p class="member-role">Coordinator of the Innovation Club</p>
+                                <p class="member-bio">The bridge between ideas and execution, driving teamwork,
+                                    precision, and creative impact."</p>
                                 <div class="member-social">
-                                    <a href="https://www.instagram.com/saloniisinghal._/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
-                                    <a href="mailto:992509220005@mail.jiit.ac.in" title="Email"><i class="fas fa-envelope"></i></a>
+                                    <a href="https://www.instagram.com/saloniisinghal._/"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="mailto:992509220005@mail.jiit.ac.in"><i class="fas fa-envelope"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -2014,80 +1840,179 @@
                 </div>
             </div>
 
-            <!-- NERVE WIRE CONDUIT 2: Leadership -> Department Teams -->
-            <div class="nerve-conduit">
-                <svg class="nerve-svg" viewBox="0 0 800 130" preserveAspectRatio="none" fill="none">
-                    <!-- Branching Trace Wires -->
-                    <path class="nerve-path-trace" d="M 230 0 C 230 50, 400 20, 400 45" />
-                    <path class="nerve-path-trace" d="M 570 0 C 570 50, 400 20, 400 45" />
-                    <path class="nerve-path-trace" d="M 400 45 C 400 80, 100 65, 100 130" />
-                    <path class="nerve-path-trace" d="M 400 45 C 400 80, 300 65, 300 130" />
-                    <path class="nerve-path-trace" d="M 400 45 C 400 80, 500 65, 500 130" />
-                    <path class="nerve-path-trace" d="M 400 45 C 400 80, 700 65, 700 130" />
-
-                    <!-- Animated Moving Pulses -->
-                    <path class="nerve-path-pulse pulse-fast" d="M 230 0 C 230 50, 400 20, 400 45" />
-                    <path class="nerve-path-pulse pulse-fast" d="M 570 0 C 570 50, 400 20, 400 45" />
-                    <path class="nerve-path-pulse pulse-delay-1" d="M 400 45 C 400 80, 100 65, 100 130" />
-                    <path class="nerve-path-pulse pulse-delay-2" d="M 400 45 C 400 80, 300 65, 300 130" />
-                    <path class="nerve-path-pulse pulse-delay-3" d="M 400 45 C 400 80, 500 65, 500 130" />
-                    <path class="nerve-path-pulse pulse-delay-4" d="M 400 45 C 400 80, 700 65, 700 130" />
-
-                    <!-- Synaptic hub -->
-                    <circle cx="400" cy="45" r="7" class="nerve-hub-core" />
-                    <circle cx="400" cy="45" r="14" class="nerve-hub-pulse-ring" />
-                </svg>
-            </div>
-
-            <!-- LEVEL 3: Show ONLY View Department Teams -->
-            <div class="nerve-tier tier-departments">
-                <div class="tier-header-badge">
-                    <span class="tier-level-code"></span>
-                    <span class="tier-title">DEPARTMENT TEAMS GATEWAY</span>
-                </div>
-                <div class="department-teams-grid">
-                    <!-- 1. Web Development Team -->
-                    <div class="department-team-card">
+            <!-- Department Teams Section -->
+            <div class="team-section">
+                <h2 class="team-section-title">Department Teams</h2>
+                <div class="department-teams">
+                    <div class="department-team-card" id="webDevTeamCard">
                         <div class="department-team-icon">
                             <i class="fas fa-code"></i>
                         </div>
-                        <h3 class="department-team-title">Web Development</h3>
-                        <p class="department-team-description">Passionate developers building digital experiences and innovative web solutions for our community.</p>
-                        <a href="pages/cdevelopments.html" class="department-team-btn">View Team</a>
+                        <div>
+                            <h3 class="department-team-title">Web Development Team</h3>
+                            <p class="department-team-description">Creating digital experiences that power our
+                                innovation ecosystem</p>
+                            <a href="pages/cdevelopments.html"><button class="department-team-btn">View Team</button>
+                        </div></a>
                     </div>
 
-                    <!-- 2. Design Team -->
-                    <div class="department-team-card">
+                    <div class="department-team-card" id="contentTeamCard">
                         <div class="department-team-icon">
-                            <i class="fas fa-paint-brush"></i>
+                            <i class="fas fa-pen-fancy"></i>
                         </div>
-                        <h3 class="department-team-title">Design</h3>
-                        <p class="department-team-description">Creative minds shaping visual identity and user interfaces for innovation initiatives.</p>
-                        <a href="pages/cdesign.html" class="department-team-btn">View Team</a>
+                        <h3 class="department-team-title">Design Team</h3>
+                        <p class="department-team-description">Crafting compelling narratives that communicate our
+                            vision</p>
+                        <a href="pages/cdesign.html"><button class="department-team-btn">View Team</button></a>
                     </div>
-
-                    <!-- 3. Management Team -->
-                    <div class="department-team-card">
+                    <div class="department-team-card" id="webDevTeamCard">
                         <div class="department-team-icon">
-                            <i class="fas fa-tasks"></i>
+                            <i class="fas fa-code"></i>
                         </div>
-                        <h3 class="department-team-title">Management</h3>
-                        <p class="department-team-description">Strategic organizers ensuring seamless operations and successful event executions.</p>
-                        <a href="pages/cmanagement.html" class="department-team-btn">View Team</a>
+                        <h3 class="department-team-title">Management Team</h3>
+                        <p class="department-team-description">Creating digital experiences that power our innovation
+                            ecosystem</p>
+                        <a href="pages/cmanagement.html"><button class="department-team-btn">View Team</button></a>
                     </div>
+                </div><br><br>
 
-                    <!-- 4. Social Team -->
-                    <div class="department-team-card">
-                        <div class="department-team-icon">
-                            <i class="fas fa-bullhorn"></i>
+                <div class="department-team-card" id="contentTeamCard">
+                    <div class="department-team-icon">
+                        <i class="fas fa-pen-fancy"></i>
+                    </div>
+                    <h3 class="department-team-title">Social Team</h3>
+                    <p class="department-team-description">Crafting compelling narratives that communicate our vision
+                    </p>
+                    <a href="pages/csocial.html"><button class="department-team-btn">View Team</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Web Development Team Page -->
+    <div id="webDevTeamPage" class="team-page">
+        <div class="team-hero">
+            <div class="team-hero-content">
+                <h1 class="team-hero-title">Web Development Team</h1>
+                <p class="team-hero-subtitle">Building digital solutions for innovation</p>
+            </div>
+        </div>
+
+        <div class="team-container">
+            <div class="team-intro">
+                <h2 class="team-intro-title">Our Web Development Team</h2>
+                <p class="team-intro-text">
+                    Our Web Development Team is responsible for creating and maintaining all digital platforms for the
+                    Innovation Club.
+                    From our official website to event registration systems, they ensure our digital presence is
+                    cutting-edge,
+                    user-friendly, and secure. With expertise in modern web technologies, they bring our innovation
+                    vision to life online.
+                </p>
+            </div>
+
+            <div class="team-section">
+                <h2 class="team-section-title">Team Members</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <div class="member-photo circular-photo">
+                                <img src="assets/images/kartikpic.jpg" alt="Web Developer">
+                            </div>
+                            <div class="member-info">
+                                <h3 class="member-name">KARTIK GULERIA</h3>
+                                <p class="member-role">Lead Web Developer</p>
+                                <p class="member-bio">Full-stack developer with React & cloud expertise, building
+                                    scalable products and startup-ready solutions.</p>
+                                <div class="member-social">
+                                    <a href="https://www.instagram.com/kartik._.097/"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="https://www.linkedin.com/in/kartik-guleria-b61602306/"><i
+                                            class="fab fa-linkedin"></i></a>
+                                    <a href="mailto:kartikguleria12@gmail.com"><i class="fas fa-envelope"></i></a>
+                                </div>
+                            </div>
                         </div>
-                        <h3 class="department-team-title">Social Media</h3>
-                        <p class="department-team-description">Voice of innovation engaging our community through dynamic digital channels.</p>
-                        <a href="pages/csocial.html" class="department-team-btn">View Team</a>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <div class="member-photo circular-photo">
+                                <img src="assets/images/WhatsApp Image 2025-08-26 at 18.51.00.jpeg" alt="Web Developer">
+                            </div>
+                            <div class="member-info">
+                                <h3 class="member-name">Om Tripathi</h3>
+                                <p class="member-role">Frontend Developer</p>
+                                <p class="member-bio">Frontend developer with a keen eye for design, turning complex
+                                    requirements into intuitive and engaging interfaces.</p>
+                                <div class="member-social">
+                                    <a href="https://www.instagram.com/_om_tripathi_007/"><i
+                                            class="fab fa-instagram"></i></a>
+                                    <a href="https://www.linkedin.com/in/om-tripathi-155b24380/"><i
+                                            class="fab fa-linkedin"></i></a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="team-member">
+                        <div class="member-avatar">
+                            <div class="member-photo circular-photo">
+                                <img src="assets/images/WhatsApp Image 2025-08-26 at 18.54.28.jpeg" alt="Web Developer">
+                            </div>
+                            <div class="member-info">
+                                <h3 class="member-name">Shivay Agarwal</h3>
+                                <p class="member-role">Backend Developer</p>
+                                <p class="member-bio">Database and server-side architecture expert. Ensures our
+                                    applications are scalable, secure, and performant.</p>
+                                <div class="member-social">
+
+                                    <a href="https://www.instagram.com/shivayagarwal_08/"><i
+                                            class="fab fa-instagram"></i></a>
+
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <div class="team-projects">
+                <h2 class="team-section-title">Our Projects</h2>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3 class="project-title">Innovation Club Website</h3>
+                        <p class="project-description">Official website showcasing our events, team, and innovation
+                            initiatives.</p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-calendar-check"></i>
+                        </div>
+                        <h3 class="project-title">Event Registration System</h3>
+                        <p class="project-description">Seamless registration platform for all our events and workshops.
+                        </p>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3 class="project-title">Hackathon Portal</h3>
+                        <p class="project-description">Comprehensive platform for managing our flagship hackathon
+                            events.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="back-button-container">
+            <a href="#" id="backToTeamFromWebDev" class="sexy-back-button">
+                <i class="fas fa-arrow-left"></i>
+                <span>Back to Team</span>
+            </a>
         </div>
     </div>
 

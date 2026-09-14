@@ -169,156 +169,111 @@ document.addEventListener('DOMContentLoaded', () => {
         init3DBanner();
     }
     
-    // =========================================================================
-    // Enhanced 3D Glossy Cube Engine: Drag-to-Rotate, Hover Tilt & Parallax
-    // =========================================================================
+    // Enhanced Dynamic cube that follows cursor
     const aboutCube = document.getElementById('aboutCube');
-    const aboutVisual = document.getElementById('aboutVisual') || document.querySelector('.about-visual');
-    const satellites = document.querySelectorAll('.floating-satellite');
+    const aboutVisual = document.querySelector('.about-visual');
     
-    if (aboutCube && aboutVisual) {
-        let isDragging = false;
-        let isHovered = false;
-        let prevMouseX = 0;
-        let prevMouseY = 0;
-        let rotX = -18;
-        let rotY = 25;
-        let targetRotX = -18;
-        let targetRotY = 25;
-        let velX = 0;
-        let velY = 0;
-        let autoTumbleX = 0.003;
-        let autoTumbleY = 0.005;
-
-        // Mouse Move on Section: Parallax, Tilt & Specular Sheen
-        const onMouseMove = (e) => {
-            const rect = aboutVisual.getBoundingClientRect();
-            const relX = (e.clientX - rect.left) / rect.width;
-            const relY = (e.clientY - rect.top) / rect.height;
-
-            // Update dynamic specular glass sheen
-            const sheenPercentX = Math.round(Math.max(0, Math.min(100, relX * 100)));
-            const sheenPercentY = Math.round(Math.max(0, Math.min(100, relY * 100)));
-            aboutCube.style.setProperty('--sheen-x', `${sheenPercentX}%`);
-            aboutCube.style.setProperty('--sheen-y', `${sheenPercentY}%`);
-
-            // 3D Parallax on Companion Satellite Shards
-            const normX = (relX - 0.5) * 2;
-            const normY = (relY - 0.5) * 2;
-            satellites.forEach(sat => {
-                const depth = parseFloat(sat.getAttribute('data-depth')) || 1.0;
-                const shiftX = normX * 22 * depth;
-                const shiftY = normY * 20 * depth;
-                const baseZ = sat.classList.contains('sat-1') ? 90 : (sat.classList.contains('sat-2') ? 70 : 100);
-                sat.style.transform = `translate3d(${shiftX}px, ${shiftY}px, ${baseZ}px)`;
-            });
-
-            if (isDragging) {
-                const deltaX = e.clientX - prevMouseX;
-                const deltaY = e.clientY - prevMouseY;
-                targetRotY += deltaX * 0.5;
-                targetRotX -= deltaY * 0.5;
-                velY = deltaX * 0.5;
-                velX = -deltaY * 0.5;
-                prevMouseX = e.clientX;
-                prevMouseY = e.clientY;
-            } else if (isHovered) {
-                // Interactive hover spring tilt
-                targetRotX = -15 + (-normY * 24);
-                targetRotY = 25 + (normX * 28);
+    // Variables for cube auto-rotation
+    let isAutoRotating = true;
+    let autoRotateX = 0;
+    let autoRotateY = 0;
+    let mouseX = 0;
+    let mouseY = 0;
+    let targetX = 0;
+    let targetY = 0;
+    
+    // Auto-rotation function
+    function autoRotateCube() {
+        if (isAutoRotating) {
+            autoRotateX += 0.005;
+            autoRotateY += 0.005;
+            if (aboutCube) {
+                aboutCube.style.transform = `rotateX(${autoRotateX * 30}deg) rotateY(${autoRotateY * 30}deg)`;
             }
-        };
-
-        // Pointer Down: Start Free 360° Drag
-        aboutVisual.addEventListener('pointerdown', (e) => {
-            isDragging = true;
-            aboutVisual.setPointerCapture(e.pointerId);
-            prevMouseX = e.clientX;
-            prevMouseY = e.clientY;
-            velX = 0;
-            velY = 0;
-        });
-
-        // Pointer Up: Release Drag with Inertia
-        aboutVisual.addEventListener('pointerup', (e) => {
-            isDragging = false;
-            try { aboutVisual.releasePointerCapture(e.pointerId); } catch(err) {}
-        });
-
-        aboutVisual.addEventListener('pointercancel', () => {
-            isDragging = false;
-        });
-
-        aboutVisual.addEventListener('pointerenter', () => {
-            isHovered = true;
-        });
-
-        aboutVisual.addEventListener('pointerleave', () => {
-            isHovered = false;
-            isDragging = false;
-        });
-
-        window.addEventListener('pointermove', onMouseMove);
-
-        // Touch drag fallback for mobile
-        aboutVisual.addEventListener('touchstart', (e) => {
-            if (e.touches.length === 1) {
-                isDragging = true;
-                prevMouseX = e.touches[0].clientX;
-                prevMouseY = e.touches[0].clientY;
-            }
-        }, { passive: true });
-
-        aboutVisual.addEventListener('touchmove', (e) => {
-            if (isDragging && e.touches.length === 1) {
-                const deltaX = e.touches[0].clientX - prevMouseX;
-                const deltaY = e.touches[0].clientY - prevMouseY;
-                targetRotY += deltaX * 0.6;
-                targetRotX -= deltaY * 0.6;
-                velY = deltaX * 0.6;
-                velX = -deltaY * 0.6;
-                prevMouseX = e.touches[0].clientX;
-                prevMouseY = e.touches[0].clientY;
-            }
-        }, { passive: true });
-
-        aboutVisual.addEventListener('touchend', () => {
-            isDragging = false;
-        }, { passive: true });
-
-        // Physics Animation Loop (Lerp + Inertia + Auto-Tumble)
-        function updateCubePhysics() {
-            if (!isDragging && !isHovered) {
-                // Apply remaining spin velocity with smooth damping
-                if (Math.abs(velX) > 0.05 || Math.abs(velY) > 0.05) {
-                    targetRotX += velX;
-                    targetRotY += velY;
-                    velX *= 0.92;
-                    velY *= 0.92;
-                } else {
-                    // Gentle auto-tumble in 3D
-                    targetRotX += Math.sin(autoTumbleX) * 0.35;
-                    targetRotY += 0.45;
-                    autoTumbleX += 0.015;
-                }
-            } else if (!isDragging && isHovered) {
-                // Decay release inertia while hovering
-                velX *= 0.85;
-                velY *= 0.85;
-                targetRotX += velX;
-                targetRotY += velY;
-            }
-
-            // Smooth Interpolation (Lerp)
-            rotX += (targetRotX - rotX) * 0.09;
-            rotY += (targetRotY - rotY) * 0.09;
-
-            aboutCube.style.transform = `rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg)`;
-
-            requestAnimationFrame(updateCubePhysics);
         }
-
-        requestAnimationFrame(updateCubePhysics);
+        requestAnimationFrame(autoRotateCube);
+    }
+    
+    // Start auto-rotation
+    if (aboutCube) {
+        autoRotateCube();
+    }
+    
+    // Add mouse move event listener to the about visual section
+    if (aboutVisual) {
+        aboutVisual.addEventListener('mousemove', (e) => {
+            isAutoRotating = false;
+            
+            // Get the position of the about visual element
+            const rect = aboutVisual.getBoundingClientRect();
+            
+            // Calculate the center of the about visual element
+            const centerX = rect.left + rect.width / 2;
+            const centerY = rect.top + rect.height / 2;
+            
+            // Calculate the mouse position relative to the center
+            mouseX = (e.clientX - centerX) / (rect.width / 2);
+            mouseY = (e.clientY - centerY) / (rect.height / 2);
+            
+            // Smooth transition to target rotation
+            targetX = mouseY * 30; // Max rotation of 30 degrees
+            targetY = mouseX * 30; // Max rotation of 30 degrees
+            
+            // Apply the rotation to the cube
+            if (aboutCube) {
+                aboutCube.style.transform = `rotateX(${targetX}deg) rotateY(${targetY}deg)`;
+            }
+        });
+        
+        // Reset cube rotation when mouse leaves the about visual section
+        aboutVisual.addEventListener('mouseleave', () => {
+            isAutoRotating = true;
+            // Reset auto-rotation values to current position for smooth transition
+            autoRotateX = targetX / 30;
+            autoRotateY = targetY / 30;
+        });
+    }
+    
+    // Touch events for mobile
+    let touchStartX = 0;
+    let touchStartY = 0;
+    
+    if (aboutVisual) {
+        aboutVisual.addEventListener('touchstart', (e) => {
+            isAutoRotating = false;
+            touchStartX = e.touches[0].clientX;
+            touchStartY = e.touches[0].clientY;
+        });
+        
+        aboutVisual.addEventListener('touchmove', (e) => {
+            if (!isAutoRotating) {
+                const rect = aboutVisual.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                
+                const touchX = e.touches[0].clientX;
+                const touchY = e.touches[0].clientY;
+                
+                // Calculate the touch position relative to the center
+                const touchDiffX = (touchX - centerX) / (rect.width / 2);
+                const touchDiffY = (touchY - centerY) / (rect.height / 2);
+                
+                // Apply the rotation to the cube
+                targetX = touchDiffY * 30; // Max rotation of 30 degrees
+                targetY = touchDiffX * 30; // Max rotation of 30 degrees
+                
+                if (aboutCube) {
+                    aboutCube.style.transform = `rotateX(${targetX}deg) rotateY(${targetY}deg)`;
+                }
+            }
+        });
+        
+        aboutVisual.addEventListener('touchend', () => {
+            isAutoRotating = true;
+            // Reset auto-rotation values to current position for smooth transition
+            autoRotateX = targetX / 30;
+            autoRotateY = targetY / 30;
+        });
     }
     
     // Enhanced Mobile menu toggle
@@ -1166,15 +1121,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // Department team buttons - Web Development navigates directly to pages/cdevelopments.html
-    // Only intercept if an element explicitly has data-internal-webdev
-    const internalWebDevOnly = document.querySelectorAll('[data-internal-webdev]');
-    internalWebDevOnly.forEach(btn => {
-        btn.addEventListener('click', (e) => {
+    // Department team buttons
+    if (webDevTeamBtn) {
+        webDevTeamBtn.addEventListener('click', (e) => {
             e.preventDefault();
             showWebDevTeamPage();
         });
-    });
+    }
     
     if (contentTeamBtn) {
         contentTeamBtn.addEventListener('click', (e) => {
@@ -1801,204 +1754,7 @@ document.addEventListener('DOMContentLoaded', function () {
             closeSIHPopup();
         }
     });
-
-    // =========================================================================
-    // Framer Motion (Motion Engine) Full-Website Integration
-    // =========================================================================
-    function initFramerMotionWebsite() {
-        const Motion = window.Motion;
-        const hasMotion = !!(Motion && typeof Motion.animate === 'function');
-
-        // 1. Framer Motion Scroll Progress Indicator
-        const progressBar = document.getElementById('scrollProgressBar');
-        if (progressBar) {
-            if (hasMotion && typeof Motion.scroll === 'function') {
-                try {
-                    Motion.scroll(
-                        Motion.animate(progressBar, { scaleX: [0, 1] }, { ease: 'linear' })
-                    );
-                } catch (err) {
-                    console.warn('Motion scroll indicator fallback:', err);
-                }
-            } else {
-                window.addEventListener('scroll', () => {
-                    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
-                    const progress = scrollHeight > 0 ? window.scrollY / scrollHeight : 0;
-                    progressBar.style.transform = `scaleX(${progress})`;
-                }, { passive: true });
-            }
-        }
-
-        // 2. Hero Section Spring-Loaded Staggered Reveal
-        function triggerHeroMotion() {
-            const heroBadge = document.querySelector('.hero-tech-badge');
-            const heroTitle = document.querySelector('.hero-title');
-            const heroSubtitle = document.querySelector('.hero-subtitle');
-            const heroLocation = document.querySelector('.hero-location');
-            const heroBtns = document.querySelectorAll('.hero-tech-btn');
-            const floatingIcons = document.querySelectorAll('.floating-element');
-
-            if (hasMotion) {
-                // Spring reveal for HUD badge
-                if (heroBadge) {
-                    Motion.animate(
-                        heroBadge,
-                        { opacity: [0, 1], y: [-30, 0] },
-                        { duration: 0.9, easing: [0.16, 1, 0.3, 1] }
-                    );
-                }
-
-                // Spring reveal for Title
-                if (heroTitle) {
-                    Motion.animate(
-                        heroTitle,
-                        { opacity: [0, 1], y: [45, 0], scale: [0.94, 1] },
-                        { duration: 1.1, delay: 0.15, easing: [0.16, 1, 0.3, 1] }
-                    );
-                }
-
-                // Spring reveal for Subtitle
-                if (heroSubtitle) {
-                    Motion.animate(
-                        heroSubtitle,
-                        { opacity: [0, 1], y: [30, 0] },
-                        { duration: 1.0, delay: 0.3, easing: [0.16, 1, 0.3, 1] }
-                    );
-                }
-
-                // Spring reveal for Location badge
-                if (heroLocation) {
-                    Motion.animate(
-                        heroLocation,
-                        { opacity: [0, 1], y: [25, 0] },
-                        { duration: 0.9, delay: 0.45, easing: [0.16, 1, 0.3, 1] }
-                    );
-                }
-
-                // Spring stagger for Hero Action Buttons
-                heroBtns.forEach((btn, idx) => {
-                    Motion.animate(
-                        btn,
-                        { opacity: [0, 1], y: [20, 0], scale: [0.92, 1] },
-                        { duration: 0.8, delay: 0.6 + idx * 0.12, easing: [0.34, 1.56, 0.64, 1] }
-                    );
-                });
-
-                // Spring pop-in for Floating Elements
-                floatingIcons.forEach((icon, idx) => {
-                    Motion.animate(
-                        icon,
-                        { opacity: [0, 0.75], scale: [0, 1] },
-                        { duration: 0.8, delay: 0.7 + idx * 0.08, easing: [0.34, 1.56, 0.64, 1] }
-                    );
-                });
-            } else {
-                // Graceful CSS fallback
-                [heroBadge, heroTitle, heroSubtitle, heroLocation, ...heroBtns].forEach(el => {
-                    if (el) {
-                        el.style.opacity = '1';
-                        el.style.transform = 'none';
-                    }
-                });
-            }
-        }
-
-        // Trigger hero animation once loader clears or after brief timeout
-        const loader = document.getElementById('loader');
-        if (loader) {
-            const checkLoader = setInterval(() => {
-                const computed = window.getComputedStyle(loader);
-                if (computed.display === 'none' || computed.opacity === '0') {
-                    clearInterval(checkLoader);
-                    setTimeout(triggerHeroMotion, 200);
-                }
-            }, 100);
-            setTimeout(() => {
-                clearInterval(checkLoader);
-                triggerHeroMotion();
-            }, 3500);
-        } else {
-            setTimeout(triggerHeroMotion, 300);
-        }
-
-        // 3. InView Staggered Spring Reveals Across All Pages/Sections
-        if (hasMotion && typeof Motion.inView === 'function') {
-            const motionElements = document.querySelectorAll(
-                '.feature-item, .event-card, .archive-card, .whatwedo-description, ' +
-                '.whatwedo-carousel-container, .section-header, .gallery-item, ' +
-                '.codeai-cta-card, .timeline-item, .team-member, .department-team-card, ' +
-                '.backend-terminal-hud, .nerve-hub-core, .telemetry-card'
-            );
-
-            motionElements.forEach((el) => {
-                // Set subtle initial state for elements below the fold
-                const rect = el.getBoundingClientRect();
-                if (rect.top > window.innerHeight) {
-                    el.style.opacity = '0';
-                    el.style.transform = 'translateY(35px)';
-                }
-
-                Motion.inView(el, () => {
-                    Motion.animate(
-                        el,
-                        { opacity: [0, 1], y: [35, 0] },
-                        { duration: 0.85, easing: [0.16, 1, 0.3, 1] }
-                    );
-                }, { amount: 0.15 });
-            });
-        }
-
-        // 4. Spring Micro-interactions on Buttons and Tech Badges
-        if (hasMotion) {
-            const springTargets = document.querySelectorAll(
-                '.hero-tech-btn, .hero-location, .feature-item, .sexy-back-button, ' +
-                '.department-team-btn, .dept-action-btn, .telemetry-card'
-            );
-
-            springTargets.forEach((btn) => {
-                btn.addEventListener('mouseenter', () => {
-                    Motion.animate(
-                        btn,
-                        { scale: 1.025 },
-                        { duration: 0.3, easing: [0.34, 1.56, 0.64, 1] }
-                    );
-                });
-
-                btn.addEventListener('mouseleave', () => {
-                    Motion.animate(
-                        btn,
-                        { scale: 1 },
-                        { duration: 0.3, easing: [0.16, 1, 0.3, 1] }
-                    );
-                });
-            });
-        }
-
-        // 5. Hero Action Buttons Smooth Navigation
-        document.querySelectorAll('.hero-tech-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                const targetPage = btn.getAttribute('data-page');
-                if (targetPage === 'about') {
-                    e.preventDefault();
-                    const aboutSection = document.getElementById('about');
-                    if (aboutSection) {
-                        aboutSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                } else if (targetPage === 'events') {
-                    e.preventDefault();
-                    const eventsSection = document.getElementById('events');
-                    if (eventsSection) {
-                        eventsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                    }
-                }
-            });
-        });
-    }
-
-    // Initialize Framer Motion
-    initFramerMotionWebsite();
 });
 // End SIH Internals 2026 Popup
-
 
 
