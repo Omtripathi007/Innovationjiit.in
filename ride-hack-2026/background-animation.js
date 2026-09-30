@@ -161,7 +161,7 @@
     let textNode;
 
     while ((textNode = walker.nextNode())) {
-      if (textNode.nodeValue !== tagline) continue;
+      if (textNode.nodeValue.replace(/\s+/g, ' ').trim() !== tagline) continue;
 
       const label = textNode.parentElement;
       label.setAttribute('aria-label', tagline);
