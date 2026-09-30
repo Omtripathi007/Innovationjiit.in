@@ -607,3 +607,292 @@ img[alt="Floating Gear"] {
 .ambient-glow {
   animation: ambient-pulse 6s ease-in-out infinite;
 }
+
+/* ==========================================================================
+   Ambient Cosmic Dark Background System (Ridehack / BECon 2026)
+   ========================================================================== */
+
+#site-ambient-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 25;
+  overflow: hidden;
+  will-change: transform;
+}
+
+/* Deep Cyber Grid Texture */
+.ambient-grid-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, rgba(0, 0, 0, 0.8) 0%, transparent 95%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, rgba(0, 0, 0, 0.8) 0%, transparent 95%);
+  pointer-events: none;
+}
+
+/* Cosmic Nebula Ambient Glow Orbs */
+.ambient-nebula {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(130px);
+  pointer-events: none;
+  opacity: 0.22;
+  will-change: transform, opacity;
+  mix-blend-mode: screen;
+}
+
+.ambient-nebula.nebula-1 {
+  top: -15%;
+  left: 10%;
+  width: 580px;
+  height: 580px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.9) 0%, rgba(76, 29, 149, 0.4) 60%, transparent 80%);
+  animation: nebula-float-1 26s ease-in-out infinite alternate;
+}
+
+.ambient-nebula.nebula-2 {
+  top: 40%;
+  right: -10%;
+  width: 650px;
+  height: 650px;
+  background: radial-gradient(circle, rgba(79, 70, 229, 0.85) 0%, rgba(55, 48, 163, 0.4) 60%, transparent 80%);
+  animation: nebula-float-2 32s ease-in-out infinite alternate;
+}
+
+.ambient-nebula.nebula-3 {
+  bottom: -20%;
+  left: 25%;
+  width: 720px;
+  height: 720px;
+  background: radial-gradient(circle, rgba(147, 51, 234, 0.75) 0%, rgba(112, 26, 117, 0.35) 60%, transparent 80%);
+  animation: nebula-float-3 28s ease-in-out infinite alternate;
+}
+
+@keyframes nebula-float-1 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.20;
+  }
+  50% {
+    transform: translate3d(60px, 80px, 0) scale(1.12);
+    opacity: 0.28;
+  }
+  100% {
+    transform: translate3d(-40px, 40px, 0) scale(0.95);
+    opacity: 0.18;
+  }
+}
+
+@keyframes nebula-float-2 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.18;
+  }
+  50% {
+    transform: translate3d(-70px, -60px, 0) scale(1.15);
+    opacity: 0.26;
+  }
+  100% {
+    transform: translate3d(50px, 30px, 0) scale(0.92);
+    opacity: 0.15;
+  }
+}
+
+@keyframes nebula-float-3 {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.95);
+    opacity: 0.16;
+  }
+  50% {
+    transform: translate3d(-50px, -80px, 0) scale(1.18);
+    opacity: 0.25;
+  }
+  100% {
+    transform: translate3d(40px, -30px, 0) scale(1.02);
+    opacity: 0.20;
+  }
+}
+
+/* Ambient Subtle Scan Beam */
+.ambient-beam {
+  position: absolute;
+  top: -40%;
+  left: 0;
+  width: 100%;
+  height: 220px;
+  background: linear-gradient(180deg, 
+    transparent 0%, 
+    rgba(168, 85, 247, 0.04) 50%, 
+    transparent 100%
+  );
+  filter: blur(20px);
+  pointer-events: none;
+  animation: beam-sweep 14s ease-in-out infinite;
+}
+
+@keyframes beam-sweep {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.8;
+  }
+  85% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translateY(180vh);
+    opacity: 0;
+  }
+}
+
+/* Interactive Ambient Particle Canvas */
+#site-ambient-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  mix-blend-mode: screen;
+}
+
+/* Subtle glow enhancement for content cards */
+.bg-white\/5 {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+/* Ensure smooth performance on mobile */
+@media (max-width: 768px) {
+  .ambient-nebula {
+    filter: blur(90px);
+    opacity: 0.15;
+  }
+  .ambient-grid-overlay {
+    background-size: 40px 40px;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-reveal {
+  opacity: 0 !important;
+  transform: translateY(24px) !important;
+  transition: opacity 650ms ease, transform 650ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.scroll-reveal-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.site-nav-panel {
+  transition: width 320ms ease, padding 320ms ease;
+}
+
+.site-nav-panel.site-nav-compact {
+  width: 104px !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+}
+
+.site-nav-row-collapsed {
+  justify-content: center !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+.site-nav-links {
+  min-width: 0;
+  max-width: 1200px;
+  overflow: hidden;
+  white-space: nowrap;
+  opacity: 1;
+  transform: translateY(0);
+  transition: max-width 320ms ease, opacity 180ms ease, transform 180ms ease;
+}
+
+.site-nav-links-hidden {
+  max-width: 0;
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+}
+
+@keyframes horizontal-stats-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-16.666667%, 0, 0);
+  }
+}
+
+.horizontal-stats-marquee {
+  margin-top: 2rem !important;
+  mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 12%, #000 88%, transparent);
+}
+
+.horizontal-stats-marquee > .absolute {
+  display: none;
+}
+
+.horizontal-stats-marquee-track {
+  display: flex;
+  width: max-content;
+  flex-direction: row;
+  align-items: center;
+  gap: 4rem;
+  padding-right: 4rem;
+  white-space: nowrap;
+  animation: horizontal-stats-scroll 36s linear infinite;
+  will-change: transform;
+}
+
+.horizontal-stats-marquee-track > div {
+  flex: 0 0 auto;
+}
+
+@media (max-width: 768px) {
+  .horizontal-stats-marquee-track {
+    gap: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .scroll-reveal,
+  .scroll-reveal-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .site-nav-panel,
+  .site-nav-links {
+    transition: none !important;
+  }
+
+  .horizontal-stats-marquee-track {
+    animation: none;
+    transform: none !important;
+  }
+}
+
