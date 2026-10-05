@@ -765,6 +765,11 @@ img[alt="Floating Gear"] {
   pointer-events: none;
   mix-blend-mode: screen;
 }
+/* Light theme: screen blend is invisible on white — use normal so particles show */
+body.light-theme #site-ambient-canvas {
+  mix-blend-mode: normal !important;
+  opacity: 1 !important;
+}
 
 /* Subtle glow enhancement for content cards */
 .bg-white\/5 {
@@ -896,3 +901,445 @@ html {
   }
 }
 
+@keyframes slideInToast {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.prize-glow {
+  box-shadow: 0 0 50px rgba(168, 85, 247, 0.4), inset 0 0 30px rgba(168, 85, 247, 0.2);
+}
+
+.bg-clip-text {
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+}
+
+.text-transparent {
+  -webkit-text-fill-color: transparent !important;
+}
+
+.readable-gradient-text {
+  background-image: linear-gradient(90deg, #A855F7 0%, #EC4899 50%, #6366F1 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
+}
+
+body.light-theme .readable-gradient-text {
+  background-image: linear-gradient(90deg, #7C3AED 0%, #DB2777 50%, #4F46E5 100%) !important;
+}
+
+/* ====================================================
+   LIGHT THEME — Refined System v2
+   Palette: #F4F6FF cool bg, #000 elements, #6366F1 accent
+   ==================================================== */
+
+/* ══ GLOBAL LIGHT DOT-GRID BACKGROUND ══ */
+body.light-theme {
+  background-color: #F4F6FF !important;
+  color: #0a0a0a !important;
+}
+
+/* [grid canvas removed — background-animation.js handles both themes] */
+
+/* Ensure page content sits above the fixed canvas */
+body.light-theme #root { position: relative; z-index: 1; }
+body.light-theme #theme-toggle-btn { z-index: 9999 !important; }
+
+/* ══════════════════════════════════════════════════ */
+/* Theme Toggle Button */
+#theme-toggle-btn {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  z-index: 9999;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid rgba(99, 102, 241, 0.4);
+  background: #000000;
+  color: #ffffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 24px rgba(99, 102, 241, 0.35), 0 2px 8px rgba(0,0,0,0.3);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  overflow: hidden;
+}
+
+#theme-toggle-btn:hover {
+  transform: scale(1.12) rotate(15deg);
+  box-shadow: 0 6px 32px rgba(99, 102, 241, 0.55), 0 2px 8px rgba(0,0,0,0.3);
+  border-color: #6366F1;
+}
+
+#theme-toggle-btn .icon-sun,
+#theme-toggle-btn .icon-moon {
+  position: absolute;
+  transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#theme-toggle-btn .icon-moon { opacity: 1; transform: rotate(0deg) scale(1); }
+#theme-toggle-btn .icon-sun  { opacity: 0; transform: rotate(90deg) scale(0.5); }
+
+body.light-theme #theme-toggle-btn {
+  background: #000000;
+  color: #ffffff;
+  border-color: rgba(99,102,241,0.5);
+}
+body.light-theme #theme-toggle-btn .icon-moon { opacity: 0; transform: rotate(-90deg) scale(0.5); }
+body.light-theme #theme-toggle-btn .icon-sun  { opacity: 1; transform: rotate(0deg) scale(1); }
+
+/* ── Hero Light Background Layers ── */
+#light-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  overflow: hidden;
+  pointer-events: none;
+  display: none;
+}
+body.light-theme #light-hero-bg { display: block; }
+
+/* image.png — direct img tag, centred watermark, low intensity */
+#light-hero-bg .hero-bg-image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 62%;
+  height: auto;
+  max-height: 85%;
+  object-fit: contain;
+  opacity: 0.10;
+  pointer-events: none;
+  user-select: none;
+  filter: grayscale(0.2) contrast(0.85);
+  z-index: 0;
+}
+
+
+/* Soft indigo radial wash */
+#light-hero-bg .hero-radial-glow {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 10%,  rgba(99,102,241,0.1) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 35% at 82% 28%,  rgba(99,102,241,0.06) 0%, transparent 60%),
+    radial-gradient(ellipse 35% 45% at 18% 72%,  rgba(99,102,241,0.05) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 40% at 50% 100%, rgba(244,246,255,0.9) 0%, transparent 55%);
+}
+
+/* Floating Logo Animation */
+#floating-logo {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+  display: none;
+}
+body.light-theme #floating-logo { display: block; }
+
+.floating-logo-item {
+  position: absolute;
+  border-radius: 16px;
+  opacity: 0;
+  animation: floatLogoUp 12s ease-in-out infinite;
+  filter: grayscale(1) opacity(0.07);
+}
+
+@keyframes floatLogoUp {
+  0%   { opacity: 0; transform: translateY(20px) scale(0.85) rotate(-5deg); }
+  15%  { opacity: 1; }
+  80%  { opacity: 0.6; }
+  100% { opacity: 0; transform: translateY(-120px) scale(1.05) rotate(8deg); }
+}
+
+/* Disable old particles canvas */
+#light-particles-canvas { display: none !important; }
+#light-hero-interactive  { display: none !important; }
+
+/* ── FULL LIGHT THEME OVERRIDES ── */
+
+/* Root container — transparent to show dot-grid body bg */
+body.light-theme .bg-\[\#05020a\],
+body.light-theme [class*="bg-\[#05020a\]"] {
+  background-color: transparent !important;
+}
+
+/* Sections — transparent */
+body.light-theme section {
+  background-color: transparent !important;
+}
+
+body.light-theme .min-h-screen {
+  background-color: transparent !important;
+}
+
+body.light-theme .bg-black {
+  background-color: transparent !important;
+}
+
+/* Desktop Navbar — pill floating, black fill */
+body.light-theme #desktopNavbarPanel {
+  background-color: rgba(0, 0, 0, 0.95) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(99,102,241,0.12) !important;
+}
+
+body.light-theme #desktopNavbarPanel a[href*="index"],
+body.light-theme #desktopNavbarPanel a[href*="sponsors"],
+body.light-theme #desktopNavbarPanel a[href*="team"],
+body.light-theme #desktopNavbarPanel a[href*="speakers"],
+body.light-theme #desktopNavbarPanel a[href*="contact"] {
+  color: rgba(255,255,255,0.8) !important;
+}
+
+body.light-theme #desktopNavbarPanel a[href*="index"]:hover,
+body.light-theme #desktopNavbarPanel a[href*="sponsors"]:hover,
+body.light-theme #desktopNavbarPanel a[href*="team"]:hover,
+body.light-theme #desktopNavbarPanel a[href*="speakers"]:hover,
+body.light-theme #desktopNavbarPanel a[href*="contact"]:hover {
+  color: #ffffff !important;
+  background-color: rgba(255,255,255,0.1) !important;
+}
+
+/* Register button stays indigo */
+body.light-theme #navbarRegister a {
+  background: linear-gradient(135deg, #6366F1, #4F46E5) !important;
+  box-shadow: 0 0 20px rgba(99,102,241,0.45) !important;
+  color: #ffffff !important;
+}
+
+/* Mobile top bar */
+body.light-theme .md\:hidden > div:first-child {
+  background-color: rgba(0,0,0,0.96) !important;
+  border-bottom-color: rgba(255,255,255,0.1) !important;
+}
+
+/* Mobile menu drawer */
+body.light-theme #mobileMenuDrawer {
+  background: rgba(0,0,0,0.97) !important;
+  border-bottom-color: rgba(255,255,255,0.1) !important;
+}
+body.light-theme #mobileMenuDrawer a {
+  color: rgba(255,255,255,0.85) !important;
+}
+
+/* ── Hero Section ── */
+body.light-theme #hero > div {
+  background-color: transparent !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* Kill the inline dark bg-color div inside hero (the starfield container) */
+body.light-theme #hero [style*="background-color: rgb(5, 2, 10)"],
+body.light-theme #hero [style*="background-color:#05020a"],
+body.light-theme #hero [style*="background: rgb(5, 2, 10)"] {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+/* Hide only the old hero-specific particle/interactive canvases in light mode */
+body.light-theme #hero #light-particles-canvas,
+body.light-theme #hero #light-hero-interactive { display: none !important; }
+
+/* Make the light-hero-bg image layer properly visible */
+body.light-theme #light-hero-bg {
+  z-index: 1 !important;
+}
+body.light-theme #light-hero-bg .hero-bg-image {
+  display: block !important;
+  opacity: 0.12 !important;
+}
+
+/* Hero bottom fade — blends into cool dot-grid bg */
+body.light-theme #hero .absolute.bottom-0 {
+  background: linear-gradient(
+    transparent 0%,
+    rgba(244,246,255,0.35) 25%,
+    rgba(244,246,255,0.75) 55%,
+    rgba(244,246,255,0.96) 82%,
+    rgba(244,246,255,1.0) 100%
+  ) !important;
+  z-index: 5 !important;
+}
+
+
+/* ── Hero logo swap: dark ↔ light ── */
+#hero-logo-dark  { display: block; }
+#hero-logo-light { display: none;  }
+
+body.light-theme #hero-logo-dark  { display: none  !important; }
+body.light-theme #hero-logo-light { display: block !important; }
+
+/* Gear overlays — subtle indigo tint */
+
+body.light-theme #hero img[alt*="Gear"] {
+  filter: drop-shadow(rgba(99,102,241,0.4) 0px 0px 30px) !important;
+  opacity: 0.28 !important;
+}
+
+/* Hero prize badge */
+body.light-theme #hero .inline-flex.items-center {
+  background: linear-gradient(135deg, rgba(99,102,241,0.09), rgba(79,70,229,0.06)) !important;
+  border-color: rgba(99,102,241,0.35) !important;
+  box-shadow: 0 0 35px rgba(99,102,241,0.14) !important;
+}
+
+body.light-theme #hero .text-purple-200 { color: #6366F1 !important; }
+
+/* Hero Register button */
+body.light-theme #hero a[href*="forms"] {
+  background: linear-gradient(135deg, #6366F1, #4F46E5) !important;
+  box-shadow: 0 0 35px rgba(99,102,241,0.35) !important;
+}
+
+/* ── Typography overrides ── */
+body.light-theme .text-white         { color: #0a0a0a !important; }
+body.light-theme .text-gray-300      { color: #374151 !important; }
+body.light-theme .text-gray-400      { color: #4B5563 !important; }
+body.light-theme .text-gray-500      { color: #6B7280 !important; }
+body.light-theme .text-purple-400    { color: #6366F1 !important; }
+body.light-theme .text-purple-200    { color: #4F46E5 !important; }
+body.light-theme h3.text-white       { color: #000000 !important; }
+
+/* Dividers */
+body.light-theme .bg-white\/10,
+body.light-theme .border-white\/10   { border-color: rgba(99,102,241,0.14) !important; }
+body.light-theme .bg-white\/5        { background-color: rgba(255,255,255,0.65) !important; }
+
+/* ── Glassmorphism cards in light mode ── */
+body.light-theme [style*="border: 1px solid rgba(255, 255, 255"] {
+  border-color: rgba(99,102,241,0.15) !important;
+  background: rgba(255,255,255,0.7) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+body.light-theme [style*="background: rgba(255, 255, 255, 0.05)"],
+body.light-theme [style*="background: rgba(255,255,255,0.05)"] {
+  background: rgba(255,255,255,0.7) !important;
+  border-color: rgba(99,102,241,0.12) !important;
+}
+body.light-theme [style*="background-color: rgba(255, 255, 255, 0.03)"],
+body.light-theme [style*="background: rgba(255, 255, 255, 0.03)"] {
+  background: rgba(255,255,255,0.6) !important;
+}
+
+/* White decorative line */
+body.light-theme .w-12.h-\[3px\].bg-white,
+body.light-theme .w-16.h-\[3px\].bg-white { background-color: #000000 !important; }
+
+/* Purple gradient keeps indigo */
+body.light-theme .from-purple-400 { --tw-gradient-from: #6366F1 !important; }
+body.light-theme .to-indigo-400   { --tw-gradient-to:   #4F46E5 !important; }
+
+/* Scrollbar fade masks */
+body.light-theme .mask-linear-fade > .absolute.left-0  { background: linear-gradient(to right, #F4F6FF, transparent) !important; }
+body.light-theme .mask-linear-fade > .absolute.right-0 { background: linear-gradient(to left,  #F4F6FF, transparent) !important; }
+
+/* Input fields */
+body.light-theme input,
+body.light-theme textarea,
+body.light-theme select {
+  background-color: rgba(255,255,255,0.85) !important;
+  color: #0a0a0a !important;
+  border-color: rgba(99,102,241,0.2) !important;
+}
+body.light-theme input::placeholder,
+body.light-theme textarea::placeholder { color: #9ca3af !important; }
+
+/* Table rows */
+body.light-theme tbody tr:nth-child(odd) { background: rgba(255,255,255,0.5) !important; }
+
+/* Prize glow */
+body.light-theme .prize-glow {
+  box-shadow: 0 0 50px rgba(99,102,241,0.25), inset 0 0 30px rgba(99,102,241,0.08) !important;
+}
+
+/* Nav section dividers */
+body.light-theme .border-b { border-bottom-color: rgba(99,102,241,0.1) !important; }
+
+/* Ambient grid overlay hidden in light theme (canvas animation replaces it) */
+body.light-theme .ambient-grid-overlay { display: none !important; }
+
+/* Nebulas in light theme — very subtle, fix blend mode */
+body.light-theme .ambient-nebula {
+  opacity: 0.05 !important;
+  mix-blend-mode: multiply !important;
+}
+
+/* site-ambient-canvas always visible — background-animation.js handles both themes */
+
+/* Stats marquee */
+body.light-theme .horizontal-stats-marquee {
+  -webkit-mask-image: linear-gradient(to right, transparent, #F4F6FF 12%, #F4F6FF 88%, transparent);
+  mask-image: linear-gradient(to right, transparent, #F4F6FF 12%, #F4F6FF 88%, transparent);
+}
+
+/* Social / icon buttons */
+body.light-theme a[class*="rounded-full"][class*="bg-white"] {
+  background-color: rgba(0,0,0,0.06) !important;
+  color: #0a0a0a !important;
+}
+
+/* Toast */
+body.light-theme [id*="toast"],
+body.light-theme [class*="toast"] {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Footer */
+body.light-theme footer,
+body.light-theme [class*="footer"] {
+  background-color: rgba(255,255,255,0.8) !important;
+  color: #0a0a0a !important;
+  border-top: 1px solid rgba(99,102,241,0.1) !important;
+  backdrop-filter: blur(8px);
+}
+
+/* Pill badge chips */
+body.light-theme .rounded-full.bg-purple-900\/50,
+body.light-theme .rounded-full[class*="bg-purple"] {
+  background: rgba(99,102,241,0.1) !important;
+  color: #4338CA !important;
+  border-color: rgba(99,102,241,0.3) !important;
+}
+
+/* Dividers */
+body.light-theme hr,
+body.light-theme .border-t { border-color: rgba(99,102,241,0.1) !important; }
+
+/* Body transition */
+body { transition: background-color 0.5s ease, color 0.5s ease; }
+
+/* Floating logo positions */
+.floating-logo-item:nth-child(1) { animation-delay: 0s;    left: 8%;   bottom: 10%; }
+.floating-logo-item:nth-child(2) { animation-delay: 2.5s;  left: 20%;  bottom: 5%;  animation-duration: 14s; }
+.floating-logo-item:nth-child(3) { animation-delay: 5s;    left: 75%;  bottom: 8%;  animation-duration: 11s; }
+.floating-logo-item:nth-child(4) { animation-delay: 7s;    left: 88%;  bottom: 15%; animation-duration: 15s; }
+.floating-logo-item:nth-child(5) { animation-delay: 1.5s;  left: 50%;  bottom: 3%;  animation-duration: 13s; }
+.floating-logo-item:nth-child(6) { animation-delay: 9s;    left: 35%;  bottom: 12%; animation-duration: 10s; }
+
+/* ── Custom scrollbar in light mode ── */
+body.light-theme ::-webkit-scrollbar { width: 6px; }
+body.light-theme ::-webkit-scrollbar-track { background: #F4F6FF; }
+body.light-theme ::-webkit-scrollbar-thumb {
+  background: rgba(99,102,241,0.3);
+  border-radius: 99px;
+}
+body.light-theme ::-webkit-scrollbar-thumb:hover {
+  background: rgba(99,102,241,0.5);
+}

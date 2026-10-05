@@ -59,14 +59,14 @@
 
     const desktopNavigation = Array.from(document.querySelectorAll('div.fixed')).find((element) =>
       element.classList.contains('hidden') &&
-      element.classList.contains('md:flex') &&
-      element.querySelector('img')
+      element.classList.contains('md:flex')
     );
     if (!desktopNavigation) return;
 
     const panel = desktopNavigation.firstElementChild;
-    const logoImage = panel.querySelector('img');
-    const logoLink = logoImage.closest('a');
+    if (!panel) return;
+    const logoLink = panel.querySelector('a');
+    if (!logoLink) return;
 
     panel.querySelectorAll('a').forEach((link) => {
       const label = link.textContent.trim().toLowerCase();
@@ -87,8 +87,10 @@
       element.classList.contains('justify-between') &&
       element.contains(logoLink)
     );
+    if (!row) return;
+
     const links = Array.from(row.children).find((element) => !element.contains(logoLink));
-    if (!row || !links) return;
+    if (!links) return;
 
     panel.classList.add('site-nav-panel');
     row.classList.add('site-nav-row');
@@ -280,14 +282,29 @@
       mouse.y = -9999;
     });
 
-    // Particle Colors (Deep violet, electric purple, neon cyan-tinted white, starlight)
-    const colors = [
-      { r: 168, g: 85, b: 247 }, // #a855f7 (Purple)
-      { r: 192, g: 132, b: 252 }, // #c084fc (Light purple)
-      { r: 129, g: 140, b: 248 }, // #818cf8 (Indigo)
-      { r: 236, g: 72, b: 153 }, // #ec4899 (Pink/Magenta accent)
-      { r: 255, g: 255, b: 255 }  // Pure white starlight
+    // Particle Colors — two palettes, theme-aware
+    const darkColors = [
+      { r: 168, g: 85,  b: 247 }, // #a855f7 violet
+      { r: 192, g: 132, b: 252 }, // #c084fc light purple
+      { r: 129, g: 140, b: 248 }, // #818cf8 indigo
+      { r: 236, g: 72,  b: 153 }, // #ec4899 pink
+      { r: 255, g: 255, b: 255 }  // white starlight
     ];
+    const lightColors = [
+      { r: 99,  g: 102, b: 241 }, // #6366f1 indigo-500
+      { r: 79,  g: 70,  b: 229 }, // #4f46e5 indigo-600
+      { r: 124, g: 58,  b: 237 }, // #7c3aed violet-600
+      { r: 139, g: 92,  b: 246 }, // #8b5cf6 violet-500
+      { r: 6,   g: 182, b: 212 }  // #06b6d4 cyan-500
+    ];
+    let colors = document.body.classList.contains('light-theme') ? lightColors : darkColors;
+
+    // Swap palettes on theme toggle
+    window.addEventListener('themechange', (e) => {
+      colors = e.detail.light ? lightColors : darkColors;
+      // Fully reset all particles so they pick up new radius + alpha for the theme
+      particles.forEach(p => p.reset(true));
+    });
 
     class Particle {
       constructor() {
@@ -297,19 +314,26 @@
       reset(init = false) {
         this.x = init ? Math.random() * width : (Math.random() > 0.5 ? 0 : width);
         this.y = Math.random() * height;
-        this.baseRadius = Math.random() * 1.6 + 0.6;
+
+        const isLight = document.body.classList.contains('light-theme');
+        // Light theme: bigger, bolder particles visible on light background
+        this.baseRadius = isLight
+          ? Math.random() * 2.5 + 2.5   // 2.5 – 5.0 px  (vs 0.6-2.2 dark)
+          : Math.random() * 1.6 + 0.6;  // 0.6 – 2.2 px  (dark)
         this.radius = this.baseRadius;
-        
-        // Very slow, soothing drift
+
         const speed = Math.random() * 0.35 + 0.12;
         const angle = Math.random() * Math.PI * 2;
         this.vx = Math.cos(angle) * speed;
         this.vy = Math.sin(angle) * speed;
-        
+
         this.color = colors[Math.floor(Math.random() * colors.length)];
-        this.baseAlpha = Math.random() * 0.55 + 0.25;
+        // Light theme: much higher base opacity so dots are clearly visible
+        this.baseAlpha = isLight
+          ? Math.random() * 0.3 + 0.6   // 0.60 – 0.90
+          : Math.random() * 0.55 + 0.25; // 0.25 – 0.80
         this.alpha = this.baseAlpha;
-        this.twinkleSpeed = Math.random() * 0.02 + 0.008;
+        this.twinkleSpeed  = Math.random() * 0.02 + 0.008;
         this.twinkleOffset = Math.random() * Math.PI * 2;
       }
 
@@ -476,7 +500,8 @@
       }
 
       // Draw Constellation Connections
-      ctx.lineWidth = 0.75;
+      const isLight = document.body.classList.contains('light-theme');
+      ctx.lineWidth = isLight ? 1.5 : 0.75;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
@@ -484,11 +509,15 @@
           const dist = Math.hypot(dx, dy);
 
           if (dist < MAX_DISTANCE) {
-            const alpha = (1 - dist / MAX_DISTANCE) * 0.22 * Math.min(particles[i].alpha, particles[j].alpha);
+            // Light theme: much higher line opacity so connections are visible
+            const alpha = isLight
+              ? (1 - dist / MAX_DISTANCE) * 0.55 * Math.min(particles[i].alpha, particles[j].alpha)
+              : (1 - dist / MAX_DISTANCE) * 0.22 * Math.min(particles[i].alpha, particles[j].alpha);
+            const lineColor = isLight ? `rgba(99,102,241,${alpha})` : `rgba(168,85,247,${alpha})`;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
-            ctx.strokeStyle = `rgba(168, 85, 247, ${alpha})`;
+            ctx.strokeStyle = lineColor;
             ctx.stroke();
           }
         }
@@ -500,11 +529,14 @@
           const dist = Math.hypot(dx, dy);
 
           if (dist < mouse.radius * 0.85) {
-            const alpha = (1 - dist / (mouse.radius * 0.85)) * 0.32;
+            const alpha = isLight
+              ? (1 - dist / (mouse.radius * 0.85)) * 0.65
+              : (1 - dist / (mouse.radius * 0.85)) * 0.32;
+            const mouseLineColor = isLight ? `rgba(99,102,241,${alpha})` : `rgba(192,132,252,${alpha})`;
             ctx.beginPath();
             ctx.moveTo(mouse.x, mouse.y);
             ctx.lineTo(particles[i].x, particles[i].y);
-            ctx.strokeStyle = `rgba(192, 132, 252, ${alpha})`;
+            ctx.strokeStyle = mouseLineColor;
             ctx.stroke();
           }
         }
