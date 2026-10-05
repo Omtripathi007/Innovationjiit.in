@@ -53,7 +53,8 @@
   <link rel="stylesheet" href="refactor.css">
 
   <script src="background-animation.js" defer></script>
-  <script src="coming-soon.js" defer></script>
+<script src="theme-toggle.js" defer></script>
+<script src="coming-soon.js" defer></script>
 </head>
 
 <body style="">
@@ -61,7 +62,7 @@
   <!-- ═══════════════════════════════════════════════ -->
   <!-- THEME TOGGLE BUTTON (fixed, bottom-right) -->
   <!-- ═══════════════════════════════════════════════ -->
-  <button id="theme-toggle-btn" aria-label="Toggle light/dark theme" title="Toggle theme" onclick="toggleSiteTheme()">
+  <button id="theme-toggle-btn" aria-label="Toggle light/dark theme" title="Toggle theme">
     <!-- Moon icon (dark mode indicator) -->
     <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -1595,27 +1596,6 @@
 
   });
 </script>
-
-
-<!-- ═══════════════════════════════════════════════════════════ -->
-<!-- THEME TOGGLE JAVASCRIPT                                    -->
-<!-- background-animation.js handles the canvas for BOTH themes -->
-<!-- ═══════════════════════════════════════════════════════════ -->
-<script>
-(function() {
-  var saved = localStorage.getItem('ridehack-theme');
-  if (saved === 'light') document.body.classList.add('light-theme');
-})();
-
-function toggleSiteTheme() {
-  var isLight = document.body.classList.toggle('light-theme');
-  localStorage.setItem('ridehack-theme', isLight ? 'light' : 'dark');
-  // Notify background-animation.js so it can adapt particle colors
-  window.dispatchEvent(new CustomEvent('themechange', { detail: { light: isLight } }));
-}
-</script>
-
-
 
 
 <script>

@@ -487,6 +487,16 @@
     let isVisible = true;
     let lastTime = 0;
 
+    window.addEventListener('themechange', (event) => {
+      if (event.detail.light) {
+        if (animId !== null) cancelAnimationFrame(animId);
+        animId = null;
+        ctx.clearRect(0, 0, width, height);
+      } else if (isVisible && animId === null) {
+        animId = requestAnimationFrame(render);
+      }
+    });
+
     function render(timestamp) {
       if (!isVisible) return;
 
@@ -553,14 +563,19 @@
     document.addEventListener('visibilitychange', () => {
       if (document.hidden) {
         isVisible = false;
-        if (animId) cancelAnimationFrame(animId);
+        if (animId !== null) cancelAnimationFrame(animId);
+        animId = null;
       } else {
         isVisible = true;
-        animId = requestAnimationFrame(render);
+        if (!document.body.classList.contains('light-theme') && animId === null) {
+          animId = requestAnimationFrame(render);
+        }
       }
     });
 
-    animId = requestAnimationFrame(render);
+    if (!document.body.classList.contains('light-theme')) {
+      animId = requestAnimationFrame(render);
+    }
   }
 
   function debounce(fn, ms) {

@@ -765,10 +765,40 @@ img[alt="Floating Gear"] {
   pointer-events: none;
   mix-blend-mode: screen;
 }
-/* Light theme: screen blend is invisible on white — use normal so particles show */
-body.light-theme #site-ambient-canvas {
-  mix-blend-mode: normal !important;
-  opacity: 1 !important;
+/* Light theme keeps its pale base with drifting purple and near-black accents. */
+body.light-theme {
+  isolation: isolate;
+}
+
+body.light-theme::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse at 15% 25%, rgba(91, 33, 182, 0.16), transparent 48%),
+    radial-gradient(ellipse at 82% 22%, rgba(15, 10, 25, 0.13), transparent 50%),
+    radial-gradient(ellipse at 65% 82%, rgba(109, 40, 217, 0.15), transparent 48%),
+    radial-gradient(ellipse at 18% 78%, rgba(0, 0, 0, 0.1), transparent 48%);
+  background-size: 140% 140%;
+  background-position: 0% 50%;
+  animation: light-theme-purple-black-drift 32s ease-in-out infinite alternate;
+}
+
+body.light-theme #site-ambient-bg {
+  display: none;
+}
+
+@keyframes light-theme-purple-black-drift {
+  from { background-position: 0% 45%; }
+  to { background-position: 100% 55%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.light-theme::before {
+    animation: none;
+  }
 }
 
 /* Subtle glow enhancement for content cards */
@@ -1321,6 +1351,63 @@ body.light-theme .rounded-full[class*="bg-purple"] {
 /* Dividers */
 body.light-theme hr,
 body.light-theme .border-t { border-color: rgba(99,102,241,0.1) !important; }
+
+/* Shared light surfaces for the standalone event pages. */
+body.light-theme[class*="bg-"] {
+  background-color: #F4F6FF !important;
+}
+
+body.light-theme [class~="bg-[#05020a]/95"],
+body.light-theme [class~="bg-[#0e0818]"],
+body.light-theme [class~="bg-[#0a0514]"],
+body.light-theme [class~="bg-black/40"],
+body.light-theme [class~="bg-black/50"],
+body.light-theme [class~="bg-black/60"] {
+  background-color: rgba(255, 255, 255, 0.82) !important;
+  color: #111827 !important;
+}
+
+body.light-theme [class*="from-[#120824]"],
+body.light-theme [class*="from-[#0a0316]"],
+body.light-theme [class*="via-[#0a0514]"],
+body.light-theme footer[class*="bg-gradient"] {
+  background-image: none !important;
+  background-color: rgba(255, 255, 255, 0.86) !important;
+  color: #111827 !important;
+}
+
+body.light-theme [class*="from-purple-950"],
+body.light-theme [class*="to-black/"] {
+  background-image: none !important;
+  background-color: rgba(255, 255, 255, 0.86) !important;
+  color: #111827 !important;
+}
+
+body.light-theme main [style*="background-color: rgb(5, 2, 10)"] {
+  background-color: #F4F6FF !important;
+}
+
+body.light-theme main [style*="rgba(5, 2, 10"] {
+  background: linear-gradient(to bottom, transparent, rgba(244, 246, 255, 0.55), #F4F6FF) !important;
+}
+
+body.light-theme .text-purple-300 {
+  color: #5b21b6 !important;
+}
+
+body.light-theme .light-theme-title-backplate {
+  width: fit-content;
+  max-width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+  padding: clamp(0.65rem, 2.2vw, 1.25rem) clamp(1rem, 3vw, 2rem);
+  border: 1px solid rgba(99, 102, 241, 0.22);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 12px 36px rgba(31, 26, 66, 0.1);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
 
 /* Body transition */
 body { transition: background-color 0.5s ease, color 0.5s ease; }
