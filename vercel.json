@@ -1,7 +1,7 @@
 {
   "headers": [
     {
-      "source": "/assets/images/kartikpic.jpg",
+      "source": "assets\\images\\hero\\SKL0224 (1).jpg",
       "headers": [
         {
           "key": "X-Robots-Tag",
