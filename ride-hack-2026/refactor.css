@@ -161,6 +161,39 @@ body.light-theme #hero > div::before {
   box-shadow: 0 0 30px rgba(99,102,241,0.7), 0 0 0 1px rgba(99,102,241,0.5) !important;
   transform: scale(1.04) !important;
 }
+.results-live-cta {
+  position: relative;
+  isolation: isolate;
+}
+.results-live-cta::before {
+  content: 'LIVE';
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 42px;
+  height: 22px;
+  padding: 0 8px;
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  border-radius: 999px;
+  background: #dc2626;
+  color: #fff;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.65);
+  animation: results-live-pulse 1.8s ease-out infinite;
+}
+.results-live-cta:hover {
+  filter: brightness(1.12);
+}
+@keyframes results-live-pulse {
+  0% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.65); }
+  70%, 100% { box-shadow: 0 0 0 8px rgba(239, 68, 68, 0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .results-live-cta::before { animation: none; }
+}
 body.light-theme #desktopNavbarPanel {
   background: rgba(8, 7, 14, 0.76) !important;
   backdrop-filter: blur(24px) saturate(1.5) !important;
