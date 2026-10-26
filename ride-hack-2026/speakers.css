@@ -1,0 +1,840 @@
+/* ==========================================================================
+   RIDE HACK '26 — LUXURY THEATRICAL STAGE SPEAKERS & JURY STYLESHEET
+   Aesthetics: Deep Burgundy/Maroon, Theatrical Stage Curtains, Metallic Gold
+   ========================================================================== */
+
+:root {
+  --color-gold-light: #fef0cd;
+  --color-gold-primary: #d4af37;
+  --color-gold-warm: #e6c364;
+  --color-gold-dark: #997825;
+  --color-gold-bronze: #845a1c;
+  --color-bg-maroon-dark: #120306;
+  --color-bg-maroon-mid: #25070c;
+  --color-bg-maroon-card: #2e0910;
+  --color-card-border: rgba(212, 175, 55, 0.35);
+  --color-card-border-hover: rgba(243, 229, 171, 0.75);
+  --color-text-cream: #fbf7ee;
+  --color-text-muted: #d9cbb8;
+  --color-text-subtle: #9c8477;
+  --font-serif-display: 'Cinzel', 'Playfair Display', Georgia, serif;
+  --font-serif-quote: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Page Stage Background with Luxury Theatrical Curtains */
+.stage-hero-background {
+  position: relative;
+  min-height: 100vh;
+  background-color: var(--color-bg-maroon-dark);
+  background-image: 
+    radial-gradient(ellipse 90% 60% at 50% -5%, rgba(243, 229, 171, 0.18) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 50% at 50% 25%, rgba(120, 20, 35, 0.45) 0%, transparent 75%),
+    linear-gradient(180deg, rgba(18, 3, 6, 0.7) 0%, rgba(25, 5, 10, 0.85) 40%, rgba(10, 2, 4, 0.98) 100%),
+    url('speakers_assets/luxury_curtain_bg.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: scroll;
+}
+
+/* Subtle curtain side vignettes */
+.stage-hero-background::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 10% 30%, rgba(0, 0, 0, 0.5) 0%, transparent 40%),
+    radial-gradient(circle at 90% 30%, rgba(0, 0, 0, 0.5) 0%, transparent 40%),
+    linear-gradient(90deg, rgba(8, 1, 3, 0.85) 0%, transparent 15%, transparent 85%, rgba(8, 1, 3, 0.85) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Floating Stardust / Sparkle Canvas */
+.stage-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.stage-content-wrap {
+  position: relative;
+  z-index: 10;
+}
+
+/* Top Theatrical Stage Valance / Header Accent */
+.stage-top-valance {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, transparent 0%, rgba(212, 175, 55, 0.8) 25%, rgba(255, 240, 200, 1) 50%, rgba(212, 175, 55, 0.8) 75%, transparent 100%);
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.8), 0 0 40px rgba(212, 175, 55, 0.4);
+}
+
+/* Grand Title Typography */
+.grand-title-container {
+  text-align: center;
+  position: relative;
+}
+
+.stage-badge-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 24px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, rgba(50, 10, 16, 0.85) 0%, rgba(80, 18, 26, 0.7) 100%);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.2), inset 0 1px 0 rgba(255, 240, 200, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.stage-badge-gold:hover {
+  border-color: rgba(243, 229, 171, 0.8);
+  box-shadow: 0 0 35px rgba(212, 175, 55, 0.35);
+  transform: translateY(-2px);
+}
+
+.stage-badge-gold .star-gem {
+  color: var(--color-gold-primary);
+  font-size: 14px;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+  animation: pulse-gem 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse-gem {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.25); text-shadow: 0 0 16px rgba(255, 240, 200, 1); }
+}
+
+.stage-badge-text {
+  font-family: var(--font-serif-display);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.5);
+}
+
+.grand-title {
+  font-family: var(--font-serif-display);
+  font-weight: 900;
+  font-size: clamp(2.5rem, 6.5vw, 5.25rem);
+  line-height: 1.05;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 auto 12px auto;
+  background: linear-gradient(180deg, #ffffff 0%, #fef3d6 30%, #e6c364 70%, #a77c22 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.8)) drop-shadow(0 0 35px rgba(212, 175, 55, 0.35));
+}
+
+.grand-subtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(0.75rem, 1.4vw, 0.95rem);
+  font-weight: 600;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(243, 229, 171, 0.85);
+  margin-bottom: 24px;
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.4);
+}
+
+/* Theatrical Golden Divider with Diamond */
+.luxury-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  max-width: 460px;
+  margin: 0 auto 36px auto;
+}
+
+.luxury-divider-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.7), transparent);
+}
+
+.luxury-divider-diamond {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-gold-primary);
+  font-size: 14px;
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.9);
+}
+
+.grand-lede {
+  font-family: var(--font-sans);
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  max-width: 720px;
+  margin: 0 auto 50px auto;
+  font-weight: 300;
+}
+
+/* ==========================================================================
+   SECTION 1: GUEST OF HONOUR (FEATURED HERO CARD)
+   ========================================================================== */
+.guest-of-honour-section {
+  margin-bottom: 90px;
+}
+
+.section-eyebrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.section-eyebrow-line {
+  width: 50px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold-primary));
+}
+
+.section-eyebrow-line.reverse {
+  background: linear-gradient(90deg, var(--color-gold-primary), transparent);
+}
+
+.section-eyebrow-text {
+  font-family: var(--font-serif-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.25em;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-gold-warm);
+}
+
+/* Featured Wide Card */
+.guest-hero-card {
+  position: relative;
+  background: linear-gradient(135deg, rgba(65, 14, 22, 0.78) 0%, rgba(35, 7, 12, 0.88) 50%, rgba(18, 3, 6, 0.95) 100%);
+  border: 1px solid var(--color-card-border);
+  border-radius: 28px;
+  padding: 36px;
+  box-shadow: 
+    0 24px 60px -15px rgba(0, 0, 0, 0.85),
+    0 0 45px rgba(180, 70, 30, 0.15),
+    inset 0 1px 0 rgba(255, 240, 200, 0.2),
+    inset 0 0 30px rgba(212, 175, 55, 0.05);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.guest-hero-card:hover {
+  border-color: var(--color-card-border-hover);
+  box-shadow: 
+    0 32px 80px -15px rgba(0, 0, 0, 0.95),
+    0 0 60px rgba(212, 175, 55, 0.25),
+    inset 0 1px 0 rgba(255, 240, 200, 0.4);
+  transform: translateY(-4px);
+}
+
+/* Decorative Gold Corner Filigrees on the Hero Card */
+.corner-filigree {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  pointer-events: none;
+  border-color: rgba(212, 175, 55, 0.5);
+  border-style: solid;
+}
+
+.corner-top-left {
+  top: 16px;
+  left: 16px;
+  border-width: 2px 0 0 2px;
+  border-top-left-radius: 8px;
+}
+
+.corner-top-right {
+  top: 16px;
+  right: 16px;
+  border-width: 2px 2px 0 0;
+  border-top-right-radius: 8px;
+}
+
+.corner-bottom-left {
+  bottom: 16px;
+  left: 16px;
+  border-width: 0 0 2px 2px;
+  border-bottom-left-radius: 8px;
+}
+
+.corner-bottom-right {
+  bottom: 16px;
+  right: 16px;
+  border-width: 0 2px 2px 0;
+  border-bottom-right-radius: 8px;
+}
+
+/* Hero Card Layout Grid */
+.guest-hero-grid {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 48px;
+  align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .guest-hero-grid {
+    grid-template-columns: 320px 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 840px) {
+  .guest-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+}
+
+/* Arch Frame for Akash Gupta's Photo */
+.arch-frame-container {
+  position: relative;
+  width: 100%;
+  max-width: 340px;
+  margin: 0 auto;
+}
+
+.arch-portrait-wrapper {
+  position: relative;
+  border-radius: 180px 180px 24px 24px;
+  padding: 5px;
+  background: linear-gradient(180deg, #fce9b8 0%, #d4af37 40%, #875c1a 80%, #d4af37 100%);
+  box-shadow: 
+    0 16px 40px -10px rgba(0, 0, 0, 0.9),
+    0 0 35px rgba(212, 175, 55, 0.35);
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.guest-hero-card:hover .arch-portrait-wrapper {
+  transform: scale(1.02);
+  box-shadow: 
+    0 20px 50px -10px rgba(0, 0, 0, 0.95),
+    0 0 50px rgba(212, 175, 55, 0.55);
+}
+
+.arch-portrait-inner {
+  border-radius: 175px 175px 20px 20px;
+  overflow: hidden;
+  background: #190509;
+  position: relative;
+  aspect-ratio: 350 / 410;
+}
+
+.arch-portrait-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.guest-hero-card:hover .arch-portrait-img {
+  transform: scale(1.05);
+}
+
+/* Floating Gold Seal / Pill */
+.arch-seal-badge {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, rgba(30, 6, 10, 0.95) 0%, rgba(55, 12, 18, 0.92) 100%);
+  border: 1px solid var(--color-gold-primary);
+  border-radius: 9999px;
+  padding: 6px 18px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.8), 0 0 15px rgba(212, 175, 55, 0.4);
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 5;
+}
+
+.arch-seal-badge span {
+  font-family: var(--font-serif-display);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  color: var(--color-gold-light);
+  text-transform: uppercase;
+}
+
+/* Hero Content Styling */
+.guest-hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-pill-category {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 16px;
+  border-radius: 9999px;
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold-warm);
+  width: fit-content;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 840px) {
+  .hero-pill-category {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.hero-name {
+  font-family: var(--font-serif-display);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 3.8vw, 3.6rem);
+  line-height: 1.1;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #fef3d6 30%, #e6c364 70%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 10px rgba(0, 0, 0, 0.6));
+}
+
+.hero-designation {
+  font-family: var(--font-sans);
+  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-text-cream);
+  margin-bottom: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+@media (max-width: 840px) {
+  .hero-designation {
+    justify-content: center;
+  }
+}
+
+.hero-role-tag {
+  color: #fff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.hero-company-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 14px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(20, 90, 40, 0.35) 0%, rgba(10, 50, 25, 0.45) 100%);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  color: #6ee7b7;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  box-shadow: 0 0 15px rgba(52, 211, 153, 0.15);
+}
+
+/* Quote Block */
+.hero-quote-block {
+  position: relative;
+  background: rgba(18, 3, 6, 0.55);
+  border-left: 3px solid var(--color-gold-primary);
+  border-radius: 0 16px 16px 0;
+  padding: 20px 24px 20px 28px;
+  margin: 18px 0 24px 0;
+}
+
+@media (max-width: 840px) {
+  .hero-quote-block {
+    text-align: left;
+  }
+}
+
+.quote-mark-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-family: var(--font-serif-quote);
+  font-size: 3rem;
+  line-height: 1;
+  color: rgba(212, 175, 55, 0.25);
+  pointer-events: none;
+}
+
+.hero-quote-text {
+  font-family: var(--font-serif-quote);
+  font-style: italic;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.65;
+  color: #f7ede0;
+  position: relative;
+  z-index: 1;
+  margin: 0;
+}
+
+/* Hero Badge Tags Row */
+.hero-tags-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+@media (max-width: 840px) {
+  .hero-tags-row {
+    justify-content: center;
+  }
+}
+
+.hero-stat-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.hero-stat-badge .badge-icon {
+  color: var(--color-gold-warm);
+}
+
+/* ==========================================================================
+   SECTION 2: PANELISTS & JUDGES (GRID LAYOUT)
+   ========================================================================== */
+.judges-section {
+  position: relative;
+  margin-bottom: 60px;
+}
+
+.judges-section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.judges-section-title {
+  font-family: var(--font-serif-display);
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3.8vw, 3rem);
+  line-height: 1.15;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin: 0 0 14px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #fef3d6 30%, #e6c364 70%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.7));
+}
+
+.judges-section-desc {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  color: var(--color-text-muted);
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* 3-Column Luxury Cards Grid */
+.panelists-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 1080px) {
+  .panelists-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .panelists-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Individual Luxury Card */
+.judge-card {
+  position: relative;
+  background: linear-gradient(180deg, rgba(62, 13, 20, 0.82) 0%, rgba(35, 7, 12, 0.92) 50%, rgba(16, 3, 5, 0.98) 100%);
+  border: 1px solid var(--color-card-border);
+  border-radius: 22px;
+  padding: 32px 24px 28px 24px;
+  box-shadow: 
+    0 16px 40px -10px rgba(0, 0, 0, 0.8),
+    0 0 25px rgba(180, 70, 30, 0.1),
+    inset 0 1px 0 rgba(255, 240, 200, 0.18);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.judge-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-card-border-hover);
+  box-shadow: 
+    0 24px 55px -10px rgba(0, 0, 0, 0.95),
+    0 0 40px rgba(212, 175, 55, 0.35),
+    inset 0 1px 0 rgba(255, 240, 200, 0.35);
+}
+
+/* Subtle top glow bar inside card */
+.judge-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 20%;
+  right: 20%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 240, 200, 0.6), transparent);
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.judge-card:hover::before {
+  opacity: 1;
+}
+
+/* Ornate Scalloped Photo Frame */
+.judge-photo-frame {
+  position: relative;
+  width: 196px;
+  height: 196px;
+  margin: 0 auto 24px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.85));
+  transition: transform 0.4s ease;
+}
+
+.judge-card:hover .judge-photo-frame {
+  transform: scale(1.04);
+}
+
+/* Frame Outer Aura */
+.frame-glow-ring {
+  position: absolute;
+  inset: -6px;
+  border-radius: 20px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.35) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.judge-card:hover .frame-glow-ring {
+  opacity: 1;
+}
+
+.judge-photo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 12px;
+}
+
+/* Judge Name */
+.judge-name {
+  font-family: var(--font-serif-display);
+  font-weight: 700;
+  font-size: clamp(1.25rem, 1.8vw, 1.55rem);
+  line-height: 1.25;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 10px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #fef3d6 35%, #e6c364 75%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+/* Judge Role & Company */
+.judge-role {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--color-text-muted);
+  font-weight: 400;
+  margin: 0 0 6px 0;
+  min-height: 2.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.judge-company {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--color-gold-warm);
+  margin-bottom: 18px;
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.3);
+}
+
+/* Mini Tag Pill */
+.judge-tag-pill {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  background: rgba(212, 175, 55, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-gold-light);
+  transition: all 0.25s ease;
+}
+
+.judge-card:hover .judge-tag-pill {
+  background: rgba(212, 175, 55, 0.18);
+  border-color: rgba(212, 175, 55, 0.5);
+  color: #fff;
+}
+
+.judge-tag-pill .pill-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--color-gold-primary);
+  box-shadow: 0 0 6px var(--color-gold-primary);
+}
+
+/* Bottom Card Diamond Accent */
+.card-bottom-accent {
+  width: 40px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.5), transparent);
+  margin-top: 14px;
+}
+
+/* ==========================================================================
+   EVENT CALL TO ACTION BANNER (MATCHING WEBSITE THEME)
+   ========================================================================== */
+.stage-cta-card {
+  margin-top: 80px;
+  margin-bottom: 20px;
+  position: relative;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(80, 16, 26, 0.85) 0%, rgba(35, 7, 12, 0.95) 100%);
+  border: 1px solid var(--color-card-border);
+  box-shadow: 0 20px 50px -10px rgba(0, 0, 0, 0.9), 0 0 35px rgba(212, 175, 55, 0.2);
+  padding: 42px 32px;
+  text-align: center;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+
+.cta-title {
+  font-family: var(--font-serif-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin: 0 0 12px 0;
+  background: linear-gradient(180deg, #ffffff 0%, #fef3d6 30%, #e6c364 70%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.cta-desc {
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
+  color: var(--color-text-muted);
+  max-width: 600px;
+  margin: 0 auto 28px auto;
+  line-height: 1.6;
+}
+
+.cta-button-gold {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 36px;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, #f7e2a9 0%, #d4af37 50%, #997825 100%);
+  color: #120306;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4), 0 0 30px rgba(212, 175, 55, 0.2);
+  transition: all 0.3s ease;
+}
+
+.cta-button-gold:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #f7e2a9 50%, #d4af37 100%);
+  box-shadow: 0 14px 35px rgba(212, 175, 55, 0.6), 0 0 45px rgba(212, 175, 55, 0.4);
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Canvas Particle Animation Keyframes */
+@keyframes floatParticle {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  20% { opacity: 0.8; }
+  80% { opacity: 0.8; }
+  100% { transform: translateY(-100px) translateX(20px); opacity: 0; }
+}

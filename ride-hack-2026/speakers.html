@@ -3,260 +3,607 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Meet the Keynote Speakers, Unicorn Founders, and VC Leaders at Ridehack 2026 - Innovation Hub, JIIT Sector 128 Noida.">
-  <title>Keynote Speakers &amp; Grand Jury | Ridehack 2026 - Innovation Hub JIIT</title>
+  <meta name="description" content="Meet the Keynote Speakers, Guest of Honour, Panelists and Grand Jury at RIDE HACK '26 - Innovation Hub, JIIT Sector 128 Noida.">
+  <meta name="theme-color" content="#120306">
+  <title>Speakers, Panelists &amp; Grand Jury | RIDE HACK '26 - Innovation Hub JIIT</title>
   <link rel="icon" type="image/png" href="innovation-logo.png">
+
+  <!-- Google Fonts: Luxury Serif (Cinzel, Playfair Display) & Clean Modern Sans (Plus Jakarta Sans) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="speakers.css">
   <script src="background-animation.js" defer></script>
   <script src="theme-toggle.js" defer></script>
-  <script src="coming-soon.js" defer></script>
 </head>
 
-<body class="bg-[#05020a] text-white min-h-screen font-sans selection:bg-purple-500 selection:text-white">
+<body class="bg-[#120306] text-white min-h-screen font-sans selection:bg-[#d4af37] selection:text-[#120306]">
   <div id="root">
+    
     <!-- UNIFIED DYNAMIC FLOATING NAVBAR -->
-  <div class="fixed top-0 left-0 right-0 z-50 hidden md:flex justify-center pt-5 pointer-events-none px-4">
-    <div id="desktopNavbarPanel" class="pointer-events-auto rounded-full flex items-center justify-between transition-all duration-500 ease-out" style="box-shadow: rgba(0, 0, 0, 0.45) 0px 8px 32px -8px; border: 1px solid rgba(255, 255, 255, 0.12); background-color: rgba(5,2,10,0.92); backdrop-filter: blur(24px); padding: 8px 24px; height: 64px; width: min(95%, 880px);">
-      
-      <!-- LOGO: COMPACT & CRISP (ALWAYS VISIBLE) -->
-      <div id="navbarLogo" class="shrink-0 flex items-center transition-all duration-300">
-        <a class="flex items-center cursor-pointer group" href="index.html">
-          <img alt="Innovation Hub Logo" class="h-8 w-auto object-contain group-hover:scale-105 transition-transform" src="innovation-logo.png">
+    <div class="fixed top-0 left-0 right-0 z-50 hidden md:flex justify-center pt-5 pointer-events-none px-4">
+      <div id="desktopNavbarPanel" class="pointer-events-auto rounded-full flex items-center justify-between transition-all duration-500 ease-out" style="box-shadow: rgba(0, 0, 0, 0.6) 0px 8px 32px -8px, rgba(212, 175, 55, 0.2) 0px 0px 20px; border: 1px solid rgba(212, 175, 55, 0.28); background-color: rgba(18, 3, 6, 0.92); backdrop-filter: blur(24px); padding: 8px 24px; height: 64px; width: min(95%, 880px);">
+        
+        <!-- LOGO: COMPACT & CRISP (ALWAYS VISIBLE) -->
+        <div id="navbarLogo" class="shrink-0 flex items-center transition-all duration-300">
+          <a class="flex items-center cursor-pointer group" href="index.html" aria-label="Home">
+            <img alt="Innovation Hub Logo" class="h-8 w-auto object-contain group-hover:scale-105 transition-transform" src="innovation-logo.png">
+          </a>
+        </div>
+
+        <!-- SPACIOUS NAV LINKS -->
+        <div id="navbarLinks" class="flex items-center justify-center gap-2 lg:gap-4 mx-auto transition-all duration-500 ease-out overflow-hidden" style="max-width: 480px; opacity: 1;">
+          <a href="index.html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors rounded-full whitespace-nowrap text-gray-300 hover:text-white hover:bg-white/5">Home</a>
+          <a href="sponsors.html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors rounded-full whitespace-nowrap text-gray-300 hover:text-white hover:bg-white/5">Grants</a>
+          <a href="team.html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors rounded-full whitespace-nowrap text-gray-300 hover:text-white hover:bg-white/5">Team</a>
+          <a href="speakers.html" class=>Speakers</a>
+          <a href="round-1-results.html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors rounded-full whitespace-nowrap text-amber-300 hover:text-white hover:bg-amber-500/10">Results</a>
+          <a href="contact.html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors rounded-full whitespace-nowrap text-gray-300 hover:text-white hover:bg-white/5">Contact</a>
+        </div>
+
+        <!-- REGISTER BUTTON: ALWAYS VISIBLE -->
+        <div id="navbarRegister" class="shrink-0 flex items-center transition-all duration-300">
+          <a href="speakers.html" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#e6c364] via-[#d4af37] to-[#a77c22] hover:brightness-110 text-[#120306] rounded-full text-xs sm:text-sm font-extrabold tracking-wide transition-all shadow-[0_0_20px_rgba(212,175,55,0.5)] hover:scale-105 whitespace-nowrap">
+            <svg xmlns="" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- MOBILE TOP BAR -->
+    <div class="fixed top-0 left-0 right-0 z-50 md:hidden">
+      <div class="flex items-center justify-between px-4 py-3 bg-[#120306]/95 backdrop-blur-md border-b border-[#d4af37]/20">
+        <a class="flex items-center" href="index.html">
+          <img alt="Innovation Hub Logo" class="h-8 w-auto object-contain" src="innovation-logo.png">
         </a>
+        <div class="flex items-center gap-3">
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSfo1yDY9sdHcOif3eGItnUyBE8StgveHDqJppyfqZ0NtJaWwg/viewform" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 bg-gradient-to-r from-[#d4af37] to-[#a77c22] text-[#120306] rounded-full text-xs font-bold shadow-[0_0_12px_rgba(212,175,55,0.4)]">
+            Register
+          </a>
+          <button id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+          </button>
+        </div>
       </div>
+    </div>
 
-      <!-- SPACIOUS NAV LINKS (Home, Grants, Team, Speakers -> speakers.html, Contact) -->
-      <div id="navbarLinks" class="flex items-center justify-center gap-3 lg:gap-5 mx-auto transition-all duration-500 ease-out overflow-hidden" style="max-width: 480px; opacity: 1;">
-        <a href="index.html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors rounded-full whitespace-nowrap text-gray-300 hover:text-white hover:bg-white/5">Home</a>
-        <a href="sponsors.html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors rounded-full whitespace-nowrap text-gray-300 hover:text-white hover:bg-white/5">Grants</a>
-        <a href="team.html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors rounded-full whitespace-nowrap text-gray-300 hover:text-white hover:bg-white/5">Team</a>
-        <a href="speakers.html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors rounded-full whitespace-nowrap text-gray-300 hover:text-white hover:bg-white/5">Speakers</a>
-        <a href="contact.html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors rounded-full whitespace-nowrap text-gray-300 hover:text-white hover:bg-white/5">Contact</a>
-      </div>
-
-      <!-- REGISTER BUTTON: ALWAYS VISIBLE -->
-      <div id="navbarRegister" class="shrink-0 flex items-center transition-all duration-300">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfo1yDY9sdHcOif3eGItnUyBE8StgveHDqJppyfqZ0NtJaWwg/viewform" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-full text-xs sm:text-sm font-extrabold tracking-wide transition-all shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:scale-105 whitespace-nowrap">
+    <!-- MOBILE MENU DRAWER -->
+    <div id="mobileMenuDrawer" style="display:none; position:fixed; top:58px; left:0; right:0; background:rgba(18,3,6,0.98); backdrop-filter:blur(24px); border-bottom:1px solid rgba(212,175,55,0.25); padding:24px 20px; z-index:9999;">
+      <div style="display:flex; flex-direction:column; gap:16px; align-items:center;">
+        <a href="index.html" onclick="toggleMobileMenu()" style="color:white; font-size:16px; font-weight:600; text-decoration:none;">Home</a>
+        <a href="sponsors.html" onclick="toggleMobileMenu()" style="color:#d1d5db; font-size:16px; font-weight:500; text-decoration:none;">Grants</a>
+        <a href="team.html" onclick="toggleMobileMenu()" style="color:#d1d5db; font-size:16px; font-weight:500; text-decoration:none;">Team</a>
+        <a href="speakers.html" onclick="toggleMobileMenu()" style="color:#fce9b8; font-size:16px; font-weight:700; text-decoration:none;">Speakers</a>
+        <a href="round-1-results.html" onclick="toggleMobileMenu()" style="color:#fcd34d; font-size:16px; font-weight:600; text-decoration:none;">Round 1 Results</a>
+        <a href="contact.html" onclick="toggleMobileMenu()" style="color:#d1d5db; font-size:16px; font-weight:500; text-decoration:none;">Contact</a>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfo1yDY9sdHcOif3eGItnUyBE8StgveHDqJppyfqZ0NtJaWwg/viewform" target="_blank" rel="noopener noreferrer" style="margin-top:6px; background:linear-gradient(to right, #e6c364, #d4af37); color:#120306; font-size:14px; font-weight:800; text-decoration:none; padding:10px 28px; border-radius:9999px; display:inline-flex; align-items:center; gap:8px;">
           <span>Register</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
         </a>
       </div>
-
     </div>
-  </div>
 
-  <!-- MOBILE TOP BAR -->
-  <div class="fixed top-0 left-0 right-0 z-50 md:hidden">
-    <div class="flex items-center justify-between px-4 py-3 bg-[#05020a]/95 backdrop-blur-md border-b border-white/10">
-      <a class="flex items-center" href="index.html">
-        <img alt="Innovation Hub Logo" class="h-8 w-auto object-contain" src="innovation-logo.png">
-      </a>
-      <div class="flex items-center gap-3">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfo1yDY9sdHcOif3eGItnUyBE8StgveHDqJppyfqZ0NtJaWwg/viewform" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full text-xs font-bold shadow-[0_0_12px_rgba(168,85,247,0.4)]">
-          Register
-        </a>
-        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
-        </button>
-      </div>
-    </div>
-  </div>
-
-  <!-- MOBILE MENU DRAWER -->
-  <div id="mobileMenuDrawer" style="display:none; position:fixed; top:58px; left:0; right:0; background:rgba(5,2,10,0.98); backdrop-filter:blur(24px); border-bottom:1px solid rgba(255,255,255,0.1); padding:24px 20px; z-index:9999;">
-    <div style="display:flex; flex-direction:column; gap:16px; align-items:center;">
-      <a href="index.html" onclick="toggleMobileMenu()" style="color:white; font-size:16px; font-weight:600; text-decoration:none;">Home</a>
-      <a href="sponsors.html" onclick="toggleMobileMenu()" style="color:#d1d5db; font-size:16px; font-weight:500; text-decoration:none;">Grants</a>
-      <a href="team.html" onclick="toggleMobileMenu()" style="color:#d1d5db; font-size:16px; font-weight:500; text-decoration:none;">Team</a>
-      <a href="speakers.html" onclick="toggleMobileMenu()" style="color:#d1d5db; font-size:16px; font-weight:500; text-decoration:none;">Speakers</a>
-      <a href="contact.html" onclick="toggleMobileMenu()" style="color:#d1d5db; font-size:16px; font-weight:500; text-decoration:none;">Contact</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfo1yDY9sdHcOif3eGItnUyBE8StgveHDqJppyfqZ0NtJaWwg/viewform" target="_blank" rel="noopener noreferrer" style="margin-top:6px; background:linear-gradient(to right, #9333ea, #4f46e5); color:white; font-size:14px; font-weight:700; text-decoration:none; padding:10px 28px; border-radius:9999px; display:inline-flex; align-items:center; gap:8px;">
-        <span>Register</span>
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
-      </a>
-    </div>
-  </div>
-
-    <main class="relative z-0 pt-36 sm:pt-44 pb-32 overflow-hidden">
-      <!-- Ambient purple and indigo background glows -->
-      <div class="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-purple-600/15 rounded-full blur-[160px] pointer-events-none"></div>
-      <div class="absolute top-80 right-10 w-96 h-96 bg-indigo-600/10 rounded-full blur-[140px] pointer-events-none"></div>
-      <div class="absolute top-[650px] left-10 w-96 h-96 bg-pink-600/10 rounded-full blur-[140px] pointer-events-none"></div>
-
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-
-        <!-- HERO HEADER -->
-        <div class="text-center max-w-4xl mx-auto mb-16 sm:mb-20">
-          <div class="inline-flex items-center gap-2.5 px-5 py-2 rounded-full border border-purple-500/40 bg-purple-500/15 mb-8 shadow-[0_0_20px_rgba(168,85,247,0.3)]">
-            <span class="w-2.5 h-2.5 rounded-full bg-pink-400 animate-pulse"></span>
-            <span class="text-xs sm:text-sm text-purple-200 uppercase tracking-widest font-extrabold">Keynote Speakers &amp; Jury • Launching Soon</span>
-          </div>
-
-          <h1 class="light-theme-title-backplate text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-white mb-6 uppercase leading-tight">
-            SOME THING SPECIAL <span class="bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-300 bg-clip-text text-transparent">Coming Soon...</span>
-          </h1>
-
-          <p class="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed font-light max-w-3xl mx-auto mb-10">
-            We are bringing together India's top unicorn founders, institutional VC investors, pioneering AI researchers, and serial entrepreneurs to keynote, judge, and mentor at <strong class="text-white font-semibold">RIDEHACK 2026</strong>.
-          </p>
-          <br><br><br><br><br>
-<!-- UNIFIED FOOTER (MATCHING USER REQUEST: NO LEGAL, NO MERCH, SPONSORS->GRANTS, CONTACT ON RIGHT) -->
-<footer class="relative bg-gradient-to-b from-[#0a0316] via-[#05010a] to-[#020005] border-t border-purple-500/30 pt-20 pb-12 px-6 sm:px-10 lg:px-16 overflow-hidden group">
-  <!-- Glowing top purple line with ambient reflection -->
-  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[2px] bg-gradient-to-r from-transparent via-purple-500/90 to-transparent shadow-[0_0_30px_rgba(168,85,247,0.7)]"></div>
-  <div class="absolute top-0 left-1/3 w-[500px] h-48 bg-purple-600/10 blur-3xl pointer-events-none"></div>
-
-  <div class="max-w-7xl mx-auto">
-    <!-- 3-Column spacious grid: Brand (5 cols) | Explore (3 cols) | Contact (4 cols on right) -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-14 xl:gap-20 pb-16">
+    <!-- MAIN THEATRICAL STAGE PAGE -->
+    <main class="stage-hero-background pt-32 sm:pt-40 pb-28">
       
-      <!-- Brand & Mission Column (5 cols) -->
-      <div class="lg:col-span-5 flex flex-col justify-between space-y-8">
-        <div>
-          <a href="index.html" class="inline-flex items-center gap-3 mb-6 group">
-            <img src="innovation-logo.png" alt="Innovation Hub Logo" class="h-10 w-auto object-contain group-hover:scale-105 transition-transform">
-          </a>
-          <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
-            Empowering the next generation of deep-tech innovators.
-            <br class="hidden sm:block">
-            <strong class="text-white font-semibold">Join us at Ridehack 2026</strong> to shape the future of technology and entrepreneurship in India.
+      <!-- Golden Stage Top Valance Line -->
+      <div class="stage-top-valance" aria-hidden="true"></div>
+
+      <!-- Ambient Canvas for Floating Golden Sparkles -->
+      <canvas id="stageParticleCanvas" class="stage-particles" aria-hidden="true"></canvas>
+
+      <div class="stage-content-wrap max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- ==========================================
+             PAGE HEADER: GRAND THEATRICAL INTRO
+             ========================================== -->
+        <header class="grand-title-container mb-16 sm:mb-20">
+          
+          <!-- Research, Innovation, Development & Entrepreneurship Badge -->
+          <div class="stage-badge-gold">
+            <span class="star-gem">✦</span>
+            <span class="stage-badge-text">Research, Innovation, Development &amp; Entrepreneurship</span>
+            <span class="star-gem">✦</span>
+          </div>
+
+          <!-- Main Title matching slide typography -->
+          <h1 class="grand-title">RIDE HACK &lsquo;26</h1>
+          
+          <div class="grand-subtitle">Keynote Speakers &bull; Panelists &bull; Grand Jury</div>
+
+          <!-- Decorative Golden Divider with Diamond -->
+          <div class="luxury-divider" aria-hidden="true">
+            <div class="luxury-divider-line"></div>
+            <div class="luxury-divider-diamond">✦ &bull; ✦</div>
+            <div class="luxury-divider-line"></div>
+          </div>
+
+          <p class="grand-lede">
+            Bringing together India&rsquo;s foremost unicorn founders, visionary venture investors, and technology pioneers to keynote, mentor, and evaluate next-generation student startups at <strong class="text-white font-semibold">RIDE HACK 2026</strong>.
           </p>
-        </div>
 
-        <!-- Social Media Icon Buttons -->
-        <div class="flex items-center gap-3 pt-2">
-          <a href="https://www.instagram.com/innovation.jiit/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-full bg-white/[0.04] hover:bg-purple-600/20 border border-white/10 hover:border-purple-400/50 text-gray-400 hover:text-white flex items-center justify-center transition-all hover:scale-110">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
-          </a>
-          <a href="https://www.linkedin.com/company/innovation-jiit/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-white/[0.04] hover:bg-purple-600/20 border border-white/10 hover:border-purple-400/50 text-gray-400 hover:text-white flex items-center justify-center transition-all hover:scale-110">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-          </a>
-          <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" class="w-10 h-10 rounded-full bg-white/[0.04] hover:bg-purple-600/20 border border-white/10 hover:border-purple-400/50 text-gray-400 hover:text-white flex items-center justify-center transition-all hover:scale-110">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-          </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="w-10 h-10 rounded-full bg-white/[0.04] hover:bg-purple-600/20 border border-white/10 hover:border-purple-400/50 text-gray-400 hover:text-white flex items-center justify-center transition-all hover:scale-110">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
-          </a>
-        </div>
+        </header>
+
+        <!-- ==========================================
+             SECTION 1: GUEST OF HONOUR (FEATURED HERO CARD)
+             ========================================== -->
+        <section class="guest-of-honour-section" aria-labelledby="guest-honour-title">
+          
+          <!-- Eyebrow label -->
+          <div class="section-eyebrow">
+            <div class="section-eyebrow-line"></div>
+            <span class="section-eyebrow-text">✦ Keynote Dignitary ✦</span>
+            <div class="section-eyebrow-line reverse"></div>
+          </div>
+
+          <!-- Wide Horizontal Featured Hero Card -->
+          <article class="guest-hero-card" id="guest-of-honour-card">
+            
+            <!-- 4 Decorative Corner Filigrees -->
+            <div class="corner-filigree corner-top-left" aria-hidden="true"></div>
+            <div class="corner-filigree corner-top-right" aria-hidden="true"></div>
+            <div class="corner-filigree corner-bottom-left" aria-hidden="true"></div>
+            <div class="corner-filigree corner-bottom-right" aria-hidden="true"></div>
+
+            <div class="guest-hero-grid">
+              
+              <!-- LEFT COLUMN: Arch-Styled Portrait Frame with Akash Gupta -->
+              <div class="arch-frame-container">
+                <div class="arch-portrait-wrapper">
+                  <div class="arch-portrait-inner">
+                    <img 
+                      src="speakers_assets/akash_arch_clean.png" 
+                      alt="Akash Gupta - Founder &amp; CEO, Zypp" 
+                      class="arch-portrait-img"
+                      loading="eager"
+                      fetchpriority="high"
+                    >
+                  </div>
+                  <!-- Floating Gold Badge on Frame -->
+                  <div class="arch-seal-badge">
+                    <span style="color:#d4af37;">✦</span>
+                    <span>GUEST OF HONOUR</span>
+                    <span style="color:#d4af37;">✦</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- RIGHT COLUMN: Details, Title, Designation & Inspiring Quote -->
+              <div class="guest-hero-content">
+                
+                <div class="hero-pill-category">
+                  <span>✦</span>
+                  <span>Distinguished Keynote Address</span>
+                </div>
+
+                <h2 id="guest-honour-title" class="hero-name">AKASH GUPTA</h2>
+
+                <div class="hero-designation">
+                  <span class="hero-role-tag">FOUNDER &amp; CEO</span>
+                  <span class="text-[#d4af37] font-bold">&bull;</span>
+                  <span class="hero-company-pill">
+                    <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>
+                    Zypp
+                  </span>
+                </div>
+
+                <!-- Inspiring Quote Block matching uploaded slide -->
+                <blockquote class="hero-quote-block">
+                  <span class="quote-mark-icon" aria-hidden="true">&ldquo;</span>
+                  <p class="hero-quote-text">
+                    &ldquo;An inspiring entrepreneur who turned a bold vision into a movement for sustainable mobility &ndash; welcoming the Founder of Zypp as our Guest of Honour, whose journey inspires us to think big and create impact.&rdquo;
+                  </p>
+                </blockquote>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </section>
+
+        <!-- ==========================================
+             SECTION 2: PANELISTS & JUDGES (GRID LAYOUT)
+             ========================================== -->
+        <section class="judges-section" aria-labelledby="judges-section-title">
+          
+          <div class="judges-section-header">
+            <!-- Eyebrow label -->
+            <div class="section-eyebrow">
+              <div class="section-eyebrow-line"></div>
+              <span class="section-eyebrow-text">✦ Industry Titans &amp; Evaluators ✦</span>
+              <div class="section-eyebrow-line reverse"></div>
+            </div>
+
+            <h2 id="judges-section-title" class="judges-section-title">PANELISTS &amp; JUDGES</h2>
+            
+            <p class="judges-section-desc">
+              Distinguished unicorn executives, strategic investors, and veteran operators presiding over the live evaluation of breakthrough startup prototypes at RIDE HACK &lsquo;26.
+            </p>
+
+            <div class="luxury-divider" style="margin-top: 24px; margin-bottom: 0;" aria-hidden="true">
+              <div class="luxury-divider-line"></div>
+              <div class="luxury-divider-diamond">✦</div>
+              <div class="luxury-divider-line"></div>
+            </div>
+          </div>
+
+          <!-- 3-Column Luxury Cards Grid -->
+          <div class="panelists-grid">
+
+            <!-- CARD 1: SUMIT SHARMA -->
+            <article class="judge-card" id="card-sumit-sharma">
+              <div class="judge-photo-frame">
+                <div class="frame-glow-ring" aria-hidden="true"></div>
+                <img 
+                  src="speakers_assets/sumit_sharma.png" 
+                  alt="Sumit Sharma - Founder &amp; CEO, LETSRYL" 
+                  class="judge-photo-img"
+                  loading="lazy"
+                >
+              </div>
+              <h3 class="judge-name">SUMIT SHARMA</h3>
+              <p class="judge-role">Founder &amp; CEO,</p>
+              <p class="judge-company">LETSRYL</p>
+              <div class="judge-tag-pill">
+                <span class="pill-dot"></span>
+                <span>E-Commerce &bull; Tech</span>
+              </div>
+              <div class="card-bottom-accent" aria-hidden="true"></div>
+            </article>
+
+            <!-- CARD 2: SHAMIK GUHA -->
+            <article class="judge-card" id="card-shamik-guha">
+              <div class="judge-photo-frame">
+                <div class="frame-glow-ring" aria-hidden="true"></div>
+                <img 
+                  src="speakers_assets/shamik_guha.png" 
+                  alt="Shamik Guha - Co-Founder &amp; CEO, Altor Smart Mobility" 
+                  class="judge-photo-img"
+                  loading="lazy"
+                >
+              </div>
+              <h3 class="judge-name">SHAMIK GUHA</h3>
+              <p class="judge-role">Co-Founder &amp; CEO,</p>
+              <p class="judge-company">ALTOR SMART MOBILITY</p>
+              <div class="judge-tag-pill">
+                <span class="pill-dot"></span>
+                <span>Smart Mobility &bull; IoT</span>
+              </div>
+              <div class="card-bottom-accent" aria-hidden="true"></div>
+            </article>
+
+            <!-- CARD 3: AMAN RANJAN -->
+            <article class="judge-card" id="card-aman-ranjan">
+              <div class="judge-photo-frame">
+                <div class="frame-glow-ring" aria-hidden="true"></div>
+                <img 
+                  src="speakers_assets/aman_ranjan.png" 
+                  alt="Aman Ranjan - Co-Founder &amp; Investor Relations, Raise Money" 
+                  class="judge-photo-img"
+                  loading="lazy"
+                >
+              </div>
+              <h3 class="judge-name">AMAN RANJAN</h3>
+              <p class="judge-role">Co-Founder &amp; Investor Relations,</p>
+              <p class="judge-company">RAISE MONEY</p>
+              <div class="judge-tag-pill">
+                <span class="pill-dot"></span>
+                <span>Angel Capital &bull; IR</span>
+              </div>
+              <div class="card-bottom-accent" aria-hidden="true"></div>
+            </article>
+
+            <!-- CARD 4: PRIYAM DUTTA -->
+            <article class="judge-card" id="card-priyam-dutta">
+              <div class="judge-photo-frame">
+                <div class="frame-glow-ring" aria-hidden="true"></div>
+                <img 
+                  src="speakers_assets/priyam_dutta.png" 
+                  alt="Priyam Dutta - Director and head of operations, Mandali Games" 
+                  class="judge-photo-img"
+                  loading="lazy"
+                >
+              </div>
+              <h3 class="judge-name">PRIYAM DUTTA</h3>
+              <p class="judge-role">Director and head of operations,</p>
+              <p class="judge-company">MANDALI GAMES</p>
+              <div class="judge-tag-pill">
+                <span class="pill-dot"></span>
+                <span>Gaming &bull; Operations</span>
+              </div>
+              <div class="card-bottom-accent" aria-hidden="true"></div>
+            </article>
+
+            <!-- CARD 5: PARVEZ SIRAJ -->
+            <article class="judge-card" id="card-parvez-siraj">
+              <div class="judge-photo-frame">
+                <div class="frame-glow-ring" aria-hidden="true"></div>
+                <img 
+                  src="speakers_assets/parvez_siraj.png" 
+                  alt="Parvez Siraj - Vice President, Lupin" 
+                  class="judge-photo-img"
+                  loading="lazy"
+                >
+              </div>
+              <h3 class="judge-name">PARVEZ SIRAJ</h3>
+              <p class="judge-role">Vice President,</p>
+              <p class="judge-company">LUPIN</p>
+              <div class="judge-tag-pill">
+                <span class="pill-dot"></span>
+                <span>Enterprise &bull; Global Scale</span>
+              </div>
+              <div class="card-bottom-accent" aria-hidden="true"></div>
+            </article>
+
+            <!-- CARD 6: RAHUL LAKHMANI -->
+            <article class="judge-card" id="card-rahul-lakhmani">
+              <div class="judge-photo-frame">
+                <div class="frame-glow-ring" aria-hidden="true"></div>
+                <img 
+                  src="speakers_assets/rahul_lakhmani.png" 
+                  alt="Rahul Lakhmani - Founder &amp; CEO, Skillfy" 
+                  class="judge-photo-img"
+                  loading="lazy"
+                >
+              </div>
+              <h3 class="judge-name">RAHUL LAKHMANI</h3>
+              <p class="judge-role">Founder &amp; CEO,</p>
+              <p class="judge-company">SKILLFY</p>
+              <div class="judge-tag-pill">
+                <span class="pill-dot"></span>
+                <span>EdTech &bull; Upskilling</span>
+              </div>
+              <div class="card-bottom-accent" aria-hidden="true"></div>
+            </article>
+
+          </div>
+
+        </section>
+
       </div>
 
-      <!-- EXPLORE Column (3 cols) - NO BULLETS, NO MERCH, SPONSORSHIP -> GRANTS -->
-      <div class="lg:col-span-3">
-        <div class="flex items-center gap-2.5 mb-6">
-          <span class="w-6 h-[2px] bg-purple-500 rounded-full"></span>
-          <span class="text-xs font-black uppercase tracking-widest text-white">EXPLORE</span>
-        </div>
-        <ul class="space-y-4 text-sm">
-          <li><a href="events.html" class="text-gray-400 hover:text-white transition-colors block">Events</a></li>
-          <li><a href="sponsors.html" class="text-gray-400 hover:text-white transition-colors block">Grants</a></li>
-          <li><a href="team.html" class="text-gray-400 hover:text-white transition-colors block">Team</a></li>
-          <li><a href="speakers.html" class="text-gray-400 hover:text-white transition-colors block">Speakers</a></li>
-          <li><a href="index.html#timeline" class="text-gray-400 hover:text-white transition-colors block">Schedule</a></li>
-        </ul>
-      </div>
+    </main>
 
-      <!-- CONTACT Column (4 cols on the right side) -->
-      <div class="lg:col-span-4">
-        <div class="flex items-center gap-2.5 mb-6">
-          <span class="w-6 h-[2px] bg-purple-500 rounded-full"></span>
-          <span class="text-xs font-black uppercase tracking-widest text-white">CONTACT</span>
+    <!-- UNIFIED FOOTER (MATCHING REST OF THE SITE) -->
+    <footer class="relative bg-gradient-to-b from-[#120306] via-[#090103] to-[#040001] border-t border-[#d4af37]/30 pt-20 pb-12 px-6 sm:px-10 lg:px-16 overflow-hidden group">
+      <!-- Glowing top gold/purple line with ambient reflection -->
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[2px] bg-gradient-to-r from-transparent via-[#d4af37]/90 to-transparent shadow-[0_0_30px_rgba(212,175,55,0.7)]"></div>
+      <div class="absolute top-0 left-1/3 w-[500px] h-48 bg-[#d4af37]/10 blur-3xl pointer-events-none"></div>
+
+      <div class="max-w-7xl mx-auto">
+        <!-- 3-Column spacious grid: Brand (5 cols) | Explore (3 cols) | Contact (4 cols on right) -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-14 xl:gap-20 pb-16">
+          
+          <!-- Brand & Mission Column (5 cols) -->
+          <div class="lg:col-span-5 flex flex-col justify-between space-y-8">
+            <div>
+              <a href="index.html" class="inline-flex items-center gap-3 mb-6 group">
+                <img src="innovation-logo.png" alt="Innovation Hub Logo" class="h-10 w-auto object-contain group-hover:scale-105 transition-transform">
+              </a>
+              <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                Empowering the next generation of deep-tech innovators.
+                <br class="hidden sm:block">
+                <strong class="text-white font-semibold">Join us at Ridehack 2026</strong> to shape the future of technology and entrepreneurship in India.
+              </p>
+            </div>
+
+            <!-- Social Media Icon Buttons -->
+            <div class="flex items-center gap-3 pt-2">
+              <a href="https://www.instagram.com/innovation.jiit/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-full bg-white/[0.04] hover:bg-[#d4af37]/20 border border-white/10 hover:border-[#d4af37]/50 text-gray-400 hover:text-white flex items-center justify-center transition-all hover:scale-110">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+              </a>
+              <a href="https://www.linkedin.com/company/innovation-jiit/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-white/[0.04] hover:bg-[#d4af37]/20 border border-white/10 hover:border-[#d4af37]/50 text-gray-400 hover:text-white flex items-center justify-center transition-all hover:scale-110">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" class="w-10 h-10 rounded-full bg-white/[0.04] hover:bg-[#d4af37]/20 border border-white/10 hover:border-[#d4af37]/50 text-gray-400 hover:text-white flex items-center justify-center transition-all hover:scale-110">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+              </a>
+              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="w-10 h-10 rounded-full bg-white/[0.04] hover:bg-[#d4af37]/20 border border-white/10 hover:border-[#d4af37]/50 text-gray-400 hover:text-white flex items-center justify-center transition-all hover:scale-110">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- EXPLORE Column (3 cols) -->
+          <div class="lg:col-span-3">
+            <div class="flex items-center gap-2.5 mb-6">
+              <span class="w-6 h-[2px] bg-[#d4af37] rounded-full"></span>
+              <span class="text-xs font-black uppercase tracking-widest text-[#fce9b8]">EXPLORE</span>
+            </div>
+            <ul class="space-y-4 text-sm">
+              <li><a href="events.html" class="text-gray-400 hover:text-white transition-colors block">Events</a></li>
+              <li><a href="sponsors.html" class="text-gray-400 hover:text-white transition-colors block">Grants</a></li>
+              <li><a href="team.html" class="text-gray-400 hover:text-white transition-colors block">Team</a></li>
+              <li><a href="speakers.html" class="text-white font-semibold transition-colors block">Speakers</a></li>
+              <li><a href="round-1-results.html" class="text-amber-300 hover:text-white transition-colors block">Round 1 Results</a></li>
+              <li><a href="index.html#timeline" class="text-gray-400 hover:text-white transition-colors block">Schedule</a></li>
+            </ul>
+          </div>
+
+          <!-- CONTACT Column (4 cols on the right side) -->
+          <div class="lg:col-span-4">
+            <div class="flex items-center gap-2.5 mb-6">
+              <span class="w-6 h-[2px] bg-[#d4af37] rounded-full"></span>
+              <span class="text-xs font-black uppercase tracking-widest text-[#fce9b8]">CONTACT</span>
+            </div>
+            <div class="space-y-3.5 text-sm">
+              <p class="text-gray-400 text-xs uppercase tracking-wider font-semibold">Get in Touch</p>
+              <p>
+                <a href="mailto:contact@innovationjiit.in" class="text-white hover:text-[#d4af37] font-bold text-base transition-colors block">
+                  contact@innovationjiit.in
+                </a>
+              </p>
+              <div class="text-gray-400 text-xs leading-relaxed pt-2">
+                <p class="font-semibold text-gray-200">Innovation Hub, JIIT Sector 128</p>
+                <p>Jaypee Institute of Information Technology, Noida - 201304</p>
+              </div>
+              <div class="pt-2 border-t border-white/5 space-y-1">
+                <p class="text-[11px] font-bold uppercase tracking-wider text-[#d4af37]">Call Us</p>
+                <p class="text-xs text-gray-300"><span class="font-semibold text-white">Yash:</span> <a href="tel:+917210000082" class="text-amber-400 hover:text-white transition-colors">+91 7210000082</a></p>
+                <p class="text-xs text-gray-300"><span class="font-semibold text-white">Saloni:</span> <a href="tel:+918700497761" class="text-amber-400 hover:text-white transition-colors">+91 8700497761</a></p>
+              </div>
+              <div class="pt-2">
+                <a href="https://maps.google.com/maps?q=Jaypee+Institute+of+Information+Technology+Sector+128+Noida" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-[#d4af37] hover:text-[#fce9b8] font-semibold transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  View on Google Maps ↗
+                </a>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="space-y-3.5 text-sm">
-          <p class="text-gray-400 text-xs uppercase tracking-wider font-semibold">Get in Touch</p>
-          <p>
-            <a href="mailto:contact@innovationjiit.in" class="text-white hover:text-purple-300 font-bold text-base transition-colors block">
-              contact@innovationjiit.in
-            </a>
+
+        <!-- Bottom copyright -->
+        <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+          <p class="text-gray-500 text-xs sm:text-sm tracking-wide order-2 md:order-1">
+            &copy; 2026 Ridehack &bull; Innovation Hub, Jaypee Institute of Information Technology (JIIT Sector 128). All rights reserved.
           </p>
-          <div class="text-gray-400 text-xs leading-relaxed pt-2">
-            <p class="font-semibold text-gray-200">Innovation Hub, JIIT Sector 128</p>
-            <p>Jaypee Institute of Information Technology, Noida - 201304</p>
-          </div>
-          <div class="pt-2 border-t border-white/5 space-y-1">
-            <p class="text-[11px] font-bold uppercase tracking-wider text-purple-300">Call Us</p>
-            <p class="text-xs text-gray-300"><span class="font-semibold text-white">Yash:</span> <a href="tel:+917210000082" class="text-purple-400 hover:text-white transition-colors">+91 7210000082</a></p>
-            <p class="text-xs text-gray-300"><span class="font-semibold text-white">Saloni:</span> <a href="tel:+918700497761" class="text-purple-400 hover:text-white transition-colors">+91 8700497761</a></p>
-          </div>
-          <div class="pt-2">
-            <a href="https://maps.google.com/maps?q=Jaypee+Institute+of+Information+Technology+Sector+128+Noida" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-purple-400 hover:text-purple-300 font-semibold transition-colors">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
-              View on Google Maps ↗
-            </a>
+          <div class="order-1 md:order-2 flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 text-xs sm:text-sm">
+            <span class="text-gray-400">Organized with</span>
+            <span class="text-amber-400 text-sm">&starf;</span>
+            <span class="text-gray-400">by</span>
+            <span class="text-white font-semibold">JIIT Innovation Team</span>
           </div>
         </div>
       </div>
+    </footer>
 
-    </div>
-
-    <!-- Bottom copyright -->
-    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-gray-500 text-xs sm:text-sm tracking-wide order-2 md:order-1">
-        © 2026 Ridehack • Innovation Hub, Jaypee Institute of Information Technology (JIIT Sector 128). All rights reserved.
-      </p>
-      <div class="order-1 md:order-2 flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 text-xs sm:text-sm">
-        <span class="text-gray-400">Organized with</span>
-        <span class="text-red-500 animate-pulse text-sm">❤️</span>
-        <span class="text-gray-400">by</span>
-        <span class="text-white font-semibold">JIIT Innovation Team</span>
-      </div>
-    </div>
-  </div>
-</footer>
   </div>
 
-  <!-- NAVBAR SCROLL SCRIPT -->
-  
-<script>
-  function toggleMobileMenu() {
-    var drawer = document.getElementById('mobileMenuDrawer');
-    if (!drawer) return;
-    if (drawer.style.display === 'none' || drawer.style.display === '') {
-      drawer.style.display = 'block';
-    } else {
-      drawer.style.display = 'none';
+  <!-- NAVBAR SCROLL & AMBIENT GOLD DUST PARTICLES SCRIPT -->
+  <script>
+    function toggleMobileMenu() {
+      var drawer = document.getElementById('mobileMenuDrawer');
+      if (!drawer) return;
+      drawer.style.display = (drawer.style.display === 'none' || drawer.style.display === '') ? 'block' : 'none';
     }
-  }
 
-  function initNavbarScroll() {
-    var panel = document.getElementById('desktopNavbarPanel');
-    var links = document.getElementById('navbarLinks');
-    if (!panel || !links) return;
+    function initNavbarScroll() {
+      var panel = document.getElementById('desktopNavbarPanel');
+      var links = document.getElementById('navbarLinks');
+      if (!panel || !links) return;
 
-    var isCompact = false;
+      var isCompact = false;
 
-    function onScroll() {
-      if (window.scrollY > 40) {
-        if (!isCompact) {
-          isCompact = true;
-          panel.style.width = '290px';
-          panel.style.padding = '8px 18px';
-          links.style.maxWidth = '0px';
-          links.style.opacity = '0';
-          links.style.pointerEvents = 'none';
-          links.style.margin = '0';
-        }
-      } else {
-        if (isCompact) {
-          isCompact = false;
-          panel.style.width = 'min(95%, 880px)';
-          panel.style.padding = '8px 24px';
-          links.style.maxWidth = '480px';
-          links.style.opacity = '1';
-          links.style.pointerEvents = 'auto';
-          links.style.margin = '0 auto';
+      function onScroll() {
+        if (window.scrollY > 40) {
+          if (!isCompact) {
+            isCompact = true;
+            panel.style.width = '290px';
+            panel.style.padding = '8px 18px';
+            links.style.maxWidth = '0px';
+            links.style.opacity = '0';
+            links.style.pointerEvents = 'none';
+            links.style.margin = '0';
+          }
+        } else {
+          if (isCompact) {
+            isCompact = false;
+            panel.style.width = 'min(95%, 880px)';
+            panel.style.padding = '8px 24px';
+            links.style.maxWidth = '480px';
+            links.style.opacity = '1';
+            links.style.pointerEvents = 'auto';
+            links.style.margin = '0 auto';
+          }
         }
       }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
     }
 
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
+    // Ambient floating gold particles on theatrical stage
+    function initGoldParticles() {
+      var canvas = document.getElementById('stageParticleCanvas');
+      if (!canvas) return;
+      var ctx = canvas.getContext('2d');
+      if (!ctx) return;
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initNavbarScroll);
-  } else {
-    initNavbarScroll();
-  }
-</script>
+      var width, height;
+      var particles = [];
+      var particleCount = window.innerWidth < 768 ? 24 : 45;
+
+      function resize() {
+        width = canvas.width = window.innerWidth;
+        height = canvas.height = canvas.parentElement ? canvas.parentElement.offsetHeight : window.innerHeight;
+      }
+      resize();
+      window.addEventListener('resize', resize, { passive: true });
+
+      function Particle() {
+        this.reset();
+      }
+
+      Particle.prototype.reset = function() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.size = Math.random() * 2.2 + 0.6;
+        this.speedY = -(Math.random() * 0.4 + 0.15);
+        this.speedX = (Math.random() - 0.5) * 0.3;
+        this.alpha = Math.random() * 0.6 + 0.2;
+        this.pulse = Math.random() * 0.02 + 0.01;
+      };
+
+      Particle.prototype.update = function() {
+        this.y += this.speedY;
+        this.x += this.speedX;
+        this.alpha += Math.sin(Date.now() * 0.002 + this.size) * 0.006;
+        if (this.alpha < 0.1) this.alpha = 0.1;
+        if (this.alpha > 0.8) this.alpha = 0.8;
+
+        if (this.y < -10 || this.x < -10 || this.x > width + 10) {
+          this.reset();
+          this.y = height + 5;
+        }
+      };
+
+      Particle.prototype.draw = function() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(243, 229, 171, ' + this.alpha + ')';
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = 'rgba(212, 175, 55, 0.8)';
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      };
+
+      for (var i = 0; i < particleCount; i++) {
+        particles.push(new Particle());
+      }
+
+      var isVisible = true;
+      document.addEventListener('visibilitychange', function() {
+        isVisible = !document.hidden;
+      });
+
+      function animate() {
+        if (isVisible) {
+          ctx.clearRect(0, 0, width, height);
+          for (var i = 0; i < particles.length; i++) {
+            particles[i].update();
+            particles[i].draw();
+          }
+        }
+        requestAnimationFrame(animate);
+      }
+      requestAnimationFrame(animate);
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', function() {
+        initNavbarScroll();
+        initGoldParticles();
+      });
+    } else {
+      initNavbarScroll();
+      initGoldParticles();
+    }
+  </script>
 </body>
 </html>
