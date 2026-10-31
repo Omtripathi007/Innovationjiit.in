@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faculty Advisors & Team • Ridehack 2026 | Innovation Hub JIIT</title>
+  <meta name="description" content="Meet the Faculty Advisors, Organizers, and Executive Leadership behind Ridehack 2026 at Jaypee Institute of Information Technology, Sector 128 Noida.">
+  <link rel="icon" type="image/png" href="innovation-logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <script src="background-animation.js" defer></script>
+  <script src="theme-toggle.js" defer></script>
+  <script src="coming-soon.js" defer></script>
+</head>
+<body class="bg-[#05020a] text-white min-h-screen font-sans selection:bg-purple-500 selection:text-white">
+
+        <!-- UNIFIED DYNAMIC FLOATING NAVBAR -->
+  <div class="fixed top-0 left-0 right-0 z-50 hidden md:flex justify-center pt-5 pointer-events-none px-4">
+    <div id="desktopNavbarPanel" class="pointer-events-auto rounded-full flex items-center justify-between transition-all duration-500 ease-out" style="box-shadow: rgba(0, 0, 0, 0.45) 0px 8px 32px -8px; border: 1px solid rgba(255, 255, 255, 0.12); background-color: rgba(5,2,10,0.92); backdrop-filter: blur(24px); padding: 8px 24px; height: 64px; width: min(95%, 880px);">
+      
+      <!-- LOGO: COMPACT & CRISP (ALWAYS VISIBLE) -->
+      <div id="navbarLogo" class="shrink-0 flex items-center transition-all duration-300">
+        <a class="flex items-center cursor-pointer group" href="index.html">
+          <img alt="Innovation Hub Logo" class="h-8 w-auto object-contain group-hover:scale-105 transition-transform" src="innovation-logo.png">
+        </a>
+      </div>
+
+      <!-- SPACIOUS NAV LINKS (Home, Grants, Team, Speakers -> speakers.html, Contact) -->
+      <div id="navbarLinks" class="flex items-center justify-center gap-3 lg:gap-5 mx-auto transition-all duration-500 ease-out overflow-hidden" style="max-width: 480px; opacity: 1;">
+        <a href="index.html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors rounded-full whitespace-nowrap text-gray-300 hover:text-white hover:bg-white/5">Home</a>
+        <a href="sponsors.html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors rounded-full whitespace-nowrap text-gray-300 hover:text-white hover:bg-white/5">Grants</a>
+        <a href="team.html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors rounded-full whitespace-nowrap text-gray-300 hover:text-white hover:bg-white/5">Team</a>
+        <a href="speakers.html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors rounded-full whitespace-nowrap text-gray-300 hover:text-white hover:bg-white/5">Speakers</a>
+        <a href="contact.html" class="px-3.5 py-1.5 text-xs sm:text-sm font-medium transition-colors rounded-full whitespace-nowrap text-gray-300 hover:text-white hover:bg-white/5">Contact</a>
+      </div>
+
+      <!-- REGISTER BUTTON: ALWAYS VISIBLE -->
+      <div id="navbarRegister" class="shrink-0 flex items-center transition-all duration-300">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfo1yDY9sdHcOif3eGItnUyBE8StgveHDqJppyfqZ0NtJaWwg/viewform" target="_blank" rel="noopener noreferrer" class="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-full text-xs sm:text-sm font-extrabold tracking-wide transition-all shadow-[0_0_20px_rgba(168,85,247,0.5)] hover:scale-105 whitespace-nowrap">
+          <span>Register</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- MOBILE TOP BAR -->
+  <div class="fixed top-0 left-0 right-0 z-50 md:hidden">
+    <div class="flex items-center justify-between px-4 py-3 bg-[#05020a]/95 backdrop-blur-md border-b border-white/10">
+      <a class="flex items-center" href="index.html">
+        <img alt="Innovation Hub Logo" class="h-8 w-auto object-contain" src="innovation-logo.png">
+      </a>
+      <div class="flex items-center gap-3">
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfo1yDY9sdHcOif3eGItnUyBE8StgveHDqJppyfqZ0NtJaWwg/viewform" target="_blank" rel="noopener noreferrer" class="px-4 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-full text-xs font-bold shadow-[0_0_12px_rgba(168,85,247,0.4)]">
+          Register
+        </a>
+        <button id="mobileMenuBtn" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu" class="w-9 h-9 flex items-center justify-center rounded-lg bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOBILE MENU DRAWER -->
+  <div id="mobileMenuDrawer" style="display:none; position:fixed; top:58px; left:0; right:0; background:rgba(5,2,10,0.98); backdrop-filter:blur(24px); border-bottom:1px solid rgba(255,255,255,0.1); padding:24px 20px; z-index:9999;">
+    <div style="display:flex; flex-direction:column; gap:16px; align-items:center;">
+      <a href="index.html" onclick="toggleMobileMenu()" style="color:white; font-size:16px; font-weight:600; text-decoration:none;">Home</a>
+      <a href="sponsors.html" onclick="toggleMobileMenu()" style="color:#d1d5db; font-size:16px; font-weight:500; text-decoration:none;">Grants</a>
+      <a href="team.html" onclick="toggleMobileMenu()" style="color:#d1d5db; font-size:16px; font-weight:500; text-decoration:none;">Team</a>
+      <a href="speakers.html" onclick="toggleMobileMenu()" style="color:#d1d5db; font-size:16px; font-weight:500; text-decoration:none;">Speakers</a>
+      <a href="contact.html" onclick="toggleMobileMenu()" style="color:#d1d5db; font-size:16px; font-weight:500; text-decoration:none;">Contact</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfo1yDY9sdHcOif3eGItnUyBE8StgveHDqJppyfqZ0NtJaWwg/viewform" target="_blank" rel="noopener noreferrer" style="margin-top:6px; background:linear-gradient(to right, #9333ea, #4f46e5); color:white; font-size:14px; font-weight:700; text-decoration:none; padding:10px 28px; border-radius:9999px; display:inline-flex; align-items:center; gap:8px;">
+        <span>Register</span>
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg>
+      </a>
+    </div>
+  </div>
+<main class="relative z-0 pt-32 sm:pt-40 pb-28">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <!-- SECTION 1: FACULTY ADVISORS (EXACTLY MATCHING IMAGE 2) -->
+      <section class="mb-24 sm:mb-32">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          
+          <!-- Left side: Header & Info -->
+          <div class="lg:col-span-5">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="w-10 h-[2px] bg-white"></span>
+              <span class="text-xs sm:text-sm font-bold tracking-widest text-gray-300 uppercase">OUR ADVISORS</span>
+            </div>
+            
+            <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black text-white tracking-tight leading-tight mb-6">
+              Meet Our Faculty Advisors: The Visionaries Behind <br>
+              <span class="text-purple-400">Ridehack'26</span>
+            </h1>
+
+            <p class="text-gray-300 text-sm sm:text-base leading-relaxed max-w-xl">
+              The Ridehack is guided and mentored by esteemed faculty leaders of Jaypee Institute of Information Technology (JIIT). Dedicated to shaping the future of technology and student entrepreneurship by bringing together the brightest minds in AI, automation, and digital transformation.
+            </p>
+          </div>
+
+          <!-- Right side: 2 Tall Cards Side by Side (Image 2 style) -->
+          <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
+            
+            <!-- Faculty 1: Dr. Mukesh Saraswat -->
+            <div class="group relative rounded-3xl overflow-hidden aspect-[3/4] sm:h-[420px] bg-black/60 border border-white/10 shadow-2xl transition-all duration-500 hover:border-purple-500/50 hover:-translate-y-1.5 flex flex-col justify-end">
+              <img alt="Dr. Mukesh Saraswat" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src="gallery/mukesh_saraswat.jpeg">
+              <!-- Dark gradient overlay at bottom -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+              
+              <!-- Bottom Content -->
+              <div class="relative z-10 p-6 sm:p-7">
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-wide leading-tight mb-1">
+                  Dr. Mukesh Saraswat
+                </h3>
+                <p class="text-purple-400 font-semibold text-sm sm:text-base">
+                  Faculty Advisor
+                </p>
+              </div>
+            </div>
+
+            <!-- Faculty 2: Dr. Akanksha Mehendiratta -->
+            <div class="group relative rounded-3xl overflow-hidden aspect-[3/4] sm:h-[420px] bg-black/60 border border-white/10 shadow-2xl transition-all duration-500 hover:border-purple-500/50 hover:-translate-y-1.5 flex flex-col justify-end">
+              <img alt="Dr. Akanksha Mehendiratta" loading="lazy" class="absolute inset-0 w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105" src="gallery/akanksha_mehendiratta.jpg">
+              <!-- Dark gradient overlay at bottom -->
+              <div class="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
+              
+              <!-- Bottom Content -->
+              <div class="relative z-10 p-6 sm:p-7">
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-wide leading-tight mb-1">
+                  Dr. Akanksha Mehendiratta
+                </h3>
+                <p class="text-purple-400 font-semibold text-sm sm:text-base">
+                  Faculty Advisor
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- QUICK SECTION NAVIGATOR -->
+      <div class="flex items-center justify-center gap-2 sm:gap-3 flex-wrap mb-16 sm:mb-20">
+        <a href="#heads" class="px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white/5 hover:bg-purple-600/20 text-gray-300 hover:text-white border border-white/10 hover:border-purple-500/50 transition-all">Heads</a>
+        <a href="#management-team" class="px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white/5 hover:bg-purple-600/20 text-gray-300 hover:text-white border border-white/10 hover:border-purple-500/50 transition-all">Management Team</a>
+        <a href="#design-team" class="px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white/5 hover:bg-purple-600/20 text-gray-300 hover:text-white border border-white/10 hover:border-purple-500/50 transition-all">Design Team</a>
+        <a href="#development-team" class="px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white/5 hover:bg-purple-600/20 text-gray-300 hover:text-white border border-white/10 hover:border-purple-500/50 transition-all">Development Team</a>
+        <a href="#social-team" class="px-4 py-2 rounded-full text-xs sm:text-sm font-semibold bg-white/5 hover:bg-purple-600/20 text-gray-300 hover:text-white border border-white/10 hover:border-purple-500/50 transition-all">Social Team</a>
+      </div>
+
+      <!-- SECTION 2: HEADS -->
+      <section id="heads" class="mb-24 sm:mb-32 scroll-mt-28">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-10 h-[2px] bg-purple-500"></span>
+          <span class="text-xs sm:text-sm font-bold tracking-widest text-purple-300 uppercase">CORE LEADERSHIP</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight uppercase mb-3">
+          Heads
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base mb-10 max-w-2xl">
+          Guiding the vision, strategic execution, and holistic ecosystem of Ridehack'26.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          <!-- Yash Aggarwal -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Yash Aggarwal" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="miscellaneous/yash.jpeg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Yash+Aggarwal&background=1a0b2e&color=c084fc&size=400';">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Yash Aggarwal</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-semibold mt-1">Club Head</p>
+            </div>
+          </div>
+
+          <!-- Saloni Singhal -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Saloni Singhal" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="miscellaneous/saloni.jpeg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Saloni+Singhal&background=1a0b2e&color=c084fc&size=400';">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Saloni Singhal</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-semibold mt-1">Club Coordinator</p>
+            </div>
+          </div>
+
+          <!-- Aditya Gupta -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Aditya Gupta" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/Aditya%20Gupta_Lead.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Aditya+Gupta&background=1a0b2e&color=c084fc&size=400';">
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-30 transition-opacity"></div>
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Aditya Gupta</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-semibold mt-1">Student Advisor &amp; Lead</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 3: MANAGEMENT TEAM -->
+      <section id="management-team" class="mb-24 sm:mb-32 scroll-mt-28">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-10 h-[2px] bg-purple-500"></span>
+          <span class="text-xs sm:text-sm font-bold tracking-widest text-purple-300 uppercase">OPERATIONS &amp; STRATEGY</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight uppercase mb-3">
+          Management Team
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base mb-10 max-w-2xl">
+          Orchestrating logistics, partnerships, finance, and flawless event execution.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Utkarsh Agarwal -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Utkarsh Agarwal" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/LEAD%20UTAKSHA%20AGARWAL.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Utkarsh+Agarwal&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Utkarsh Agarwal</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Team Lead</p>
+            </div>
+          </div>
+
+          <!-- Harshit Gupta -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Harshit Gupta" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/LEAD%20-%20Harshit%20Gupta.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Harshit+Gupta&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Harshit Gupta</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Team Lead</p>
+            </div>
+          </div>
+
+          <!-- Vitthal Singh -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Vitthal Singh" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/CORE%20-%20vitthal%20singh.png" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Vitthal+Singh&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Vitthal Singh</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Management Lead</p>
+            </div>
+          </div>
+
+          <!-- Simran Singh -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Simran Singh" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="miscellaneous/simran%20singh.jpeg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Simran+Singh&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Simran Singh</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Management Lead</p>
+            </div>
+          </div>
+
+          <!-- Abhinav Kumar Sinha -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Abhinav Kumar Sinha" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/CORE%20-%20Abhinav%20Sinha.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Abhinav+Kumar+Sinha&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Abhinav Kumar Sinha</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Member</p>
+            </div>
+          </div>
+
+          <!-- Harsh Agrawal -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Harsh Agrawal" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/CORE-%20Harsh%20Agrawal.webp" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Harsh+Agrawal&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Harsh Agrawal</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Member</p>
+            </div>
+          </div>
+
+          <!-- Ashwin Prasad -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Ashwin Prasad" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/CORE_ASHWIN%20PRASAD.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ashwin+Prasad&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Ashwin Prasad</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Member</p>
+            </div>
+          </div>
+
+          <!-- Raghav Bansal -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Raghav Bansal" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/CORE_RAGHAV%20BANSAL.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Raghav+Bansal&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Raghav Bansal</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Member</p>
+            </div>
+          </div>
+
+          <!-- Nikhat Ali -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Nikhat Ali" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/CORE_NIKHAT%20ALI.jpeg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Nikhat+Ali&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Nikhat Ali</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Member</p>
+            </div>
+          </div>
+
+          <!-- Nikita Singh -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Nikita Singh" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/CORE%20-%20Nikita%20Singh.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Nikita+Singh&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Nikita Singh</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Member</p>
+            </div>
+          </div>
+
+          <!-- Anaya Mittal -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Anaya Mittal" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/CORE_ANAYA%20MITTLAL.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Anaya+Mittal&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Anaya Mittal</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Member</p>
+            </div>
+          </div>
+
+          <!-- Kavya Agarwal -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Kavya Agarwal" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/CORE%20-%20KAVYA%20AGARWAL%20BCG25228.png" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Kavya+Agarwal&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Kavya Agarwal</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Member</p>
+            </div>
+          </div>
+
+          <!-- Shreshtha Gupta -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Shreshtha Gupta" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/CORE-%20Shreshtha%20Gupta.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Shreshtha+Gupta&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Shreshtha Gupta</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Member</p>
+            </div>
+          </div>
+
+          <!-- Delisha Agarwal -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Delisha Agarwal" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/CORE-%20Delisha%20Agarwal.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Delisha+Agarwal&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Delisha Agarwal</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Member</p>
+            </div>
+          </div>
+
+          <!-- Jitaksh Jain -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Jitaksh Jain" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/CORE-%20jitaksh%20jain.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Jitaksh+Jain&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Jitaksh Jain</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Member</p>
+            </div>
+          </div>
+
+          <!-- Vidhraj Singh -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Vidhraj Singh" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/CORE-%20Vidhraj%20Singh.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Vidhraj+Singh&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Vidhraj Singh</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Member</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 4: DESIGN TEAM -->
+      <section id="design-team" class="mb-24 sm:mb-32 scroll-mt-28">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-10 h-[2px] bg-purple-500"></span>
+          <span class="text-xs sm:text-sm font-bold tracking-widest text-purple-300 uppercase">CREATIVE &amp; BRANDING</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight uppercase mb-3">
+          Design Team
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base mb-10 max-w-2xl">
+          Crafting visual storytelling, user aesthetics, and brand identity for Ridehack'26.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Isha Chawla -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Isha Chawla" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/Isha%20Chawla_Lead.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Isha+Chawla&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Isha Chawla</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Team Lead</p>
+            </div>
+          </div>
+
+          <!-- Varnika Gupta -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Varnika Gupta" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="gallery/WhatsApp%20Image%202025-09-13%20at%2018.56.34.jpeg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Varnika+Gupta&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Varnika Gupta</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Design Lead</p>
+            </div>
+          </div>
+
+          <!-- Ikshit Bhardwaj -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Ikshit Bhardwaj" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/Ikshit%20Bhardwaj_core.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ikshit+Bhardwaj&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Ikshit Bhardwaj</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Design Lead</p>
+            </div>
+          </div>
+
+          <!-- Paarth Sachdeva -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Paarth Sachdeva" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/Paarth%20Sachdeva_core.jpeg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Paarth+Sachdeva&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Paarth Sachdeva</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Designer</p>
+            </div>
+          </div>
+
+          <!-- Kanishka Saxena -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Kanishka Saxena" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/Kanishka%20Saxena_core.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Kanishka+Saxena&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Kanishka Saxena</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Designer</p>
+            </div>
+          </div>
+
+          <!-- Shourya Agarwal -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Shourya Agarwal" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/Shourya%20Agarwal_core.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Shourya+Agarwal&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Shourya Agarwal</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Designer</p>
+            </div>
+          </div>
+
+          <!-- Harshit Sinha -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Harshit Sinha" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/Harshit%20Sinha_core.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Harshit+Sinha&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Harshit Sinha</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Designer</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 5: DEVELOPMENT TEAM -->
+      <section id="development-team" class="mb-24 sm:mb-32 scroll-mt-28">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-10 h-[2px] bg-purple-500"></span>
+          <span class="text-xs sm:text-sm font-bold tracking-widest text-purple-300 uppercase">TECH &amp; ENGINEERING</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight uppercase mb-3">
+          Development Team
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base mb-10 max-w-2xl">
+          Architecting high-performance digital infrastructure, web portals, and software systems.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          <!-- Kartik Guleria -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Kartik Guleria" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="miscellaneous/kartikpic.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Kartik+Guleria&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Kartik Guleria</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Lead Web Developer</p>
+            </div>
+          </div>
+
+          <!-- Om Tripathi -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Om Tripathi" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="miscellaneous/OMDEV.jpeg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Om+Tripathi&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Om Tripathi</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Frontend &amp; Full Stack</p>
+            </div>
+          </div>
+
+          <!-- Shivay Agarwal -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Shivay Agarwal" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="miscellaneous/Shivay%20prsnl%20-%20Shivay%20Agarwal.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Shivay+Agarwal&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Shivay Agarwal</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Backend Developer</p>
+            </div>
+          </div>
+
+          <!-- Ayush Mishra -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Ayush Mishra" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="Ayush.jpeg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Ayush+Mishra&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Ayush Mishra</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Backend Developer</p>
+            </div>
+          </div>
+
+          <!-- Raunak Kheshwari -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Raunak Kheshwari" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/lead-%20Raunak.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Raunak+Kheshwari&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Raunak Kheshwari</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Team Lead</p>
+            </div>
+          </div>
+
+          <!-- Devanshi Srivastava -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Devanshi Srivastava" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/lead%20-%20Devanshi%20Srivastava.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Devanshi+Srivastava&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Devanshi Srivastava</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Team Lead</p>
+            </div>
+          </div>
+
+          <!-- Lakshya Agrawal -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Lakshya Agrawal" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/core%20-%20Lakshya%20Agrawal.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Lakshya+Agrawal&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Lakshya Agrawal</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Developer</p>
+            </div>
+          </div>
+
+          <!-- Nalini Tiwari -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Nalini Tiwari" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/core%20-%20Nalini%20Tiwari.jpeg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Nalini+Tiwari&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Nalini Tiwari</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-medium mt-1">Core Developer</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION 6: SOCIAL TEAM -->
+      <section id="social-team" class="mb-24 sm:mb-32 scroll-mt-28">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="w-10 h-[2px] bg-purple-500"></span>
+          <span class="text-xs sm:text-sm font-bold tracking-widest text-purple-300 uppercase">COMMUNITY &amp; OUTREACH</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight uppercase mb-3">
+          Social Team
+        </h2>
+        <p class="text-gray-400 text-sm sm:text-base mb-10 max-w-2xl">
+          Amplifying Ridehack's impact across digital platforms, media, and student communities.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-6 sm:gap-8">
+          <!-- Yash Deep -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Yash Deep" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/Yashdeep_lead.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Yash+Deep&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Yash Deep</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-semibold mt-1">Team Lead</p>
+            </div>
+          </div>
+
+          <!-- Aman Gupta -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Aman Gupta" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/Aman%20Gupta_lead.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Aman+Gupta&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Aman Gupta</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-semibold mt-1">Team Lead</p>
+            </div>
+          </div>
+
+          <!-- Saumya Agarwal -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Saumya Agarwal" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/Saumya%20Agarwal_mailing_lead.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Saumya+Agarwal&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Saumya Agarwal</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-semibold mt-1">Social &amp; Outreach Lead</p>
+            </div>
+          </div>
+
+          <!-- Arohan Arora -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Arohan Arora" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/Arohan_core%20(1).jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Arohan+Arora&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Arohan Arora</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-semibold mt-1">Core Member</p>
+            </div>
+          </div>
+
+          <!-- Kushagra Rathi -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Kushagra Rathi" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/Kushagra%20Rathi_core.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Kushagra+Rathi&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Kushagra Rathi</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-semibold mt-1">Core Member</p>
+            </div>
+          </div>
+
+          <!-- Vaishnavi Vats -->
+          <div class="group relative rounded-2xl bg-[#0e0818]/90 border border-white/10 p-4 sm:p-5 flex flex-col justify-between hover:border-purple-500/60 transition-all duration-300 hover:-translate-y-1.5 shadow-lg hover:shadow-[0_10px_30px_rgba(168,85,247,0.2)]">
+            <div class="relative w-full aspect-square rounded-xl overflow-hidden mb-4 bg-[#140b24] border border-white/5">
+              <img alt="Vaishnavi Vats" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105" src="teams/Vaishnavi%20Vats_core.jpg" onerror="this.onerror=null; this.src='https://ui-avatars.com/api/?name=Vaishnavi+Vats&background=1a0b2e&color=c084fc&size=400';">
+            </div>
+            <div>
+              <h3 class="text-lg sm:text-xl font-bold text-white tracking-wide group-hover:text-purple-300 transition-colors">Vaishnavi Vats</h3>
+              <p class="text-xs sm:text-sm text-purple-400 font-semibold mt-1">Core Member</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- UNIFIED FOOTER (MATCHING USER REQUEST: NO LEGAL, NO MERCH, SPONSORS->GRANTS, CONTACT ON RIGHT) -->
+<footer class="relative bg-gradient-to-b from-[#0a0316] via-[#05010a] to-[#020005] border-t border-purple-500/30 pt-20 pb-12 px-6 sm:px-10 lg:px-16 overflow-hidden group">
+  <!-- Glowing top purple line with ambient reflection -->
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-7xl h-[2px] bg-gradient-to-r from-transparent via-purple-500/90 to-transparent shadow-[0_0_30px_rgba(168,85,247,0.7)]"></div>
+  <div class="absolute top-0 left-1/3 w-[500px] h-48 bg-purple-600/10 blur-3xl pointer-events-none"></div>
+
+  <div class="max-w-7xl mx-auto">
+    <!-- 3-Column spacious grid: Brand (5 cols) | Explore (3 cols) | Contact (4 cols on right) -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 lg:gap-14 xl:gap-20 pb-16">
+      
+      <!-- Brand & Mission Column (5 cols) -->
+      <div class="lg:col-span-5 flex flex-col justify-between space-y-8">
+        <div>
+          <a href="index.html" class="inline-flex items-center gap-3 mb-6 group">
+            <img src="innovation-logo.png" alt="Innovation Hub Logo" class="h-10 w-auto object-contain group-hover:scale-105 transition-transform">
+          </a>
+          <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+            Empowering the next generation of deep-tech innovators.
+            <br class="hidden sm:block">
+            <strong class="text-white font-semibold">Join us at Ridehack 2026</strong> to shape the future of technology and entrepreneurship in India.
+          </p>
+        </div>
+
+        <!-- Social Media Icon Buttons -->
+        <div class="flex items-center gap-3 pt-2">
+          <a href="https://www.instagram.com/innovation.jiit/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-10 h-10 rounded-full bg-white/[0.04] hover:bg-purple-600/20 border border-white/10 hover:border-purple-400/50 text-gray-400 hover:text-white flex items-center justify-center transition-all hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/innovation-jiit/posts/?feedView=all" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="w-10 h-10 rounded-full bg-white/[0.04] hover:bg-purple-600/20 border border-white/10 hover:border-purple-400/50 text-gray-400 hover:text-white flex items-center justify-center transition-all hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+          </a>
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X" class="w-10 h-10 rounded-full bg-white/[0.04] hover:bg-purple-600/20 border border-white/10 hover:border-purple-400/50 text-gray-400 hover:text-white flex items-center justify-center transition-all hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+          </a>
+          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="w-10 h-10 rounded-full bg-white/[0.04] hover:bg-purple-600/20 border border-white/10 hover:border-purple-400/50 text-gray-400 hover:text-white flex items-center justify-center transition-all hover:scale-110">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"></path><path d="m10 15 5-3-5-3z"></path></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- EXPLORE Column (3 cols) - NO BULLETS, NO MERCH, SPONSORSHIP -> GRANTS -->
+      <div class="lg:col-span-3">
+        <div class="flex items-center gap-2.5 mb-6">
+          <span class="w-6 h-[2px] bg-purple-500 rounded-full"></span>
+          <span class="text-xs font-black uppercase tracking-widest text-white">EXPLORE</span>
+        </div>
+        <ul class="space-y-4 text-sm">
+          <li><a href="events.html" class="text-gray-400 hover:text-white transition-colors block">Events</a></li>
+          <li><a href="sponsors.html" class="text-gray-400 hover:text-white transition-colors block">Grants</a></li>
+          <li><a href="team.html" class="text-gray-400 hover:text-white transition-colors block">Team</a></li>
+          <li><a href="speakers.html" class="text-gray-400 hover:text-white transition-colors block">Speakers</a></li>
+          <li><a href="index.html#timeline" class="text-gray-400 hover:text-white transition-colors block">Schedule</a></li>
+        </ul>
+      </div>
+
+      <!-- CONTACT Column (4 cols on the right side) -->
+      <div class="lg:col-span-4">
+        <div class="flex items-center gap-2.5 mb-6">
+          <span class="w-6 h-[2px] bg-purple-500 rounded-full"></span>
+          <span class="text-xs font-black uppercase tracking-widest text-white">CONTACT</span>
+        </div>
+        <div class="space-y-3.5 text-sm">
+          <p class="text-gray-400 text-xs uppercase tracking-wider font-semibold">Get in Touch</p>
+          <p>
+            <a href="mailto:contact@innovationjiit.in" class="text-white hover:text-purple-300 font-bold text-base transition-colors block">
+              contact@innovationjiit.in
+            </a>
+          </p>
+          <div class="text-gray-400 text-xs leading-relaxed pt-2">
+            <p class="font-semibold text-gray-200">Innovation Hub, JIIT Sector 128</p>
+            <p>Jaypee Institute of Information Technology, Noida - 201304</p>
+          </div>
+          <div class="pt-2 border-t border-white/5 space-y-1">
+            <p class="text-[11px] font-bold uppercase tracking-wider text-purple-300">Call Us</p>
+            <p class="text-xs text-gray-300"><span class="font-semibold text-white">Yash:</span> <a href="tel:+917210000082" class="text-purple-400 hover:text-white transition-colors">+91 7210000082</a></p>
+            <p class="text-xs text-gray-300"><span class="font-semibold text-white">Saloni:</span> <a href="tel:+918700497761" class="text-purple-400 hover:text-white transition-colors">+91 8700497761</a></p>
+          </div>
+          <div class="pt-2">
+            <a href="https://maps.google.com/maps?q=Jaypee+Institute+of+Information+Technology+Sector+128+Noida" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs text-purple-400 hover:text-purple-300 font-semibold transition-colors">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              View on Google Maps ↗
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom copyright -->
+    <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+      <p class="text-gray-500 text-xs sm:text-sm tracking-wide order-2 md:order-1">
+        © 2026 Ridehack • Innovation Hub, Jaypee Institute of Information Technology (JIIT Sector 128). All rights reserved.
+      </p>
+      <div class="order-1 md:order-2 flex items-center gap-2 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 text-xs sm:text-sm">
+        <span class="text-gray-400">Organized with</span>
+        <span class="text-red-500 animate-pulse text-sm">❤️</span>
+        <span class="text-gray-400">by</span>
+        <span class="text-white font-semibold">JIIT Innovation Team</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  
+
+
+<script>
+  function toggleMobileMenu() {
+    var drawer = document.getElementById('mobileMenuDrawer');
+    if (!drawer) return;
+    if (drawer.style.display === 'none' || drawer.style.display === '') {
+      drawer.style.display = 'block';
+    } else {
+      drawer.style.display = 'none';
+    }
+  }
+
+  function initNavbarScroll() {
+    var panel = document.getElementById('desktopNavbarPanel');
+    var links = document.getElementById('navbarLinks');
+    if (!panel || !links) return;
+
+    var isCompact = false;
+
+    function onScroll() {
+      if (window.scrollY > 40) {
+        if (!isCompact) {
+          isCompact = true;
+          panel.style.width = '290px';
+          panel.style.padding = '8px 18px';
+          links.style.maxWidth = '0px';
+          links.style.opacity = '0';
+          links.style.pointerEvents = 'none';
+          links.style.margin = '0';
+        }
+      } else {
+        if (isCompact) {
+          isCompact = false;
+          panel.style.width = 'min(95%, 880px)';
+          panel.style.padding = '8px 24px';
+          links.style.maxWidth = '480px';
+          links.style.opacity = '1';
+          links.style.pointerEvents = 'auto';
+          links.style.margin = '0 auto';
+        }
+      }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavbarScroll);
+  } else {
+    initNavbarScroll();
+  }
+</script>
+</body>
+</html>
