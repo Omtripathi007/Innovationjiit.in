@@ -57,7 +57,7 @@
             category: 'Team Leads',
             tagline: 'Architecting scalable web applications & leading tech initiatives.',
             bio: 'Passionate about full-stack engineering, cloud architecture, and mentoring student developers across web and mobile platforms.',
-            image: '../assets/images/teams/LEAD - Harshit Gupta.jpg',
+            image: '../../assets/images/teams/LEAD - Harshit Gupta.jpg',
             socials: { github: '#', linkedin: '#', instagram: '#', website: '#' }
         },
         {
@@ -67,7 +67,7 @@
             category: 'Team Leads',
             tagline: 'Driving team execution, community growth, and strategic vision.',
             bio: 'Specializing in project management, cross-functional collaboration, and hosting university-wide flagship tech events.',
-            image: '../assets/images/teams/Isha Chawla_Lead.jpg',
+            image: '../../assets/images/teams/Isha Chawla_Lead.jpg',
             socials: { linkedin: '#', instagram: '#', website: '#' }
         },
         {
@@ -77,7 +77,7 @@
             category: 'Team Leads',
             tagline: 'Building high-performance software systems & open source tools.',
             bio: 'Core technical lead focusing on backend infrastructure, dev tools, and guiding student development projects.',
-            image: '../assets/images/teams/Aditya Gupta_Lead.jpg',
+            image: '../../assets/images/teams/Aditya Gupta_Lead.jpg',
             socials: { github: '#', linkedin: '#', instagram: '#' }
         },
         {
@@ -87,7 +87,7 @@
             category: 'Team Leads',
             tagline: 'Crafting expressive UI/UX designs and visual brand identities.',
             bio: 'Leading creative design, editorial visual styling, and user experience research across all club digital products.',
-            image: '../assets/images/teams/led - Devanshi Srivastava.jpg',
+            image: '../../assets/images/teams/lead - Devanshi Srivastava.jpg',
             socials: { linkedin: '#', instagram: '#', website: '#' }
         },
         {
@@ -97,7 +97,7 @@
             category: 'Team Leads',
             tagline: 'Streamlining event logistics, sponsorships, and outreach.',
             bio: 'Managing club logistics, sponsor relations, and event execution for seamless university hackathons.',
-            image: '../assets/images/teams/Aman Gupta_lead.jpg',
+            image: '../../assets/images/teams/Aman Gupta_lead.jpg',
             socials: { linkedin: '#', instagram: '#', github: '#' }
         },
         {
@@ -107,7 +107,7 @@
             category: 'Team Leads',
             tagline: 'Connecting student communities through effective engagement.',
             bio: 'Heading community engagement, social communications, and media partnerships for Innovation Club.',
-            image: '../assets/images/teams/Saumya Agarwal_mailing_lead.jpg',
+            image: '../../assets/images/teams/Saumya Agarwal_mailing_lead.jpg',
             socials: { linkedin: '#', instagram: '#' }
         },
         {
@@ -117,7 +117,7 @@
             category: 'Team Leads',
             tagline: 'Orchestrating memorable hackathons & interactive workshops.',
             bio: 'Curating technical workshops, competitive hackathons, and speaker sessions for 500+ participants.',
-            image: '../assets/images/teams/LEAD UTAKSHA AGARWAL.jpg',
+            image: '../../assets/images/teams/LEAD UTAKSHA AGARWAL.jpg',
             socials: { linkedin: '#', instagram: '#' }
         },
         {
@@ -127,8 +127,18 @@
             category: 'Team Leads',
             tagline: 'Directing software lifecycles & practical code implementation.',
             bio: 'Overseeing development sprints, code reviews, and developer onboarding for active club projects.',
-            image: '../assets/images/teams/Yashdeep_lead.jpg',
+            image: '../../assets/images/teams/Yashdeep_lead.jpg',
             socials: { github: '#', linkedin: '#', instagram: '#' }
+        },
+        {
+            id: 'l9',
+            name: 'Raunak',
+            role: 'Team Lead',
+            category: 'Team Leads',
+            tagline: 'Bringing ideas to life with the Innovation Club community.',
+            bio: 'A valued member of the Innovation Club team, collaborating with peers on club initiatives.',
+            image: '../../assets/images/teams/lead- Raunak.jpg',
+            socials: {}
         },
 
         // ── CORE TEAM ────────────────────────────────────────────
@@ -139,7 +149,7 @@
             category: 'Core Team',
             tagline: 'Building intuitive user interfaces and modern web applications.',
             bio: 'Frontend developer passionate about clean UI components, web responsiveness, and seamless user experiences.',
-            image: '../assets/images/teams/CORE - Abhinav Sinha.jpg',
+            image: '../../assets/images/teams/CORE - Abhinav Sinha.jpg',
             socials: { github: '#', linkedin: '#', instagram: '#' }
         },
         {
@@ -149,7 +159,7 @@
             category: 'Core Team',
             tagline: 'Translating complex ideas into delightful digital graphics.',
             bio: 'Specializing in vector illustrations, UI component design, and marketing collateral for innovation events.',
-            image: '../assets/images/teams/CORE - Nikita Singh.jpg',
+            image: '../../assets/images/teams/CORE - Nikita Singh.jpg',
             socials: { linkedin: '#', instagram: '#', website: '#' }
         },
         {
@@ -159,7 +169,7 @@
             category: 'Core Team',
             tagline: 'Exploring AI algorithms and competitive coding.',
             bio: 'Problem solver focusing on Python development, data structures, and machine learning models.',
-            image: '../assets/images/teams/CORE - KAVYA AGARWAL BCG25228.png',
+            image: '../../assets/images/teams/CORE - KAVYA AGARWAL BCG25228.png',
             socials: { github: '#', linkedin: '#' }
         },
         {
@@ -169,7 +179,7 @@
             category: 'Core Team',
             tagline: 'Developing backend APIs and database architectures.',
             bio: 'Backend enthusiast working with Node.js, Express, and database management systems.',
-            image: '../assets/images/teams/CORE - utkarsh agrawal.jpg',
+            image: '../../assets/images/teams/CORE - utkarsh agrawal.jpg',
             socials: { github: '#', linkedin: '#', instagram: '#' }
         },
         {
@@ -179,7 +189,7 @@
             category: 'Core Team',
             tagline: 'Collaborating on full-stack web and open source projects.',
             bio: 'Active contributor across web development, open-source repositories, and event logistics.',
-            image: '../assets/images/teams/CORE - vitthal singh.png',
+            image: '../../assets/images/teams/CORE - vitthal singh.png',
             socials: { github: '#', linkedin: '#' }
         },
         {
@@ -189,7 +199,7 @@
             category: 'Core Team',
             tagline: 'Crafting engaging content and managing community channels.',
             bio: 'Core contributor handling content creation, social communications, and student engagement.',
-            image: '../assets/images/teams/CORE- Delisha Agarwal.jpg',
+            image: '../../assets/images/teams/CORE- Delisha Agarwal.jpg',
             socials: { linkedin: '#', instagram: '#' }
         },
         {
@@ -199,7 +209,7 @@
             category: 'Core Team',
             tagline: 'Interested in web security and cloud deployments.',
             bio: 'Exploring cybersecurity, serverless deployment, and modern JavaScript toolchains.',
-            image: '../assets/images/teams/CORE- Harsh Agrawal.webp',
+            image: '../../assets/images/teams/CORE- Harsh Agrawal.webp',
             socials: { github: '#', linkedin: '#', instagram: '#' }
         },
         {
@@ -209,7 +219,7 @@
             category: 'Core Team',
             tagline: 'Organizing domain workshops and designing visual media.',
             bio: 'Supporting creative campaigns, graphic assets, and technical workshop execution.',
-            image: '../assets/images/teams/CORE- Shreshtha Gupta.jpg',
+            image: '../../assets/images/teams/CORE- Shreshtha Gupta.jpg',
             socials: { linkedin: '#', instagram: '#' }
         },
         {
@@ -219,7 +229,7 @@
             category: 'Core Team',
             tagline: 'Crafting responsive mobile-first UI components.',
             bio: 'Frontend developer working with modern CSS, UI responsiveness, and web interactive elements.',
-            image: '../assets/images/teams/CORE- jitaksh jain.jpg',
+            image: '../../assets/images/teams/CORE- jitaksh jain.jpg',
             socials: { github: '#', linkedin: '#' }
         },
         {
@@ -229,8 +239,138 @@
             category: 'Core Team',
             tagline: 'Fostering inclusive team collaboration and documentation.',
             bio: 'Contributing to project documentation, community outreach, and technical event planning.',
-            image: '../assets/images/teams/CORE_ANAYA MITTLAL.jpg',
+            image: '../../assets/images/teams/CORE_ANAYA MITTLAL.jpg',
             socials: { linkedin: '#', instagram: '#' }
+        },
+        {
+            id: 'c11',
+            name: 'Arohan',
+            role: 'Core Team Member',
+            category: 'Core Team',
+            tagline: 'Bringing ideas to life with the Innovation Club community.',
+            bio: 'A valued member of the Innovation Club team, collaborating with peers on club initiatives.',
+            image: '../../assets/images/teams/Arohan_core (1).jpg',
+            socials: {}
+        },
+        {
+            id: 'c12',
+            name: 'Vidhraj Singh',
+            role: 'Core Team Member',
+            category: 'Core Team',
+            tagline: 'Bringing ideas to life with the Innovation Club community.',
+            bio: 'A valued member of the Innovation Club team, collaborating with peers on club initiatives.',
+            image: '../../assets/images/teams/CORE- Vidhraj Singh.jpg',
+            socials: {}
+        },
+        {
+            id: 'c13',
+            name: 'Ashwin Prasad',
+            role: 'Core Team Member',
+            category: 'Core Team',
+            tagline: 'Bringing ideas to life with the Innovation Club community.',
+            bio: 'A valued member of the Innovation Club team, collaborating with peers on club initiatives.',
+            image: '../../assets/images/teams/CORE_ASHWIN PRASAD.jpg',
+            socials: {}
+        },
+        {
+            id: 'c14',
+            name: 'Nikhat Ali',
+            role: 'Core Team Member',
+            category: 'Core Team',
+            tagline: 'Bringing ideas to life with the Innovation Club community.',
+            bio: 'A valued member of the Innovation Club team, collaborating with peers on club initiatives.',
+            image: '../../assets/images/teams/CORE_NIKHAT ALI.jpeg',
+            socials: {}
+        },
+        {
+            id: 'c15',
+            name: 'Raghav Bansal',
+            role: 'Core Team Member',
+            category: 'Core Team',
+            tagline: 'Bringing ideas to life with the Innovation Club community.',
+            bio: 'A valued member of the Innovation Club team, collaborating with peers on club initiatives.',
+            image: '../../assets/images/teams/CORE_RAGHAV BANSAL.jpg',
+            socials: {}
+        },
+        {
+            id: 'c16',
+            name: 'Harshit Sinha',
+            role: 'Core Team Member',
+            category: 'Core Team',
+            tagline: 'Bringing ideas to life with the Innovation Club community.',
+            bio: 'A valued member of the Innovation Club team, collaborating with peers on club initiatives.',
+            image: '../../assets/images/teams/Harshit Sinha_core.jpg',
+            socials: {}
+        },
+        {
+            id: 'c17',
+            name: 'Kanishka Saxena',
+            role: 'Core Team Member',
+            category: 'Core Team',
+            tagline: 'Bringing ideas to life with the Innovation Club community.',
+            bio: 'A valued member of the Innovation Club team, collaborating with peers on club initiatives.',
+            image: '../../assets/images/teams/Kanishka Saxena_core.jpg',
+            socials: {}
+        },
+        {
+            id: 'c18',
+            name: 'Kushagra Rathi',
+            role: 'Core Team Member',
+            category: 'Core Team',
+            tagline: 'Bringing ideas to life with the Innovation Club community.',
+            bio: 'A valued member of the Innovation Club team, collaborating with peers on club initiatives.',
+            image: '../../assets/images/teams/Kushagra Rathi_core.jpg',
+            socials: {}
+        },
+        {
+            id: 'c19',
+            name: 'Paarth Sachdeva',
+            role: 'Core Team Member',
+            category: 'Core Team',
+            tagline: 'Bringing ideas to life with the Innovation Club community.',
+            bio: 'A valued member of the Innovation Club team, collaborating with peers on club initiatives.',
+            image: '../../assets/images/teams/Paarth Sachdeva_core.jpeg',
+            socials: {}
+        },
+        {
+            id: 'c20',
+            name: 'Shourya Agarwal',
+            role: 'Core Team Member',
+            category: 'Core Team',
+            tagline: 'Bringing ideas to life with the Innovation Club community.',
+            bio: 'A valued member of the Innovation Club team, collaborating with peers on club initiatives.',
+            image: '../../assets/images/teams/Shourya Agarwal_core.jpg',
+            socials: {}
+        },
+        {
+            id: 'c21',
+            name: 'Vaishnavi Vats',
+            role: 'Core Team Member',
+            category: 'Core Team',
+            tagline: 'Bringing ideas to life with the Innovation Club community.',
+            bio: 'A valued member of the Innovation Club team, collaborating with peers on club initiatives.',
+            image: '../../assets/images/teams/Vaishnavi Vats_core.jpg',
+            socials: {}
+        },
+        {
+            id: 'c22',
+            name: 'Lakshya Agrawal',
+            role: 'Core Team Member',
+            category: 'Core Team',
+            tagline: 'Bringing ideas to life with the Innovation Club community.',
+            bio: 'A valued member of the Innovation Club team, collaborating with peers on club initiatives.',
+            image: '../../assets/images/teams/core - Lakshya Agrawal.jpg',
+            socials: {}
+        },
+        {
+            id: 'c23',
+            name: 'Nalini Tiwari',
+            role: 'Core Team Member',
+            category: 'Core Team',
+            tagline: 'Bringing ideas to life with the Innovation Club community.',
+            bio: 'A valued member of the Innovation Club team, collaborating with peers on club initiatives.',
+            image: '../../assets/images/teams/core - Nalini Tiwari.jpeg',
+            socials: {}
         }
     ];
 
